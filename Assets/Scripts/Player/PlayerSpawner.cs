@@ -1,38 +1,56 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerSpawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
-    public GameObject playerPrefab;
-    private int playerCount = 0;
+    public List<PlayerInput> playerList = new List<PlayerInput>();
+    [SerializeField] private InputAction joinAction;
+    
+    // Instances
+    public static PlayerSpawner instance = null;
+    
+    // Events
+    public event System.Action<PlayerInput> PlayerJoinedGame; 
 
-    private void OnEnable()
+    private void Awake()
     {
-        PlayerInputManager.instance.onPlayerJoined += OnPlayerJoined;
-    }
-
-    private void OnDisable()
-    {
-        if (PlayerInputManager.instance != null)
+        if (instance == null)
         {
-            PlayerInputManager.instance.onPlayerJoined -= OnPlayerJoined;
+            instance = this;
         }
+        else Destroy(gameObject);
+        
+        joinAction.Enable();
+        joinAction.performed += context => JoinAction(context);
     }
 
-    private void OnPlayerJoined(PlayerInput playerInput)
+    private void Start()
     {
-        if (playerCount >= spawnPoints.Length)
+        PlayerInputManager.instance.JoinPlayer(0, -1, null);
+    }
+
+    void OnPlayerJoined(PlayerInput playerInput)
+    {
+        playerList.Add(playerInput);
+        
+        int playerIndex = playerList.Count - 1;
+        
+        if (playerIndex < spawnPoints.Length)
         {
-            Debug.LogWarning("Not enough spawn points for all players!");
-            return;
+            playerInput.transform.position = spawnPoints[playerIndex].position;
         }
         
-        Transform spawnPoint = spawnPoints[playerCount];
-        playerInput.transform.position = spawnPoint.position;
-        playerInput.transform.rotation = spawnPoint.rotation;
-
-        playerCount++;
+        if (PlayerJoinedGame != null)
+        {
+            PlayerJoinedGame(playerInput);
+        }
     }
-    
+
+    private void JoinAction(InputAction.CallbackContext context)
+    {
+        PlayerInputManager.instance.JoinPlayerFromActionIfNotAlreadyJoined(context);
+    }
 }

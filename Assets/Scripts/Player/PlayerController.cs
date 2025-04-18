@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movementInput;
     private Vector2 aimInput;
+    private Vector3 move;
 
     private Camera mainCamera;
     private PlayerInput playerInput;
@@ -17,16 +20,19 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         mainCamera = Camera.main;
-        playerInput = GetComponent<PlayerInput>();
+        
         gun = GetComponent<PlayerGun>();
         controller = GetComponent<CharacterController>();
     }
 
+    private void Start()
+    {
+        playerInput = GetComponentInChildren<PlayerInput>();
+    }
+
     void Update()
     {
-        Vector3 move = new Vector3(movementInput.x, 0, movementInput.y);
         controller.Move(move * speed * Time.deltaTime);
-
         HandleRotation();
     }
 
@@ -61,8 +67,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
-    public void OnAim(InputAction.CallbackContext ctx) => aimInput = ctx.ReadValue<Vector2>();
+    public void OnMove(InputAction.CallbackContext ctx)
+    {
+        movementInput = ctx.ReadValue<Vector2>();
+        move = new Vector3(movementInput.x, 0, movementInput.y);
+        
+    }
+    public void OnAim(InputAction.CallbackContext ctx) 
+    {
+        aimInput = ctx.ReadValue<Vector2>();
+        
+    }
     public void OnFire(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)

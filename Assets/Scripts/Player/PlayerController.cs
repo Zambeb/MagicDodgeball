@@ -1,120 +1,71 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public float speed = 5f;
+    public float rotationSpeed = 720f;
+
+    private Vector2 movementInput;
+    private Vector2 aimInput;
+
+    private Camera mainCamera;
+    private PlayerInput playerInput;
+    private PlayerGun gun;
     private CharacterController controller;
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;
-    [SerializeField] private float playerSpeed = 5.0f;
-    private float gravityValue = -9.81f;
 
-    private Vector3 move;
-    private Vector3 aimDirection = Vector3.forward;
-    private bool usingMouseAim = false;
-
-    [SerializeField] private Transform aimPivot;
-
-    [Header("Shooting")]
-    public GameObject projectilePrefab;
-    public Transform firePoint;
-
-    private bool isKeyboard;  // Переменная для определения типа устройства
-
-    private void Awake()
+    void Awake()
     {
+        mainCamera = Camera.main;
+        playerInput = GetComponent<PlayerInput>();
+        gun = GetComponent<PlayerGun>();
         controller = GetComponent<CharacterController>();
     }
 
-    private void Update()
+    void Update()
     {
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+        Vector3 move = new Vector3(movementInput.x, 0, movementInput.y);
+        controller.Move(move * speed * Time.deltaTime);
+
+        HandleRotation();
+    }
+
+    void HandleRotation()
+    {
+        string currentControlScheme = playerInput.currentControlScheme;
+
+        if (currentControlScheme == "Gamepad")
         {
-            playerVelocity.y = 0f;
-        }
-
-        controller.Move(move * Time.deltaTime * playerSpeed);
-
-        // Gravity
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
-
-        // Обработка прицеливания в зависимости от устройства
-        if (isKeyboard)
-        {
-            HandleMouseAim();
+            Vector3 direction = new Vector3(aimInput.x, 0, aimInput.y);
+            if (direction.sqrMagnitude > 0.1f)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
         }
         else
         {
-            HandleGamepadAim();
-        }
-
-        if (!usingMouseAim && aimDirection.sqrMagnitude > 0.1f)
-        {
-            transform.forward = aimDirection;
-        }
-    }
-
-    public void SetInputDevice(bool keyboard)
-    {
-        isKeyboard = keyboard;
-    }
-
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        Vector2 movement = context.ReadValue<Vector2>();
-        move = new Vector3(movement.x, 0, movement.y);
-    }
-
-    public void OnAim(InputAction.CallbackContext context)
-    {
-        if (isKeyboard)
-        {
-            // Управление мышью
-            Vector2 aimInput = context.ReadValue<Vector2>();
-            Vector3 newAim = new Vector3(aimInput.x, 0, aimInput.y);
-            if (newAim.sqrMagnitude > 0.1f)
+            Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
             {
-                aimDirection = newAim.normalized;
-                usingMouseAim = true;
+                Vector3 lookPoint = hit.point;
+                Vector3 direction = lookPoint - transform.position;
+                direction.y = 0f;
+
+                if (direction.sqrMagnitude > 0.01f)
+                {
+                    Quaternion rot = Quaternion.LookRotation(direction);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, rot, 15f * Time.deltaTime);
+                }
             }
         }
     }
 
-    public void OnFire(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
+    public void OnAim(InputAction.CallbackContext ctx) => aimInput = ctx.ReadValue<Vector2>();
+    public void OnFire(InputAction.CallbackContext ctx)
     {
-        if (context.performed)
-        {
-            PlayerGun.Instance.Shoot();
-        }
-    }
-
-    private void HandleMouseAim()
-    {
-        if (Mouse.current == null) return;
-
-        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            Vector3 lookPoint = new Vector3(hit.point.x, transform.position.y, hit.point.z);
-            transform.LookAt(lookPoint);
-            usingMouseAim = true;
-        }
-    }
-
-    private void HandleGamepadAim()
-    {
-        if (Gamepad.current == null) return;
-
-        Vector2 aimInput = Gamepad.current.rightStick.ReadValue();
-        Vector3 newAim = new Vector3(aimInput.x, 0, aimInput.y);
-        if (newAim.sqrMagnitude > 0.1f)
-        {
-            aimDirection = newAim.normalized;
-        }
+        if (ctx.performed)
+            gun.Shoot();
     }
 }

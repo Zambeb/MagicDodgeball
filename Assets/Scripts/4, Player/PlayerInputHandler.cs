@@ -22,6 +22,7 @@ public class PlayerInputHandler : MonoBehaviour
                 .GetComponent<PlayerController>();
             transform.parent = playerController.transform;
             transform.position = playerController.transform.position;
+            playerController.playerIndex = playerIndex;
         }
     }
 

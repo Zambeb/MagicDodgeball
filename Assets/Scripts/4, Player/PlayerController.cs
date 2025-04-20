@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour, IDamageable
 {
+    public int playerIndex;
     public PlayerStats stats;
     public float speed = 5f;
     public float rotationSpeed = 720f;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void Start()
     {
         playerInput = GetComponentInChildren<PlayerInput>();
+        UIManager.Instance.InitPlayerHearts(playerIndex, stats.maxHealth);
     }
 
     void Update()
@@ -95,6 +97,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void TakeDamage(int amount)
     {
         stats.currentHealth -= amount;
+        UIManager.Instance.UpdatePlayerHearts(playerIndex, stats.currentHealth);
         Debug.Log("Ouch!");
         if (IsDead)
         {

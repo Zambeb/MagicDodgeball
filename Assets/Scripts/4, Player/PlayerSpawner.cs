@@ -43,6 +43,8 @@ public class PlayerSpawner : MonoBehaviour
             playerInput.transform.position = spawnPoints[playerIndex].position;
         }
         
+        
+        
         if (PlayerJoinedGame != null)
         {
             PlayerJoinedGame(playerInput);

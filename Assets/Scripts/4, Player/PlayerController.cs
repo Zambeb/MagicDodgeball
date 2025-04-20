@@ -3,8 +3,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
+    public PlayerStats stats;
     public float speed = 5f;
     public float rotationSpeed = 720f;
 
@@ -17,12 +18,19 @@ public class PlayerController : MonoBehaviour
     private PlayerGun gun;
     private CharacterController controller;
 
+    [SerializeField] private GameObject model;
+    [SerializeField] private GameObject deathEffect;
+
+    public bool IsDead => stats.currentHealth <= 0;
+
     void Awake()
     {
         mainCamera = Camera.main;
         
         gun = GetComponent<PlayerGun>();
         controller = GetComponent<CharacterController>();
+        stats.ResetHealth();
+        speed = stats.moveSpeed;
     }
 
     private void Start()
@@ -82,5 +90,22 @@ public class PlayerController : MonoBehaviour
     {
         if (ctx.performed)
             gun.Shoot();
+    }
+
+    public void TakeDamage(int amount)
+    {
+        stats.currentHealth -= amount;
+        Debug.Log("Ouch!");
+        if (IsDead)
+        {
+            Debug.Log($"{gameObject.name} is dead!");
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        model.SetActive(false);
+        deathEffect.SetActive(true);
     }
 }

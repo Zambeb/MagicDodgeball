@@ -122,5 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 10
-  maxLifetime: 10
   maxBounces: 5

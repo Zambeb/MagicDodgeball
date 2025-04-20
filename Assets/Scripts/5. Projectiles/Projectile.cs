@@ -25,8 +25,13 @@ public class Projectile : MonoBehaviour
         float distance = projectileSpeed * Time.deltaTime;
         RaycastHit hit;
         if (Physics.SphereCast(transform.position, 0.1f, direction, out hit, distance))
-
         {
+            IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(1);
+            }
+            
             if (hit.collider.CompareTag("CenterWall"))
             {
                 if (!hasEnteredEnemyZone)
@@ -58,6 +63,7 @@ public class Projectile : MonoBehaviour
             transform.position += direction * distance;
         }
     }
+    
 
     private void DestroySelf()
     {

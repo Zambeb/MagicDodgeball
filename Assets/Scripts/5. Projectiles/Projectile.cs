@@ -3,9 +3,9 @@ using System;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float projectileSpeed = 10f;
+    public float projectileSpeed;
+    public int maxBounces;
     //[SerializeField] private float maxLifetime = 10f;
-    [SerializeField] private int maxBounces = 5;
 
     private Vector3 direction;
     private int bounceCount = 0;
@@ -48,14 +48,14 @@ public class Projectile : MonoBehaviour
             {
                 direction = Vector3.Reflect(direction, hit.normal);
                 bounceCount++;
-                if (bounceCount >= maxBounces) DestroySelf();
+                if (bounceCount > maxBounces) DestroySelf();
                 transform.position = hit.point + direction * 0.01f;
                 return;
             }
 
             direction = Vector3.Reflect(direction, hit.normal);
             bounceCount++;
-            if (bounceCount >= maxBounces) DestroySelf();
+            if (bounceCount > maxBounces) DestroySelf();
             transform.position = hit.point + direction * 0.01f;
         }
         else

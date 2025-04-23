@@ -26,6 +26,12 @@ public class Projectile : MonoBehaviour
         RaycastHit hit;
         if (Physics.SphereCast(transform.position, 0.1f, direction, out hit, distance))
         {
+            if (hit.collider.CompareTag("PlayerWall"))
+            {
+                transform.position += direction * distance;
+                return;
+            }
+            
             if (hit.collider.CompareTag("CenterWall"))
             {
                 if (!hasEnteredEnemyZone)

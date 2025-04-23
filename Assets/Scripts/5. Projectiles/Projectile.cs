@@ -3,9 +3,9 @@ using System;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float projectileSpeed = 10f;
+    public float projectileSpeed;
+    public int maxBounces;
     //[SerializeField] private float maxLifetime = 10f;
-    [SerializeField] private int maxBounces = 5;
 
     private Vector3 direction;
     private int bounceCount = 0;
@@ -26,10 +26,10 @@ public class Projectile : MonoBehaviour
         RaycastHit hit;
         if (Physics.SphereCast(transform.position, 0.1f, direction, out hit, distance))
         {
-            IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-            if (damageable != null)
+            if (hit.collider.CompareTag("PlayerWall"))
             {
-                damageable.TakeDamage(1);
+                transform.position += direction * distance;
+                return;
             }
             
             if (hit.collider.CompareTag("CenterWall"))
@@ -38,25 +38,18 @@ public class Projectile : MonoBehaviour
                 {
                     hasEnteredEnemyZone = true;
                     gameObject.layer = LayerMask.NameToLayer("EnemyProjectile");
-                    
                     transform.position = hit.point + direction * 0.01f;
                     return;
                 }
             }
             
-            if (hit.collider.CompareTag("Projectile"))
+            IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+            if (damageable != null)
             {
-                direction = Vector3.Reflect(direction, hit.normal);
-                bounceCount++;
-                if (bounceCount >= maxBounces) DestroySelf();
-                transform.position = hit.point + direction * 0.01f;
-                return;
+                damageable.TakeDamage(1);
             }
-
-            direction = Vector3.Reflect(direction, hit.normal);
-            bounceCount++;
-            if (bounceCount >= maxBounces) DestroySelf();
-            transform.position = hit.point + direction * 0.01f;
+            
+            HandleBounce(hit.normal, hit.point);
         }
         else
         {
@@ -64,6 +57,24 @@ public class Projectile : MonoBehaviour
         }
     }
     
+    private void HandleBounce(Vector3 normal, Vector3 hitPoint)
+    {
+        direction = ReflectInXZ(direction, normal);
+        bounceCount++;
+        if (bounceCount > maxBounces)
+        {
+            DestroySelf();
+            return;
+        }
+        transform.position = hitPoint + direction * 0.01f;
+    }
+    
+    private Vector3 ReflectInXZ(Vector3 incoming, Vector3 normal)
+    {
+        Vector3 reflected = Vector3.Reflect(incoming, normal);
+        reflected.y = 0f;
+        return reflected.normalized;
+    }
 
     private void DestroySelf()
     {

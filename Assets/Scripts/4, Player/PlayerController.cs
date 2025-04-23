@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 {
     public int playerIndex;
     public PlayerStats stats;
-    public float speed = 5f;
+    private float speed = 5f;
     public float rotationSpeed = 720f;
 
     private Vector2 movementInput;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private PlayerGun gun;
     private CharacterController controller;
 
-    [SerializeField] private GameObject model;
+    [SerializeField] private GameObject[] models;
     [SerializeField] private GameObject deathEffect;
 
     public bool IsDead => stats.currentHealth <= 0;
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void OnFire(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
-            gun.Shoot();
+            gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed);
     }
 
     public void TakeDamage(int amount)
@@ -108,7 +108,22 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        model.SetActive(false);
+        foreach (var model in models)
+        {
+            model.SetActive(false);
+        }
         deathEffect.SetActive(true);
+        playerInput.GameObject().SetActive(false);
+    }
+
+    private void Revive()
+    {
+        foreach (var model in models)
+        {
+            model.SetActive(true);
+        }
+        deathEffect.SetActive(false);
+        playerInput.GameObject().SetActive(true);
+        stats.ResetHealth();
     }
 }

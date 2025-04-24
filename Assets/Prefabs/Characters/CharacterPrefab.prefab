@@ -4996,11 +4996,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 0
   stats:
-    maxHealth: 5
+    maxHealth: 3
     currentHealth: 0
-    moveSpeed: 10
-    projectileSpeed: 16
-    maxBounces: 5
+    moveSpeed: 7
+    projectileSpeed: 12
+    maxBounces: 3
   rotationSpeed: 720
   models:
   - {fileID: 8650496838310874520}
@@ -5021,7 +5021,7 @@ MonoBehaviour:
   firingPoint: {fileID: 1317890245922917044}
   projectilePrefab: {fileID: 6479857954294971646, guid: 3690d4bcabafba44f988ab9c18a63d27, type: 3}
   firingSpeed: 0
-  maxProjectiles: 10
+  maxProjectiles: 3
   projectileMaterial:
   - {fileID: 2100000, guid: ddd78d9a361559e49a82b5bcf7a05a40, type: 2}
   - {fileID: 2100000, guid: e3ed2a00fcba9e144bfd3f8fd7563e75, type: 2}

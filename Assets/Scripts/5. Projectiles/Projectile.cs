@@ -13,18 +13,28 @@ public class Projectile : MonoBehaviour
     public Action OnProjectileDestroyed; // <- добавлено
     
     private bool hasEnteredEnemyZone = false;
+    private float sphereCastRadius;
 
     private void Start()
     {
         direction = transform.forward;
         //Invoke(nameof(DestroySelf), maxLifetime);
+        SphereCollider sc = GetComponent<SphereCollider>();
+        if (sc != null)
+        {
+            sphereCastRadius = sc.radius * Mathf.Max(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            sphereCastRadius = transform.localScale.x / 2f;
+        }
     }
 
     private void Update()
     {
         float distance = projectileSpeed * Time.deltaTime;
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position, 0.1f, direction, out hit, distance))
+        if (Physics.SphereCast(transform.position, sphereCastRadius, direction, out hit, distance))
         {
             if (hit.collider.CompareTag("PlayerWall"))
             {

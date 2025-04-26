@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,8 +7,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour, IDamageable
 {
     public int playerIndex;
-    public PlayerStats stats;
-    private float speed = 5f;
+    [SerializeField] public PlayerStats stats;
+    [SerializeField] private PlayerStats initialStats;
+    //private float speed = 5f;
     public float rotationSpeed = 720f;
 
     private Vector2 movementInput;
@@ -18,6 +20,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     private PlayerInput playerInput;
     private PlayerGun gun;
     private CharacterController controller;
+    
+    public List<UpgradeEffectBase> acquiredUpgrades = new List<UpgradeEffectBase>();
 
     [SerializeField] private GameObject[] models;
     [SerializeField] private GameObject deathEffect;
@@ -30,19 +34,25 @@ public class PlayerController : MonoBehaviour, IDamageable
         
         gun = GetComponent<PlayerGun>();
         controller = GetComponent<CharacterController>();
+        
+        initialStats = new PlayerStats(stats);
         stats.ResetHealth();
-        speed = stats.moveSpeed;
+        //speed = stats.moveSpeed;
     }
 
     private void Start()
     {
         playerInput = GetComponentInChildren<PlayerInput>();
         UIManager.Instance.InitPlayerHearts(playerIndex, stats.maxHealth);
+
+        Debug.Log($"Initial stats - Health: {initialStats.maxHealth}, Speed: {initialStats.moveSpeed}");
+        Debug.Log($"Current stats - Health: {stats.maxHealth}, Speed: {stats.moveSpeed}");
+        
     }
 
     void Update()
     {
-        controller.Move(move * speed * Time.deltaTime);
+        controller.Move(move * stats.moveSpeed * Time.deltaTime);
         HandleRotation();
     }
 
@@ -91,7 +101,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void OnFire(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
+        {
             gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed);
+        }
     }
 
     public void TakeDamage(int amount)
@@ -114,9 +126,19 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
         deathEffect.SetActive(true);
         playerInput.GameObject().SetActive(false);
+        
+        if (RoundManager.Instance != null)
+        {
+            RoundManager.Instance.OnPlayerDied(this);
+        }
+        else
+        {
+            Debug.LogError("RoundManager.Instance is null!");
+        }
+        
     }
 
-    private void Revive()
+    public void ResetCharacter()
     {
         foreach (var model in models)
         {
@@ -124,6 +146,22 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
         deathEffect.SetActive(false);
         playerInput.GameObject().SetActive(true);
+        ApplyAllUpgrades();
         stats.ResetHealth();
+        UIManager.Instance.InitPlayerHearts(playerIndex, stats.maxHealth);
+    }
+    
+    public void AddUpgrade(UpgradeEffectBase effect)
+    {
+        acquiredUpgrades.Add(effect);
+    }
+    
+    public void ApplyAllUpgrades()
+    {
+        stats = new PlayerStats(initialStats);
+        foreach (var upgrade in acquiredUpgrades)
+        {
+            upgrade.Apply(this);
+        }
     }
 }

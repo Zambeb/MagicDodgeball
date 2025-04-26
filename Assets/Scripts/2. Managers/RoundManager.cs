@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class RoundManager : MonoBehaviour
@@ -13,6 +14,18 @@ public class RoundManager : MonoBehaviour
     public void OnPlayerDied(PlayerController deadPlayer)
     {
         Debug.Log($"Round over. {deadPlayer.name} lost.");
+        StartCoroutine(RespawnAllPlayersAfterDelay(3f));
+    }
+    
+    private IEnumerator RespawnAllPlayersAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        
+        PlayerController[] allPlayers = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
+        foreach (PlayerController player in allPlayers)
+        {
+            player.ResetCharacter();
+        }
     }
 }
 

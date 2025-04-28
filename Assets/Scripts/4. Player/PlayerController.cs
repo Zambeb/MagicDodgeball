@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 {
     public int playerIndex;
     [SerializeField] public PlayerStats stats;
-    [SerializeField] private PlayerStats initialStats;
+    private PlayerStats initialStats;
     //private float speed = 5f;
     public float rotationSpeed = 720f;
 

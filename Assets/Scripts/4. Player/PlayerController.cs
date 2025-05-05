@@ -20,13 +20,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     private PlayerInput playerInput;
     private PlayerGun gun;
     private CharacterController controller;
+
+    public int hits = 0;
     
     public List<UpgradeEffectBase> acquiredUpgrades = new List<UpgradeEffectBase>();
-
-    [SerializeField] private GameObject[] models;
-    [SerializeField] private GameObject deathEffect;
-
-    public bool IsDead => stats.currentHealth <= 0;
 
     void Awake()
     {
@@ -36,18 +33,12 @@ public class PlayerController : MonoBehaviour, IDamageable
         controller = GetComponent<CharacterController>();
         
         initialStats = new PlayerStats(stats);
-        stats.ResetHealth();
         //speed = stats.moveSpeed;
     }
 
     private void Start()
     {
         playerInput = GetComponentInChildren<PlayerInput>();
-        UIManager.Instance.InitPlayerHearts(playerIndex, stats.maxHealth);
-
-        Debug.Log($"Initial stats - Health: {initialStats.maxHealth}, Speed: {initialStats.moveSpeed}");
-        Debug.Log($"Current stats - Health: {stats.maxHealth}, Speed: {stats.moveSpeed}");
-        
     }
 
     void Update()
@@ -106,49 +97,22 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage()
     {
-        stats.currentHealth -= amount;
-        UIManager.Instance.UpdatePlayerHearts(playerIndex, stats.currentHealth);
+        hits++;
         Debug.Log("Ouch!");
-        if (IsDead)
-        {
-            Debug.Log($"{gameObject.name} is dead!");
-            Die();
-        }
     }
 
-    private void Die()
+    public void DisableCharacter()
     {
-        foreach (var model in models)
-        {
-            model.SetActive(false);
-        }
-        deathEffect.SetActive(true);
         playerInput.GameObject().SetActive(false);
-        
-        if (RoundManager.Instance != null)
-        {
-            RoundManager.Instance.OnPlayerDied(this);
-        }
-        else
-        {
-            Debug.LogError("RoundManager.Instance is null!");
-        }
-        
     }
 
     public void ResetCharacter()
     {
-        foreach (var model in models)
-        {
-            model.SetActive(true);
-        }
-        deathEffect.SetActive(false);
         playerInput.GameObject().SetActive(true);
         ApplyAllUpgrades();
-        stats.ResetHealth();
-        UIManager.Instance.InitPlayerHearts(playerIndex, stats.maxHealth);
+        hits = 0;
     }
     
     public void AddUpgrade(UpgradeEffectBase effect)

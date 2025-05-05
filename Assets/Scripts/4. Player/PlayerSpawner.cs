@@ -25,6 +25,8 @@ public class PlayerSpawner : MonoBehaviour
         
         joinAction.Enable();
         joinAction.performed += context => JoinAction(context);
+        
+        PlayerInputManager.instance.onPlayerJoined += OnPlayerJoined;
     }
 
     private void Start()
@@ -43,12 +45,7 @@ public class PlayerSpawner : MonoBehaviour
             playerInput.transform.position = spawnPoints[playerIndex].position;
         }
         
-        
-        
-        if (PlayerJoinedGame != null)
-        {
-            PlayerJoinedGame(playerInput);
-        }
+        PlayerJoinedGame?.Invoke(playerInput);
     }
 
     private void JoinAction(InputAction.CallbackContext context)

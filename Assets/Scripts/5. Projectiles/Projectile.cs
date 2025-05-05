@@ -56,7 +56,7 @@ public class Projectile : MonoBehaviour
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                damageable.TakeDamage(1);
+                damageable.TakeDamage();
             }
             
             HandleBounce(hit.normal, hit.point);

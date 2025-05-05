@@ -16,11 +16,6 @@ public class StatUpgradeEffect : UpgradeEffectBase
             case StatType.ProjectileSpeed:
                 player.stats.projectileSpeed += value;
                 break;
-            case StatType.MaxHealth:
-                player.stats.maxHealth += (int)value;
-                player.stats.currentHealth += (int)value;
-                UIManager.Instance.UpdatePlayerHearts(player.playerIndex, player.stats.currentHealth); 
-                break;
             case StatType.MaxBounces:
                 player.stats.maxBounces += (int)value;
                 break;

@@ -10,10 +10,11 @@ public class PlayerStats
     public int maxBounces;
     public int maxProjectiles;
 
-
+    /*
     public PlayerStats()
     {
     }
+    */
 
     public PlayerStats(PlayerStats other)
     {

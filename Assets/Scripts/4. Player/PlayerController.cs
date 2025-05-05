@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private Vector2 movementInput;
     private Vector2 aimInput;
-    private Vector3 move;
+    private Vector3 moveDir;
 
     private Camera mainCamera;
     private PlayerInput playerInput;
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void Update()
     {
-        controller.Move(move * stats.moveSpeed * Time.deltaTime);
+        controller.Move(moveDir * stats.moveSpeed * Time.deltaTime);
         HandleRotation();
     }
 
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void OnMove(InputAction.CallbackContext ctx)
     {
         movementInput = ctx.ReadValue<Vector2>();
-        move = new Vector3(movementInput.x, 0, movementInput.y);
+        moveDir = new Vector3(movementInput.x, 0, movementInput.y);
         
     }
     public void OnAim(InputAction.CallbackContext ctx) 

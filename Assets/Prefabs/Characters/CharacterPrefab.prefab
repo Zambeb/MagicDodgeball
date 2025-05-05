@@ -5002,13 +5002,6 @@ MonoBehaviour:
     projectileSpeed: 12
     maxBounces: 3
     maxProjectiles: 3
-  initialStats:
-    maxHealth: 0
-    currentHealth: 0
-    moveSpeed: 0
-    projectileSpeed: 0
-    maxBounces: 0
-    maxProjectiles: 0
   rotationSpeed: 720
   acquiredUpgrades: []
   models:

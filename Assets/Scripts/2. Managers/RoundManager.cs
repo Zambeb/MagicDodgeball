@@ -22,8 +22,9 @@ public class RoundManager : MonoBehaviour
     public int player2points;
     
     private float timer;
-    private bool roundActive = false;
+    public bool roundActive = false;
     private int playersReady = 0;
+    private int playersSelectedUpgrade;
     
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class RoundManager : MonoBehaviour
     private void Start()
     {
         PlayerSpawner.instance.PlayerJoinedGame += OnPlayerJoined;
+        playersSelectedUpgrade = 0;
     }
     
     void OnPlayerJoined(PlayerInput input)
@@ -112,13 +114,15 @@ public class RoundManager : MonoBehaviour
         player1.DisableCharacter();
         player2.DisableCharacter();
 
+        playersSelectedUpgrade = 0;
+        
         StartCoroutine(ShowUpgradeScreenAfterDelay());
     }
     
     private IEnumerator ShowUpgradeScreenAfterDelay()
     {
         yield return new WaitForSeconds(delayBeforeUpgrades);
-        //upgradeScreen.Open(player1, player2);
+        UIManager.Instance.OpenUpgradeScreens(player1, player2);
     }
     
     public void RegisterHit(int damagedIndex)
@@ -137,6 +141,16 @@ public class RoundManager : MonoBehaviour
     public float GetRemainingTime()
     {
         return timer;
+    }
+
+    public void PlayerSelectedUpgrade()
+    {
+        playersSelectedUpgrade++;
+        if (playersSelectedUpgrade > 1)
+        {
+            UIManager.Instance.CloseUpgradeScreens();
+            TryStartRound();
+        }
     }
 }
 

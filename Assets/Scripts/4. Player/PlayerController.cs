@@ -97,8 +97,11 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void TakeDamage()
     {
-        RoundManager.Instance.RegisterHit(playerIndex);
-        Debug.Log("Ouch!");
+        if (RoundManager.Instance.roundActive)
+        {
+            RoundManager.Instance.RegisterHit(playerIndex);
+            Debug.Log("Ouch!");
+        }
     }
 
     public void DisableCharacter()
@@ -108,6 +111,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void ResetCharacter()
     {
+        this.GameObject().transform.position = PlayerSpawner.instance.spawnPoints[playerIndex].position;
         playerInput.GameObject().SetActive(true);
         ApplyAllUpgrades();
     }

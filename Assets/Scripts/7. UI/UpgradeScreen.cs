@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UpgradeScreen : MonoBehaviour
 {
     [SerializeField] private GameObject upgradeButtonPrefab;
     [SerializeField] private Transform buttonsParent;
+    [SerializeField] private GameObject firstSelectedButton;
+    
     private List<GameObject> spawnedButtons = new List<GameObject>();
     
     private PlayerController currentPlayer;
@@ -14,6 +17,21 @@ public class UpgradeScreen : MonoBehaviour
         currentPlayer = player;
         gameObject.SetActive(true);
         GenerateUpgradeButtons();
+        EventSystem.current.SetSelectedGameObject(firstSelectedButton);
+    }
+    
+    public void Close()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void ClearButtons()
+    {
+        foreach (var button in spawnedButtons)
+        {
+            Destroy(button);
+        }
+        spawnedButtons.Clear();
     }
 
     private void GenerateUpgradeButtons()
@@ -27,19 +45,17 @@ public class UpgradeScreen : MonoBehaviour
             upgradeButton.Setup(upgrade, this);
             spawnedButtons.Add(buttonObj);
         }
+        
+        if (spawnedButtons.Count > 0)
+        {
+            firstSelectedButton = spawnedButtons[0];
+        }
     }
 
     public void SelectUpgrade(UpgradeData selectedUpgrade)
     {
         UpgradeManager.Instance.ApplyUpgrade(currentPlayer, selectedUpgrade);
-
-        // Чистим всё
-        foreach (var button in spawnedButtons)
-        {
-            Destroy(button);
-        }
-        spawnedButtons.Clear();
-
-        gameObject.SetActive(false);
+        RoundManager.Instance.PlayerSelectedUpgrade();
+        ClearButtons();
     }
 }

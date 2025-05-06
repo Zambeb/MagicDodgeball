@@ -19,10 +19,31 @@ public class UpgradeButton : MonoBehaviour
         iconImage.sprite = data.icon;
         nameText.text = data.upgradeName;
         descriptionText.text = data.description;
+        
+        GetComponent<Button>().onClick.AddListener(OnClick);
     }
 
     public void OnClick()
     {
-        upgradeScreen.SelectUpgrade(upgradeData);
+        if (upgradeData != null && upgradeScreen != null)
+        {
+            upgradeScreen.SelectUpgrade(upgradeData);
+        }
+        else if (upgradeData == null && upgradeScreen != null)
+        {
+            Debug.Log("No upgrade data!!!");
+        }
+        else if (upgradeData != null && upgradeScreen == null)
+        {
+            Debug.Log("No upgrade screen!!!");
+        }
+        else if (upgradeData == null && upgradeScreen == null)
+        {
+            Debug.Log("No upgrade data AND upgrade screen!!!");
+        }
+        else
+        {
+            Debug.Log("Something's totally wrong");
+        }
     }
 }

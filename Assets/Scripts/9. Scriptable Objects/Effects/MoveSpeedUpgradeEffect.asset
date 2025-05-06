@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MoveSpeedUpgradeEffect
   m_EditorClassIdentifier: 
   statType: 0
-  value: 1
+  value: 2

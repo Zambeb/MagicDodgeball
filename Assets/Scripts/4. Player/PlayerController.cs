@@ -21,8 +21,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     private PlayerGun gun;
     private CharacterController controller;
 
-    public int hits = 0;
-    
     public List<UpgradeEffectBase> acquiredUpgrades = new List<UpgradeEffectBase>();
 
     void Awake()
@@ -99,7 +97,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void TakeDamage()
     {
-        hits++;
+        RoundManager.Instance.RegisterHit(playerIndex);
         Debug.Log("Ouch!");
     }
 
@@ -112,7 +110,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         playerInput.GameObject().SetActive(true);
         ApplyAllUpgrades();
-        hits = 0;
     }
     
     public void AddUpgrade(UpgradeEffectBase effect)

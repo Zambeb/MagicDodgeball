@@ -16,6 +16,10 @@ public class RoundManager : MonoBehaviour
     [Header("Players")]
     public PlayerController player1;
     public PlayerController player2;
+
+    [Header("Round Points")] 
+    public int player1points;
+    public int player2points;
     
     private float timer;
     private bool roundActive = false;
@@ -93,6 +97,11 @@ public class RoundManager : MonoBehaviour
 
         player1.ResetCharacter();
         player2.ResetCharacter();
+
+        player1points = 0;
+        player2points = 0;
+        
+        UIManager.Instance.UpdateRoundPoints(player1points, player2points);
     }
     
     public void EndRound()
@@ -112,10 +121,17 @@ public class RoundManager : MonoBehaviour
         //upgradeScreen.Open(player1, player2);
     }
     
-    public void RegisterHit(PlayerController damaged, PlayerController attacker)
+    public void RegisterHit(int damagedIndex)
     {
-        attacker.hits++;
-        Debug.Log($"Player {attacker.playerIndex} scored! Total: {attacker.hits}");
+        if (damagedIndex == 0)
+        {
+            player2points++;
+        }
+        else if (damagedIndex == 1)
+        {
+            player1points++;
+        }
+        UIManager.Instance.UpdateRoundPoints(player1points, player2points);
     }
     
     public float GetRemainingTime()

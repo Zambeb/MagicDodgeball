@@ -23,9 +23,45 @@ public class PlayerInputHandler : MonoBehaviour
             transform.parent = playerController.transform;
             transform.position = playerController.transform.position;
             playerController.playerIndex = playerIndex;
+            
+            AssignUIInputModule(playerIndex);
         }
     }
 
+    private void AssignUIInputModule(int playerIndex)
+    {
+        GameObject eventSystemsObj = GameObject.Find("EventSystems");
+        if (eventSystemsObj == null)
+        {
+            Debug.LogError("EventSystems not found!");
+            return;
+        }
+        
+        string moduleName = $"UIInputModule_{playerIndex}";
+        Transform moduleTransform = eventSystemsObj.transform.Find(moduleName);
+        if (moduleTransform == null)
+        {
+            Debug.LogError($"Not found UI Input Module: {moduleName}");
+            return;
+        }
+        
+        var inputModule = moduleTransform.GetComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+        if (inputModule == null)
+        {
+            Debug.LogError($"На {moduleName} не найден компонент InputSystemUIInputModule");
+            return;
+        }
+        
+        var playerInput = GetComponent<PlayerInput>();
+        if (playerInput == null)
+        {
+            Debug.LogError("PlayerInput компонент не найден на объекте PlayerInputHandler!");
+            return;
+        }
+
+        playerInput.uiInputModule = inputModule;
+    }
+    
     public void OnMove(InputAction.CallbackContext context)
     {
         playerController.OnMove(context);

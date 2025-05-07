@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     private PlayerGun gun;
     private CharacterController controller;
 
+    public string currentControlScheme;
+
+    private bool disabled;
+
     public List<UpgradeEffectBase> acquiredUpgrades = new List<UpgradeEffectBase>();
 
     void Awake()
@@ -37,18 +41,22 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void Start()
     {
         playerInput = GetComponentInChildren<PlayerInput>();
+        disabled = true;
+        currentControlScheme = playerInput.currentControlScheme;
     }
 
     void Update()
     {
-        controller.Move(moveDir * stats.moveSpeed * Time.deltaTime);
-        HandleRotation();
+        if (!disabled)
+        {
+            controller.Move(moveDir * stats.moveSpeed * Time.deltaTime);
+            HandleRotation();
+        }
+
     }
 
     void HandleRotation()
     {
-        string currentControlScheme = playerInput.currentControlScheme;
-
         if (currentControlScheme == "Gamepad")
         {
             Vector3 direction = new Vector3(aimInput.x, 0, aimInput.y);
@@ -89,7 +97,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
     public void OnFire(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
+        if (ctx.performed && !disabled)
         {
             gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed);
         }
@@ -106,13 +114,15 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void DisableCharacter()
     {
-        playerInput.GameObject().SetActive(false);
+        //playerInput.GameObject().SetActive(false);
+        disabled = true;
     }
 
     public void ResetCharacter()
     {
         this.GameObject().transform.position = PlayerSpawner.instance.spawnPoints[playerIndex].position;
-        playerInput.GameObject().SetActive(true);
+        //playerInput.GameObject().SetActive(true);
+        disabled = false;
         ApplyAllUpgrades();
     }
     

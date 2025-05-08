@@ -16,6 +16,8 @@ public class PlayerGun : MonoBehaviour
     private PlayerController playerController;
 
     private List<GameObject> activeProjectiles = new List<GameObject>();
+    
+    public List<MonoBehaviour> bruh = new List<MonoBehaviour>();
 
     private void Awake()
     {

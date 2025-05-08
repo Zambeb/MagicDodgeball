@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a49f6d966f35674d8996657698de4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundDuration: 20
+  roundDuration: 10
   delayBeforeUpgrades: 2
   upgradeScreen: {fileID: 0}
   player1: {fileID: 0}
@@ -3362,6 +3362,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 200333034035c3e4c9da2f1bb714d2d3, type: 2}
   - {fileID: 11400000, guid: 5c955e5d66344be409c1ea9a0b7f97d4, type: 2}
   - {fileID: 11400000, guid: cd6ceaefef2857a4aae4f71f61147d54, type: 2}
+  - {fileID: 11400000, guid: e2f6e8910b1829f4fadf770c2d53cdf5, type: 2}
 --- !u!1 &2146455101
 GameObject:
   m_ObjectHideFlags: 0

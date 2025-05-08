@@ -9,4 +9,9 @@ public class MoveSpeedUpgradeEffect : UpgradeEffectBase
     {
         player.stats.moveSpeed += speedIncrease;
     }
+
+    public override void PerformAbility(PlayerController player)
+    {
+        return;
+    }
 }

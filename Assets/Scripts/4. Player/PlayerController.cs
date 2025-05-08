@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -24,8 +25,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     public string currentControlScheme;
 
     private bool disabled;
+    private bool invincible;
 
     public List<UpgradeEffectBase> acquiredUpgrades = new List<UpgradeEffectBase>();
+    public UpgradeEffectBase acquiredActiveAbility;
 
     void Awake()
     {
@@ -42,6 +45,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         playerInput = GetComponentInChildren<PlayerInput>();
         disabled = true;
+        invincible = false;
         currentControlScheme = playerInput.currentControlScheme;
     }
 
@@ -103,9 +107,46 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
+    public void OnPerformActiveAbility(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && !disabled && acquiredActiveAbility != null)
+        {
+            acquiredActiveAbility.PerformAbility(this);
+        }
+    }
+
+    public void Dash(float distance, float duration)
+    {
+        StartCoroutine(PerformDash(distance, duration));
+    }
+
+    public IEnumerator PerformDash(float distance, float duration)
+    {
+        disabled = true;
+        invincible = true;
+
+        float elapsed = 0f;
+        Vector3 dashDirection = transform.forward.normalized;
+        Vector3 startPosition = transform.position;
+
+        while (elapsed < duration)
+        {
+            float delta = Time.deltaTime;
+            elapsed += delta;
+
+            float moveStep = (distance / duration) * delta;
+            controller.Move(dashDirection * moveStep);
+
+            yield return null;
+        }
+
+        disabled = false;
+        invincible = false;
+    }
+    
     public void TakeDamage()
     {
-        if (RoundManager.Instance.roundActive)
+        if (RoundManager.Instance.roundActive && !invincible)
         {
             RoundManager.Instance.RegisterHit(playerIndex);
             Debug.Log("Ouch!");
@@ -116,6 +157,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         //playerInput.GameObject().SetActive(false);
         disabled = true;
+        invincible = true;
     }
 
     public void ResetCharacter()
@@ -123,12 +165,18 @@ public class PlayerController : MonoBehaviour, IDamageable
         this.GameObject().transform.position = PlayerSpawner.instance.spawnPoints[playerIndex].position;
         //playerInput.GameObject().SetActive(true);
         disabled = false;
+        invincible = false;
         ApplyAllUpgrades();
     }
     
     public void AddUpgrade(UpgradeEffectBase effect)
     {
         acquiredUpgrades.Add(effect);
+    }
+
+    public void AddActiveAbility(UpgradeEffectBase effect)
+    {
+        acquiredActiveAbility = effect;
     }
     
     public void ApplyAllUpgrades()

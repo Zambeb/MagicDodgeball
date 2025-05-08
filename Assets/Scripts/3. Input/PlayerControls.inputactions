@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ActiveAbility",
+                    "type": "Button",
+                    "id": "15fb733a-e608-4979-a2c9-0d0a91d1233c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -58,17 +67,6 @@
                     "name": "",
                     "id": "15fd21e4-c302-4790-b968-bc75b07ceb8a",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard + Mouse",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7182b750-a260-42c4-89bf-67d147adfccb",
-                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard + Mouse",
@@ -183,6 +181,28 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54eeb920-f131-4c7d-a0b3-258b571e842a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard;Keyboard + Mouse",
+                    "action": "ActiveAbility",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eba8ea8e-a40a-4d24-9eb9-dc81a2d83f68",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "ActiveAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

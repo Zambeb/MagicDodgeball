@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbe3f2c831cf7824e979e3650b230812, type: 3}
-  m_Name: MaxBouncesUpgradeEffect
+  m_Script: {fileID: 11500000, guid: 0d66c4d55cd411c49ac86b0bfdd060a2, type: 3}
+  m_Name: DashUpgradeEffect
   m_EditorClassIdentifier: 
-  isActiveAbility: 0
-  statType: 3
-  value: 1
+  isActiveAbility: 1
+  dashDistance: 5

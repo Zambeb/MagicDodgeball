@@ -27,4 +27,9 @@ public class StatUpgradeEffect : UpgradeEffectBase
                 break;
         }
     }
+
+    public override void PerformAbility(PlayerController player)
+    {
+        return;
+    }
 }

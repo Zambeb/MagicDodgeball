@@ -62,6 +62,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActiveAbility"",
+                    ""type"": ""Button"",
+                    ""id"": ""15fb733a-e608-4979-a2c9-0d0a91d1233c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -80,17 +89,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""15fd21e4-c302-4790-b968-bc75b07ceb8a"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard + Mouse"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7182b750-a260-42c4-89bf-67d147adfccb"",
-                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard + Mouse"",
@@ -205,6 +203,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
                     ""action"": ""Join"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54eeb920-f131-4c7d-a0b3-258b571e842a"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard;Keyboard + Mouse"",
+                    ""action"": ""ActiveAbility"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eba8ea8e-a40a-4d24-9eb9-dc81a2d83f68"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""ActiveAbility"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -719,6 +739,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_Join = m_Player.FindAction("Join", throwIfNotFound: true);
+        m_Player_ActiveAbility = m_Player.FindAction("ActiveAbility", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -802,6 +823,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_Aim;
     private readonly InputAction m_Player_Join;
+    private readonly InputAction m_Player_ActiveAbility;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -810,6 +832,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputAction @Join => m_Wrapper.m_Player_Join;
+        public InputAction @ActiveAbility => m_Wrapper.m_Player_ActiveAbility;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -831,6 +854,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Join.started += instance.OnJoin;
             @Join.performed += instance.OnJoin;
             @Join.canceled += instance.OnJoin;
+            @ActiveAbility.started += instance.OnActiveAbility;
+            @ActiveAbility.performed += instance.OnActiveAbility;
+            @ActiveAbility.canceled += instance.OnActiveAbility;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -847,6 +873,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Join.started -= instance.OnJoin;
             @Join.performed -= instance.OnJoin;
             @Join.canceled -= instance.OnJoin;
+            @ActiveAbility.started -= instance.OnActiveAbility;
+            @ActiveAbility.performed -= instance.OnActiveAbility;
+            @ActiveAbility.canceled -= instance.OnActiveAbility;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1015,6 +1044,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnJoin(InputAction.CallbackContext context);
+        void OnActiveAbility(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

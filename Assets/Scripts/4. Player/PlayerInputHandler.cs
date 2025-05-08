@@ -76,4 +76,9 @@ public class PlayerInputHandler : MonoBehaviour
     {
         playerController.OnFire(context);
     }
+
+    public void OnPerformActiveAbility(InputAction.CallbackContext context)
+    {
+        playerController.OnPerformActiveAbility(context);
+    }
 }

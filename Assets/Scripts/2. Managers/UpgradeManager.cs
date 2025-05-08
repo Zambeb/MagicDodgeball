@@ -33,6 +33,13 @@ public class UpgradeManager : MonoBehaviour
     {
         var effect = upgradeData.CreateEffect();
         effect.Apply(player);
-        player.AddUpgrade(effect);
+        if (effect.isActiveAbility)
+        {
+            player.AddActiveAbility(effect);
+        }
+        else
+        {
+            player.AddUpgrade(effect);
+        }
     }
 }

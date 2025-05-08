@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MaxProjectilesUpgradeEffect
   m_EditorClassIdentifier: 
   statType: 4
-  value: 1
+  value: 2

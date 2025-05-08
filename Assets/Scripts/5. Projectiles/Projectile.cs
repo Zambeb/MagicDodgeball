@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float distance = projectileSpeed * Time.deltaTime;
         RaycastHit hit;

@@ -93,17 +93,12 @@ public class RoundManager : MonoBehaviour
     
     public void StartRound()
     {
-        Debug.Log("Round Started!");
-        timer = roundDuration;
-        roundActive = true;
-
-        player1.ResetCharacter();
-        player2.ResetCharacter();
-
         player1points = 0;
         player2points = 0;
         
         UIManager.Instance.UpdateRoundPoints(player1points, player2points);
+
+        StartCoroutine(ResetRoundAfterDelay());
     }
     
     public void EndRound()
@@ -123,6 +118,18 @@ public class RoundManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delayBeforeUpgrades);
         UIManager.Instance.OpenUpgradeScreens(player1, player2);
+    }
+
+    private IEnumerator ResetRoundAfterDelay()
+    {
+        yield return new WaitForSeconds(delayBeforeUpgrades);
+        
+        Debug.Log("Round Started!");
+        timer = roundDuration;
+        roundActive = true;
+        
+        player1.ResetCharacter();
+        player2.ResetCharacter();
     }
     
     public void RegisterHit(int damagedIndex)

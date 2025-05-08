@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ProjectileSpeedUpgradeEffect
   m_EditorClassIdentifier: 
   statType: 1
-  value: 2
+  value: 5

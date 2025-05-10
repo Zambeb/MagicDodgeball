@@ -165,7 +165,7 @@ MonoBehaviour:
     currentHealth: 0
     moveSpeed: 7
     projectileSpeed: 12
-    maxBounces: 20
+    maxBounces: 3
     maxProjectiles: 3
     accelerationAfterBounce: 1
   rotationSpeed: 720

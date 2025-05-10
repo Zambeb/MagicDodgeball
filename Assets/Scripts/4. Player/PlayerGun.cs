@@ -10,6 +10,7 @@ public class PlayerGun : MonoBehaviour
     [SerializeField] private float firingSpeed;
     //[SerializeField] private int maxProjectiles = 3;
     [SerializeField] private Material[] projectileMaterial;
+    private GameObject projectileCollector;
 
     public static PlayerGun Instance;
 
@@ -23,22 +24,25 @@ public class PlayerGun : MonoBehaviour
     {
         Instance = this;
         playerController = GetComponent<PlayerController>();
+        projectileCollector = GameObject.Find("ProjectileCollector");
     }
 
-    public void Shoot(int index, int bounces, float speed)
+    public void Shoot(int index, int bounces, float speed, float acceleration)
     {
         int maxProjectiles = playerController.stats.maxProjectiles;
 
         if (activeProjectiles.Count >= maxProjectiles)
             return;
 
-        GameObject projectile = Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation);
-        projectile.GetComponent<Projectile>().maxBounces = bounces;
-        projectile.GetComponent<Projectile>().projectileSpeed = speed;
+        GameObject projectile = Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation, projectileCollector.transform);
+        Projectile projectileProj = projectile.GetComponent<Projectile>();
+        projectileProj.maxBounces = bounces;
+        projectileProj.projectileSpeed = speed;
+        projectileProj.accelerationAfterBounce = acceleration;
         activeProjectiles.Add(projectile);
         Renderer rend = projectile.GetComponent<Renderer>();
         rend.material = projectileMaterial[index];
-        
+
         Projectile projectileScript = projectile.GetComponent<Projectile>();
         projectileScript.OnProjectileDestroyed = () => { activeProjectiles.Remove(projectile); };
     }

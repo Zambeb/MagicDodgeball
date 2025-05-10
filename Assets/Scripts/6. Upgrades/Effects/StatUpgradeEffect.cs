@@ -22,6 +22,9 @@ public class StatUpgradeEffect : UpgradeEffectBase
             case StatType.MaxProjectiles:
                 player.stats.maxProjectiles += (int)value;
                 break;
+            case StatType.AccelerationAfterBounce:
+                player.stats.accelerationAfterBounce += value;
+                break;
             default:
                 Debug.LogWarning("Unknown stat type!");
                 break;

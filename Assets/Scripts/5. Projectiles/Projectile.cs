@@ -5,6 +5,7 @@ public class Projectile : MonoBehaviour
 {
     public float projectileSpeed;
     public int maxBounces;
+    public float accelerationAfterBounce;
     //[SerializeField] private float maxLifetime = 10f;
 
     private Vector3 direction;
@@ -32,16 +33,29 @@ public class Projectile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float distance = projectileSpeed * Time.deltaTime;
+        float totalDistance = projectileSpeed * Time.deltaTime;
+        int steps = Mathf.CeilToInt(totalDistance / sphereCastRadius);
+        float stepDistance = totalDistance / steps;
+
+        for (int i = 0; i < steps; i++)
+        {
+            if (DoMovementStep(stepDistance))
+            {
+                break;
+            }
+        }
+    }
+    private bool DoMovementStep(float distance)
+    {
         RaycastHit hit;
         if (Physics.SphereCast(transform.position, sphereCastRadius, direction, out hit, distance))
         {
             if (hit.collider.CompareTag("PlayerWall"))
             {
                 transform.position += direction * distance;
-                return;
+                return true;
             }
-            
+
             if (hit.collider.CompareTag("CenterWall"))
             {
                 if (!hasEnteredEnemyZone)
@@ -49,21 +63,23 @@ public class Projectile : MonoBehaviour
                     hasEnteredEnemyZone = true;
                     gameObject.layer = LayerMask.NameToLayer("EnemyProjectile");
                     transform.position = hit.point + direction * 0.01f;
-                    return;
+                    return true;
                 }
             }
-            
+
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             if (damageable != null)
             {
                 damageable.TakeDamage();
             }
-            
+
             HandleBounce(hit.normal, hit.point);
+            return true;
         }
         else
         {
             transform.position += direction * distance;
+            return false;
         }
     }
     
@@ -71,6 +87,7 @@ public class Projectile : MonoBehaviour
     {
         direction = ReflectInXZ(direction, normal);
         bounceCount++;
+        projectileSpeed *= accelerationAfterBounce;
         if (bounceCount > maxBounces)
         {
             DestroySelf();
@@ -86,7 +103,7 @@ public class Projectile : MonoBehaviour
         return reflected.normalized;
     }
 
-    private void DestroySelf()
+    public void DestroySelf()
     {
         OnProjectileDestroyed?.Invoke();
         Destroy(gameObject);

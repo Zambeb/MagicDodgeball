@@ -165,11 +165,13 @@ MonoBehaviour:
     currentHealth: 0
     moveSpeed: 7
     projectileSpeed: 12
-    maxBounces: 3
+    maxBounces: 20
     maxProjectiles: 3
+    accelerationAfterBounce: 1
   rotationSpeed: 720
   currentControlScheme: 
   acquiredUpgrades: []
+  acquiredActiveAbility: {fileID: 0}
 --- !u!114 &2567601348316867193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +190,7 @@ MonoBehaviour:
   projectileMaterial:
   - {fileID: 2100000, guid: ddd78d9a361559e49a82b5bcf7a05a40, type: 2}
   - {fileID: 2100000, guid: e3ed2a00fcba9e144bfd3f8fd7563e75, type: 2}
+  bruh: []
 --- !u!143 &3360537607054427031
 CharacterController:
   m_ObjectHideFlags: 0

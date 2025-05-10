@@ -8,6 +8,7 @@ public class PlayerStats
     public float projectileSpeed;
     public int maxBounces;
     public int maxProjectiles;
+    public float accelerationAfterBounce;
 
     /*
     public PlayerStats()
@@ -22,6 +23,7 @@ public class PlayerStats
         projectileSpeed = other.projectileSpeed;
         currentHealth = other.currentHealth;
         maxProjectiles = other.maxProjectiles;
+        accelerationAfterBounce = other.accelerationAfterBounce;
     }
 }
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,7 +21,7 @@ public class RoundManager : MonoBehaviour
     [Header("Round Points")] 
     public int player1points;
     public int player2points;
-    
+
     private float timer;
     public bool roundActive = false;
     private int playersReady = 0;
@@ -112,6 +113,13 @@ public class RoundManager : MonoBehaviour
         playersSelectedUpgrade = 0;
         
         StartCoroutine(ShowUpgradeScreenAfterDelay());
+        
+        //Destroy all projectiles left
+        Projectile[] allProjectiles = FindObjectsByType<Projectile>(FindObjectsSortMode.None);
+        foreach (Projectile projectile in allProjectiles)
+        {
+            projectile.DestroySelf();
+        }
     }
     
     private IEnumerator ShowUpgradeScreenAfterDelay()

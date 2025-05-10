@@ -3063,6 +3063,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597369783}
   m_CullTransparentMesh: 1
+--- !u!1 &1600644216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1600644217}
+  m_Layer: 0
+  m_Name: ProjectileCollector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1600644217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600644216}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997172206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,6 +3394,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5c955e5d66344be409c1ea9a0b7f97d4, type: 2}
   - {fileID: 11400000, guid: cd6ceaefef2857a4aae4f71f61147d54, type: 2}
   - {fileID: 11400000, guid: e2f6e8910b1829f4fadf770c2d53cdf5, type: 2}
+  - {fileID: 11400000, guid: 935ce369fe2c6f241bf03906af82ebb4, type: 2}
 --- !u!1 &2146455101
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,3 +3543,4 @@ SceneRoots:
   - {fileID: 90638409}
   - {fileID: 1158484794}
   - {fileID: 2027519948}
+  - {fileID: 1600644217}

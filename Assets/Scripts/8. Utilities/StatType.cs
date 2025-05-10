@@ -2,7 +2,7 @@ public enum StatType
 {
     MoveSpeed,
     ProjectileSpeed,
-    MaxHealth,
+    AccelerationAfterBounce,
     MaxBounces,
     MaxProjectiles
 }

@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (ctx.performed && !disabled)
         {
-            gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed);
+            gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce);
         }
     }
 

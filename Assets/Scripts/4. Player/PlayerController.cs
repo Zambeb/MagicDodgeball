@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     public List<UpgradeEffectBase> acquiredUpgrades = new List<UpgradeEffectBase>();
     public UpgradeEffectBase acquiredActiveAbility;
 
+    public ShieldOrbitManager shieldOrbit;
+
     void Awake()
     {
         mainCamera = Camera.main;
@@ -190,6 +192,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         this.GameObject().transform.position = PlayerSpawner.instance.spawnPoints[playerIndex].position;
         //playerInput.GameObject().SetActive(true);
+        shieldOrbit.ClearShields();
         disabled = false;
         invincible = false;
         ApplyAllUpgrades();

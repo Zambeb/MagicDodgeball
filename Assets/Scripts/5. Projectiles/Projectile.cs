@@ -70,6 +70,24 @@ public class Projectile : MonoBehaviour
                 }
             }
 
+            if (hit.collider.CompareTag("Shield"))
+            {
+                PlayerController shieldOwner = hit.collider.GetComponentInParent<PlayerController>();
+                if (shieldOwner != null)
+                {
+                    if (shieldOwner.playerIndex != playerIndex)
+                    {
+                        HandleBounce(hit.normal, hit.point);
+                        return true;
+                    }
+                    else
+                    {
+                        transform.position = hit.point + direction * 0.01f;
+                        return false;
+                    }
+                }
+            }
+
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             PlayerController hitPlayer = hit.collider.GetComponent<PlayerController>();
             if (damageable != null)

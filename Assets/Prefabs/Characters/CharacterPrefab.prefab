@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7190430596572428923
 Transform:
   m_ObjectHideFlags: 0
@@ -146,6 +146,7 @@ Transform:
   m_Children:
   - {fileID: 1317890245922917044}
   - {fileID: 8899839456730761503}
+  - {fileID: 7633988561042475685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3961742690513703101
@@ -175,6 +176,7 @@ MonoBehaviour:
   currentControlScheme: 
   acquiredUpgrades: []
   acquiredActiveAbility: {fileID: 0}
+  shieldOrbit: {fileID: 4547161487450497762}
 --- !u!114 &2567601348316867193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +260,53 @@ MonoBehaviour:
   characterModels:
   - {fileID: 3108579058375262241}
   - {fileID: 6068294536245071304}
+--- !u!1 &5911594708312170669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7633988561042475685}
+  - component: {fileID: 4547161487450497762}
+  m_Layer: 0
+  m_Name: ShieldOrbit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7633988561042475685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5911594708312170669}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 81602361723310949}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4547161487450497762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5911594708312170669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7d93fdc7bfb1e47baf2eece4fb5478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldPrefab: {fileID: 7342655614191344124, guid: 14e991dcdc5d8474a98edeb5f2c7ac2e, type: 3}
+  radius: 2
+  rotationSpeed: 120
 --- !u!1 &6068294536245071304
 GameObject:
   m_ObjectHideFlags: 0

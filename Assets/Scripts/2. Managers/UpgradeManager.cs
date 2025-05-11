@@ -13,20 +13,39 @@ public class UpgradeManager : MonoBehaviour
         else Instance = this;
     }
 
-    public List<UpgradeData> GetRandomUpgrades(int count)
+    public List<UpgradeData> GetRandomUpgrades(int count, PlayerController player)
     {
-        List<UpgradeData> randomUpgrades = new List<UpgradeData>();
+        List<UpgradeData> result = new List<UpgradeData>();
         List<UpgradeData> available = new List<UpgradeData>(allUpgrades);
+
+        available.RemoveAll(upgradeData =>
+        {
+            var effect = upgradeData.CreateEffect();
+        
+            if (!effect.isStackable)
+            {
+                bool alreadyHas = player.acquiredUpgrades.Exists(u => u.GetType() == effect.GetType());
+                
+                bool isActiveAndSame = effect.isActiveAbility &&
+                                       player.acquiredActiveAbility != null &&
+                                       player.acquiredActiveAbility.GetType() == effect.GetType();
+
+                return alreadyHas || isActiveAndSame;
+            }
+
+            return false;
+        });
 
         for (int i = 0; i < count; i++)
         {
             if (available.Count == 0) break;
+
             int index = Random.Range(0, available.Count);
-            randomUpgrades.Add(available[index]);
+            result.Add(available[index]);
             available.RemoveAt(index);
         }
 
-        return randomUpgrades;
+        return result;
     }
 
     public void ApplyUpgrade(PlayerController player, UpgradeData upgradeData)

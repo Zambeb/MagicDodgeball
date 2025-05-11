@@ -60,7 +60,7 @@ public class UpgradeScreen : MonoBehaviour
 
     private void GenerateUpgradeButtons()
     {
-        var upgrades = UpgradeManager.Instance.GetRandomUpgrades(4);
+        var upgrades = UpgradeManager.Instance.GetRandomUpgrades(4, currentPlayer);
 
         foreach (var upgrade in upgrades)
         {

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: MaxBouncesUpgradeEffect
   m_EditorClassIdentifier: 
   isActiveAbility: 0
+  isStackable: 1
   statType: 3
   value: 1

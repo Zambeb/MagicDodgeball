@@ -42,6 +42,7 @@ public class PlayerGun : MonoBehaviour
         projectileProj.accelerationAfterBounce = acceleration;
         projectileProj.canStun = canStun;
         projectileProj.stunDuration = stunDuration;
+        projectileProj.playerIndex = index;
         activeProjectiles.Add(projectile);
         Renderer rend = projectile.GetComponent<Renderer>();
         rend.material = projectileMaterial[index];

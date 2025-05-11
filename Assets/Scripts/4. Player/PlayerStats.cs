@@ -11,6 +11,7 @@ public class PlayerStats
     public float accelerationAfterBounce;
     public bool canStun;
     public float stunDuration;
+    public bool canSelfHarm;
 
     /*
     public PlayerStats()
@@ -28,6 +29,7 @@ public class PlayerStats
         accelerationAfterBounce = other.accelerationAfterBounce;
         canStun = other.canStun;
         stunDuration = other.stunDuration;
+        canSelfHarm = other.canSelfHarm;
     }
 }
 

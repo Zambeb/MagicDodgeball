@@ -29,6 +29,9 @@ public class StatUpgradeEffect : UpgradeEffectBase
                 player.stats.canStun = true;
                 player.stats.stunDuration = value;
                 break;
+            case StatType.NoSelfHarm:
+                player.stats.canSelfHarm = false;
+                break;
             default:
                 Debug.LogWarning("Unknown stat type!");
                 break;

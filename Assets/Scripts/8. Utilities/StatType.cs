@@ -5,5 +5,6 @@ public enum StatType
     AccelerationAfterBounce,
     MaxBounces,
     MaxProjectiles,
-    Stun
+    Stun,
+    NoSelfHarm
 }

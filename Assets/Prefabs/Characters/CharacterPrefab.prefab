@@ -170,10 +170,10 @@ MonoBehaviour:
     accelerationAfterBounce: 1
     canStun: 0
     stunDuration: 0
+    canSelfHarm: 1
   rotationSpeed: 720
   currentControlScheme: 
-  acquiredUpgrades:
-  - {fileID: 11400000, guid: e18952ae0d8e48c49bcad02dbfb19d14, type: 2}
+  acquiredUpgrades: []
   acquiredActiveAbility: {fileID: 0}
 --- !u!114 &2567601348316867193
 MonoBehaviour:

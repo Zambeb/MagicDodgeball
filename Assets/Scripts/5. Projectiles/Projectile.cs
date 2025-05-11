@@ -3,6 +3,7 @@ using System;
 
 public class Projectile : MonoBehaviour
 {
+    public int playerIndex;
     public float projectileSpeed;
     public int maxBounces;
     public float accelerationAfterBounce;
@@ -70,13 +71,20 @@ public class Projectile : MonoBehaviour
             }
 
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+            PlayerController hitPlayer = hit.collider.GetComponent<PlayerController>();
             if (damageable != null)
             {
+                bool isSelfHit = hitPlayer != null && hitPlayer.playerIndex == playerIndex;
+
                 if (canStun)
                 {
                     damageable.Stun(stunDuration);
                 }
-                damageable.TakeDamage();
+
+                if (!isSelfHit || (isSelfHit && hitPlayer.stats.canSelfHarm))
+                {
+                    damageable.TakeDamage();
+                }
             }
 
             HandleBounce(hit.normal, hit.point);

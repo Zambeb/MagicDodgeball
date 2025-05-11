@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (ctx.performed && !disabled)
         {
-            gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce);
+            gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration);
         }
     }
 
@@ -152,7 +152,33 @@ public class PlayerController : MonoBehaviour, IDamageable
             Debug.Log("Ouch!");
         }
     }
+    
+    public void Stun(float duration)
+    {
+        if (RoundManager.Instance.roundActive && !invincible)
+        {
+            Debug.Log("Stunned!");
+            StartCoroutine(PerformStun(duration));
+        }
+    }
+    
+    private IEnumerator PerformStun(float duration)
+    {
+        disabled = true;
+        float elapsed = 0f;
 
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        if (RoundManager.Instance.roundActive)
+        {
+            disabled = false;
+        }
+    }
+    
     public void DisableCharacter()
     {
         //playerInput.GameObject().SetActive(false);

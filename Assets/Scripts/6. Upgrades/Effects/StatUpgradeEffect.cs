@@ -25,6 +25,10 @@ public class StatUpgradeEffect : UpgradeEffectBase
             case StatType.AccelerationAfterBounce:
                 player.stats.accelerationAfterBounce += value;
                 break;
+            case StatType.Stun:
+                player.stats.canStun = true;
+                player.stats.stunDuration = value;
+                break;
             default:
                 Debug.LogWarning("Unknown stat type!");
                 break;

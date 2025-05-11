@@ -168,9 +168,12 @@ MonoBehaviour:
     maxBounces: 3
     maxProjectiles: 3
     accelerationAfterBounce: 1
+    canStun: 0
+    stunDuration: 0
   rotationSpeed: 720
   currentControlScheme: 
-  acquiredUpgrades: []
+  acquiredUpgrades:
+  - {fileID: 11400000, guid: e18952ae0d8e48c49bcad02dbfb19d14, type: 2}
   acquiredActiveAbility: {fileID: 0}
 --- !u!114 &2567601348316867193
 MonoBehaviour:

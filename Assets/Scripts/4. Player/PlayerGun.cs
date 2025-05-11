@@ -27,7 +27,7 @@ public class PlayerGun : MonoBehaviour
         projectileCollector = GameObject.Find("ProjectileCollector");
     }
 
-    public void Shoot(int index, int bounces, float speed, float acceleration)
+    public void Shoot(int index, int bounces, float speed, float acceleration, bool canStun, float stunDuration)
     {
         int maxProjectiles = playerController.stats.maxProjectiles;
 
@@ -35,10 +35,13 @@ public class PlayerGun : MonoBehaviour
             return;
 
         GameObject projectile = Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation, projectileCollector.transform);
+        
         Projectile projectileProj = projectile.GetComponent<Projectile>();
         projectileProj.maxBounces = bounces;
         projectileProj.projectileSpeed = speed;
         projectileProj.accelerationAfterBounce = acceleration;
+        projectileProj.canStun = canStun;
+        projectileProj.stunDuration = stunDuration;
         activeProjectiles.Add(projectile);
         Renderer rend = projectile.GetComponent<Renderer>();
         rend.material = projectileMaterial[index];

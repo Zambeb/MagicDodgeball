@@ -7,11 +7,13 @@ public class Projectile : MonoBehaviour
     public int maxBounces;
     public float accelerationAfterBounce;
     //[SerializeField] private float maxLifetime = 10f;
+    public bool canStun;
+    public float stunDuration;
 
     private Vector3 direction;
     private int bounceCount = 0;
 
-    public Action OnProjectileDestroyed; // <- добавлено
+    public Action OnProjectileDestroyed; 
     
     private bool hasEnteredEnemyZone = false;
     private float sphereCastRadius;
@@ -70,6 +72,10 @@ public class Projectile : MonoBehaviour
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             if (damageable != null)
             {
+                if (canStun)
+                {
+                    damageable.Stun(stunDuration);
+                }
                 damageable.TakeDamage();
             }
 
@@ -82,7 +88,7 @@ public class Projectile : MonoBehaviour
             return false;
         }
     }
-    
+
     private void HandleBounce(Vector3 normal, Vector3 hitPoint)
     {
         direction = ReflectInXZ(direction, normal);

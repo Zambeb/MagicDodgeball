@@ -9,6 +9,8 @@ public class PlayerStats
     public int maxBounces;
     public int maxProjectiles;
     public float accelerationAfterBounce;
+    public bool canStun;
+    public float stunDuration;
 
     /*
     public PlayerStats()
@@ -24,6 +26,8 @@ public class PlayerStats
         currentHealth = other.currentHealth;
         maxProjectiles = other.maxProjectiles;
         accelerationAfterBounce = other.accelerationAfterBounce;
+        canStun = other.canStun;
+        stunDuration = other.stunDuration;
     }
 }
 

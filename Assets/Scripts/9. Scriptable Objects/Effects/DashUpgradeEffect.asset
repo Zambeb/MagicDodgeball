@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: DashUpgradeEffect
   m_EditorClassIdentifier: 
   isActiveAbility: 1
-  dashDistance: 5
+  isStackable: 0
+  dashDistance: 7
+  dashDuration: 0.3

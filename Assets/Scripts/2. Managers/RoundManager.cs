@@ -21,6 +21,10 @@ public class RoundManager : MonoBehaviour
     [Header("Round Points")] 
     public int player1points;
     public int player2points;
+    
+    [Header("Match Wins")]
+    public int player1Wins;
+    public int player2Wins;
 
     private float timer;
     public bool roundActive = false;
@@ -111,10 +115,25 @@ public class RoundManager : MonoBehaviour
         player2.DisableCharacter();
 
         playersSelectedUpgrade = 0;
-        
+
+        string winnerMessage = "Draw!";
+        if (player1points > player2points)
+        {
+            winnerMessage = "Player 1 has won!";
+            player1Wins++;
+        }
+        else if (player2points > player1points)
+        {
+            winnerMessage = "Player 2 has won!";
+            player2Wins++;
+        }
+
+        UIManager.Instance.ShowWinner(winnerMessage);
+        UIManager.Instance.UpdateMatchWins(player1Wins, player2Wins);
+
         StartCoroutine(ShowUpgradeScreenAfterDelay());
-        
-        //Destroy all projectiles left
+
+        // Destroy all projectiles left
         Projectile[] allProjectiles = FindObjectsByType<Projectile>(FindObjectsSortMode.None);
         foreach (Projectile projectile in allProjectiles)
         {
@@ -125,17 +144,29 @@ public class RoundManager : MonoBehaviour
     private IEnumerator ShowUpgradeScreenAfterDelay()
     {
         yield return new WaitForSeconds(delayBeforeUpgrades);
+        UIManager.Instance.HideWinner();
         UIManager.Instance.OpenUpgradeScreens(player1, player2);
     }
 
     private IEnumerator ResetRoundAfterDelay()
     {
-        yield return new WaitForSeconds(delayBeforeUpgrades);
-        
+        UIManager.Instance.countdownText.gameObject.SetActive(true);
+
+        string[] countdownSteps = { "3", "2", "1", "GO!" };
+        float stepDelay = delayBeforeUpgrades / countdownSteps.Length;
+
+        foreach (string step in countdownSteps)
+        {
+            UIManager.Instance.countdownText.text = step;
+            yield return new WaitForSeconds(stepDelay);
+        }
+
+        UIManager.Instance.countdownText.gameObject.SetActive(false);
+
         Debug.Log("Round Started!");
         timer = roundDuration;
         roundActive = true;
-        
+
         player1.ResetCharacter();
         player2.ResetCharacter();
     }

@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7190430596572428923
 Transform:
   m_ObjectHideFlags: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6479857954294971646, guid: 3690d4bcabafba44f988ab9c18a63d27, type: 3}
   firingSpeed: 0
   projectileMaterial:
-  - {fileID: 2100000, guid: ddd78d9a361559e49a82b5bcf7a05a40, type: 2}
-  - {fileID: 2100000, guid: e3ed2a00fcba9e144bfd3f8fd7563e75, type: 2}
+  - {fileID: 2100000, guid: 2d97edb07cd39fc45bda490251027e0c, type: 2}
+  - {fileID: 2100000, guid: 34a47811570e3b24a9d54a8bd15c3d72, type: 2}
   bruh: []
 --- !u!143 &3360537607054427031
 CharacterController:

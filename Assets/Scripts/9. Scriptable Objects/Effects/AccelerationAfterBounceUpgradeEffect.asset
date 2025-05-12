@@ -15,4 +15,4 @@ MonoBehaviour:
   isActiveAbility: 0
   isStackable: 1
   statType: 2
-  value: 0.1
+  value: 0.15

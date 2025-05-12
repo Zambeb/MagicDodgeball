@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldPrefab: {fileID: 7342655614191344124, guid: 14e991dcdc5d8474a98edeb5f2c7ac2e, type: 3}
-  radius: 2
+  radius: 1.5
   rotationSpeed: 120
 --- !u!1 &6068294536245071304
 GameObject:

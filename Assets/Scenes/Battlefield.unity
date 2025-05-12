@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a49f6d966f35674d8996657698de4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundDuration: 10
+  roundDuration: 30
   delayBeforeUpgrades: 2
   upgradeScreen: {fileID: 0}
   player1: {fileID: 0}

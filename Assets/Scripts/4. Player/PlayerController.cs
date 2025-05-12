@@ -128,8 +128,10 @@ public class PlayerController : MonoBehaviour, IDamageable
         invincible = true;
 
         float elapsed = 0f;
-        Vector3 dashDirection = transform.forward.normalized;
-        Vector3 startPosition = transform.position;
+        Vector3 dashDirection = moveDir.normalized;
+        
+        if (dashDirection.sqrMagnitude < 0.01f)
+            dashDirection = transform.forward;
 
         while (elapsed < duration)
         {

@@ -164,7 +164,7 @@ MonoBehaviour:
   playerIndex: 0
   stats:
     currentHealth: 0
-    moveSpeed: 7
+    moveSpeed: 8
     projectileSpeed: 12
     maxBounces: 3
     maxProjectiles: 3

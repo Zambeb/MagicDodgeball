@@ -5,7 +5,7 @@ public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance { get; private set; }
 
-    [SerializeField] private List<UpgradeData> allUpgrades;
+    public List<UpgradeData> allUpgrades;
 
     private void Awake()
     {

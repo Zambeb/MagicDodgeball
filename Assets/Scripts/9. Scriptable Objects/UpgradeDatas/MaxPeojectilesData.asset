@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Max Projectiles
   icon: {fileID: 0}
-  description: Pidor
+  description: + 2 projectiles
   effectPrefab: {fileID: 11400000, guid: 10b1932bdde166d4f90917c12707fdb4, type: 2}

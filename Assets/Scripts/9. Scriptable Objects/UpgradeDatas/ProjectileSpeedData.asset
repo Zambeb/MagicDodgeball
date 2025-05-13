@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Projectile Speed
   icon: {fileID: 0}
-  description: Zadolbal
+  description: + projectile speed
   effectPrefab: {fileID: 11400000, guid: 9a435af95bf0069479f5e70d60d3feb1, type: 2}

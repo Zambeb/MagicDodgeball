@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Move Speed
   icon: {fileID: 0}
-  description: "\u0412\u0420\u0423\u041C \u0412\u0420\u0423\u041C!!!"
+  description: + movement speed
   effectPrefab: {fileID: 11400000, guid: d98bb321498607e41ad4fca9fcbcf3e9, type: 2}

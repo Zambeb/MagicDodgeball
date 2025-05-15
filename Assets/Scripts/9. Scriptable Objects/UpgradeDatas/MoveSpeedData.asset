@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MoveSpeedData
   m_EditorClassIdentifier: 
   upgradeName: Move Speed
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7ec1bffc5a77b6b47befab45a388d1e4, type: 3}
   description: + movement speed
   effectPrefab: {fileID: 11400000, guid: d98bb321498607e41ad4fca9fcbcf3e9, type: 2}

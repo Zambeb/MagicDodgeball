@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ShieldData
   m_EditorClassIdentifier: 
   upgradeName: Shield
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7ec1bffc5a77b6b47befab45a388d1e4, type: 3}
   description: + 1 shield floating around you
   effectPrefab: {fileID: 11400000, guid: 1977ae0842430cc4d8d1d513a1e287e5, type: 2}

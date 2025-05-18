@@ -72,7 +72,10 @@ public class UpgradeScreen : MonoBehaviour
 
         if (spawnedButtons.Count > 0)
         {
-            firstSelectedButton = spawnedButtons[0];
+            if (currentPlayer.currentControlScheme == "Gamepad")
+            {
+                firstSelectedButton = spawnedButtons[0];
+            }
         }
     }
 

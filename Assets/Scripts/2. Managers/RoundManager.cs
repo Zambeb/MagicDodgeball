@@ -104,6 +104,7 @@ public class RoundManager : MonoBehaviour
         UIManager.Instance.UpdateRoundPoints(player1points, player2points);
 
         StartCoroutine(ResetRoundAfterDelay());
+        Cursor.visible = false;
     }
     
     public void EndRound()
@@ -139,6 +140,8 @@ public class RoundManager : MonoBehaviour
         {
             projectile.DestroySelf();
         }
+
+        Cursor.visible = true;
     }
     
     private IEnumerator ShowUpgradeScreenAfterDelay()
@@ -150,6 +153,9 @@ public class RoundManager : MonoBehaviour
 
     private IEnumerator ResetRoundAfterDelay()
     {
+        player1.ResetPosition();
+        player2.ResetPosition();
+        
         UIManager.Instance.countdownText.gameObject.SetActive(true);
 
         string[] countdownSteps = { "3", "2", "1", "GO!" };
@@ -166,7 +172,7 @@ public class RoundManager : MonoBehaviour
         Debug.Log("Round Started!");
         timer = roundDuration;
         roundActive = true;
-
+        
         player1.ResetCharacter();
         player2.ResetCharacter();
     }

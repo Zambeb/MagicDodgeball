@@ -185,19 +185,21 @@ public class PlayerController : MonoBehaviour, IDamageable
     
     public void DisableCharacter()
     {
-        //playerInput.GameObject().SetActive(false);
         disabled = true;
         invincible = true;
     }
 
     public void ResetCharacter()
     {
-        this.GameObject().transform.position = PlayerSpawner.instance.spawnPoints[playerIndex].position;
-        //playerInput.GameObject().SetActive(true);
         shieldOrbit.ClearShields();
         disabled = false;
         invincible = false;
         ApplyAllUpgrades();
+    }
+
+    public void ResetPosition()
+    {
+        this.GameObject().transform.position = PlayerSpawner.instance.spawnPoints[playerIndex].position;
     }
     
     public void AddUpgrade(UpgradeEffectBase effect)

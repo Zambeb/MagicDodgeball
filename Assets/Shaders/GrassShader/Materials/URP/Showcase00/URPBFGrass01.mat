@@ -121,7 +121,7 @@ Material:
     - _Mode: 0
     - _NearCameraSmoosh: 0.5
     - _NoisePower: 2
-    - _NumberOfStacks: 17
+    - _NumberOfStacks: 12.2
     - _OcclusionStrength: 1
     - _OffsetExtrude: 0
     - _OffsetValue: 1.8

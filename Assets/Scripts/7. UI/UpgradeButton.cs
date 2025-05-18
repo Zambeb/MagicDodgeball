@@ -5,7 +5,7 @@ using TMPro;
 public class UpgradeButton : MonoBehaviour
 {
     [SerializeField] private Image iconImage;
-    [SerializeField] private TMP_Text nameText;
+    //[SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text descriptionText;
 
     private UpgradeData upgradeData;
@@ -17,7 +17,7 @@ public class UpgradeButton : MonoBehaviour
         upgradeScreen = screen;
 
         iconImage.sprite = data.icon;
-        nameText.text = data.upgradeName;
+        //nameText.text = data.upgradeName;
         descriptionText.text = data.description;
         
         GetComponent<Button>().onClick.AddListener(OnClick);

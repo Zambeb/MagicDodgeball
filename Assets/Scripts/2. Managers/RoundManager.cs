@@ -13,6 +13,7 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private float roundDuration = 30f;
     [SerializeField] private float delayBeforeUpgrades = 3f;
     [SerializeField] private UpgradeScreen upgradeScreen;
+    public int roundCount;
 
     [Header("Players")]
     public PlayerController player1;
@@ -25,6 +26,7 @@ public class RoundManager : MonoBehaviour
     [Header("Match Wins")]
     public int player1Wins;
     public int player2Wins;
+    private bool gameEnded;
 
     private float timer;
     public bool roundActive = false;
@@ -41,6 +43,8 @@ public class RoundManager : MonoBehaviour
     {
         PlayerSpawner.instance.PlayerJoinedGame += OnPlayerJoined;
         playersSelectedUpgrade = 0;
+        gameEnded = false;
+        roundCount = 0;
     }
     
     void OnPlayerJoined(PlayerInput input)
@@ -98,6 +102,7 @@ public class RoundManager : MonoBehaviour
     
     public void StartRound()
     {
+        roundCount++;
         player1points = 0;
         player2points = 0;
         
@@ -120,20 +125,33 @@ public class RoundManager : MonoBehaviour
         string winnerMessage = "Draw!";
         if (player1points > player2points)
         {
-            winnerMessage = "Player 1 has won!";
             player1Wins++;
+            winnerMessage = "Player 1 has won!";
         }
         else if (player2points > player1points)
         {
-            winnerMessage = "Player 2 has won!";
             player2Wins++;
+            winnerMessage = "Player 2 has won!";
+        }
+        if (player1Wins >= 4)
+        {
+            winnerMessage = "PLAYER 1 IS VICTORIOUS!!!";
+            gameEnded = true;
+        }
+        else if (player2Wins >= 4)
+        {
+            winnerMessage = "PLAYER 2 IS VICTORIOUS!!!";
+            gameEnded = true;
         }
 
         UIManager.Instance.ShowWinner(winnerMessage);
-        UIManager.Instance.UpdateMatchWins(player1Wins, player2Wins);
+        UIManager.Instance.victoryDisplayUI.UpdateVictoryCrystals(player1Wins, player2Wins);
 
-        StartCoroutine(ShowUpgradeScreenAfterDelay());
-
+        if (!gameEnded)
+        {
+            StartCoroutine(ShowUpgradeScreenAfterDelay());
+        }
+        
         // Destroy all projectiles left
         Projectile[] allProjectiles = FindObjectsByType<Projectile>(FindObjectsSortMode.None);
         foreach (Projectile projectile in allProjectiles)
@@ -159,6 +177,12 @@ public class RoundManager : MonoBehaviour
         UIManager.Instance.countdownText.gameObject.SetActive(true);
 
         string[] countdownSteps = { "3", "2", "1", "GO!" };
+        
+        if (player1Wins > 2 && player2Wins > 2)
+        {
+            countdownSteps[0] = "Final round!";
+        }
+
         float stepDelay = delayBeforeUpgrades / countdownSteps.Length;
 
         foreach (string step in countdownSteps)

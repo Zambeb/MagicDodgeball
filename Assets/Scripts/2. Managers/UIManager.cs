@@ -7,15 +7,19 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
+    [SerializeField] private GameObject inRoundUI;
+
     [Header("Round Points")] 
     [SerializeField] private TextMeshProUGUI player1PointsText;
     [SerializeField] private TextMeshProUGUI player2PointsText;
     
     [Header("Player Wins")]
-    public TextMeshProUGUI player1WinsText;
-    public TextMeshProUGUI player2WinsText;
+    public VictoryDisplayUI victoryDisplayUI;
+    //public TextMeshProUGUI player1WinsText;
+    //public TextMeshProUGUI player2WinsText;
     
     [Header("Upgrade Screens")] 
+    [SerializeField] private GameObject upgradeScreenMode;
     [SerializeField] private UpgradeScreen player1UpgradeScreen;
     [SerializeField] private UpgradeScreen player2UpgradeScreen;
 
@@ -31,20 +35,34 @@ public class UIManager : MonoBehaviour
 
     public void UpdateRoundPoints(int player1Points, int player2Points)
     {
-        player1PointsText.text = player1Points + " Points";
-        player2PointsText.text = player2Points + " Points";
+        player1PointsText.text = player1Points.ToString();
+        player2PointsText.text = player2Points.ToString();
     }
     
     public void OpenUpgradeScreens(PlayerController p1, PlayerController p2)
     {
-        player1UpgradeScreen.Open(p1);
-        player2UpgradeScreen.Open(p2);
+        upgradeScreenMode.SetActive(true);
+        inRoundUI.SetActive(false);
+        
+        if (RoundManager.Instance.roundCount > 1)
+        {
+            player1UpgradeScreen.Open(p1, 2);
+            player2UpgradeScreen.Open(p2, 2);
+        }
+        else
+        {
+            player1UpgradeScreen.Open(p1, 1);
+            player2UpgradeScreen.Open(p2, 1);
+        }
+        
     }
 
     public void CloseUpgradeScreens()
     {
         player1UpgradeScreen.Close();
         player2UpgradeScreen.Close();
+        upgradeScreenMode.SetActive(false);
+        inRoundUI.SetActive(true);
     }
     
     public void ShowWinner(string winnerMessage)
@@ -60,7 +78,7 @@ public class UIManager : MonoBehaviour
     
     public void UpdateMatchWins(int p1Wins, int p2Wins)
     {
-        player1WinsText.text = $"{p1Wins}";
-        player2WinsText.text = $"{p2Wins}";
+        //player1WinsText.text = $"{p1Wins} / 4";
+        //player2WinsText.text = $"{p2Wins} / 4";
     }
 }

@@ -15,9 +15,15 @@ public class UpgradeScreen : MonoBehaviour
 
     private PlayerController currentPlayer;
 
-    public void Open(PlayerController player)
+    public int buffsToChoose;
+    public int buffsChosen;
+
+    public void Open(PlayerController player, int buffs)
     {
         currentPlayer = player;
+        
+        buffsToChoose = buffs;
+        buffsChosen = 0;
 
         gameObject.SetActive(true);
         GenerateUpgradeButtons();
@@ -82,7 +88,32 @@ public class UpgradeScreen : MonoBehaviour
     public void SelectUpgrade(UpgradeData selectedUpgrade)
     {
         UpgradeManager.Instance.ApplyUpgrade(currentPlayer, selectedUpgrade);
-        RoundManager.Instance.PlayerSelectedUpgrade();
-        ClearButtons();
+        buffsChosen++;
+        
+        if (buffsChosen < buffsToChoose)
+        {
+            ClearButtons();
+            GenerateUpgradeButtons();
+            if (currentPlayer.currentControlScheme == "Gamepad" && spawnedButtons.Count > 0)
+            {
+                int playerIndex = currentPlayer.playerIndex;
+                string eventSystemName = $"UIInputModule_{playerIndex}";
+                GameObject eventSystemObj = GameObject.Find(eventSystemName);
+                if (eventSystemObj != null)
+                {
+                    MultiplayerEventSystem ev = eventSystemObj.GetComponent<MultiplayerEventSystem>();
+                    if (ev != null)
+                    {
+                        ev.SetSelectedGameObject(spawnedButtons[0]);
+                    }
+                }
+            }
+            
+        }
+        else
+        {
+            RoundManager.Instance.PlayerSelectedUpgrade();
+            ClearButtons();
+        }
     }
 }

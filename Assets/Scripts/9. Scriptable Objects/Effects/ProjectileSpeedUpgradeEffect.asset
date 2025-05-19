@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe3f2c831cf7824e979e3650b230812, type: 3}
   m_Name: ProjectileSpeedUpgradeEffect
   m_EditorClassIdentifier: 
+  upgradeName: Proj Speed
+  icon: {fileID: 0}
   isActiveAbility: 0
   isStackable: 1
   statType: 1
-  value: 5
+  value: 4

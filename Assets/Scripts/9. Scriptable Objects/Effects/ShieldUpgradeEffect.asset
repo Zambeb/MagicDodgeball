@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27388cf70bccaf4abab0446527c7c96, type: 3}
   m_Name: ShieldUpgradeEffect
   m_EditorClassIdentifier: 
+  upgradeName: Shield
+  icon: {fileID: 0}
   isActiveAbility: 0
   isStackable: 1

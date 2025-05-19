@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject upgradeScreenMode;
     [SerializeField] private UpgradeScreen player1UpgradeScreen;
     [SerializeField] private UpgradeScreen player2UpgradeScreen;
+    [SerializeField] private AcquiredBuffsShower player1Acquired;
+    [SerializeField] private AcquiredBuffsShower player2Acquired;
 
     [Header("Other UI")]
     public TextMeshProUGUI countdownText;
@@ -55,6 +57,8 @@ public class UIManager : MonoBehaviour
             player2UpgradeScreen.Open(p2, 1);
         }
         
+        player1Acquired.UpdateBuffIcons();
+        player2Acquired.UpdateBuffIcons();
     }
 
     public void CloseUpgradeScreens()

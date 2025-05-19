@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe3f2c831cf7824e979e3650b230812, type: 3}
   m_Name: StunUpgradeEffect
   m_EditorClassIdentifier: 
+  upgradeName: Stun
+  icon: {fileID: 0}
   isActiveAbility: 0
   isStackable: 0
   statType: 5

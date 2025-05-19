@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d66c4d55cd411c49ac86b0bfdd060a2, type: 3}
   m_Name: DashUpgradeEffect
   m_EditorClassIdentifier: 
+  upgradeName: Dash
+  icon: {fileID: 0}
   isActiveAbility: 1
   isStackable: 0
-  dashDistance: 7
-  dashDuration: 0.3
+  dashDistance: 8
+  dashDuration: 0.5

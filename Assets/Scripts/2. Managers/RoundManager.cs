@@ -109,7 +109,7 @@ public class RoundManager : MonoBehaviour
         UIManager.Instance.UpdateRoundPoints(player1points, player2points);
 
         StartCoroutine(ResetRoundAfterDelay());
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
     
     public void EndRound()
@@ -159,7 +159,7 @@ public class RoundManager : MonoBehaviour
             projectile.DestroySelf();
         }
 
-        Cursor.visible = true;
+        //Cursor.visible = true;
     }
     
     private IEnumerator ShowUpgradeScreenAfterDelay()

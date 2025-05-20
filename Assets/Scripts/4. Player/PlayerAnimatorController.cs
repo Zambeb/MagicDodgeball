@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerAnimatorController : MonoBehaviour
 {
     private Animator animator;
+    private PlayerController playerController;
 
     // Animation Parameters
     private const string IS_RUNNING_FORWARD = "isRunningForward";
@@ -14,6 +15,12 @@ public class PlayerAnimatorController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        playerController = GetComponentInParent<PlayerController>();
+        
+        if (playerController == null)
+        {
+            Debug.LogError("PlayerAnimatorController requires a PlayerController component in parent!");
+        }
         
         // Reset all animation parameters
         ResetAnimationParameters();
@@ -21,56 +28,61 @@ public class PlayerAnimatorController : MonoBehaviour
 
     void Update()
     {
-        HandleMovement();
-        HandleAttack();
+        if (playerController != null)
+        {
+            HandleMovement();
+        }
     }
 
     private void HandleMovement()
     {
-        // Get movement input from PlayerControls
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
+        // Get movement input from PlayerController
+        Vector2 movementInput = playerController.GetMovementInput();
+        
         // Reset all movement parameters first
         ResetMovementParameters();
-
-        // Only set animation parameters if actually moving
-        if (vertical > 0.1f) // Forward
+        
+        // Skip if no movement
+        if (movementInput.magnitude < 0.1f)
+            return;
+            
+        // Convert the 2D movement input to a 3D vector in world space
+        Vector3 movementVector = new Vector3(movementInput.x, 0, movementInput.y);
+        
+        // Convert world space movement to local space relative to character's forward direction
+        Vector3 localMovement = transform.parent.InverseTransformDirection(movementVector);
+        
+        // Determine movement direction relative to character's facing direction
+        if (localMovement.z > 0.1f) // Forward relative to character facing
         {
             animator.SetBool(IS_RUNNING_FORWARD, true);
-            Debug.Log("Moving Forward");
+            Debug.Log("Running Forward (Gun Direction)");
         }
-        else if (vertical < -0.1f) // Backward
+        else if (localMovement.z < -0.1f) // Backward relative to character facing
         {
             animator.SetBool(IS_RUNNING_BACKWARD, true);
-            Debug.Log("Moving Backward");
+            Debug.Log("Running Backward (Away from Gun)");
         }
-
-        if (horizontal > 0.1f) // Right
+        
+        if (localMovement.x > 0.1f) // Right relative to character facing
         {
             animator.SetBool(IS_RUNNING_RIGHT, true);
-            Debug.Log("Moving Right");
+            Debug.Log("Running Right (Gun's Right)");
         }
-        else if (horizontal < -0.1f) // Left
+        else if (localMovement.x < -0.1f) // Left relative to character facing
         {
             animator.SetBool(IS_RUNNING_LEFT, true);
-            Debug.Log("Moving Left");
+            Debug.Log("Running Left (Gun's Left)");
         }
 
-        // If not moving at all, reset all parameters
-        if (Mathf.Abs(horizontal) < 0.1f && Mathf.Abs(vertical) < 0.1f)
-        {
-            ResetMovementParameters();
-        }
+        // Note: We already check for no movement at the beginning of the method
+        // and the reset is already done at the start of the method, so this check is redundant
     }
 
-    private void HandleAttack()
+    // This method will be called from PlayerController when firing
+    public void TriggerAttackAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.SetTrigger(IS_ATTACKING);
-            Debug.Log("Attacking!");
-        }
+        animator.SetTrigger(IS_ATTACKING);
     }
 
     private void ResetAnimationParameters()

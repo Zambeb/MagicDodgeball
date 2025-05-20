@@ -94,7 +94,12 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         movementInput = ctx.ReadValue<Vector2>();
         moveDir = new Vector3(movementInput.x, 0, movementInput.y);
-        
+    }
+    
+    // Method for PlayerAnimatorController to access movement input
+    public Vector2 GetMovementInput()
+    {
+        return movementInput;
     }
     public void OnAim(InputAction.CallbackContext ctx) 
     {
@@ -106,6 +111,13 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (ctx.performed && !disabled)
         {
             gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration);
+            
+            // Trigger attack animation
+            PlayerAnimatorController animController = GetComponentInChildren<PlayerAnimatorController>();
+            if (animController != null)
+            {
+                animController.TriggerAttackAnimation();
+            }
         }
     }
 

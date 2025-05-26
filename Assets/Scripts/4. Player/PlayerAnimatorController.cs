@@ -56,23 +56,23 @@ public class PlayerAnimatorController : MonoBehaviour
         if (localMovement.z > 0.1f) // Forward relative to character facing
         {
             animator.SetBool(IS_RUNNING_FORWARD, true);
-            Debug.Log("Running Forward (Gun Direction)");
+            //Debug.Log("Running Forward (Gun Direction)");
         }
         else if (localMovement.z < -0.1f) // Backward relative to character facing
         {
             animator.SetBool(IS_RUNNING_BACKWARD, true);
-            Debug.Log("Running Backward (Away from Gun)");
+            //Debug.Log("Running Backward (Away from Gun)");
         }
         
         if (localMovement.x > 0.1f) // Right relative to character facing
         {
             animator.SetBool(IS_RUNNING_RIGHT, true);
-            Debug.Log("Running Right (Gun's Right)");
+            //Debug.Log("Running Right (Gun's Right)");
         }
         else if (localMovement.x < -0.1f) // Left relative to character facing
         {
             animator.SetBool(IS_RUNNING_LEFT, true);
-            Debug.Log("Running Left (Gun's Left)");
+            //Debug.Log("Running Left (Gun's Left)");
         }
 
         // Note: We already check for no movement at the beginning of the method

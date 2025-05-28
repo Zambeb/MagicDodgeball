@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: NoSelfHarmData
   m_EditorClassIdentifier: 
   upgradeName: No Self Harm
-  icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
+  icon: {fileID: 21300000, guid: 4ae9bea1832052944a071686272b6096, type: 3}
   description: Your projectiles can not damage you
   effectPrefab: {fileID: 11400000, guid: 0cfb9e20b61ba0a43980ddcd5a7efcda, type: 2}

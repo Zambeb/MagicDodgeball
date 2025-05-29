@@ -32,6 +32,9 @@ public class StatUpgradeEffect : UpgradeEffectBase
             case StatType.NoSelfHarm:
                 player.stats.canSelfHarm = false;
                 break;
+            case StatType.CanBurnArea:
+                player.stats.canBurnArea = true;
+                break;
             default:
                 Debug.LogWarning("Unknown stat type!");
                 break;

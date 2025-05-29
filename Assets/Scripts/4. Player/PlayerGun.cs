@@ -16,7 +16,7 @@ public class PlayerGun : MonoBehaviour
 
     private PlayerController playerController;
 
-    private List<GameObject> activeProjectiles = new List<GameObject>();
+    public List<GameObject> activeProjectiles = new List<GameObject>();
     
     public List<MonoBehaviour> bruh = new List<MonoBehaviour>();
 
@@ -29,14 +29,10 @@ public class PlayerGun : MonoBehaviour
 
     public void Shoot(int index, int bounces, float speed, float acceleration, bool canStun, float stunDuration)
     {
-        int maxProjectiles = playerController.stats.maxProjectiles;
-
-        if (activeProjectiles.Count >= maxProjectiles)
-            return;
-
         GameObject projectile = Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation, projectileCollector.transform);
         
         Projectile projectileProj = projectile.GetComponent<Projectile>();
+        projectileProj.ownerPlayer = playerController;
         projectileProj.maxBounces = bounces;
         projectileProj.projectileSpeed = speed;
         projectileProj.accelerationAfterBounce = acceleration;

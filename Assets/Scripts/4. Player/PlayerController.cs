@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
     public void OnFire(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && !disabled)
+        if (ctx.performed && !disabled && gun.activeProjectiles.Count < stats.maxProjectiles)
         {
             gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration);
             

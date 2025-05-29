@@ -3,6 +3,8 @@ using System;
 
 public class Projectile : MonoBehaviour
 {
+    public LayerMask collisionMask;
+    
     public int playerIndex;
     public float projectileSpeed;
     public int maxBounces;
@@ -18,6 +20,9 @@ public class Projectile : MonoBehaviour
     
     private bool hasEnteredEnemyZone = false;
     private float sphereCastRadius;
+    
+    public GameObject burnedAreaPrefab; 
+    public PlayerController ownerPlayer;
 
     private void Start()
     {
@@ -51,7 +56,7 @@ public class Projectile : MonoBehaviour
     private bool DoMovementStep(float distance)
     {
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position, sphereCastRadius, direction, out hit, distance))
+        if (Physics.SphereCast(transform.position, sphereCastRadius, direction, out hit, distance, collisionMask))
         {
             if (hit.collider.CompareTag("PlayerWall"))
             {
@@ -117,14 +122,15 @@ public class Projectile : MonoBehaviour
 
     private void HandleBounce(Vector3 normal, Vector3 hitPoint)
     {
-        direction = ReflectInXZ(direction, normal);
         bounceCount++;
-        projectileSpeed *= accelerationAfterBounce;
         if (bounceCount > maxBounces)
         {
             DestroySelf();
             return;
         }
+        
+        direction = ReflectInXZ(direction, normal);
+        projectileSpeed *= accelerationAfterBounce;
         transform.position = hitPoint + direction * 0.01f;
     }
     
@@ -137,6 +143,11 @@ public class Projectile : MonoBehaviour
 
     public void DestroySelf()
     {
+        if (ownerPlayer != null && ownerPlayer.stats.canBurnArea)
+        {
+            Vector3 spawnPosition = transform.position - direction.normalized * 2f;
+            Instantiate(burnedAreaPrefab, spawnPosition, Quaternion.identity);
+        }
         OnProjectileDestroyed?.Invoke();
         Destroy(gameObject);
     }

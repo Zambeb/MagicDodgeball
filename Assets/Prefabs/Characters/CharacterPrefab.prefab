@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1763795756801384758}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.84, z: 2.32}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0.131, z: 2.32}
+  m_LocalScale: {x: 0.11, y: 0.17205128, z: 0.17205128}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2019226097110186186}
@@ -314,6 +314,7 @@ MonoBehaviour:
     canStun: 0
     stunDuration: 0
     canSelfHarm: 1
+    canBurnArea: 0
   rotationSpeed: 720
   currentControlScheme: 
   acquiredUpgrades: []
@@ -337,6 +338,7 @@ MonoBehaviour:
   projectileMaterial:
   - {fileID: 2100000, guid: 2d97edb07cd39fc45bda490251027e0c, type: 2}
   - {fileID: 2100000, guid: 34a47811570e3b24a9d54a8bd15c3d72, type: 2}
+  activeProjectiles: []
   bruh: []
 --- !u!143 &3360537607054427031
 CharacterController:
@@ -730,15 +732,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515312904218883939, guid: 20f6d0a90883f07469dcea5c55cc72d0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7515312904218883939, guid: 20f6d0a90883f07469dcea5c55cc72d0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7515312904218883939, guid: 20f6d0a90883f07469dcea5c55cc72d0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7515312904218883939, guid: 20f6d0a90883f07469dcea5c55cc72d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -817,15 +819,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515312904218883939, guid: a738a3bb27a701e4d9b4276c0c9f7562, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7515312904218883939, guid: a738a3bb27a701e4d9b4276c0c9f7562, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7515312904218883939, guid: a738a3bb27a701e4d9b4276c0c9f7562, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7515312904218883939, guid: a738a3bb27a701e4d9b4276c0c9f7562, type: 3}
       propertyPath: m_LocalPosition.x

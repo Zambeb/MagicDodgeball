@@ -308,7 +308,7 @@ MonoBehaviour:
     currentHealth: 0
     moveSpeed: 8
     projectileSpeed: 12
-    maxBounces: 3
+    maxBounces: 4
     maxProjectiles: 3
     accelerationAfterBounce: 1
     canStun: 0
@@ -319,8 +319,7 @@ MonoBehaviour:
     canExplodeBalls: 0
   rotationSpeed: 720
   currentControlScheme: 
-  acquiredUpgrades:
-  - {fileID: 11400000, guid: 2fea1a5e87817c4408e4b0e2a840e86d, type: 2}
+  acquiredUpgrades: []
   acquiredActiveAbility: {fileID: 0}
   shieldOrbit: {fileID: 4547161487450497762}
 --- !u!114 &2567601348316867193

@@ -7,5 +7,6 @@ public enum StatType
     MaxProjectiles,
     Stun,
     NoSelfHarm,
-    CanBurnArea
+    CanBurnArea,
+    ProjectileSize
 }

@@ -26,6 +26,7 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
+        transform.localScale *= ownerPlayer.stats.ballSizeMultiplier;
         direction = transform.forward;
         //Invoke(nameof(DestroySelf), maxLifetime);
         SphereCollider sc = GetComponent<SphereCollider>();
@@ -145,8 +146,9 @@ public class Projectile : MonoBehaviour
     {
         if (ownerPlayer != null && ownerPlayer.stats.canBurnArea)
         {
-            Vector3 spawnPosition = transform.position - direction.normalized * 2f;
-            Instantiate(burnedAreaPrefab, spawnPosition, Quaternion.identity);
+            Vector3 spawnPosition = transform.position - direction.normalized * ownerPlayer.stats.ballSizeMultiplier;
+            GameObject burnedArea = Instantiate(burnedAreaPrefab, spawnPosition, Quaternion.identity);
+            burnedArea.transform.localScale *= ownerPlayer.stats.ballSizeMultiplier;
         }
         OnProjectileDestroyed?.Invoke();
         Destroy(gameObject);

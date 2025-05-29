@@ -315,6 +315,7 @@ MonoBehaviour:
     stunDuration: 0
     canSelfHarm: 1
     canBurnArea: 0
+    ballSizeMultiplier: 1
   rotationSpeed: 720
   currentControlScheme: 
   acquiredUpgrades: []

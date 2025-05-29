@@ -35,6 +35,9 @@ public class StatUpgradeEffect : UpgradeEffectBase
             case StatType.CanBurnArea:
                 player.stats.canBurnArea = true;
                 break;
+            case StatType.ProjectileSize:
+                player.stats.ballSizeMultiplier += value;
+                break;
             default:
                 Debug.LogWarning("Unknown stat type!");
                 break;

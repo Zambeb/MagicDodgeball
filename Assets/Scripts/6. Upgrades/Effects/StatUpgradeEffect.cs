@@ -38,6 +38,9 @@ public class StatUpgradeEffect : UpgradeEffectBase
             case StatType.ProjectileSize:
                 player.stats.ballSizeMultiplier += value;
                 break;
+            case StatType.ExplosiveBalls:
+                player.stats.canExplodeBalls = true;
+                break;
             default:
                 Debug.LogWarning("Unknown stat type!");
                 break;

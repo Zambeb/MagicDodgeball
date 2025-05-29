@@ -12,8 +12,9 @@ public class Projectile : MonoBehaviour
     //[SerializeField] private float maxLifetime = 10f;
     public bool canStun;
     public float stunDuration;
+    public bool miniBall = false;
 
-    private Vector3 direction;
+    public Vector3 direction;
     private int bounceCount = 0;
 
     public Action OnProjectileDestroyed; 
@@ -23,11 +24,20 @@ public class Projectile : MonoBehaviour
     
     public GameObject burnedAreaPrefab; 
     public PlayerController ownerPlayer;
+    
+    [Header("Mini Projectiles")]
+    public GameObject miniProjectilePrefab;
+    public int explosionProjectileCount = 6; 
+    public float explosionProjectileSpeed = 5f; 
+    public float explosionSpreadAngle = 360f; 
 
     private void Start()
     {
         transform.localScale *= ownerPlayer.stats.ballSizeMultiplier;
-        direction = transform.forward;
+        if (direction == Vector3.zero)
+        {
+            direction = transform.forward;
+        }
         //Invoke(nameof(DestroySelf), maxLifetime);
         SphereCollider sc = GetComponent<SphereCollider>();
         if (sc != null)
@@ -38,6 +48,11 @@ public class Projectile : MonoBehaviour
         {
             sphereCastRadius = transform.localScale.x / 2f;
         }
+    }
+    
+    public void Initialize(Vector3 initDirection)
+    {
+        direction = initDirection;
     }
 
     private void FixedUpdate()
@@ -67,7 +82,7 @@ public class Projectile : MonoBehaviour
 
             if (hit.collider.CompareTag("CenterWall"))
             {
-                if (!hasEnteredEnemyZone)
+                if (!hasEnteredEnemyZone && !miniBall)
                 {
                     hasEnteredEnemyZone = true;
                     gameObject.layer = LayerMask.NameToLayer("EnemyProjectile");
@@ -124,7 +139,7 @@ public class Projectile : MonoBehaviour
     private void HandleBounce(Vector3 normal, Vector3 hitPoint)
     {
         bounceCount++;
-        if (bounceCount > maxBounces)
+        if (bounceCount >= maxBounces)
         {
             DestroySelf();
             return;
@@ -144,11 +159,39 @@ public class Projectile : MonoBehaviour
 
     public void DestroySelf()
     {
-        if (ownerPlayer != null && ownerPlayer.stats.canBurnArea)
+        if (ownerPlayer != null && !miniBall)
         {
-            Vector3 spawnPosition = transform.position - direction.normalized * ownerPlayer.stats.ballSizeMultiplier;
-            GameObject burnedArea = Instantiate(burnedAreaPrefab, spawnPosition, Quaternion.identity);
-            burnedArea.transform.localScale *= ownerPlayer.stats.ballSizeMultiplier;
+            if (ownerPlayer.stats.canBurnArea)
+            {
+                Vector3 spawnPosition = transform.position - direction.normalized * ownerPlayer.stats.ballSizeMultiplier;
+                GameObject burnedArea = Instantiate(burnedAreaPrefab, spawnPosition, Quaternion.identity);
+                burnedArea.transform.localScale *= ownerPlayer.stats.ballSizeMultiplier;
+            }
+
+            if (ownerPlayer.stats.canExplodeBalls && miniProjectilePrefab != null)
+            {
+                for (int i = 0; i < explosionProjectileCount; i++)
+                {
+                    float angle = (i / (float)explosionProjectileCount) * 360f;
+                    Vector3 dir = Quaternion.Euler(0f, angle, 0f) * Vector3.forward;
+
+                    GameObject miniProjObj = Instantiate(miniProjectilePrefab, transform.position, Quaternion.identity);
+                    miniProjObj.transform.localScale *= (0.5f * ownerPlayer.stats.ballSizeMultiplier);
+                    Projectile miniProj = miniProjObj.GetComponent<Projectile>();
+
+                    if (miniProj != null)
+                    {
+                        miniProj.Initialize(dir);
+                        miniProj.playerIndex = playerIndex;
+                        miniProj.ownerPlayer = ownerPlayer;
+                        miniProj.projectileSpeed = explosionProjectileSpeed;
+                        miniProj.maxBounces = 1;
+                        miniProj.direction = dir;
+                        miniProj.canStun = false;
+                        miniProj.miniBall = true;
+                    }
+                }
+            }
         }
         OnProjectileDestroyed?.Invoke();
         Destroy(gameObject);

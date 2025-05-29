@@ -14,6 +14,7 @@ public class PlayerStats
     public bool canSelfHarm;
     public bool canBurnArea;
     public float ballSizeMultiplier;
+    public bool canExplodeBalls;
 
     /*
     public PlayerStats()
@@ -34,6 +35,7 @@ public class PlayerStats
         canSelfHarm = other.canSelfHarm;
         canBurnArea = other.canBurnArea;
         ballSizeMultiplier = other.ballSizeMultiplier;
+        canExplodeBalls = other.canExplodeBalls;
     }
 }
 

@@ -8,5 +8,6 @@ public enum StatType
     Stun,
     NoSelfHarm,
     CanBurnArea,
-    ProjectileSize
+    ProjectileSize,
+    ExplosiveBalls
 }

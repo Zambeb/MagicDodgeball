@@ -316,9 +316,11 @@ MonoBehaviour:
     canSelfHarm: 1
     canBurnArea: 0
     ballSizeMultiplier: 1
+    canExplodeBalls: 0
   rotationSpeed: 720
   currentControlScheme: 
-  acquiredUpgrades: []
+  acquiredUpgrades:
+  - {fileID: 11400000, guid: 2fea1a5e87817c4408e4b0e2a840e86d, type: 2}
   acquiredActiveAbility: {fileID: 0}
   shieldOrbit: {fileID: 4547161487450497762}
 --- !u!114 &2567601348316867193

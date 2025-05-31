@@ -6,6 +6,7 @@ public class ForceFieldEffect : UpgradeEffectBase
 {
     public float forceFieldDuration = 2;
     public float speedMultiplier = 2;
+    public float cooldown = 2;
 
     public override void Apply(PlayerController player)
     {
@@ -14,7 +15,7 @@ public class ForceFieldEffect : UpgradeEffectBase
 
     public override void PerformAbility(PlayerController player)
     {
-        player.ForceField(forceFieldDuration, speedMultiplier);
+        player.ForceField(forceFieldDuration, speedMultiplier, cooldown);
         Debug.Log("Force field performed!");
     }
 }

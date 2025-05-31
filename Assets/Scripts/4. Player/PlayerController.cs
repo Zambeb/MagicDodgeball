@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private bool disabled;
     private bool invincible;
     private bool canShoot;
-    private bool forceFieldApplied = false;
+    private bool activeApplied = false;
 
     public List<UpgradeEffectBase> acquiredUpgrades = new List<UpgradeEffectBase>();
     public UpgradeEffectBase acquiredActiveAbility;
@@ -132,24 +132,29 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
-    public void Dash(float distance, float duration)
+    public void Dash(float distance, float duration, float cooldown)
     {
-        StartCoroutine(PerformDash(distance, duration));
+        if (!activeApplied)
+        {
+            StartCoroutine(PerformDash(distance, duration, cooldown));
+        }
     }
 
-    public void ForceField(float duration, float speedMultiplier)
+    public void ForceField(float duration, float speedMultiplier, float cooldown)
     {
-        if (!forceFieldApplied)
+        if (!activeApplied)
         {
-            StartCoroutine(PerformForceField(duration, speedMultiplier));
+            StartCoroutine(PerformForceField(duration, speedMultiplier, cooldown));
         }
         
     }
 
-    public IEnumerator PerformDash(float distance, float duration)
+    public IEnumerator PerformDash(float distance, float duration, float cooldown)
     {
         disabled = true;
         invincible = true;
+
+        activeApplied = true;
 
         float elapsed = 0f;
         Vector3 dashDirection = moveDir.normalized;
@@ -170,30 +175,45 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         disabled = false;
         invincible = false;
+        
+        elapsed = 0f;
+        while (elapsed < cooldown)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        activeApplied = false;
     }
 
-    public IEnumerator PerformForceField(float duration, float speedMultiplier)
+    public IEnumerator PerformForceField(float duration, float speedMultiplier, float cooldown)
     {
         invincible = true;
         canShoot = false;
-        forceFieldApplied = true;
+        activeApplied = true;
         float initialSpeed = stats.moveSpeed;
         stats.moveSpeed *= speedMultiplier;
 
         float elapsed = 0f;
-
+        
         while (elapsed < duration)
         {
-            float delta = Time.deltaTime;
-            elapsed += delta;
-
+            elapsed += Time.deltaTime;
             yield return null;
         }
-
+        
         stats.moveSpeed = initialSpeed;
         canShoot = true;
         invincible = false;
-        forceFieldApplied = false;
+        
+        elapsed = 0f;
+        while (elapsed < cooldown)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        activeApplied = false;
     }
     
     public void TakeDamage()

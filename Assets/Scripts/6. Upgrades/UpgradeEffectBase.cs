@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "UpgradeEffectBase", menuName = "Upgrades/UpgradeEffectBase")]
+[CreateAssetMenu(fileName = "UpgradeEffectBase", menuName = "Upgrades/Data/UpgradeEffectBase")]
 public abstract class UpgradeEffectBase : ScriptableObject
 {
     public string upgradeName;

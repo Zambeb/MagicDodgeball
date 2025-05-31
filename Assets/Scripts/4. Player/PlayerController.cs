@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private bool disabled;
     private bool invincible;
+    private bool canShoot;
+    private bool forceFieldApplied = false;
 
     public List<UpgradeEffectBase> acquiredUpgrades = new List<UpgradeEffectBase>();
     public UpgradeEffectBase acquiredActiveAbility;
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         playerInput = GetComponentInChildren<PlayerInput>();
         disabled = true;
         invincible = false;
+        canShoot = true;
         currentControlScheme = playerInput.currentControlScheme;
     }
 
@@ -108,7 +111,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
     public void OnFire(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && !disabled && gun.activeProjectiles.Count < stats.maxProjectiles)
+        if (ctx.performed && !disabled && canShoot && gun.activeProjectiles.Count < stats.maxProjectiles)
         {
             gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration);
             
@@ -132,6 +135,15 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void Dash(float distance, float duration)
     {
         StartCoroutine(PerformDash(distance, duration));
+    }
+
+    public void ForceField(float duration, float speedMultiplier)
+    {
+        if (!forceFieldApplied)
+        {
+            StartCoroutine(PerformForceField(duration, speedMultiplier));
+        }
+        
     }
 
     public IEnumerator PerformDash(float distance, float duration)
@@ -158,6 +170,30 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         disabled = false;
         invincible = false;
+    }
+
+    public IEnumerator PerformForceField(float duration, float speedMultiplier)
+    {
+        invincible = true;
+        canShoot = false;
+        forceFieldApplied = true;
+        float initialSpeed = stats.moveSpeed;
+        stats.moveSpeed *= speedMultiplier;
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float delta = Time.deltaTime;
+            elapsed += delta;
+
+            yield return null;
+        }
+
+        stats.moveSpeed = initialSpeed;
+        canShoot = true;
+        invincible = false;
+        forceFieldApplied = false;
     }
     
     public void TakeDamage()

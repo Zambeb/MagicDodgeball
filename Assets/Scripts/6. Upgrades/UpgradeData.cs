@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "UpgradeData", menuName = "Upgrades/UpgradeData")]
+[CreateAssetMenu(fileName = "UpgradeData", menuName = "Upgrades/Data/UpgradeData")]
 public class UpgradeData : ScriptableObject
 {
     public string upgradeName;

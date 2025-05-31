@@ -222,6 +222,10 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             RoundManager.Instance.RegisterHit(playerIndex);
             Debug.Log("Ouch!");
+            if (stats.immunityAfterHit != 0)
+            {
+                StartCoroutine(InvinvibityAfterHit(stats.immunityAfterHit));
+            }
         }
     }
     
@@ -249,6 +253,21 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             disabled = false;
         }
+    }
+
+    private IEnumerator InvinvibityAfterHit(float duration)
+    {
+        invincible = true;
+        Debug.Log("Invincibility starts");
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        
+        invincible = false;
+        Debug.Log("Invincibility ends");
     }
     
     public void DisableCharacter()

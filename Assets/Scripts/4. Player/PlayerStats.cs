@@ -16,6 +16,7 @@ public class PlayerStats
     public float ballSizeMultiplier;
     public bool canExplodeBalls;
     public bool amigaBall;
+    public float immunityAfterHit;
 
     /*
     public PlayerStats()
@@ -38,6 +39,7 @@ public class PlayerStats
         ballSizeMultiplier = other.ballSizeMultiplier;
         canExplodeBalls = other.canExplodeBalls;
         amigaBall = other.amigaBall;
+        immunityAfterHit = other.immunityAfterHit;
     }
 }
 

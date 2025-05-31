@@ -41,6 +41,9 @@ public class StatUpgradeEffect : UpgradeEffectBase
             case StatType.ExplosiveBalls:
                 player.stats.canExplodeBalls = true;
                 break;
+            case StatType.ImmunityAfterHit:
+                player.stats.immunityAfterHit += value;
+                break;
             default:
                 Debug.LogWarning("Unknown stat type!");
                 break;

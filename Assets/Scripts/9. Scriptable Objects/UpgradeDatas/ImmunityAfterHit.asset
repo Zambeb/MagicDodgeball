@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de604bd7fdf335347bd00dd3b2cae24d, type: 3}
+  m_Name: ImmunityAfterHit
+  m_EditorClassIdentifier: 
+  upgradeName: Immunity After Hit
+  icon: {fileID: 0}
+  description: Become invincible for 1 sec after a hit
+  effectPrefab: {fileID: 11400000, guid: d40f268cfab0638459d58e0be8ced44b, type: 2}

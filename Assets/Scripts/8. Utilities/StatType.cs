@@ -9,5 +9,6 @@ public enum StatType
     NoSelfHarm,
     CanBurnArea,
     ProjectileSize,
-    ExplosiveBalls
+    ExplosiveBalls,
+    ImmunityAfterHit
 }

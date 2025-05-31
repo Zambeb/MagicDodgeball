@@ -10,6 +10,7 @@ public class PlayerGun : MonoBehaviour
     [SerializeField] private float firingSpeed;
     //[SerializeField] private int maxProjectiles = 3;
     [SerializeField] private Material[] projectileMaterial;
+    [SerializeField] private Material amigaBallMaterial;
     private GameObject projectileCollector;
 
     public static PlayerGun Instance;
@@ -41,7 +42,14 @@ public class PlayerGun : MonoBehaviour
         projectileProj.playerIndex = index;
         activeProjectiles.Add(projectile);
         Renderer rend = projectile.GetComponent<Renderer>();
-        rend.material = projectileMaterial[index];
+        if (!playerController.stats.amigaBall)
+        {
+            rend.material = projectileMaterial[index];
+        }
+        else
+        {
+            rend.material = amigaBallMaterial;
+        }
 
         Projectile projectileScript = projectile.GetComponent<Projectile>();
         projectileScript.OnProjectileDestroyed = () => { activeProjectiles.Remove(projectile); };

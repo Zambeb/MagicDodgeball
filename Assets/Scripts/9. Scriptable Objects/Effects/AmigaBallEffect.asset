@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbe3f2c831cf7824e979e3650b230812, type: 3}
-  m_Name: NoSelfHarmEffect
+  m_Script: {fileID: 11500000, guid: 399367f4575e193468cf8df7468df690, type: 3}
+  m_Name: AmigaBallEffect
   m_EditorClassIdentifier: 
-  upgradeName: No Self Harm
-  icon: {fileID: 21300000, guid: 4ae9bea1832052944a071686272b6096, type: 3}
+  upgradeName: AmigaBall
+  icon: {fileID: 0}
   isActiveAbility: 0
   isStackable: 0
-  statType: 6
-  value: 0
+  projectileSpeedMultiplier: 0.5
+  extraBounces: 2
+  sizeMultiplier: 2

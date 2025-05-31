@@ -15,6 +15,7 @@ public class PlayerStats
     public bool canBurnArea;
     public float ballSizeMultiplier;
     public bool canExplodeBalls;
+    public bool amigaBall;
 
     /*
     public PlayerStats()
@@ -36,6 +37,7 @@ public class PlayerStats
         canBurnArea = other.canBurnArea;
         ballSizeMultiplier = other.ballSizeMultiplier;
         canExplodeBalls = other.canExplodeBalls;
+        amigaBall = other.amigaBall;
     }
 }
 

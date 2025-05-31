@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e67f0bff5378ff24e84eeaa7511f38a4
+guid: f65a959a4b865114d843ed74223c9e70
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,8 +10,7 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - History of Wawa
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 8eb7d1d7d5885dc4d86a91c161e00446, type: 3}
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

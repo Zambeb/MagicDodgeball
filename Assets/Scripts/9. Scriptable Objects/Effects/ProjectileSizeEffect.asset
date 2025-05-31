@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ProjectileSizeEffect
   m_EditorClassIdentifier: 
   upgradeName: Projectile Size
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: bc145d720e0ffa246abcb42c65d0d4a0, type: 3}
   isActiveAbility: 0
   isStackable: 1
   statType: 8

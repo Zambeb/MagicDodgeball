@@ -322,7 +322,7 @@ MonoBehaviour:
   rotationSpeed: 720
   currentControlScheme: 
   acquiredUpgrades:
-  - {fileID: 11400000, guid: d40f268cfab0638459d58e0be8ced44b, type: 2}
+  - {fileID: 0}
   acquiredActiveAbility: {fileID: 0}
   shieldOrbit: {fileID: 4547161487450497762}
 --- !u!114 &2567601348316867193

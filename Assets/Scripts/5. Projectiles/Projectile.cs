@@ -86,8 +86,8 @@ public class Projectile : MonoBehaviour
                 {
                     hasEnteredEnemyZone = true;
                     gameObject.layer = LayerMask.NameToLayer("EnemyProjectile");
-                    transform.position = hit.point + direction * 0.01f;
-                    return true;
+                    transform.position += direction * distance;
+                    return false;
                 }
             }
 
@@ -147,7 +147,7 @@ public class Projectile : MonoBehaviour
         
         direction = ReflectInXZ(direction, normal);
         projectileSpeed *= accelerationAfterBounce;
-        transform.position = hitPoint + direction * sphereCastRadius;
+        transform.position = hitPoint + normal * sphereCastRadius + direction * 0.01f;
     }
     
     private Vector3 ReflectInXZ(Vector3 incoming, Vector3 normal)

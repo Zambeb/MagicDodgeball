@@ -70,71 +70,71 @@ public class Projectile : MonoBehaviour
         }
     }
     private bool DoMovementStep(float distance)
+{
+    if (!Physics.SphereCast(transform.position, sphereCastRadius, direction, out RaycastHit hit, distance, collisionMask))
     {
-        RaycastHit hit;
-        if (Physics.SphereCast(transform.position, sphereCastRadius, direction, out hit, distance, collisionMask))
+        transform.position += direction * distance;
+        return false;
+    }
+
+    // Cash tag
+    string hitTag = hit.collider.tag;
+
+    // 1. PlayerWall - let the ball through
+    if (hitTag == "PlayerWall")
+    {
+        transform.position += direction * distance;
+        return true;
+    }
+
+    // 2. CenterWall - change layer and let the ball through
+    if (!hasEnteredEnemyZone && !miniBall && hitTag == "CenterWall")
+    {
+        hasEnteredEnemyZone = true;
+        gameObject.layer = LayerMask.NameToLayer("EnemyProjectile");
+        transform.position += direction * distance;
+        return false;
+    }
+
+    // 3. Shield
+    if (hitTag == "Shield")
+    {
+        var shieldOwner = hit.collider.GetComponentInParent<PlayerController>();
+        if (shieldOwner != null)
         {
-            if (hit.collider.CompareTag("PlayerWall"))
+            if (shieldOwner.playerIndex != playerIndex)
             {
-                transform.position += direction * distance;
+                HandleBounce(hit.normal, hit.point);
                 return true;
             }
-
-            if (hit.collider.CompareTag("CenterWall"))
-            {
-                if (!hasEnteredEnemyZone && !miniBall)
-                {
-                    hasEnteredEnemyZone = true;
-                    gameObject.layer = LayerMask.NameToLayer("EnemyProjectile");
-                    transform.position += direction * distance;
-                    return false;
-                }
-            }
-
-            if (hit.collider.CompareTag("Shield"))
-            {
-                PlayerController shieldOwner = hit.collider.GetComponentInParent<PlayerController>();
-                if (shieldOwner != null)
-                {
-                    if (shieldOwner.playerIndex != playerIndex)
-                    {
-                        HandleBounce(hit.normal, hit.point);
-                        return true;
-                    }
-                    else
-                    {
-                        transform.position = hit.point + direction * 0.01f;
-                        return false;
-                    }
-                }
-            }
-
-            IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-            PlayerController hitPlayer = hit.collider.GetComponent<PlayerController>();
-            if (damageable != null)
-            {
-                bool isSelfHit = hitPlayer != null && hitPlayer.playerIndex == playerIndex;
-
-                if (canStun)
-                {
-                    damageable.Stun(stunDuration);
-                }
-
-                if (!isSelfHit || (isSelfHit && hitPlayer.stats.canSelfHarm))
-                {
-                    damageable.TakeDamage();
-                }
-            }
-
-            HandleBounce(hit.normal, hit.point);
-            return true;
-        }
-        else
-        {
-            transform.position += direction * distance;
+            
+            transform.position = direction * distance;
             return false;
         }
     }
+
+    // 4. IDamageable
+    var damageable = hit.collider.GetComponent<IDamageable>();
+    if (damageable != null)
+    {
+        var hitPlayer = hit.collider.GetComponent<PlayerController>();
+        bool isSelfHit = hitPlayer != null && hitPlayer.playerIndex == playerIndex;
+
+        if (canStun)
+        {
+            damageable.Stun(stunDuration);
+        }
+
+        if (!isSelfHit || (isSelfHit && hitPlayer.stats.canSelfHarm))
+        {
+            damageable.TakeDamage();
+        }
+    }
+
+    // 5. Bounce
+    HandleBounce(hit.normal, hit.point);
+    return true;
+}
 
     private void HandleBounce(Vector3 normal, Vector3 hitPoint)
     {

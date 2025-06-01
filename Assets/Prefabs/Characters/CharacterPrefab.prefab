@@ -321,8 +321,7 @@ MonoBehaviour:
     immunityAfterHit: 0
   rotationSpeed: 720
   currentControlScheme: 
-  acquiredUpgrades:
-  - {fileID: 0}
+  acquiredUpgrades: []
   acquiredActiveAbility: {fileID: 0}
   shieldOrbit: {fileID: 4547161487450497762}
 --- !u!114 &2567601348316867193

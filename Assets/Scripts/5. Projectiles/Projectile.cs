@@ -147,7 +147,7 @@ public class Projectile : MonoBehaviour
         
         direction = ReflectInXZ(direction, normal);
         projectileSpeed *= accelerationAfterBounce;
-        transform.position = hitPoint + direction * 0.01f;
+        transform.position = hitPoint + direction * sphereCastRadius;
     }
     
     private Vector3 ReflectInXZ(Vector3 incoming, Vector3 normal)

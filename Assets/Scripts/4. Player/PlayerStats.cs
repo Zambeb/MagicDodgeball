@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class PlayerStats
+public struct PlayerStats
 {
     public int currentHealth;
     public float moveSpeed;

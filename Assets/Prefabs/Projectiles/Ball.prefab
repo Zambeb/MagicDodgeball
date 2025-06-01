@@ -138,3 +138,6 @@ MonoBehaviour:
   explosionProjectileCount: 6
   explosionProjectileSpeed: 20
   explosionSpreadAngle: 360
+  bounceEffectPrefab: {fileID: 1925073853537468795, guid: 9029ce3694352004cb38dcb48d5602c8, type: 3}
+  destroyEffectPrefab: {fileID: 775012160707874427, guid: d4fd582801927194cb6d5710e6278675, type: 3}
+  effectLifetime: 2

@@ -30,6 +30,11 @@ public class Projectile : MonoBehaviour
     public int explosionProjectileCount = 6; 
     public float explosionProjectileSpeed = 5f; 
     public float explosionSpreadAngle = 360f; 
+    
+    [Header("Visual Effects")]
+    public GameObject bounceEffectPrefab; 
+    public GameObject destroyEffectPrefab; 
+    public float effectLifetime = 2f;
 
     private void Start()
     {
@@ -138,6 +143,13 @@ public class Projectile : MonoBehaviour
 
     private void HandleBounce(Vector3 normal, Vector3 hitPoint)
     {
+        if (bounceEffectPrefab != null)
+        {
+            Quaternion effectRotation = Quaternion.LookRotation(normal);
+            GameObject effect = Instantiate(bounceEffectPrefab, hitPoint, effectRotation);
+            Destroy(effect, effectLifetime);
+        }
+        
         bounceCount++;
         if (bounceCount >= maxBounces)
         {
@@ -159,6 +171,13 @@ public class Projectile : MonoBehaviour
 
     public void DestroySelf()
     {
+        if (destroyEffectPrefab != null)
+        {
+            Quaternion randomRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
+            GameObject effect = Instantiate(destroyEffectPrefab, transform.position, randomRotation);
+            Destroy(effect, effectLifetime);
+        }
+        
         if (ownerPlayer != null && !miniBall)
         {
             if (ownerPlayer.stats.canBurnArea)

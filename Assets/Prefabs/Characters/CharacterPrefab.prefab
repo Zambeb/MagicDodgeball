@@ -319,11 +319,16 @@ MonoBehaviour:
     canExplodeBalls: 0
     amigaBall: 0
     immunityAfterHit: 0
-  rotationSpeed: 720
+  rotationSpeed: 1500
   currentControlScheme: 
   acquiredUpgrades: []
   acquiredActiveAbility: {fileID: 0}
   shieldOrbit: {fileID: 4547161487450497762}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  rotationSmoothness: 100
+  raycastUpdateInterval: 0.01
 --- !u!114 &2567601348316867193
 MonoBehaviour:
   m_ObjectHideFlags: 0

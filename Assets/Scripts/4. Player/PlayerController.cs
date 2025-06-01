@@ -33,6 +33,14 @@ public class PlayerController : MonoBehaviour, IDamageable
     public UpgradeEffectBase acquiredActiveAbility;
 
     public ShieldOrbitManager shieldOrbit;
+    
+    private PlayerAnimatorController animController;
+
+    [Header("Mouse Rotation")]
+    [SerializeField] private LayerMask groundMask; 
+    [SerializeField] private float rotationSmoothness = 15f;
+    [SerializeField] private float raycastUpdateInterval = 0.05f; 
+    private float lastRaycastTime;
 
     void Awake()
     {
@@ -40,6 +48,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         
         gun = GetComponent<PlayerGun>();
         controller = GetComponent<CharacterController>();
+        animController = GetComponentInChildren<PlayerAnimatorController>();
         
         initialStats = new PlayerStats(stats);
         //speed = stats.moveSpeed;
@@ -59,9 +68,13 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (!disabled)
         {
             controller.Move(moveDir * stats.moveSpeed * Time.deltaTime);
-            HandleRotation();
+        
+            // Оптимизация: проверяем, есть ли ввод
+            if (aimInput.sqrMagnitude > 0.1f || currentControlScheme != "Gamepad")
+            {
+                HandleRotation();
+            }
         }
-
     }
 
     void HandleRotation()
@@ -77,18 +90,29 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
         else
         {
-            Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+            if (Time.time - lastRaycastTime >= raycastUpdateInterval)
             {
-                Vector3 lookPoint = hit.point;
-                Vector3 direction = lookPoint - transform.position;
-                direction.y = 0f;
-
-                if (direction.sqrMagnitude > 0.01f)
-                {
-                    Quaternion rot = Quaternion.LookRotation(direction);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, rot, 15f * Time.deltaTime);
-                }
+                UpdateMouseRotation();
+                lastRaycastTime = Time.time;
+            }
+        }
+    }
+    
+    private void UpdateMouseRotation()
+    {
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        Ray ray = mainCamera.ScreenPointToRay(mousePos);
+    
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, groundMask))
+        {
+            Vector3 lookPoint = hit.point;
+            lookPoint.y = transform.position.y; 
+            
+            Vector3 direction = (lookPoint - transform.position).normalized;
+            if (direction != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSmoothness * Time.deltaTime);
             }
         }
     }
@@ -116,7 +140,6 @@ public class PlayerController : MonoBehaviour, IDamageable
             gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration);
             
             // Trigger attack animation
-            PlayerAnimatorController animController = GetComponentInChildren<PlayerAnimatorController>();
             if (animController != null)
             {
                 animController.TriggerAttackAnimation();
@@ -194,24 +217,13 @@ public class PlayerController : MonoBehaviour, IDamageable
         float initialSpeed = stats.moveSpeed;
         stats.moveSpeed *= speedMultiplier;
 
-        float elapsed = 0f;
-        
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(duration);
         
         stats.moveSpeed = initialSpeed;
         canShoot = true;
         invincible = false;
-        
-        elapsed = 0f;
-        while (elapsed < cooldown)
-        {
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
+
+        yield return new WaitForSeconds(cooldown);
 
         activeApplied = false;
     }
@@ -302,9 +314,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void ApplyAllUpgrades()
     {
         stats = new PlayerStats(initialStats);
-        foreach (var upgrade in acquiredUpgrades)
+        for (int i = 0; i < acquiredUpgrades.Count; i++)
         {
-            upgrade.Apply(this);
+            acquiredUpgrades[i].Apply(this);
         }
     }
 }

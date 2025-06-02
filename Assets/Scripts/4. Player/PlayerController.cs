@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private Camera mainCamera;
     private PlayerInput playerInput;
-    private PlayerGun gun;
+    public PlayerGun gun;
     private CharacterController controller;
 
     public string currentControlScheme;

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Amiga Ball
   icon: {fileID: 0}
-  description: '-50% speed
+  description: '-25% speed
 
-    x2 size
+    x3size
 
     +2 bounces
 

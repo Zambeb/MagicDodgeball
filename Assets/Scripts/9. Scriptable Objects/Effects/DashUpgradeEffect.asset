@@ -17,4 +17,5 @@ MonoBehaviour:
   isActiveAbility: 1
   isStackable: 0
   dashDistance: 8
-  dashDuration: 0.5
+  dashDuration: 0.3
+  cooldown: 4

@@ -195,7 +195,7 @@ public class Projectile : MonoBehaviour
                     Vector3 dir = Quaternion.Euler(0f, angle, 0f) * Vector3.forward;
 
                     GameObject miniProjObj = Instantiate(miniProjectilePrefab, transform.position, Quaternion.identity);
-                    miniProjObj.transform.localScale *= (0.5f * ownerPlayer.stats.ballSizeMultiplier);
+                    miniProjObj.transform.localScale *= 0.5f;
                     Projectile miniProj = miniProjObj.GetComponent<Projectile>();
 
                     if (miniProj != null)
@@ -208,6 +208,15 @@ public class Projectile : MonoBehaviour
                         miniProj.direction = dir;
                         miniProj.canStun = false;
                         miniProj.miniBall = true;
+                        Renderer rend = miniProj.GetComponent<Renderer>();
+                        if (!ownerPlayer.stats.amigaBall)
+                        {
+                            rend.material = ownerPlayer.gun.projectileMaterial[ownerPlayer.playerIndex];
+                        }
+                        else
+                        {
+                            rend.material = ownerPlayer.gun.amigaBallMaterial;
+                        }
                     }
                 }
             }

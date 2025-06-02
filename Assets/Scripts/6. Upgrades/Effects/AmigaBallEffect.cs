@@ -13,7 +13,7 @@ public class AmigaBallEffect : UpgradeEffectBase
     {
         player.stats.projectileSpeed *= projectileSpeedMultiplier;
         player.stats.maxBounces += extraBounces;
-        player.stats.ballSizeMultiplier *= sizeMultiplier;
+        player.stats.ballSizeMultiplier += sizeMultiplier;
         player.stats.amigaBall = true;
     }
 

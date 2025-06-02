@@ -17,4 +17,5 @@ MonoBehaviour:
   isActiveAbility: 1
   isStackable: 0
   forceFieldDuration: 2
-  speedMultiplier: 2
+  speedMultiplier: 0.5
+  cooldown: 6

@@ -11,6 +11,8 @@ public class UpgradeManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) Destroy(gameObject);
         else Instance = this;
+        
+        Random.InitState(System.DateTime.Now.Millisecond);
     }
 
     public List<UpgradeData> GetRandomUpgrades(int count, PlayerController player)
@@ -36,13 +38,16 @@ public class UpgradeManager : MonoBehaviour
             return false;
         });
 
-        for (int i = 0; i < count; i++)
+        // Fisher-Yates shuffle
+        for (int i = 0; i < available.Count; i++)
         {
-            if (available.Count == 0) break;
-
-            int index = Random.Range(0, available.Count);
-            result.Add(available[index]);
-            available.RemoveAt(index);
+            int randomIndex = Random.Range(i, available.Count);
+            (available[i], available[randomIndex]) = (available[randomIndex], available[i]); // Swap via deconstruction
+        }
+        
+        for (int i = 0; i < count && i < available.Count; i++)
+        {
+            result.Add(available[i]);
         }
 
         return result;

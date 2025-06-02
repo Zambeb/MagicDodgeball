@@ -113,7 +113,7 @@ public class Projectile : MonoBehaviour
                 return true;
             }
             
-            transform.position = direction * distance;
+            transform.position += direction * distance;
             return false;
         }
     }

@@ -320,6 +320,7 @@ MonoBehaviour:
     amigaBall: 0
     immunityAfterHit: 0
   rotationSpeed: 1500
+  gun: {fileID: 0}
   currentControlScheme: 
   acquiredUpgrades: []
   acquiredActiveAbility: {fileID: 0}

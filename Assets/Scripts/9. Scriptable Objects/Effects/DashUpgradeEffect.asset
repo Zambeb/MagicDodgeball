@@ -18,3 +18,4 @@ MonoBehaviour:
   isStackable: 0
   dashDistance: 8
   dashDuration: 0.5
+  cooldown: 4

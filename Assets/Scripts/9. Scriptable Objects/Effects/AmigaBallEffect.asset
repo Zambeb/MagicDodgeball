@@ -16,6 +16,6 @@ MonoBehaviour:
   icon: {fileID: 0}
   isActiveAbility: 0
   isStackable: 0
-  projectileSpeedMultiplier: 0.5
+  projectileSpeedMultiplier: 0.75
   extraBounces: 2
-  sizeMultiplier: 2
+  sizeMultiplier: 3

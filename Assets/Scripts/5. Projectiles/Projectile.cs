@@ -63,7 +63,7 @@ public class Projectile : MonoBehaviour
     private void FixedUpdate()
     {
         float totalDistance = projectileSpeed * Time.deltaTime;
-        int steps = Mathf.CeilToInt(totalDistance / sphereCastRadius);
+        int steps = Mathf.Clamp(Mathf.CeilToInt(totalDistance / 0.05f), 1, 100);
         float stepDistance = totalDistance / steps;
 
         for (int i = 0; i < steps; i++)

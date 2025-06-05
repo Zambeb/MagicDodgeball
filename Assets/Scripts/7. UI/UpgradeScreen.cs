@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -87,13 +88,84 @@ public class UpgradeScreen : MonoBehaviour
 
     public void SelectUpgrade(UpgradeData selectedUpgrade)
     {
+        GameObject selectedButtonObj = null;
+        foreach (var go in spawnedButtons)
+        {
+            UpgradeButton b = go.GetComponent<UpgradeButton>();
+            if (b != null && b.GetUpgradeData() == selectedUpgrade)
+            {
+                selectedButtonObj = go;
+                break;
+            }
+        }
+        
+        if (selectedButtonObj != null)
+        {
+            foreach (var go in spawnedButtons)
+            {
+                if (go != selectedButtonObj)
+                    Destroy(go);
+            }
+            
+            spawnedButtons.Clear();
+            spawnedButtons.Add(selectedButtonObj);
+
+            StartCoroutine(AnimateSelectedButton(selectedButtonObj, selectedUpgrade));
+        }
+        else
+        {
+            ApplyUpgradeAndContinue(selectedUpgrade);
+        }
+    }
+
+    private IEnumerator AnimateSelectedButton(GameObject buttonObj, UpgradeData selectedUpgrade)
+    {
+        var buttonComponent = buttonObj.GetComponent<UnityEngine.UI.Button>();
+        if (buttonComponent != null)
+        {
+            buttonComponent.interactable = false;
+        }
+        
+        Vector3 startPos = buttonObj.transform.position;
+        Vector3 startScale = buttonObj.transform.localScale;
+        
+        Vector3 targetPos = buttonsParent.position;
+        
+        Vector3 targetScale = startScale * 2f;
+
+        float duration = 1f;
+        float elapsed = 0f;
+        
+        RectTransform rt = buttonObj.GetComponent<RectTransform>();
+        Vector3 startLocalPos = rt.localPosition;
+        Vector3 targetLocalPos = Vector3.zero; 
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            rt.localPosition = Vector3.Lerp(startLocalPos, targetLocalPos, t);
+            rt.localScale = Vector3.Lerp(startScale, targetScale, t);
+
+            yield return null;
+        }
+        
+        yield return new WaitForSeconds(1f);
+        
+        ApplyUpgradeAndContinue(selectedUpgrade);
+    }
+    
+    private void ApplyUpgradeAndContinue(UpgradeData selectedUpgrade)
+    {
         UpgradeManager.Instance.ApplyUpgrade(currentPlayer, selectedUpgrade);
         buffsChosen++;
-        
+
         if (buffsChosen < buffsToChoose)
         {
             ClearButtons();
             GenerateUpgradeButtons();
+
             if (currentPlayer.currentControlScheme == "Gamepad" && spawnedButtons.Count > 0)
             {
                 int playerIndex = currentPlayer.playerIndex;
@@ -108,12 +180,12 @@ public class UpgradeScreen : MonoBehaviour
                     }
                 }
             }
-            
         }
         else
         {
             RoundManager.Instance.PlayerSelectedUpgrade();
             ClearButtons();
+            //Close();
         }
     }
     

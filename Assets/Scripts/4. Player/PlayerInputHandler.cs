@@ -48,14 +48,14 @@ public class PlayerInputHandler : MonoBehaviour
         var inputModule = moduleTransform.GetComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
         if (inputModule == null)
         {
-            Debug.LogError($"На {moduleName} не найден компонент InputSystemUIInputModule");
+            Debug.LogError($"InputSystemUIInputModule not found in {moduleName} ");
             return;
         }
         
         var playerInput = GetComponent<PlayerInput>();
         if (playerInput == null)
         {
-            Debug.LogError("PlayerInput компонент не найден на объекте PlayerInputHandler!");
+            Debug.LogError("PlayerInput not found in PlayerInputHandler!");
             return;
         }
 

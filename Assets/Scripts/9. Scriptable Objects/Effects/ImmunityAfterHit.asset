@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Immunity After Hit
   icon: {fileID: 0}
   isActiveAbility: 0
-  isStackable: 1
+  isStackable: 0
   statType: 10
-  value: 1.2
+  value: 1.5

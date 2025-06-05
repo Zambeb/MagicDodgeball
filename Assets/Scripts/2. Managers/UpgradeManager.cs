@@ -22,18 +22,20 @@ public class UpgradeManager : MonoBehaviour
 
         available.RemoveAll(upgradeData =>
         {
-            var effect = upgradeData.CreateEffect();
+            //var effect = upgradeData.CreateEffect();
+            var effectPrefab = upgradeData.effectPrefab;
         
-            if (!effect.isStackable)
+            if (!effectPrefab.isStackable)
             {
-                bool alreadyHas = player.acquiredUpgrades.Exists(u => u.GetType() == effect.GetType());
-                
-                bool isActiveAndSame = effect.isActiveAbility &&
-                                       player.acquiredActiveAbility != null &&
-                                       player.acquiredActiveAbility.GetType() == effect.GetType();
+                bool alreadyHas = player.acquiredUpgradeEffectsPrefabs.Contains(effectPrefab);
+
+                bool isActiveAndSame = effectPrefab.isActiveAbility &&
+                                       player.acquiredActiveAbilityPrefab != null &&
+                                       player.acquiredActiveAbilityPrefab == effectPrefab;
 
                 return alreadyHas || isActiveAndSame;
             }
+
 
             return false;
         });
@@ -59,11 +61,13 @@ public class UpgradeManager : MonoBehaviour
         effect.Apply(player);
         if (effect.isActiveAbility)
         {
-            player.AddActiveAbility(effect);
+            player.acquiredActiveAbility = effect;
+            player.acquiredActiveAbilityPrefab = upgradeData.effectPrefab;
         }
         else
         {
-            player.AddUpgrade(effect);
+            player.acquiredUpgrades.Add(effect);
+            player.acquiredUpgradeEffectsPrefabs.Add(upgradeData.effectPrefab);
         }
     }
 }

@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public List<UpgradeEffectBase> acquiredUpgrades = new List<UpgradeEffectBase>();
     public UpgradeEffectBase acquiredActiveAbility;
+    public List<UpgradeEffectBase> acquiredUpgradeEffectsPrefabs = new List<UpgradeEffectBase>();
+    public UpgradeEffectBase acquiredActiveAbilityPrefab;
 
     public ShieldOrbitManager shieldOrbit;
     

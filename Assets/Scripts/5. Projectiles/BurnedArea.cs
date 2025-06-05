@@ -18,8 +18,17 @@ public class BurnedArea : MonoBehaviour
     private IEnumerator DestroyAfterTime()
     {
         yield return new WaitForSeconds(duration);
-        Destroy(gameObject);
+
+        if (transform.parent != null)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
+
 
     private IEnumerator DamageCoroutine()
     {

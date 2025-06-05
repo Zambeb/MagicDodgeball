@@ -1,6 +1,0 @@
-Round,Player1Upgrades,Player2Upgrades,Winner
-Round 1:
-Player 1 upgrades: ProjectileSizeEffect(Clone)|CanBurnAreaEffect(Clone)|ProjectileSizeEffect(Clone)
-Player 2 upgrades: ImmunityAfterHit(Clone)|ProjectileSizeEffect(Clone)|ProjectileSizeEffect(Clone)|CanBurnAreaEffect(Clone)
-Winner: Player1
-

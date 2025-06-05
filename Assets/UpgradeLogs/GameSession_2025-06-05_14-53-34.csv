@@ -1,9 +1,0 @@
-Round,Player1Upgrades,Player2Upgrades,Winner
-1,,,Player2
-2,NoSelfHarmEffect(Clone),ShieldUpgradeEffect(Clone),Player2
-3,NoSelfHarmEffect(Clone)|MaxBouncesUpgradeEffect(Clone),ShieldUpgradeEffect(Clone)|NoSelfHarmEffect(Clone),Player3
-4,NoSelfHarmEffect(Clone)|MaxBouncesUpgradeEffect(Clone)|MoveSpeedUpgradeEffect(Clone)|ImmunityAfterHit(Clone),ShieldUpgradeEffect(Clone)|NoSelfHarmEffect(Clone)|MaxBouncesUpgradeEffect(Clone)|Active:DashUpgradeEffect(Clone),Player2
-7,NoSelfHarmEffect(Clone)|MaxBouncesUpgradeEffect(Clone)|MoveSpeedUpgradeEffect(Clone)|ImmunityAfterHit(Clone)|ShieldUpgradeEffect(Clone)|ProjectileSizeEffect(Clone)|StunUpgradeEffect(Clone)|MoveSpeedUpgradeEffect(Clone)|Active:ForceFieldUpgrade(Clone),ShieldUpgradeEffect(Clone)|NoSelfHarmEffect(Clone)|MaxBouncesUpgradeEffect(Clone)|AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)|StunUpgradeEffect(Clone)|ShieldUpgradeEffect(Clone)|MaxBouncesUpgradeEffect(Clone)|Active:ForceFieldUpgrade(Clone),Player2
-7,NoSelfHarmEffect(Clone)|MaxBouncesUpgradeEffect(Clone)|MoveSpeedUpgradeEffect(Clone)|ImmunityAfterHit(Clone)|ShieldUpgradeEffect(Clone)|ProjectileSizeEffect(Clone)|StunUpgradeEffect(Clone)|MoveSpeedUpgradeEffect(Clone)|Active:ForceFieldUpgrade(Clone),ShieldUpgradeEffect(Clone)|NoSelfHarmEffect(Clone)|MaxBouncesUpgradeEffect(Clone)|AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)|StunUpgradeEffect(Clone)|ShieldUpgradeEffect(Clone)|MaxBouncesUpgradeEffect(Clone)|Active:ForceFieldUpgrade(Clone),Player2
-
-Total Rounds: 6

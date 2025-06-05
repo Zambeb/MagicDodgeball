@@ -24,6 +24,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private UpgradeScreen player2UpgradeScreen;
     [SerializeField] private AcquiredBuffsShower player1Acquired;
     [SerializeField] private AcquiredBuffsShower player2Acquired;
+    [SerializeField] private float upgradeSelectionTime = 10f; // в секундах
+    [SerializeField] private TextMeshProUGUI upgradeTimerText;
+    private float upgradeTimer;
+    private bool isUpgradeTimerRunning;
 
     [Header("Other UI")]
     public TextMeshProUGUI countdownText;
@@ -34,6 +38,31 @@ public class UIManager : MonoBehaviour
         if (Instance != null && Instance != this) Destroy(gameObject);
         else Instance = this;
     }
+    
+    private void Update()
+    {
+        if (isUpgradeTimerRunning)
+        {
+            upgradeTimer -= Time.deltaTime;
+            upgradeTimerText.text = Mathf.CeilToInt(upgradeTimer).ToString();
+
+            if (upgradeTimer <= 0f)
+            {
+                StopUpgradeTimer();
+                ForceChooseUpgrades();
+            }
+            else
+            {
+                // Оба игрока выбрали раньше времени
+                if (player1UpgradeScreen.HasFinishedChoosing() && player2UpgradeScreen.HasFinishedChoosing())
+                {
+                    StopUpgradeTimer();
+                    CloseUpgradeScreens();
+                }
+            }
+        }
+    }
+
 
     public void UpdateRoundPoints(int player1Points, int player2Points)
     {
@@ -59,6 +88,8 @@ public class UIManager : MonoBehaviour
         
         player1Acquired.UpdateBuffIcons();
         player2Acquired.UpdateBuffIcons();
+        
+        StartUpgradeTimer(); 
     }
 
     public void CloseUpgradeScreens()
@@ -85,4 +116,33 @@ public class UIManager : MonoBehaviour
         //player1WinsText.text = $"{p1Wins} / 4";
         //player2WinsText.text = $"{p2Wins} / 4";
     }
+    
+    private void StartUpgradeTimer()
+    {
+        upgradeTimer = upgradeSelectionTime;
+        isUpgradeTimerRunning = true;
+        upgradeTimerText.gameObject.SetActive(true);
+    }
+    
+    private void StopUpgradeTimer()
+    {
+        isUpgradeTimerRunning = false;
+        upgradeTimerText.gameObject.SetActive(false);
+    }
+    
+    private void ForceChooseUpgrades()
+    {
+        if (!player1UpgradeScreen.HasFinishedChoosing())
+        {
+            player1UpgradeScreen.ChooseRandomUpgrades();
+        }
+
+        if (!player2UpgradeScreen.HasFinishedChoosing())
+        {
+            player2UpgradeScreen.ChooseRandomUpgrades();
+        }
+
+        CloseUpgradeScreens();
+    }
+
 }

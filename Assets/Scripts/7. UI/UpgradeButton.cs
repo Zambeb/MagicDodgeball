@@ -46,4 +46,9 @@ public class UpgradeButton : MonoBehaviour
             Debug.Log("Something's totally wrong");
         }
     }
+
+    public UpgradeData GetUpgradeData()
+    {
+        return upgradeData;
+    }
 }

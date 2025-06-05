@@ -116,4 +116,35 @@ public class UpgradeScreen : MonoBehaviour
             ClearButtons();
         }
     }
+    
+    public void ChooseRandomUpgrades()
+    {
+        while (buffsChosen < buffsToChoose)
+        {
+            List<UpgradeButton> availableButtons = new List<UpgradeButton>();
+            foreach (var go in spawnedButtons)
+            {
+                var b = go.GetComponent<UpgradeButton>();
+                if (b != null)
+                    availableButtons.Add(b);
+            }
+
+            if (availableButtons.Count > 0)
+            {
+                int randIndex = UnityEngine.Random.Range(0, availableButtons.Count);
+                SelectUpgrade(availableButtons[randIndex].GetUpgradeData());
+            }
+            else
+            {
+                Debug.LogWarning("No available buffs");
+                break;
+            }
+        }
+    }
+
+    public bool HasFinishedChoosing()
+    {
+        return buffsChosen >= buffsToChoose;
+    }
+
 }

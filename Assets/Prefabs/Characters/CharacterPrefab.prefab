@@ -324,6 +324,8 @@ MonoBehaviour:
   currentControlScheme: 
   acquiredUpgrades: []
   acquiredActiveAbility: {fileID: 0}
+  acquiredUpgradeEffectsPrefabs: []
+  acquiredActiveAbilityPrefab: {fileID: 0}
   shieldOrbit: {fileID: 4547161487450497762}
   groundMask:
     serializedVersion: 2
@@ -797,6 +799,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8478235838321817152, guid: 20f6d0a90883f07469dcea5c55cc72d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e3ed2a00fcba9e144bfd3f8fd7563e75, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -826,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7133721498510978521, guid: a738a3bb27a701e4d9b4276c0c9f7562, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7515312904218883939, guid: a738a3bb27a701e4d9b4276c0c9f7562, type: 3}
       propertyPath: m_LocalScale.x
@@ -884,6 +890,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8478235838321817152, guid: a738a3bb27a701e4d9b4276c0c9f7562, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd78d9a361559e49a82b5bcf7a05a40, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

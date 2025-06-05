@@ -12,12 +12,13 @@ public class TooltipUI : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        tooltipObject.GetComponent<RectTransform>().pivot = new Vector2(1, 1);
+
         Hide();
     }
 
     private void Update()
     {
-        // Следим за курсором
         Vector2 position;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             transform.parent.GetComponent<RectTransform>(),

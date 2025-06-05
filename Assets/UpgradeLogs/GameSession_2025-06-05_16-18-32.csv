@@ -1,0 +1,6 @@
+Round,Player1Upgrades,Player2Upgrades,Winner
+Round 1:
+Player 1 upgrades: CanBurnAreaEffect(Clone)
+Player 2 upgrades: ProjectileSizeEffect(Clone)|ProjectileSizeEffect(Clone)|CanBurnAreaEffect(Clone)
+Winner: Player2
+

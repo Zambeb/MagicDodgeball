@@ -33,6 +33,7 @@ Material:
   m_CustomRenderQueue: 2750
   stringTagMap:
     MotionVector: User
+    RenderType: Transparent
   disabledShaderPasses:
   - TransparentDepthPrepass
   - TransparentDepthPostpass

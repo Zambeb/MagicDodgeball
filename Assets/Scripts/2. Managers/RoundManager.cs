@@ -133,18 +133,23 @@ public class RoundManager : MonoBehaviour
         {
             player1Wins++;
             winnerMessage = "Player 1 has won!";
-            upgradeLogger.LogRound(roundCount, player1, player2, 1);
+            upgradeLogger.LogRound(roundCount, player1, player2, 0);
         }
         else if (player2points > player1points)
         {
             player2Wins++;
             winnerMessage = "Player 2 has won!";
+            upgradeLogger.LogRound(roundCount, player1, player2, 1);
+        }
+        else
+        {
             upgradeLogger.LogRound(roundCount, player1, player2, 2);
         }
+        
         if (player1Wins >= 4)
         {
             winnerMessage = "PLAYER 1 IS VICTORIOUS!!!";
-            upgradeLogger.LogRound(roundCount, player1, player2, 1);
+            upgradeLogger.LogRound(roundCount, player1, player2, 0);
             upgradeLogger.FinalizeLog();
 
             gameEnded = true;
@@ -152,7 +157,7 @@ public class RoundManager : MonoBehaviour
         else if (player2Wins >= 4)
         {
             winnerMessage = "PLAYER 2 IS VICTORIOUS!!!";
-            upgradeLogger.LogRound(roundCount, player1, player2, 2);
+            upgradeLogger.LogRound(roundCount, player1, player2, 1);
             upgradeLogger.FinalizeLog();
 
             gameEnded = true;

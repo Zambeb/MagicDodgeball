@@ -1,0 +1,33 @@
+Round,Player1Upgrades,Player2Upgrades,Winner
+Round 1:
+Player 1 upgrades: AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)
+Player 2 upgrades: ProjectileSizeEffect(Clone)|CanBurnAreaEffect(Clone)
+Winner: Player2
+
+Round 2:
+Player 1 upgrades: AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)|ShieldUpgradeEffect(Clone)
+Player 2 upgrades: ProjectileSizeEffect(Clone)|CanBurnAreaEffect(Clone)|ProjectileSizeEffect(Clone)
+Winner: Player3
+
+Round 3:
+Player 1 upgrades: AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)|ShieldUpgradeEffect(Clone)|AccelerationAfterBounceUpgradeEffect(Clone)
+Player 2 upgrades: ProjectileSizeEffect(Clone)|CanBurnAreaEffect(Clone)|ProjectileSizeEffect(Clone)|AmigaBallEffect(Clone)
+Winner: Player2
+
+Round 4:
+Player 1 upgrades: AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)|ShieldUpgradeEffect(Clone)|AccelerationAfterBounceUpgradeEffect(Clone)|ShieldUpgradeEffect(Clone)|MoveSpeedUpgradeEffect(Clone)
+Player 2 upgrades: ProjectileSizeEffect(Clone)|CanBurnAreaEffect(Clone)|ProjectileSizeEffect(Clone)|AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)|Active:DashUpgradeEffect(Clone)
+Winner: Player2
+
+Round 5:
+Player 1 upgrades: AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)|ShieldUpgradeEffect(Clone)|AccelerationAfterBounceUpgradeEffect(Clone)|ShieldUpgradeEffect(Clone)|MoveSpeedUpgradeEffect(Clone)|ImmunityAfterHit(Clone)|ShieldUpgradeEffect(Clone)
+Player 2 upgrades: ProjectileSizeEffect(Clone)|CanBurnAreaEffect(Clone)|ProjectileSizeEffect(Clone)|AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)|MaxProjectilesUpgradeEffect(Clone)|ProjectileSpeedUpgradeEffect(Clone)|Active:DashUpgradeEffect(Clone)
+Winner: Player2
+
+Round 5:
+Player 1 upgrades: AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)|ShieldUpgradeEffect(Clone)|AccelerationAfterBounceUpgradeEffect(Clone)|ShieldUpgradeEffect(Clone)|MoveSpeedUpgradeEffect(Clone)|ImmunityAfterHit(Clone)|ShieldUpgradeEffect(Clone)
+Player 2 upgrades: ProjectileSizeEffect(Clone)|CanBurnAreaEffect(Clone)|ProjectileSizeEffect(Clone)|AmigaBallEffect(Clone)|ExplosiveBallsEffect(Clone)|MaxProjectilesUpgradeEffect(Clone)|ProjectileSpeedUpgradeEffect(Clone)|Active:DashUpgradeEffect(Clone)
+Winner: Player2
+
+
+Total Rounds: 6

@@ -1,0 +1,6 @@
+Round,Player1Upgrades,Player2Upgrades,Winner
+1,,,Player2
+2,CanBurnAreaEffect(Clone),AccelerationAfterBounceUpgradeEffect(Clone),Player2
+3,CanBurnAreaEffect(Clone)|ProjectileSizeEffect(Clone),AccelerationAfterBounceUpgradeEffect(Clone)|Active:DashUpgradeEffect(Clone),Player2
+4,CanBurnAreaEffect(Clone)|ProjectileSizeEffect(Clone)|ProjectileSpeedUpgradeEffect(Clone)|MaxProjectilesUpgradeEffect(Clone),AccelerationAfterBounceUpgradeEffect(Clone)|MaxProjectilesUpgradeEffect(Clone)|ExplosiveBallsEffect(Clone)|Active:DashUpgradeEffect(Clone),Player2
+4,CanBurnAreaEffect(Clone)|ProjectileSizeEffect(Clone)|ProjectileSpeedUpgradeEffect(Clone)|MaxProjectilesUpgradeEffect(Clone),AccelerationAfterBounceUpgradeEffect(Clone)|MaxProjectilesUpgradeEffect(Clone)|ExplosiveBallsEffect(Clone)|Active:DashUpgradeEffect(Clone),Player2

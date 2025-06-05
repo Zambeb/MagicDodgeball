@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     public UpgradeEffectBase acquiredActiveAbility;
     public List<UpgradeEffectBase> acquiredUpgradeEffectsPrefabs = new List<UpgradeEffectBase>();
     public UpgradeEffectBase acquiredActiveAbilityPrefab;
+    public bool IsActiveOnCooldown => activeApplied;
+    public float activeCooldownTimeRemaining;
+    public float activeCooldownDuration;
+    public CooldownRing cooldownRing;
 
     public ShieldOrbitManager shieldOrbit;
     
@@ -151,9 +155,18 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnPerformActiveAbility(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && !disabled && acquiredActiveAbility != null)
+        if (ctx.performed)
         {
-            acquiredActiveAbility.PerformAbility(this);
+            if (acquiredActiveAbility == null) return;
+
+            if (!disabled && !IsActiveOnCooldown)
+            {
+                acquiredActiveAbility.PerformAbility(this);
+            }
+            else
+            {
+                cooldownRing.ShowCooldown(activeCooldownTimeRemaining, activeCooldownDuration);
+            }
         }
     }
 
@@ -201,10 +214,12 @@ public class PlayerController : MonoBehaviour, IDamageable
         disabled = false;
         invincible = false;
         
-        elapsed = 0f;
-        while (elapsed < cooldown)
+        activeCooldownDuration = cooldown;
+        activeCooldownTimeRemaining = cooldown;
+        
+        while (activeCooldownTimeRemaining > 0)
         {
-            elapsed += Time.deltaTime;
+            activeCooldownTimeRemaining -= Time.deltaTime;
             yield return null;
         }
 
@@ -216,6 +231,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         invincible = true;
         canShoot = false;
         activeApplied = true;
+        
         float initialSpeed = stats.moveSpeed;
         stats.moveSpeed *= speedMultiplier;
 
@@ -224,8 +240,15 @@ public class PlayerController : MonoBehaviour, IDamageable
         stats.moveSpeed = initialSpeed;
         canShoot = true;
         invincible = false;
+        
+        activeCooldownDuration = cooldown;
+        activeCooldownTimeRemaining = cooldown;
 
-        yield return new WaitForSeconds(cooldown);
+        while (activeCooldownTimeRemaining > 0)
+        {
+            activeCooldownTimeRemaining -= Time.deltaTime;
+            yield return null;
+        }
 
         activeApplied = false;
     }

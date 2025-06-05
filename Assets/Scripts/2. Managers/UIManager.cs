@@ -45,8 +45,8 @@ public class UIManager : MonoBehaviour
     {
         upgradeScreenMode.SetActive(true);
         inRoundUI.SetActive(false);
-        
-        if (RoundManager.Instance.roundCount > 1)
+
+        if (RoundManager.Instance.roundCount >= RoundManager.Instance.twoBuffRound)
         {
             player1UpgradeScreen.Open(p1, 2);
             player2UpgradeScreen.Open(p2, 2);

@@ -14,6 +14,7 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private float delayBeforeUpgrades = 3f;
     [SerializeField] private UpgradeScreen upgradeScreen;
     public int roundCount;
+    public int twoBuffRound = 4;
 
     [Header("Players")]
     public PlayerController player1;
@@ -32,7 +33,7 @@ public class RoundManager : MonoBehaviour
     public bool roundActive = false;
     private int playersReady = 0;
     private int playersSelectedUpgrade;
-    
+
     private void Awake()
     {
         if (Instance != null && Instance != this) Destroy(gameObject);

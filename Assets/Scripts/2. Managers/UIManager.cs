@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,17 +10,18 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject inRoundUI;
 
-    [Header("Round Points")] 
-    [SerializeField] private TextMeshProUGUI player1PointsText;
+    [Header("Round Points")] [SerializeField]
+    private TextMeshProUGUI player1PointsText;
+
     [SerializeField] private TextMeshProUGUI player2PointsText;
-    
-    [Header("Player Wins")]
-    public VictoryDisplayUI victoryDisplayUI;
+
+    [Header("Player Wins")] public VictoryDisplayUI victoryDisplayUI;
     //public TextMeshProUGUI player1WinsText;
     //public TextMeshProUGUI player2WinsText;
-    
-    [Header("Upgrade Screens")] 
-    [SerializeField] private GameObject upgradeScreenMode;
+
+    [Header("Upgrade Screens")] [SerializeField]
+    private GameObject upgradeScreenMode;
+
     [SerializeField] private UpgradeScreen player1UpgradeScreen;
     [SerializeField] private UpgradeScreen player2UpgradeScreen;
     [SerializeField] private AcquiredBuffsShower player1Acquired;
@@ -29,8 +31,7 @@ public class UIManager : MonoBehaviour
     private float upgradeTimer;
     private bool isUpgradeTimerRunning;
 
-    [Header("Other UI")]
-    public TextMeshProUGUI countdownText;
+    [Header("Other UI")] public TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI winnerText;
 
     private void Awake()
@@ -38,7 +39,7 @@ public class UIManager : MonoBehaviour
         if (Instance != null && Instance != this) Destroy(gameObject);
         else Instance = this;
     }
-    
+
     private void Update()
     {
         if (isUpgradeTimerRunning)
@@ -53,7 +54,11 @@ public class UIManager : MonoBehaviour
             }
             else
             {
-                if (player1UpgradeScreen.HasFinishedChoosing() && player2UpgradeScreen.HasFinishedChoosing())
+                if (upgradeTimer <= 0f || 
+                    (player1UpgradeScreen.HasFinishedChoosing() && 
+                     player2UpgradeScreen.HasFinishedChoosing() &&
+                     !player1UpgradeScreen.IsAnimating() && 
+                     !player2UpgradeScreen.IsAnimating()))
                 {
                     StopUpgradeTimer();
                     CloseUpgradeScreens();
@@ -68,7 +73,7 @@ public class UIManager : MonoBehaviour
         player1PointsText.text = player1Points.ToString();
         player2PointsText.text = player2Points.ToString();
     }
-    
+
     public void OpenUpgradeScreens(PlayerController p1, PlayerController p2)
     {
         upgradeScreenMode.SetActive(true);
@@ -84,10 +89,10 @@ public class UIManager : MonoBehaviour
             player1UpgradeScreen.Open(p1, 1);
             player2UpgradeScreen.Open(p2, 1);
         }
-        
+
         UpdateAllAcquiredBuffs();
-        
-        StartUpgradeTimer(); 
+
+        StartUpgradeTimer();
     }
 
     public void CloseUpgradeScreens()
@@ -97,7 +102,7 @@ public class UIManager : MonoBehaviour
         upgradeScreenMode.SetActive(false);
         inRoundUI.SetActive(true);
     }
-    
+
     public void ShowWinner(string winnerMessage)
     {
         winnerText.text = winnerMessage;
@@ -108,7 +113,7 @@ public class UIManager : MonoBehaviour
     {
         winnerText.gameObject.SetActive(false);
     }
-    
+
     public void UpdateMatchWins(int p1Wins, int p2Wins)
     {
         //player1WinsText.text = $"{p1Wins} / 4";
@@ -120,34 +125,56 @@ public class UIManager : MonoBehaviour
         player1Acquired.UpdateBuffIcons();
         player2Acquired.UpdateBuffIcons();
     }
-    
+
     private void StartUpgradeTimer()
     {
         upgradeTimer = upgradeSelectionTime;
         isUpgradeTimerRunning = true;
         upgradeTimerText.gameObject.SetActive(true);
     }
-    
+
     private void StopUpgradeTimer()
     {
         isUpgradeTimerRunning = false;
         upgradeTimerText.gameObject.SetActive(false);
     }
-    
+
     private void ForceChooseUpgrades()
     {
-        if (!player1UpgradeScreen.HasFinishedChoosing())
-        {
-            player1UpgradeScreen.ChooseRandomUpgrades();
-        }
-
-        if (!player2UpgradeScreen.HasFinishedChoosing())
-        {
-            player2UpgradeScreen.ChooseRandomUpgrades();
-        }
-
-        //CloseUpgradeScreens();
+        StartCoroutine(ForceChooseCoroutine());
     }
+
+    private IEnumerator ForceChooseCoroutine()
+    {
+        bool p1Done = false;
+        bool p2Done = false;
+
+        while (!p1Done || !p2Done)
+        {
+            if (!p1Done && !player1UpgradeScreen.HasFinishedChoosing())
+            {
+                player1UpgradeScreen.ChooseRandomUpgrades();
+            }
+            else
+            {
+                p1Done = true;
+            }
+
+            if (!p2Done && !player2UpgradeScreen.HasFinishedChoosing())
+            {
+                player2UpgradeScreen.ChooseRandomUpgrades();
+            }
+            else
+            {
+                p2Done = true;
+            }
+            
+            yield return null;
+        }
+        
+        UIManager.Instance.CloseUpgradeScreens();
+    }
+
 
     public void PauseUpgradeTimer()
     {
@@ -159,5 +186,4 @@ public class UIManager : MonoBehaviour
         if (!upgradeScreenMode.activeSelf) return;
         isUpgradeTimerRunning = true;
     }
-    
 }

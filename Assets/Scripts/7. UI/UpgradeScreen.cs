@@ -19,6 +19,7 @@ public class UpgradeScreen : MonoBehaviour
     public int buffsChosen;
 
     private bool isAnimating = false;
+    private int activeAnimations = 0;
 
     public void Open(PlayerController player, int buffs)
     {
@@ -68,6 +69,7 @@ public class UpgradeScreen : MonoBehaviour
 
     private void GenerateUpgradeButtons()
     {
+        if (buffsChosen >= buffsToChoose) return;
         var upgrades = UpgradeManager.Instance.GetRandomUpgrades(4, currentPlayer);
 
         foreach (var upgrade in upgrades)
@@ -126,17 +128,22 @@ public class UpgradeScreen : MonoBehaviour
 
     public bool HasFinishedChoosing()
     {
-        return buffsChosen >= buffsToChoose;
+        return buffsChosen >= buffsToChoose && !isAnimating;
+    }
+    
+    public bool IsAnimating()
+    {
+        return isAnimating || activeAnimations > 0;
     }
 
     private IEnumerator AnimateAndApply(GameObject button, UpgradeData upgrade)
     {
         isAnimating = true;
+        activeAnimations++;
         
         UIManager.Instance.PauseUpgradeTimer();
         
         UpgradeManager.Instance.ApplyUpgrade(currentPlayer, upgrade);
-        buffsChosen++;
         UIManager.Instance.UpdateAllAcquiredBuffs();
 
         Vector3 originalPos = button.transform.position;
@@ -174,6 +181,8 @@ public class UpgradeScreen : MonoBehaviour
 
         Destroy(button);
         spawnedButtons.Clear();
+        
+        buffsChosen++;
 
         if (buffsChosen < buffsToChoose)
         {
@@ -193,12 +202,15 @@ public class UpgradeScreen : MonoBehaviour
                 }
             }
         }
-        else
+        activeAnimations--;
+        isAnimating = false;
+        UIManager.Instance.ResumeUpgradeTimer();
+        
+        
+        
+        if (buffsChosen >= buffsToChoose)
         {
             RoundManager.Instance.PlayerSelectedUpgrade();
         }
-
-        UIManager.Instance.ResumeUpgradeTimer();
-        isAnimating = false;
     }
 }

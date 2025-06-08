@@ -312,6 +312,12 @@ public class PlayerController : MonoBehaviour, IDamageable
         disabled = true;
         invincible = true;
     }
+    
+    public void EnableCharacter()
+    {
+        disabled = false;
+        invincible = false;
+    }
 
     public void ResetCharacter()
     {

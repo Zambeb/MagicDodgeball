@@ -108,6 +108,7 @@ public class RoundManager : MonoBehaviour
     
     public void StartRound()
     {
+        Debug.Log("Round " + (roundCount + 1) + " starts");
         roundCount++;
         player1points = 0;
         player2points = 0;
@@ -244,7 +245,7 @@ public class RoundManager : MonoBehaviour
     public void PlayerSelectedUpgrade()
     {
         playersSelectedUpgrade++;
-        if (playersSelectedUpgrade > 1)
+        if (playersSelectedUpgrade >= 2)
         {
             UIManager.Instance.CloseUpgradeScreens();
             TryStartRound();

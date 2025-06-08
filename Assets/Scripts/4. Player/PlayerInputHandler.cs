@@ -81,4 +81,15 @@ public class PlayerInputHandler : MonoBehaviour
     {
         playerController.OnPerformActiveAbility(context);
     }
+    
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (PauseManager.Instance.IsPaused)
+                PauseManager.Instance.Resume();
+            else
+                PauseManager.Instance.Pause();
+        }
+    }
 }

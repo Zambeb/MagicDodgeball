@@ -8,7 +8,7 @@ public class UpgradeButton : MonoBehaviour
     //[SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text descriptionText;
 
-    private UpgradeData upgradeData;
+    public UpgradeData upgradeData;
     private UpgradeScreen upgradeScreen;
 
     public void Setup(UpgradeData data, UpgradeScreen screen)

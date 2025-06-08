@@ -53,7 +53,6 @@ public class UIManager : MonoBehaviour
             }
             else
             {
-                // Оба игрока выбрали раньше времени
                 if (player1UpgradeScreen.HasFinishedChoosing() && player2UpgradeScreen.HasFinishedChoosing())
                 {
                     StopUpgradeTimer();
@@ -142,7 +141,18 @@ public class UIManager : MonoBehaviour
             player2UpgradeScreen.ChooseRandomUpgrades();
         }
 
-        CloseUpgradeScreens();
+        //CloseUpgradeScreens();
     }
 
+    public void PauseUpgradeTimer()
+    {
+        isUpgradeTimerRunning = false;
+    }
+
+    public void ResumeUpgradeTimer()
+    {
+        if (!upgradeScreenMode.activeSelf) return;
+        isUpgradeTimerRunning = true;
+    }
+    
 }

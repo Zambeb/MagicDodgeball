@@ -53,6 +53,7 @@ public class UpgradeScreen : MonoBehaviour
     public void Close()
     {
         gameObject.SetActive(false);
+        TooltipUI.Instance.Hide();
     }
 
     public void ClearButtons()
@@ -131,9 +132,12 @@ public class UpgradeScreen : MonoBehaviour
     private IEnumerator AnimateAndApply(GameObject button, UpgradeData upgrade)
     {
         isAnimating = true;
-
-        // Пауза таймера
+        
         UIManager.Instance.PauseUpgradeTimer();
+        
+        UpgradeManager.Instance.ApplyUpgrade(currentPlayer, upgrade);
+        buffsChosen++;
+        UIManager.Instance.UpdateAllAcquiredBuffs();
 
         Vector3 originalPos = button.transform.position;
         RectTransform parentRect = buttonsParent.GetComponent<RectTransform>();
@@ -142,8 +146,7 @@ public class UpgradeScreen : MonoBehaviour
         Vector3 targetPos = targetWorldPos;
         Vector3 originalScale = button.transform.localScale;
         Vector3 targetScale = originalScale * 2f;
-
-        // Удалить все, кроме выбранной кнопки
+        
         foreach (var go in spawnedButtons)
         {
             if (go != button)
@@ -171,10 +174,6 @@ public class UpgradeScreen : MonoBehaviour
 
         Destroy(button);
         spawnedButtons.Clear();
-
-        // Применение выбранного апгрейда
-        UpgradeManager.Instance.ApplyUpgrade(currentPlayer, upgrade);
-        buffsChosen++;
 
         if (buffsChosen < buffsToChoose)
         {

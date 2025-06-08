@@ -85,8 +85,7 @@ public class UIManager : MonoBehaviour
             player2UpgradeScreen.Open(p2, 1);
         }
         
-        player1Acquired.UpdateBuffIcons();
-        player2Acquired.UpdateBuffIcons();
+        UpdateAllAcquiredBuffs();
         
         StartUpgradeTimer(); 
     }
@@ -114,6 +113,12 @@ public class UIManager : MonoBehaviour
     {
         //player1WinsText.text = $"{p1Wins} / 4";
         //player2WinsText.text = $"{p2Wins} / 4";
+    }
+
+    public void UpdateAllAcquiredBuffs()
+    {
+        player1Acquired.UpdateBuffIcons();
+        player2Acquired.UpdateBuffIcons();
     }
     
     private void StartUpgradeTimer()

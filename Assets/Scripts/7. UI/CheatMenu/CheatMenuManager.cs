@@ -52,6 +52,6 @@ public class CheatMenuManager : MonoBehaviour
 
     public void EndRound()
     {
-        RoundManager.Instance.EndRound();
+        RoundManager.Instance.TryEndRound();
     }
 }

@@ -7,6 +7,8 @@ public class PauseManager : MonoBehaviour
     public static PauseManager Instance;
 
     [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject mainPauseMenu;
+    [SerializeField] private GameObject balanceMenu;
 
     private bool isPaused = false;
 
@@ -25,9 +27,12 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         isPaused = true;
-        pauseMenuUI.SetActive(true);
-        RoundManager.Instance.player1.DisableCharacter(); ;
-        RoundManager.Instance.player2.DisableCharacter();
+        DefaultPause();
+        if (RoundManager.Instance.roundActive)
+        {
+            RoundManager.Instance.player1.DisableCharacter();
+            RoundManager.Instance.player2.DisableCharacter();
+        }
     }
 
     public void Resume()
@@ -35,8 +40,30 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         pauseMenuUI.SetActive(false);
-        RoundManager.Instance.player1.EnableCharacter();
-        RoundManager.Instance.player2.EnableCharacter();
+        if (RoundManager.Instance.roundActive)
+        {
+            RoundManager.Instance.player1.EnableCharacter();
+            RoundManager.Instance.player2.EnableCharacter();
+        }
+    }
+
+    private void DefaultPause()
+    {
+        pauseMenuUI.SetActive(true);
+        BackToMainPauseMenu();
+    }
+
+    public void OpenBalanceMenu()
+    {
+        mainPauseMenu.SetActive(false);
+        balanceMenu.SetActive(true);
+        balanceMenu.GetComponent<BalanceData>().UpdateAllData();
+    }
+
+    public void BackToMainPauseMenu()
+    {
+        mainPauseMenu.SetActive(true);
+        balanceMenu.SetActive(false);
     }
 
     public bool IsPaused => isPaused;

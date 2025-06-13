@@ -105,6 +105,14 @@ public class RoundManager : MonoBehaviour
             Debug.Log("Something wrong, mate");
         }
     }
+
+    public void TryEndRound()
+    {
+        if (roundActive)
+        {
+            timer = 0;
+        }
+    }
     
     public void StartRound()
     {

@@ -145,7 +145,9 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (ctx.performed && !disabled && canShoot && gun.activeProjectiles.Count < stats.maxProjectiles)
         {
             gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration);
-            
+            int shotBalls = gun.activeProjectiles.Count;
+            int notShotBalls = stats.maxProjectiles - shotBalls;
+            UIManager.Instance.UpdateBallsDisplay(playerIndex, notShotBalls, shotBalls);
             // Trigger attack animation
             if (animController != null)
             {
@@ -327,6 +329,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         disabled = false;
         invincible = false;
         ApplyAllUpgrades();
+        UIManager.Instance.UpdateBallsDisplay(playerIndex, stats.maxProjectiles, 0);
     }
 
     public void ResetPosition()

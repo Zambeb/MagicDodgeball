@@ -15,6 +15,12 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI player2PointsText;
 
+    [Header("Player Balls")] 
+    [SerializeField] private GameObject player1Balls;
+    [SerializeField] private GameObject player2Balls;
+    [SerializeField] private GameObject activeBallUIPrefab;
+    [SerializeField] private GameObject notActiveBallUIPrefab;
+
     [Header("Player Wins")] public VictoryDisplayUI victoryDisplayUI;
     //public TextMeshProUGUI player1WinsText;
     //public TextMeshProUGUI player2WinsText;
@@ -72,6 +78,54 @@ public class UIManager : MonoBehaviour
     {
         player1PointsText.text = player1Points.ToString();
         player2PointsText.text = player2Points.ToString();
+    }
+
+    public void UpdateBallsDisplay(int playerIndex, int notShotBalls, int shotBalls)
+    {
+        Transform targetContainer = null;
+
+        if (playerIndex == 0)
+        {
+            targetContainer = player1Balls.transform;
+        }
+        else if (playerIndex == 1)
+        {
+            targetContainer = player2Balls.transform;
+        }
+        else
+        {
+            return;
+        }
+        
+        foreach (Transform child in targetContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
+        if (playerIndex == 0)
+        {
+            for (int i = 0; i < notShotBalls; i++)
+            {
+                Instantiate(activeBallUIPrefab, targetContainer);
+            }
+
+            for (int i = 0; i < shotBalls; i++)
+            {
+                Instantiate(notActiveBallUIPrefab, targetContainer);
+            }
+        }
+        else if (playerIndex == 1)
+        {
+            for (int i = 0; i < shotBalls; i++)
+            {
+                Instantiate(notActiveBallUIPrefab, targetContainer);
+            }
+
+            for (int i = 0; i < notShotBalls; i++)
+            {
+                Instantiate(activeBallUIPrefab, targetContainer);
+            }
+        }
     }
 
     public void OpenUpgradeScreens(PlayerController p1, PlayerController p2)

@@ -52,6 +52,14 @@ public class PlayerGun : MonoBehaviour
         }
 
         Projectile projectileScript = projectile.GetComponent<Projectile>();
-        projectileScript.OnProjectileDestroyed = () => { activeProjectiles.Remove(projectile); };
+        projectileScript.OnProjectileDestroyed = () =>
+        {
+            activeProjectiles.Remove(projectile);
+            
+            int usedBalls = activeProjectiles.Count;
+            int notUsedBalls = playerController.stats.maxProjectiles - activeProjectiles.Count;
+
+            UIManager.Instance.UpdateBallsDisplay(index, notUsedBalls, usedBalls);
+        };
     }
 }

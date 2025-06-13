@@ -10,6 +10,10 @@ public class CharacterVisuals : MonoBehaviour
     
     [SerializeField] private Material whiteMaterial;
     public GameObject model;
+    private Renderer renderer;
+    private Material originalMaterial;
+    
+    private Coroutine flashCoroutine;
     
     private void Start()
     {
@@ -34,23 +38,28 @@ public class CharacterVisuals : MonoBehaviour
         
         model = characterModels[idx];
         model.SetActive(true);
+        renderer = model.GetComponentInChildren<Renderer>();
+        originalMaterial = renderer.material;
     }
     
     public void FlashWhite(int flashes, float totalDuration)
     {
-        StartCoroutine(FlashWhiteCoroutine(flashes, totalDuration));
+        if (flashCoroutine != null)
+        {
+            StopCoroutine(flashCoroutine);
+            renderer.material = originalMaterial; 
+        }
+        flashCoroutine = StartCoroutine(FlashWhiteCoroutine(flashes, totalDuration));
     }
     
     private IEnumerator FlashWhiteCoroutine(int flashes, float totalDuration)
     {
         if (model == null)
             yield break;
-
-        Renderer renderer = model.GetComponentInChildren<Renderer>();
+        
         if (renderer == null)
             yield break;
-
-        Material originalMaterial = renderer.material;
+        
         float flashDuration = totalDuration / (flashes * 2);
 
         for (int i = 0; i < flashes; i++)

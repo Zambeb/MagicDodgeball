@@ -423,6 +423,7 @@ MonoBehaviour:
     amigaBall: 0
     immunityAfterHit: 0
   rotationSpeed: 1500
+  _visuals: {fileID: 6537004844670196330}
   gun: {fileID: 0}
   currentControlScheme: 
   acquiredUpgrades: []
@@ -523,6 +524,8 @@ MonoBehaviour:
   characterModels:
   - {fileID: 8812673905450778447}
   - {fileID: 8511601473300222665}
+  whiteMaterial: {fileID: 2100000, guid: 44efd414dd90c8741a2eedfbf29d77e3, type: 2}
+  model: {fileID: 0}
 --- !u!1 &5101880460496916527
 GameObject:
   m_ObjectHideFlags: 0

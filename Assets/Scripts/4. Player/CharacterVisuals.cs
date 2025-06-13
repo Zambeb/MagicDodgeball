@@ -1,10 +1,15 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterVisuals : MonoBehaviour
 {
     [SerializeField] private Transform modelsRoot;  
     [SerializeField] private GameObject[] characterModels;
+    
+    [SerializeField] private Material whiteMaterial;
+    public GameObject model;
     
     private void Start()
     {
@@ -27,7 +32,36 @@ public class CharacterVisuals : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         
-        GameObject modelToEnable = characterModels[idx];
-        modelToEnable.SetActive(true);
+        model = characterModels[idx];
+        model.SetActive(true);
+    }
+    
+    public void FlashWhite(int flashes, float totalDuration)
+    {
+        StartCoroutine(FlashWhiteCoroutine(flashes, totalDuration));
+    }
+    
+    private IEnumerator FlashWhiteCoroutine(int flashes, float totalDuration)
+    {
+        if (model == null)
+            yield break;
+
+        Renderer renderer = model.GetComponentInChildren<Renderer>();
+        if (renderer == null)
+            yield break;
+
+        Material originalMaterial = renderer.material;
+        float flashDuration = totalDuration / (flashes * 2);
+
+        for (int i = 0; i < flashes; i++)
+        {
+            renderer.material = whiteMaterial;
+            yield return new WaitForSeconds(flashDuration);
+
+            renderer.material = originalMaterial;
+            yield return new WaitForSeconds(flashDuration);
+        }
+        
+        renderer.material = originalMaterial;
     }
 }

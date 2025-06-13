@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private PlayerStats initialStats;
     //private float speed = 5f;
     public float rotationSpeed = 720f;
+    [SerializeField] private CharacterVisuals _visuals;
 
     private Vector2 movementInput;
     private Vector2 aimInput;
@@ -259,6 +260,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             RoundManager.Instance.RegisterHit(playerIndex);
             Debug.Log("Ouch!");
+            _visuals.FlashWhite(3, 0.5f);
             if (stats.immunityAfterHit != 0)
             {
                 StartCoroutine(InvinvibityAfterHit(stats.immunityAfterHit));

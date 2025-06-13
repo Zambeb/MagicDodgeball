@@ -35,9 +35,14 @@ public class UpgradeManager : MonoBehaviour
 
                 return alreadyHas || isActiveAndSame;
             }
+            int stackCount = 0;
+            foreach (var buff in player.acquiredUpgradeEffectsPrefabs)
+            {
+                if (buff == effectPrefab)
+                    stackCount++;
+            }
 
-
-            return false;
+            return stackCount >= effectPrefab.maxStacks;
         });
 
         // Fisher-Yates shuffle

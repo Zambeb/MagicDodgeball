@@ -47,10 +47,10 @@ public class BalanceData : MonoBehaviour
         
         coverageAndSurvivabilityText.text =
             $"P1 survivability: {player1Survivability:F2}\n" +
-            $"P1 invincibility time: {30-player1InvincibilityTime:F2} seconds\n" +
+            $"P1 invincibility time: {player1InvincibilityTime-30:F2} seconds\n" +
             $"P1 coverage/second: {player1Coverage:F2}%\n\n" +
             $"P2 survivability: {player2Survivability:F2}\n" +
-            $"P2 invincibility time: {30-player2InvincibilityTime:F2} seconds\n" +
+            $"P2 invincibility time: {player2InvincibilityTime-30:F2} seconds\n" +
             $"P2 coverage/second: {player2Coverage:F2}%";
     }
     private void UpdateBuffsDisplay(PlayerController player1, PlayerController player2)
@@ -160,14 +160,14 @@ public class BalanceData : MonoBehaviour
     {
         float invincibilityTime = 0;
         
-        if (player.acquiredActiveAbility != null)
+        if (player.acquiredActiveAbilityPrefab != null)
         {
-            if (player.acquiredActiveAbility.name == "Dash")
+            if (player.acquiredActiveAbilityPrefab.upgradeName == "Dash")
             {
                 invincibilityTime += (0.4f * 6f);
             }
 
-            else if (player.acquiredActiveAbility.name == "Force Field")
+            else if (player.acquiredActiveAbility.upgradeName == "Force Field")
             {
                 invincibilityTime += (2f * 3f);
             }

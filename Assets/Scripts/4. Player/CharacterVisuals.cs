@@ -14,6 +14,9 @@ public class CharacterVisuals : MonoBehaviour
     private Material originalMaterial;
     
     private Coroutine flashCoroutine;
+
+    [Header("VFX")] 
+    [SerializeField] private GameObject ParryVFX;
     
     private void Start()
     {
@@ -72,5 +75,16 @@ public class CharacterVisuals : MonoBehaviour
         }
         
         renderer.material = originalMaterial;
+    }
+
+    public void ParryVisualEffect()
+    {
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.y = 1f; 
+
+        GameObject effect = Instantiate(ParryVFX, spawnPosition, Quaternion.identity);
+        effect.transform.localScale *= 4f; 
+        
+        Destroy(effect, 1f);
     }
 }

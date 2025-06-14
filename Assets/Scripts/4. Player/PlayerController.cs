@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour, IDamageable
 {
     public int playerIndex;
+    public PlayerController opponent;
     [SerializeField] public PlayerStats stats;
     private PlayerStats initialStats;
     //private float speed = 5f;
@@ -155,106 +156,6 @@ public class PlayerController : MonoBehaviour, IDamageable
             }
         }
     }
-
-    public void OnPerformActiveAbility(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            if (acquiredActiveAbility == null) return;
-
-            if (!disabled && !IsActiveOnCooldown)
-            {
-                acquiredActiveAbility.PerformAbility(this);
-            }
-            else
-            {
-                cooldownRing.ShowCooldown(activeCooldownTimeRemaining, activeCooldownDuration);
-            }
-        }
-    }
-
-    public void Dash(float distance, float duration, float cooldown)
-    {
-        if (!activeApplied)
-        {
-            StartCoroutine(PerformDash(distance, duration, cooldown));
-        }
-    }
-
-    public void ForceField(float duration, float speedMultiplier, float cooldown)
-    {
-        if (!activeApplied)
-        {
-            StartCoroutine(PerformForceField(duration, speedMultiplier, cooldown));
-        }
-        
-    }
-
-    public IEnumerator PerformDash(float distance, float duration, float cooldown)
-    {
-        disabled = true;
-        invincible = true;
-
-        activeApplied = true;
-
-        float elapsed = 0f;
-        Vector3 dashDirection = moveDir.normalized;
-        
-        if (dashDirection.sqrMagnitude < 0.01f)
-            dashDirection = transform.forward;
-
-        while (elapsed < duration)
-        {
-            float delta = Time.deltaTime;
-            elapsed += delta;
-
-            float moveStep = (distance / duration) * delta;
-            controller.Move(dashDirection * moveStep);
-
-            yield return null;
-        }
-
-        disabled = false;
-        invincible = false;
-        
-        activeCooldownDuration = cooldown;
-        activeCooldownTimeRemaining = cooldown;
-        
-        while (activeCooldownTimeRemaining > 0)
-        {
-            activeCooldownTimeRemaining -= Time.deltaTime;
-            yield return null;
-        }
-
-        activeApplied = false;
-    }
-
-    public IEnumerator PerformForceField(float duration, float speedMultiplier, float cooldown)
-    {
-        invincible = true;
-        canShoot = false;
-        activeApplied = true;
-        
-        float initialSpeed = stats.moveSpeed;
-        stats.moveSpeed *= speedMultiplier;
-
-        yield return new WaitForSeconds(duration);
-        
-        stats.moveSpeed = initialSpeed;
-        canShoot = true;
-        invincible = false;
-        
-        activeCooldownDuration = cooldown;
-        activeCooldownTimeRemaining = cooldown;
-
-        while (activeCooldownTimeRemaining > 0)
-        {
-            activeCooldownTimeRemaining -= Time.deltaTime;
-            yield return null;
-        }
-
-        activeApplied = false;
-    }
     
     public void TakeDamage()
     {
@@ -355,4 +256,152 @@ public class PlayerController : MonoBehaviour, IDamageable
             acquiredUpgrades[i].Apply(this);
         }
     }
+    
+    // ================
+    // ACTIVE ABILITIES
+    // ================
+    
+    public void OnPerformActiveAbility(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            if (acquiredActiveAbility == null) return;
+
+            if (!disabled && !IsActiveOnCooldown)
+            {
+                acquiredActiveAbility.PerformAbility(this);
+            }
+            else
+            {
+                cooldownRing.ShowCooldown(activeCooldownTimeRemaining, activeCooldownDuration);
+            }
+        }
+    }
+
+    public void Dash(float distance, float duration, float cooldown)
+    {
+        if (!activeApplied)
+        {
+            StartCoroutine(PerformDash(distance, duration, cooldown));
+        }
+    }
+
+    public void ForceField(float duration, float speedMultiplier, float cooldown)
+    {
+        if (!activeApplied)
+        {
+            StartCoroutine(PerformForceField(duration, speedMultiplier, cooldown));
+        }
+    }
+
+    public void Parry(float radius, float cooldown)
+    {
+        if (!activeApplied)
+        {
+            if (playerIndex == 0) opponent = RoundManager.Instance.player2;
+            else opponent = RoundManager.Instance.player1;
+            _visuals.ParryVisualEffect();
+            StartCoroutine(PerformParry(radius, cooldown));
+        }
+    }
+
+    public IEnumerator PerformDash(float distance, float duration, float cooldown)
+    {
+        disabled = true;
+        invincible = true;
+
+        activeApplied = true;
+
+        float elapsed = 0f;
+        Vector3 dashDirection = moveDir.normalized;
+        
+        if (dashDirection.sqrMagnitude < 0.01f)
+            dashDirection = transform.forward;
+
+        while (elapsed < duration)
+        {
+            float delta = Time.deltaTime;
+            elapsed += delta;
+
+            float moveStep = (distance / duration) * delta;
+            controller.Move(dashDirection * moveStep);
+
+            yield return null;
+        }
+
+        disabled = false;
+        invincible = false;
+        
+        activeCooldownDuration = cooldown;
+        activeCooldownTimeRemaining = cooldown;
+        
+        while (activeCooldownTimeRemaining > 0)
+        {
+            activeCooldownTimeRemaining -= Time.deltaTime;
+            yield return null;
+        }
+
+        activeApplied = false;
+    }
+
+    public IEnumerator PerformForceField(float duration, float speedMultiplier, float cooldown)
+    {
+        invincible = true;
+        canShoot = false;
+        activeApplied = true;
+        
+        float initialSpeed = stats.moveSpeed;
+        stats.moveSpeed *= speedMultiplier;
+
+        yield return new WaitForSeconds(duration);
+        
+        stats.moveSpeed = initialSpeed;
+        canShoot = true;
+        invincible = false;
+        
+        activeCooldownDuration = cooldown;
+        activeCooldownTimeRemaining = cooldown;
+
+        while (activeCooldownTimeRemaining > 0)
+        {
+            activeCooldownTimeRemaining -= Time.deltaTime;
+            yield return null;
+        }
+
+        activeApplied = false;
+    }
+
+    private IEnumerator PerformParry(float radius, float cooldown)
+    {
+        activeApplied = true;
+        invincible = true; // Needed?
+        Vector3 center = transform.position;
+
+        Collider[] hits = Physics.OverlapSphere(center, radius);
+        foreach (var hit in hits)
+        {
+            Projectile proj = hit.GetComponent<Projectile>();
+            if (proj != null)
+            {
+                Vector3 directionToOpponent = (opponent.transform.position - proj.transform.position).normalized;
+                proj.Redirect(directionToOpponent);
+            }
+        }
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        invincible = false;
+
+        activeCooldownDuration = cooldown;
+        activeCooldownTimeRemaining = cooldown;
+
+        while (activeCooldownTimeRemaining > 0)
+        {
+            activeCooldownTimeRemaining -= Time.deltaTime;
+            yield return null;
+        }
+
+        activeApplied = false;
+    }
+    
 }

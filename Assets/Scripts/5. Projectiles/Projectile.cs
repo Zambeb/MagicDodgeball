@@ -169,6 +169,15 @@ public class Projectile : MonoBehaviour
         return reflected.normalized;
     }
 
+    public void Redirect(Vector3 newDirection)
+    {
+        Debug.Log("Redirection");
+        direction = newDirection.normalized;
+        transform.forward = direction;
+        hasEnteredEnemyZone = false;
+        bounceCount++;
+    }
+
     public void DestroySelf()
     {
         if (destroyEffectPrefab != null)

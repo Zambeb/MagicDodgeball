@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
+  opponent: {fileID: 0}
   stats:
     currentHealth: 0
     moveSpeed: 8
@@ -526,6 +527,7 @@ MonoBehaviour:
   - {fileID: 8511601473300222665}
   whiteMaterial: {fileID: 2100000, guid: 44efd414dd90c8741a2eedfbf29d77e3, type: 2}
   model: {fileID: 0}
+  ParryVFX: {fileID: 1037542503268038, guid: f35c52aa1abeb6b4b86e682039141b66, type: 3}
 --- !u!1 &5101880460496916527
 GameObject:
   m_ObjectHideFlags: 0

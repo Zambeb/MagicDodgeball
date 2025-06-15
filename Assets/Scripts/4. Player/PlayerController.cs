@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private float rotationSmoothness = 15f;
     [SerializeField] private float raycastUpdateInterval = 0.05f; 
     private float lastRaycastTime;
+    
+    private readonly HashSet<TrailSlowZone> activeSlowZones = new HashSet<TrailSlowZone>();
 
     void Awake()
     {
@@ -197,14 +199,17 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
-    public void ApplySlow(float slowAmount)
+    public void RegisterSlowZone(TrailSlowZone zone, float slowAmount)
     {
+        activeSlowZones.Add(zone);
         speedMultiplier = slowAmount;
     }
 
-    public void RemoveSlow()
+    public void UnregisterSlowZone(TrailSlowZone zone)
     {
-        speedMultiplier = 1f;
+        activeSlowZones.Remove(zone);
+        if (activeSlowZones.Count == 0)
+            speedMultiplier = 1f;
     }
 
     private IEnumerator InvinvibityAfterHit(float duration)

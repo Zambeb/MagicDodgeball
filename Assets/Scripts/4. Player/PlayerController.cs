@@ -320,6 +320,19 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
+    public void Swap(float cooldown)
+    {
+        if (!activeApplied)
+        {
+            var p1 = RoundManager.Instance.player1;
+            var p2 = RoundManager.Instance.player2;
+
+            if (p1 == null || p2 == null) return;
+
+            StartCoroutine(PerformSwap(p1, p2, cooldown));
+        }
+    }
+
     public IEnumerator PerformDash(float distance, float duration, float cooldown)
     {
         disabled = true;
@@ -407,6 +420,42 @@ public class PlayerController : MonoBehaviour, IDamageable
         
         invincible = false;
 
+        activeCooldownDuration = cooldown;
+        activeCooldownTimeRemaining = cooldown;
+
+        while (activeCooldownTimeRemaining > 0)
+        {
+            activeCooldownTimeRemaining -= Time.deltaTime;
+            yield return null;
+        }
+
+        activeApplied = false;
+    }
+
+    private IEnumerator PerformSwap(PlayerController p1, PlayerController p2, float cooldown)
+    {
+        activeApplied = true;
+        
+        CharacterController cc1 = p1.GetComponent<CharacterController>();
+        CharacterController cc2 = p2.GetComponent<CharacterController>();
+
+        if (cc1 != null) cc1.enabled = false;
+        if (cc2 != null) cc2.enabled = false;
+        
+        Vector3 tempPosition = p1.transform.position;
+        Quaternion tempRotation = p1.transform.rotation;
+            
+        p1.transform.position = p2.transform.position;
+        p1.transform.rotation = p2.transform.rotation;
+
+        p2.transform.position = tempPosition;
+        p2.transform.rotation = tempRotation;
+        
+        yield return null; 
+
+        if (cc1 != null) cc1.enabled = true;
+        if (cc2 != null) cc2.enabled = true;
+        
         activeCooldownDuration = cooldown;
         activeCooldownTimeRemaining = cooldown;
 

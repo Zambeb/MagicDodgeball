@@ -17,6 +17,7 @@ public struct PlayerStats
     public bool canExplodeBalls;
     public bool amigaBall;
     public float immunityAfterHit;
+    public bool canAbsorbBalls;
 
     /*
     public PlayerStats()
@@ -40,6 +41,7 @@ public struct PlayerStats
         canExplodeBalls = other.canExplodeBalls;
         amigaBall = other.amigaBall;
         immunityAfterHit = other.immunityAfterHit;
+        canAbsorbBalls = other.canAbsorbBalls;
     }
 }
 

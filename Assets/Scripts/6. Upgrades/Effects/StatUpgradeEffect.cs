@@ -44,6 +44,9 @@ public class StatUpgradeEffect : UpgradeEffectBase
             case StatType.ImmunityAfterHit:
                 player.stats.immunityAfterHit += value;
                 break;
+            case StatType.CanAbsorbBalls:
+                player.stats.canAbsorbBalls = true;
+                break;
             default:
                 Debug.LogWarning("Unknown stat type!");
                 break;

@@ -4,6 +4,8 @@ using System;
 public class Projectile : MonoBehaviour
 {
     public LayerMask collisionMask;
+
+    public int projectileCount;
     
     public int playerIndex;
     public float projectileSpeed;
@@ -53,6 +55,7 @@ public class Projectile : MonoBehaviour
         {
             sphereCastRadius = transform.localScale.x / 2f;
         }
+        sphereCastRadius = Mathf.Max(sphereCastRadius, 0.1f); 
     }
     
     public void Initialize(Vector3 initDirection)
@@ -63,7 +66,7 @@ public class Projectile : MonoBehaviour
     private void FixedUpdate()
     {
         float totalDistance = projectileSpeed * Time.deltaTime;
-        int steps = Mathf.Clamp(Mathf.CeilToInt(totalDistance / 0.05f), 1, 100);
+        int steps = Mathf.Clamp(Mathf.CeilToInt(totalDistance / 0.02f), 1, 100);
         float stepDistance = totalDistance / steps;
 
         for (int i = 0; i < steps; i++)
@@ -135,8 +138,31 @@ public class Projectile : MonoBehaviour
             damageable.TakeDamage();
         }
     }
+    // 5. Projectile
+    if (hitTag == "Projectile")
+    {
+        var proj = hit.collider.GetComponent<Projectile>();
 
-    // 5. Bounce
+        if (proj != null)
+        {
+            bool iCanAbsorb = ownerPlayer.stats.canAbsorbBalls;
+            bool otherCanAbsorb = proj.ownerPlayer != null && proj.ownerPlayer.stats.canAbsorbBalls;
+
+            if (iCanAbsorb || otherCanAbsorb)
+            {
+                bool iShouldAbsorb = (projectileCount > proj.projectileCount) || !otherCanAbsorb;
+
+                if (iShouldAbsorb)
+                {
+                    AbsorbBall(proj);
+                    transform.position += direction * distance;
+                    return false;
+                }
+            }
+        }
+    }
+
+    // 6. Bounce
     HandleBounce(hit.normal, hit.point);
     return true;
 }
@@ -176,6 +202,13 @@ public class Projectile : MonoBehaviour
         transform.forward = direction;
         hasEnteredEnemyZone = false;
         bounceCount++;
+    }
+
+    private void AbsorbBall(Projectile absorbed)
+    {
+        maxBounces += absorbed.maxBounces - absorbed.bounceCount;
+        gameObject.transform.localScale += (absorbed.transform.localScale / 2);
+        absorbed.DestroySelf();
     }
 
     public void DestroySelf()

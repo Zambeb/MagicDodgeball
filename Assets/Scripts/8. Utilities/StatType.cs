@@ -10,5 +10,6 @@ public enum StatType
     CanBurnArea,
     ProjectileSize,
     ExplosiveBalls,
-    ImmunityAfterHit
+    ImmunityAfterHit,
+    CanAbsorbBalls
 }

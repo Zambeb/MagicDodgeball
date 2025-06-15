@@ -11,6 +11,7 @@ public class PlayerGun : MonoBehaviour
     //[SerializeField] private int maxProjectiles = 3;
     public Material[] projectileMaterial;
     public Material amigaBallMaterial;
+    public int projectileCount = 0;
     private GameObject projectileCollector;
 
     public static PlayerGun Instance;
@@ -30,6 +31,7 @@ public class PlayerGun : MonoBehaviour
 
     public void Shoot(int index, int bounces, float speed, float acceleration, bool canStun, float stunDuration)
     {
+        projectileCount++;
         GameObject projectile = Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation, projectileCollector.transform);
         
         Projectile projectileProj = projectile.GetComponent<Projectile>();
@@ -40,6 +42,7 @@ public class PlayerGun : MonoBehaviour
         projectileProj.canStun = canStun;
         projectileProj.stunDuration = stunDuration;
         projectileProj.playerIndex = index;
+        projectileProj.projectileCount = projectileCount;
         activeProjectiles.Add(projectile);
         Renderer rend = projectile.GetComponent<Renderer>();
         if (!playerController.stats.amigaBall)

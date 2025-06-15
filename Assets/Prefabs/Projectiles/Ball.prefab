@@ -297,6 +297,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6682976913869357878}
     m_Modifications:
+    - target: {fileID: 129608565374702579, guid: 4b010467bb2e6e4439f789f2247bf9e2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d97edb07cd39fc45bda490251027e0c, type: 2}
     - target: {fileID: 2294036178547761555, guid: 4b010467bb2e6e4439f789f2247bf9e2, type: 3}
       propertyPath: m_Name
       value: Projectile-ball
@@ -421,6 +425,14 @@ PrefabInstance:
       propertyPath: ShapeModule.enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8219857906281585556, guid: 4b010467bb2e6e4439f789f2247bf9e2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8219857906281585556, guid: 4b010467bb2e6e4439f789f2247bf9e2, type: 3}
+      propertyPath: m_RenderMode
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8739434068382500307, guid: 4b010467bb2e6e4439f789f2247bf9e2, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -436,6 +448,18 @@ PrefabInstance:
     - target: {fileID: 8739434068382500307, guid: 4b010467bb2e6e4439f789f2247bf9e2, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849076688064175880, guid: 4b010467bb2e6e4439f789f2247bf9e2, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849076688064175880, guid: 4b010467bb2e6e4439f789f2247bf9e2, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.5321532
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849076688064175880, guid: 4b010467bb2e6e4439f789f2247bf9e2, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.5189569
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -75,11 +75,10 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void Update()
     {
-        if (!disabled)
+        if (!disabled && controller.enabled)
         {
             controller.Move(moveDir * stats.moveSpeed * speedMultiplier * Time.deltaTime);
-        
-            // Оптимизация: проверяем, есть ли ввод
+            
             if (aimInput.sqrMagnitude > 0.1f || currentControlScheme != "Gamepad")
             {
                 HandleRotation();

@@ -29,7 +29,7 @@ public class PlayerGun : MonoBehaviour
         projectileCollector = GameObject.Find("ProjectileCollector");
     }
 
-    public void Shoot(int index, int bounces, float speed, float acceleration, bool canStun, float stunDuration)
+    public void Shoot(int index, int bounces, float speed, float acceleration, bool canStun, float stunDuration, bool leavesTrail)
     {
         projectileCount++;
         GameObject projectile = Instantiate(projectilePrefab, firingPoint.position, firingPoint.rotation, projectileCollector.transform);
@@ -64,5 +64,11 @@ public class PlayerGun : MonoBehaviour
 
             UIManager.Instance.UpdateBallsDisplay(index, notUsedBalls, usedBalls);
         };
+        if (leavesTrail)
+        {
+            projectileProj.leavesTrail = true;
+            projectileProj.trailDuration = playerController.stats.trailDuration;
+            projectileProj.slowAmount = playerController.stats.slowAmount;
+        }
     }
 }

@@ -31,7 +31,16 @@ public class Projectile : MonoBehaviour
     public GameObject miniProjectilePrefab;
     public int explosionProjectileCount = 6; 
     public float explosionProjectileSpeed = 5f; 
-    public float explosionSpreadAngle = 360f; 
+    public float explosionSpreadAngle = 360f;
+
+    [Header("Trail")] 
+    public bool leavesTrail;
+    [SerializeField] private GameObject trailObject;
+    [SerializeField] private float trailSpacing = 0.5f;
+    [SerializeField] private GameObject trailPrefab;
+    private Vector3 lastTrailSpawnPos;
+    public float trailDuration;
+    public float slowAmount;
     
     [Header("Visual Effects")]
     public GameObject bounceEffectPrefab; 
@@ -55,7 +64,14 @@ public class Projectile : MonoBehaviour
         {
             sphereCastRadius = transform.localScale.x / 2f;
         }
-        sphereCastRadius = Mathf.Max(sphereCastRadius, 0.1f); 
+        sphereCastRadius = Mathf.Max(sphereCastRadius, 0.1f);
+        
+        if (leavesTrail)
+        {
+            trailObject.SetActive(true);
+            trailObject.GetComponent<TrailRenderer>().time = ownerPlayer.stats.trailDuration;
+            lastTrailSpawnPos = transform.position;
+        }
     }
     
     public void Initialize(Vector3 initDirection)
@@ -76,7 +92,30 @@ public class Projectile : MonoBehaviour
                 break;
             }
         }
+
+        if (leavesTrail)
+        {
+            float dist = Vector3.Distance(transform.position, lastTrailSpawnPos);
+            if (dist >= trailSpacing)
+            {
+                SpawnTrail(trailDuration);
+                lastTrailSpawnPos = transform.position;
+            }
+        }
     }
+    
+    void SpawnTrail(float dur)
+    {
+        GameObject trail = Instantiate(trailPrefab, transform.position, Quaternion.identity);
+        TrailSlowZone trailSlow = trail.GetComponent<TrailSlowZone>();
+        if (trailSlow != null)
+        {
+            trailSlow.slowAmount = slowAmount;
+        }
+        Destroy(trail, dur);
+    }
+    
+    
     private bool DoMovementStep(float distance)
 {
     if (!Physics.SphereCast(transform.position, sphereCastRadius, direction, out RaycastHit hit, distance, collisionMask))
@@ -89,7 +128,7 @@ public class Projectile : MonoBehaviour
     string hitTag = hit.collider.tag;
 
     // 1. PlayerWall - let the ball through
-    if (hitTag == "PlayerWall")
+    if (hitTag == "PlayerWall" || hitTag == "Trail" )
     {
         transform.position += direction * distance;
         return true;
@@ -263,6 +302,17 @@ public class Projectile : MonoBehaviour
                 }
             }
         }
+
+        if (leavesTrail && trailObject != null)
+        {
+            trailObject.transform.SetParent(null);
+            var trail = trailObject.GetComponent<TrailRenderer>();
+            if (trail != null)
+            {
+                trail.autodestruct = true;
+            }
+        }
+        
         OnProjectileDestroyed?.Invoke();
         Destroy(gameObject);
     }

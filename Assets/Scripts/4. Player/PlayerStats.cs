@@ -18,6 +18,9 @@ public struct PlayerStats
     public bool amigaBall;
     public float immunityAfterHit;
     public bool canAbsorbBalls;
+    public bool leavesTrail;
+    public float trailDuration;
+    public float slowAmount;
 
     /*
     public PlayerStats()
@@ -42,6 +45,10 @@ public struct PlayerStats
         amigaBall = other.amigaBall;
         immunityAfterHit = other.immunityAfterHit;
         canAbsorbBalls = other.canAbsorbBalls;
+        leavesTrail = other.leavesTrail;
+        trailDuration = other.trailDuration;
+        slowAmount = other.slowAmount;
+
     }
 }
 

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public PlayerController opponent;
     [SerializeField] public PlayerStats stats;
     private PlayerStats initialStats;
-    //private float speed = 5f;
+    private float speedMultiplier = 1f;
     public float rotationSpeed = 720f;
     [SerializeField] private CharacterVisuals _visuals;
 
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (!disabled)
         {
-            controller.Move(moveDir * stats.moveSpeed * Time.deltaTime);
+            controller.Move(moveDir * stats.moveSpeed * speedMultiplier * Time.deltaTime);
         
             // Оптимизация: проверяем, есть ли ввод
             if (aimInput.sqrMagnitude > 0.1f || currentControlScheme != "Gamepad")
@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (ctx.performed && !disabled && canShoot && gun.activeProjectiles.Count < stats.maxProjectiles)
         {
-            gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration);
+            gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration, stats.leavesTrail);
             int shotBalls = gun.activeProjectiles.Count;
             int notShotBalls = stats.maxProjectiles - shotBalls;
             UIManager.Instance.UpdateBallsDisplay(playerIndex, notShotBalls, shotBalls);
@@ -195,6 +195,16 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             disabled = false;
         }
+    }
+
+    public void ApplySlow(float slowAmount)
+    {
+        speedMultiplier = slowAmount;
+    }
+
+    public void RemoveSlow()
+    {
+        speedMultiplier = 1f;
     }
 
     private IEnumerator InvinvibityAfterHit(float duration)

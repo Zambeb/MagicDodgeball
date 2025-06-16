@@ -101,7 +101,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2039
 --- !u!1 &1763795756801384758
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +423,10 @@ MonoBehaviour:
     canExplodeBalls: 0
     amigaBall: 0
     immunityAfterHit: 0
+    canAbsorbBalls: 0
+    leavesTrail: 0
+    trailDuration: 0
+    slowAmount: 0
   rotationSpeed: 1500
   _visuals: {fileID: 6537004844670196330}
   gun: {fileID: 0}
@@ -1027,6 +1031,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8899839456730761503}
     m_Modifications:
+    - target: {fileID: 4515964255083556121, guid: a738a3bb27a701e4d9b4276c0c9f7562, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7133721498510978521, guid: a738a3bb27a701e4d9b4276c0c9f7562, type: 3}
       propertyPath: m_Name
       value: Player1

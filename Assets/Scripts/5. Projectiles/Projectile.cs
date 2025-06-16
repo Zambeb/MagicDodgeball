@@ -58,13 +58,13 @@ public class Projectile : MonoBehaviour
         SphereCollider sc = GetComponent<SphereCollider>();
         if (sc != null)
         {
-            sphereCastRadius = sc.radius * Mathf.Max(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            sphereCastRadius = sc.radius * transform.localScale.x;
         }
         else
         {
             sphereCastRadius = transform.localScale.x / 2f;
         }
-        sphereCastRadius = Mathf.Max(sphereCastRadius, 0.1f);
+        sphereCastRadius = Mathf.Max(sphereCastRadius, 0.5f);
         
         if (leavesTrail)
         {
@@ -83,7 +83,7 @@ public class Projectile : MonoBehaviour
     {
         float totalDistance = projectileSpeed * Time.deltaTime;
         int steps = Mathf.Clamp(Mathf.CeilToInt(totalDistance / 0.02f), 1, 100);
-        float stepDistance = totalDistance / steps;
+        float stepDistance = totalDistance / Mathf.Max(steps, 20);
 
         for (int i = 0; i < steps; i++)
         {
@@ -181,7 +181,6 @@ public class Projectile : MonoBehaviour
     if (hitTag == "Projectile")
     {
         var proj = hit.collider.GetComponent<Projectile>();
-
         if (proj != null)
         {
             bool iCanAbsorb = ownerPlayer.stats.canAbsorbBalls;
@@ -189,13 +188,29 @@ public class Projectile : MonoBehaviour
 
             if (iCanAbsorb || otherCanAbsorb)
             {
-                bool iShouldAbsorb = (projectileCount > proj.projectileCount) || !otherCanAbsorb;
+                bool iShouldAbsorb;
+                
+                if (iCanAbsorb != otherCanAbsorb)
+                {
+                    iShouldAbsorb = iCanAbsorb;
+                }
+                else
+                {
+                    if (projectileCount != proj.projectileCount)
+                    {
+                        iShouldAbsorb = projectileCount > proj.projectileCount;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
 
                 if (iShouldAbsorb)
                 {
                     AbsorbBall(proj);
                     transform.position += direction * distance;
-                    return false;
+                    return true;
                 }
             }
         }
@@ -245,9 +260,13 @@ public class Projectile : MonoBehaviour
 
     private void AbsorbBall(Projectile absorbed)
     {
+        if (absorbed == null || !absorbed.gameObject.activeSelf || this == null) return;
+
         maxBounces += absorbed.maxBounces - absorbed.bounceCount;
-        gameObject.transform.localScale += (absorbed.transform.localScale / 2);
+        Vector3 scaleIncrease = absorbed.transform.localScale * 0.5f;
+        transform.localScale += scaleIncrease;
         absorbed.DestroySelf();
+        Debug.Log($"Absorbing: scale increased for {scaleIncrease}");
     }
 
     public void DestroySelf()

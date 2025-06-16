@@ -15,6 +15,7 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private UpgradeScreen upgradeScreen;
     public int roundCount;
     public int twoBuffRound = 4;
+    public int projectileCount = 0;
 
     [Header("Players")]
     public PlayerController player1;

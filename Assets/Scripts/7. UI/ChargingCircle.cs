@@ -35,11 +35,8 @@ public class ChargingCircle : MonoBehaviour
         transform.localPosition = originalLocalPosition;
         transform.rotation = originalRotation;
         
-        if (!isCharging)
-        {
-            gameObject.SetActive(true);
-            isCharging = true;
-        }
+        gameObject.SetActive(true);
+        isCharging = true;
     }
 
     private void Update()

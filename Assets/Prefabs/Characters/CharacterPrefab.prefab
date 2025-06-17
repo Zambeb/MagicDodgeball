@@ -410,8 +410,8 @@ MonoBehaviour:
   opponent: {fileID: 0}
   stats:
     currentHealth: 0
-    moveSpeed: 8
-    projectileSpeed: 12
+    moveSpeed: 9
+    projectileSpeed: 14
     maxBounces: 4
     maxProjectiles: 3
     accelerationAfterBounce: 1

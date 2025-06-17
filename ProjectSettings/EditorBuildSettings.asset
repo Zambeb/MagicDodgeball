@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Trash/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Battlefield.unity
+    path: Assets/Scenes/Battlefield1.unity
     guid: d0bfcda5b6cc9a7458e36fc2a2040bb7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7d44fc5bdd58bca4a8744a2ed076bf4e, type: 2}

@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public float activeCooldownTimeRemaining;
     public float activeCooldownDuration;
     public CooldownRing cooldownRing;
+    public ChargingCircle chargingCircle;
 
     public ShieldOrbitManager shieldOrbit;
     
@@ -165,11 +166,19 @@ public class PlayerController : MonoBehaviour, IDamageable
                 isCharging = true;
                 chargeTime = 0f;
                 chargeMultiplier = 1f;
+                if (chargingCircle != null)
+                {
+                    chargingCircle.Show(stats.maxChargeTime);
+                }
             }
             else if (ctx.canceled)
             {
                 if (isCharging && stats.canCharge)
                 {
+                    if (chargingCircle != null)
+                    {
+                        chargingCircle.Hide();
+                    }
                     gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed * chargeMultiplier, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration, stats.leavesTrail);
                     int shotBalls = gun.activeProjectiles.Count;
                     int notShotBalls = stats.maxProjectiles - shotBalls;
@@ -269,6 +278,12 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         disabled = true;
         invincible = true;
+        if (isCharging && chargingCircle != null)
+        {
+            chargingCircle.Hide();
+        }
+
+        isCharging = false;
     }
     
     public void EnableCharacter()

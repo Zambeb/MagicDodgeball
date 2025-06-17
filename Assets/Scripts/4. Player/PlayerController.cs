@@ -388,10 +388,10 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public IEnumerator PerformDash(float distance, float duration, float cooldown)
     {
+        activeApplied = true;
+        
         disabled = true;
         invincible = true;
-
-        activeApplied = true;
 
         float elapsed = 0f;
         Vector3 dashDirection = moveDir.normalized;
@@ -413,24 +413,16 @@ public class PlayerController : MonoBehaviour, IDamageable
         disabled = false;
         invincible = false;
         
-        activeCooldownDuration = cooldown;
-        activeCooldownTimeRemaining = cooldown;
-        
-        while (activeCooldownTimeRemaining > 0)
-        {
-            activeCooldownTimeRemaining -= Time.deltaTime;
-            yield return null;
-        }
-
-        activeApplied = false;
+        SetActiveCooldown(cooldown);
     }
 
     public IEnumerator PerformForceField(float duration, float speedMultiplier, float cooldown)
     {
-        invincible = true;
-        canShoot = false;
         activeApplied = true;
         
+        invincible = true;
+        canShoot = false;
+
         float initialSpeed = stats.moveSpeed;
         stats.moveSpeed *= speedMultiplier;
 
@@ -440,16 +432,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         canShoot = true;
         invincible = false;
         
-        activeCooldownDuration = cooldown;
-        activeCooldownTimeRemaining = cooldown;
-
-        while (activeCooldownTimeRemaining > 0)
-        {
-            activeCooldownTimeRemaining -= Time.deltaTime;
-            yield return null;
-        }
-
-        activeApplied = false;
+        SetActiveCooldown(cooldown);
     }
 
     private IEnumerator PerformParry(float radius, float cooldown)
@@ -473,16 +456,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         
         invincible = false;
 
-        activeCooldownDuration = cooldown;
-        activeCooldownTimeRemaining = cooldown;
-
-        while (activeCooldownTimeRemaining > 0)
-        {
-            activeCooldownTimeRemaining -= Time.deltaTime;
-            yield return null;
-        }
-
-        activeApplied = false;
+        SetActiveCooldown(cooldown);
     }
 
     private IEnumerator PerformSwap(PlayerController p1, PlayerController p2, float cooldown)
@@ -509,16 +483,28 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (cc1 != null) cc1.enabled = true;
         if (cc2 != null) cc2.enabled = true;
         
-        activeCooldownDuration = cooldown;
-        activeCooldownTimeRemaining = cooldown;
+        SetActiveCooldown(cooldown);
+    }
 
+    public void SetActiveCooldown(float cooldownDuration)
+    {
+        if (cooldownDuration <= 0) return;
+
+        activeCooldownDuration = cooldownDuration;
+        activeCooldownTimeRemaining = cooldownDuration;
+        activeApplied = true;
+    
+        StartCoroutine(CooldownRoutine());
+    }
+    
+    private IEnumerator CooldownRoutine()
+    {
         while (activeCooldownTimeRemaining > 0)
         {
             activeCooldownTimeRemaining -= Time.deltaTime;
             yield return null;
         }
-
+    
         activeApplied = false;
     }
-    
 }

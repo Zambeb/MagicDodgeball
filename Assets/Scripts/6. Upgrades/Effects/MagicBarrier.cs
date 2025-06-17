@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,10 +10,11 @@ public class MagicBarrier : UpgradeEffectBase
     public GameObject barrierPrefab;
     public int maxBarriers = 2;
     public int barrierHP = 2;
-
     public float wallDistance = 2f;
-    private List<MagicBarrierPrefab> activeBarriers = new List<MagicBarrierPrefab>();
     
+    private List<MagicBarrierPrefab> activeBarriers = new List<MagicBarrierPrefab>();
+    private bool isOnCooldown = false;
+
     public override void Apply(PlayerController player)
     {
         return;
@@ -20,7 +22,9 @@ public class MagicBarrier : UpgradeEffectBase
 
     public override void PerformAbility(PlayerController player)
     {
-        if (barrierPrefab == null) return;
+        if (player.IsActiveOnCooldown || isOnCooldown || barrierPrefab == null) return;
+        
+        player.SetActiveCooldown(cooldown);
         
         activeBarriers.RemoveAll(barrier => barrier == null);
 
@@ -43,4 +47,13 @@ public class MagicBarrier : UpgradeEffectBase
     {
         activeBarriers.Remove(barrier);
     }
+    
+    private IEnumerator CooldownRoutine()
+    {
+        isOnCooldown = true;
+        yield return new WaitForSeconds(cooldown);
+        isOnCooldown = false;
+    }
+    
+    
 }

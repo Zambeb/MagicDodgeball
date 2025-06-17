@@ -427,6 +427,9 @@ MonoBehaviour:
     leavesTrail: 0
     trailDuration: 0
     slowAmount: 0
+    canCharge: 0
+    maxChargeTime: 0
+    chargeSpeedIncreasePerSecond: 0
   rotationSpeed: 1500
   _visuals: {fileID: 6537004844670196330}
   gun: {fileID: 0}

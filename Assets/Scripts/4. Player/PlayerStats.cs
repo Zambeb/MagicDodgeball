@@ -21,6 +21,9 @@ public struct PlayerStats
     public bool leavesTrail;
     public float trailDuration;
     public float slowAmount;
+    public bool canCharge;
+    public float maxChargeTime;
+    public float chargeSpeedIncreasePerSecond;
 
     /*
     public PlayerStats()
@@ -48,7 +51,9 @@ public struct PlayerStats
         leavesTrail = other.leavesTrail;
         trailDuration = other.trailDuration;
         slowAmount = other.slowAmount;
-
+        canCharge = other.canCharge;
+        maxChargeTime = other.maxChargeTime;
+        chargeSpeedIncreasePerSecond = other.chargeSpeedIncreasePerSecond;
     }
 }
 

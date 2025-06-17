@@ -52,6 +52,11 @@ public class PlayerController : MonoBehaviour, IDamageable
     
     private readonly HashSet<TrailSlowZone> activeSlowZones = new HashSet<TrailSlowZone>();
 
+    [Header("Charged Shot")] 
+    private float chargeMultiplier = 1f;
+    private bool isCharging = false;
+    private float chargeTime = 0f;
+
     void Awake()
     {
         mainCamera = Camera.main;
@@ -82,6 +87,15 @@ public class PlayerController : MonoBehaviour, IDamageable
             if (aimInput.sqrMagnitude > 0.1f || currentControlScheme != "Gamepad")
             {
                 HandleRotation();
+            }
+            
+            if (isCharging && stats.canCharge)
+            {
+                chargeTime += Time.deltaTime;
+                chargeTime = Mathf.Min(chargeTime, stats.maxChargeTime);
+                chargeMultiplier = 1f + (chargeTime * stats.chargeSpeedIncreasePerSecond);
+            
+                // Add visual feedback
             }
         }
     }
@@ -144,12 +158,37 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
     public void OnFire(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && !disabled && canShoot && gun.activeProjectiles.Count < stats.maxProjectiles)
+        if (!disabled && canShoot && gun.activeProjectiles.Count < stats.maxProjectiles)
         {
-            gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration, stats.leavesTrail);
-            int shotBalls = gun.activeProjectiles.Count;
-            int notShotBalls = stats.maxProjectiles - shotBalls;
-            UIManager.Instance.UpdateBallsDisplay(playerIndex, notShotBalls, shotBalls);
+            if (ctx.started && stats.canCharge)
+            {
+                isCharging = true;
+                chargeTime = 0f;
+                chargeMultiplier = 1f;
+            }
+            else if (ctx.canceled)
+            {
+                if (isCharging && stats.canCharge)
+                {
+                    gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed * chargeMultiplier, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration, stats.leavesTrail);
+                    int shotBalls = gun.activeProjectiles.Count;
+                    int notShotBalls = stats.maxProjectiles - shotBalls;
+                    UIManager.Instance.UpdateBallsDisplay(playerIndex, notShotBalls, shotBalls);
+                    
+                    isCharging = false;
+                    chargeTime = 0f;
+                    chargeMultiplier = 1f;
+                }
+                else if (!isCharging)
+                {
+                    gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration, stats.leavesTrail);
+                    int shotBalls = gun.activeProjectiles.Count;
+                    int notShotBalls = stats.maxProjectiles - shotBalls;
+                    UIManager.Instance.UpdateBallsDisplay(playerIndex, notShotBalls, shotBalls);
+                }
+            }
+            
+            
             // Trigger attack animation
             if (animController != null)
             {

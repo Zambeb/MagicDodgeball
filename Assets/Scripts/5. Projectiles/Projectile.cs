@@ -283,6 +283,7 @@ public class Projectile : MonoBehaviour
             if (ownerPlayer.stats.canBurnArea)
             {
                 Vector3 spawnPosition = transform.position - direction.normalized * ownerPlayer.stats.ballSizeMultiplier;
+                spawnPosition.y = 0;
                 GameObject burnedArea = Instantiate(burnedAreaPrefab, spawnPosition, Quaternion.identity);
                 burnedArea.transform.localScale *= ownerPlayer.stats.ballSizeMultiplier;
             }

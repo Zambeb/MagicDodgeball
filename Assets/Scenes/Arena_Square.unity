@@ -3053,7 +3053,7 @@ Transform:
   m_GameObject: {fileID: 368951225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 3.842918, z: 3.5787241}
+  m_LocalPosition: {x: 0.2, y: 4.53, z: 3.5787241}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3195,13 +3195,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399465414}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.90656585, y: 0, z: 0, w: 0.4220645}
+  m_LocalRotation: {x: 0.5300672, y: 0, z: 0, w: 0.8479557}
   m_LocalPosition: {x: -2.2, y: 43.6, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1147233918}
-  m_LocalEulerAnglesHint: {x: 130.07, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 64.02, y: 0, z: 0}
 --- !u!114 &399465416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3280,7 +3280,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -3625,6 +3625,7 @@ MonoBehaviour:
   player1Wins: 0
   player2Wins: 0
   roundActive: 0
+  playersReady: 0
 --- !u!1 &440566418
 GameObject:
   m_ObjectHideFlags: 0
@@ -5346,7 +5347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &663478405
 Transform:
   m_ObjectHideFlags: 0
@@ -9035,8 +9036,8 @@ Transform:
   m_GameObject: {fileID: 1198220588}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.53, z: -1.1}
-  m_LocalScale: {x: 0.32, y: 4.540609, z: 32.6}
+  m_LocalPosition: {x: 0, y: 2.81, z: -2.5}
+  m_LocalScale: {x: 0.32, y: 2.86, z: 29.69}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 200396638}

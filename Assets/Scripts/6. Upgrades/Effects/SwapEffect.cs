@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwapEffect : UpgradeEffectBase
 {
     public float cooldown;
+    public float delay;
 
     public override void Apply(PlayerController player)
     {
@@ -13,6 +14,6 @@ public class SwapEffect : UpgradeEffectBase
 
     public override void PerformAbility(PlayerController player)
     {
-        player.Swap(cooldown);
+        player.Swap(cooldown, delay);
     }
 }

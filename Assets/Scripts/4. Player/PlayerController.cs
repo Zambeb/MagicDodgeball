@@ -373,7 +373,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
-    public void Swap(float cooldown)
+    public void Swap(float cooldown, float delay)
     {
         if (!activeApplied)
         {
@@ -382,7 +382,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
             if (p1 == null || p2 == null) return;
 
-            StartCoroutine(PerformSwap(p1, p2, cooldown));
+            StartCoroutine(PerformSwap(p1, p2, cooldown, delay));
         }
     }
 
@@ -440,6 +440,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         activeApplied = true;
         invincible = true; // Needed?
         Vector3 center = transform.position;
+        center.y = 1;
 
         Collider[] hits = Physics.OverlapSphere(center, radius);
         foreach (var hit in hits)
@@ -459,7 +460,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         SetActiveCooldown(cooldown);
     }
 
-    private IEnumerator PerformSwap(PlayerController p1, PlayerController p2, float cooldown)
+    private IEnumerator PerformSwap(PlayerController p1, PlayerController p2, float cooldown, float delay)
     {
         activeApplied = true;
         
@@ -468,6 +469,10 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (cc1 != null) cc1.enabled = false;
         if (cc2 != null) cc2.enabled = false;
+        
+        _visuals.SwapVisualEffect();
+        
+        yield return new WaitForSeconds(delay);
         
         Vector3 tempPosition = p1.transform.position;
         Quaternion tempRotation = p1.transform.rotation;

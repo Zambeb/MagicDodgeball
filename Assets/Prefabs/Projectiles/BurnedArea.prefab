@@ -239,8 +239,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4734265969269707620}
   m_Father: {fileID: 0}
@@ -312,6 +312,14 @@ PrefabInstance:
     - target: {fileID: 4322562971931584, guid: 1ddb25e5337e706459491b01d93aa9bd, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108991027053845044, guid: 1ddb25e5337e706459491b01d93aa9bd, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 5666.3594
+      objectReference: {fileID: 0}
+    - target: {fileID: 108991027053845044, guid: 1ddb25e5337e706459491b01d93aa9bd, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 198504767949288526, guid: 1ddb25e5337e706459491b01d93aa9bd, type: 3}
       propertyPath: InitialModule.startLifetime.scalar

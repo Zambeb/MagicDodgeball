@@ -628,6 +628,7 @@ MonoBehaviour:
   whiteMaterial: {fileID: 2100000, guid: 44efd414dd90c8741a2eedfbf29d77e3, type: 2}
   model: {fileID: 0}
   ParryVFX: {fileID: 1037542503268038, guid: f35c52aa1abeb6b4b86e682039141b66, type: 3}
+  swapVFX: {fileID: 2528196425102328709, guid: 934f46fc5e1bafd4ca7f14ce4aa04a16, type: 3}
 --- !u!1 &5101880460496916527
 GameObject:
   m_ObjectHideFlags: 0

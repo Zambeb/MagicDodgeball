@@ -82,8 +82,9 @@ public class Projectile : MonoBehaviour
     private void FixedUpdate()
     {
         float totalDistance = projectileSpeed * Time.deltaTime;
-        int steps = Mathf.Clamp(Mathf.CeilToInt(totalDistance / 0.02f), 1, 100);
-        float stepDistance = totalDistance / Mathf.Max(steps, 20);
+        float stepSize = 0.01f;
+        int steps = Mathf.CeilToInt(totalDistance / stepSize);
+        float stepDistance = totalDistance / steps;
 
         for (int i = 0; i < steps; i++)
         {
@@ -255,7 +256,7 @@ public class Projectile : MonoBehaviour
         direction = newDirection.normalized;
         transform.forward = direction;
         hasEnteredEnemyZone = false;
-        bounceCount++;
+        //bounceCount++;
     }
 
     private void AbsorbBall(Projectile absorbed)
@@ -265,6 +266,18 @@ public class Projectile : MonoBehaviour
         maxBounces += absorbed.maxBounces - absorbed.bounceCount;
         Vector3 scaleIncrease = absorbed.transform.localScale * 0.5f;
         transform.localScale += scaleIncrease;
+        
+        SphereCollider sc = GetComponent<SphereCollider>();
+        if (sc != null)
+        {
+            sphereCastRadius = sc.radius * transform.localScale.x;
+        }
+        else
+        {
+            sphereCastRadius = transform.localScale.x / 2f;
+        }
+        sphereCastRadius = Mathf.Max(sphereCastRadius, 0.5f);
+        
         absorbed.DestroySelf();
         Debug.Log($"Absorbing: scale increased for {scaleIncrease}");
     }

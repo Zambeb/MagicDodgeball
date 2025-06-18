@@ -18,4 +18,4 @@ MonoBehaviour:
   isStackable: 0
   maxStacks: 0
   radius: 3
-  cooldown: 0.5
+  cooldown: 1

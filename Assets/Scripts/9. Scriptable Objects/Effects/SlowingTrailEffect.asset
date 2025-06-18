@@ -18,4 +18,4 @@ MonoBehaviour:
   isStackable: 0
   maxStacks: 0
   trailDuration: 1.5
-  slowAmount: 0.75
+  slowAmount: 0.65

@@ -17,6 +17,7 @@ public class CharacterVisuals : MonoBehaviour
 
     [Header("VFX")] 
     [SerializeField] private GameObject ParryVFX;
+    [SerializeField] private GameObject swapVFX;
     
     private void Start()
     {
@@ -86,5 +87,15 @@ public class CharacterVisuals : MonoBehaviour
         effect.transform.localScale *= 4f; 
         
         Destroy(effect, 1f);
+    }
+
+    public void SwapVisualEffect()
+    {
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.y = 0.2f;
+        GameObject effect = Instantiate(swapVFX, spawnPosition, Quaternion.identity);
+        effect.transform.localScale *= 4f; 
+        
+        Destroy(effect, 2f);
     }
 }

@@ -65,9 +65,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e1f3da621d899e341b0c9d832b1d57d0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 778156745850dd2469f567cc91bcea26, type: 3}
         m_Scale: {x: 0.5, y: 0.5}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: -0.05, y: 0.97}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -110,7 +110,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GrassCut: 0
-    - _GrassSaturation: 3.27
+    - _GrassSaturation: 1
     - _GrassShading: 1
     - _GrassThinness: 0.4
     - _GrassThinnessIntersection: 0.43
@@ -161,15 +161,15 @@ Material:
     - _ZWrite: 1
     - __NumberOfStacks: 17
     m_Colors:
-    - _Color: {r: 0.7372549, g: 0.6, b: 0.9686275, a: 1}
+    - _Color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 0.9725491, g: 0.67058825, b: 0.654902, a: 1}
+    - _GroundColor: {r: 0.8431373, g: 0.61960787, b: 0.24705884, a: 1}
     - _GroundGrassColor: {r: 0.09999997, g: 0.7, b: 0.09999997, a: 1}
     - _OffsetVector: {r: 0, g: 0, b: 0, a: 0}
     - _PJShadowColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ProjectedShadowColor: {r: 0.2606469, g: 0.08036668, b: 0.8113208, a: 1}
+    - _ProjectedShadowColor: {r: 0.7849056, g: 0.7311321, b: 1, a: 1}
     - _RimColor: {r: 0.14566667, g: 0.184, b: 0.09008333, a: 1}
-    - _SelfShadowColor: {r: 0.07450981, g: 0, b: 0.12156863, a: 1}
+    - _SelfShadowColor: {r: 0.72156864, g: 0.43529415, b: 0.3803922, a: 1}
     - _ShadowColor: {r: 0.09999997, g: 0.7, b: 0.09999997, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

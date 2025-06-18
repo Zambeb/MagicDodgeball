@@ -32,7 +32,7 @@ public class RoundManager : MonoBehaviour
 
     private float timer;
     public bool roundActive = false;
-    private int playersReady = 0;
+    public int playersReady = 0;
     private int playersSelectedUpgrade;
     
     [Header("Logger")]

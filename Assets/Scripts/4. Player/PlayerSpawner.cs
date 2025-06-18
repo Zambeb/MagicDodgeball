@@ -27,7 +27,7 @@ public class PlayerSpawner : MonoBehaviour
         joinAction.performed += context => JoinAction(context);
         
         PlayerInputManager.instance.onPlayerJoined += OnPlayerJoined;
-    }
+        }
 
     private void Start()
     {
@@ -50,6 +50,9 @@ public class PlayerSpawner : MonoBehaviour
 
     private void JoinAction(InputAction.CallbackContext context)
     {
-        PlayerInputManager.instance.JoinPlayerFromActionIfNotAlreadyJoined(context);
+        if (RoundManager.Instance.playersReady < 2)
+        {
+            PlayerInputManager.instance.JoinPlayerFromActionIfNotAlreadyJoined(context);
+        }
     }
 }

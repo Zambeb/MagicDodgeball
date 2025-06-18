@@ -17,7 +17,7 @@ MonoBehaviour:
   isActiveAbility: 1
   isStackable: 0
   maxStacks: 0
-  cooldown: 4
+  cooldown: 6
   barrierPrefab: {fileID: 395778960728282786, guid: 458c308f1e39d344aa13d09979b1f016, type: 3}
   maxBarriers: 2
   barrierHP: 2

@@ -5766,7 +5766,7 @@ MonoBehaviour:
   player2UpgradeScreen: {fileID: 1597369785}
   player1Acquired: {fileID: 655771448}
   player2Acquired: {fileID: 1359835996}
-  upgradeSelectionTime: 30
+  upgradeSelectionTime: 45
   upgradeTimerText: {fileID: 1496388249}
   countdownText: {fileID: 326195682}
   winnerText: {fileID: 205809696}

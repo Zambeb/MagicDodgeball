@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: DashUpgradeEffect
   m_EditorClassIdentifier: 
   upgradeName: Dash
-  icon: {fileID: 21300000, guid: 425bedcac7af73f40ba0f51b99a68faf, type: 3}
+  icon: {fileID: 21300000, guid: bbce6f07dcdf99e45add519412a8653f, type: 3}
   isActiveAbility: 1
   isStackable: 0
+  maxStacks: 0
   dashDistance: 12
   dashDuration: 0.4
   cooldown: 3

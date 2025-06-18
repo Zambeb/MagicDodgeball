@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ImmunityAfterHit
   m_EditorClassIdentifier: 
   upgradeName: Immunity After Hit
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
   description: Become invincible for 1.2 sec after a hit
   effectPrefab: {fileID: 11400000, guid: d40f268cfab0638459d58e0be8ced44b, type: 2}

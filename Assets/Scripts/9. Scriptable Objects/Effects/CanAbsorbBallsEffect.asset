@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CanAbsorbBallsEffect
   m_EditorClassIdentifier: 
   upgradeName: Absorb Balls
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
   isActiveAbility: 0
   isStackable: 0
   maxStacks: 0

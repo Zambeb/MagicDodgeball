@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Parry
   icon: {fileID: 21300000, guid: bbce6f07dcdf99e45add519412a8653f, type: 3}
-  description: 'Active Ability
+  description: '[ACTIVE ABILITY]
 
     Press L2 or Space to parry'
   effectPrefab: {fileID: 11400000, guid: cd132b941b3335847865f7d8e80c0d99, type: 2}

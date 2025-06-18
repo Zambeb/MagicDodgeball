@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AmigaBallData
   m_EditorClassIdentifier: 
   upgradeName: Amiga Ball
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
   description: '-25% speed
 
     x3size

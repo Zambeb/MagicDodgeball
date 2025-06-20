@@ -17,5 +17,5 @@ MonoBehaviour:
   description: '[ACTIVE ABILITY]
 
     Press Spacebar/L2 to activate a teleport and
-    swap places with your opponent'
+    swap places with your enemy'
   effectPrefab: {fileID: 11400000, guid: dd92093da93b96545aade6b7726a0993, type: 2}

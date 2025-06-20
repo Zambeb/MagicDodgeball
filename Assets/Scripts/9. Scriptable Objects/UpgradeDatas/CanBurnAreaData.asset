@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Create Burned Area
   icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
-  description: After final bounce your projectile creates a burned area
+  description: Final bounce creates electric area. Bigger projectile, bigger damage
+    area
   effectPrefab: {fileID: 11400000, guid: 303c338d6bce86a4c8cff423ac13a508, type: 2}

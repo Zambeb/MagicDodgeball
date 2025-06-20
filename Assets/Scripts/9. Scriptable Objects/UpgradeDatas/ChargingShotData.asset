@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Charging Shot
   icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
-  description: Hold 'Attack' button to charge the balls speed
+  description: Hold 'Attack' button to increase the next projectile's speed
   effectPrefab: {fileID: 11400000, guid: d04d36a0a6b4f804d95a6bf5fb55cbdc, type: 2}

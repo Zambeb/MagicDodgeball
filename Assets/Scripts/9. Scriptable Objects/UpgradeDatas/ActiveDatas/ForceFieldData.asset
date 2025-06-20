@@ -16,7 +16,12 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: bbce6f07dcdf99e45add519412a8653f, type: 3}
   description: '[ACTIVE ABILITY]
 
-    No damage and x0.5 speed for 2 seconds
+    Press Space/L2 to become invincible for 1.5
+    seconds, but your character speed is halfed and you can''t shoot
+
+
+    Cooldown:
+    7 seconds
 
 '
   effectPrefab: {fileID: 11400000, guid: c72dedab87d1e8d43bcfc400903b3bdc, type: 2}

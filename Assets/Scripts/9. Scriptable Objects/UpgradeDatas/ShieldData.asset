@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Shield
   icon: {fileID: 21300000, guid: 163b5aa180941244491ac8091516c176, type: 3}
-  description: + 1 shield floating around you
+  description: +1 Shield floating around you, that protects from attacks
   effectPrefab: {fileID: 11400000, guid: 1977ae0842430cc4d8d1d513a1e287e5, type: 2}

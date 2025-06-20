@@ -16,5 +16,12 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: bbce6f07dcdf99e45add519412a8653f, type: 3}
   description: '[ACTIVE ABILITY]
 
-    Press Space or L2 to create a wall'
+    Press Space/L2 to create a wall near yourself
+    in the direction where you aim.
+
+    This wall exists for 3 seconds. Only 2 walls
+    can exist at the same time
+
+
+    Cooldown: 4 seconds'
   effectPrefab: {fileID: 11400000, guid: 597d91c1871a2d2478ffe65a24ef1568, type: 2}

@@ -138,7 +138,7 @@ MonoBehaviour:
   burnedAreaPrefab: {fileID: 7176197847012727590, guid: 630a3aea350aa5342a6f3fd1a283d961, type: 3}
   ownerPlayer: {fileID: 0}
   miniProjectilePrefab: {fileID: 6479857954294971646, guid: 3c8152e8c23027d4aab4b98d31d76315, type: 3}
-  explosionProjectileCount: 6
+  explosionProjectileCount: 8
   explosionProjectileSpeed: 20
   explosionSpreadAngle: 360
   leavesTrail: 0

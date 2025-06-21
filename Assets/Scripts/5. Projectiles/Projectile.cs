@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour
     
     [Header("Mini Projectiles")]
     public GameObject miniProjectilePrefab;
-    public int explosionProjectileCount = 6; 
+    public int explosionProjectileCount = 8; 
     public float explosionProjectileSpeed = 5f; 
     public float explosionSpreadAngle = 360f;
 

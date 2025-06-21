@@ -81,7 +81,8 @@ public class Projectile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float totalDistance = projectileSpeed * Time.deltaTime;
+        float maxDistancePerFrame = sphereCastRadius * 2f;
+        float totalDistance = Mathf.Min(projectileSpeed * Time.deltaTime, maxDistancePerFrame);
         float stepSize = 0.01f;
         int steps = Mathf.CeilToInt(totalDistance / stepSize);
         float stepDistance = totalDistance / steps;
@@ -136,12 +137,20 @@ public class Projectile : MonoBehaviour
     }
 
     // 2. CenterWall - change layer and let the ball through
-    if (!hasEnteredEnemyZone && !miniBall && hitTag == "CenterWall")
+    if (hitTag == "CenterWall")
     {
-        hasEnteredEnemyZone = true;
-        gameObject.layer = LayerMask.NameToLayer("EnemyProjectile");
-        transform.position += direction * distance;
-        return false;
+        if (!hasEnteredEnemyZone && !miniBall)
+        {
+            hasEnteredEnemyZone = true;
+            gameObject.layer = LayerMask.NameToLayer("EnemyProjectile");
+            transform.position += direction * distance;
+            return false;
+        }
+        else
+        {
+            HandleBounce(hit.normal, hit.point);
+            return true;
+        }
     }
 
     // 3. Shield

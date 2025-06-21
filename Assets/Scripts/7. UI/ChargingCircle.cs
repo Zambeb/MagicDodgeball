@@ -27,15 +27,16 @@ public class ChargingCircle : MonoBehaviour
     
     public void Show(float duration)
     {
-        currentCharge = 0;
-        totalCharge = duration;
-        circleImage.fillAmount = 0;
-        isShaking = false;
+        gameObject.SetActive(true);
         
         transform.localPosition = originalLocalPosition;
         transform.rotation = originalRotation;
         
-        gameObject.SetActive(true);
+        currentCharge = 0;
+        totalCharge = duration;
+        circleImage.fillAmount = 0;
+        isShaking = false;
+
         isCharging = true;
     }
 

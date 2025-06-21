@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Move Speed
   icon: {fileID: 21300000, guid: 30bce560af634754bb3d4dad6a98ee08, type: 3}
-  description: + Movement speed
+  descriptionIfKeyboard: + Movement speed
+  descriptionIfGamepad: + Movement speed
   effectPrefab: {fileID: 11400000, guid: d98bb321498607e41ad4fca9fcbcf3e9, type: 2}

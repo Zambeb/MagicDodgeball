@@ -5,8 +5,10 @@ public class UpgradeData : ScriptableObject
 {
     public string upgradeName;
     public Sprite icon;
-    [TextArea]
-    public string description;
+    [TextArea(3, 10)] 
+    public string descriptionIfKeyboard;
+    [TextArea(3, 10)] 
+    public string descriptionIfGamepad;
     
     public UpgradeEffectBase effectPrefab;
 

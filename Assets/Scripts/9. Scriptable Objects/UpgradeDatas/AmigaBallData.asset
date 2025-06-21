@@ -14,11 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Amiga Ball
   icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
-  description: '-25% speed
-
-    x3size
-
-    +2 bounces
-
-    AMIGA BALL!'
+  descriptionIfKeyboard: AMIGA BALL!!!
+  descriptionIfGamepad: AMIGA BALL!!!
   effectPrefab: {fileID: 11400000, guid: 51648f26d49f3aa4d88aa8550b430289, type: 2}

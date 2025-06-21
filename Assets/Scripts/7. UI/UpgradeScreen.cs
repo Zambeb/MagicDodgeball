@@ -76,7 +76,7 @@ public class UpgradeScreen : MonoBehaviour
         {
             GameObject buttonObj = Instantiate(upgradeButtonPrefab, buttonsParent);
             UpgradeButton upgradeButton = buttonObj.GetComponent<UpgradeButton>();
-            upgradeButton.Setup(upgrade, this);
+            upgradeButton.Setup(upgrade, this, currentPlayer);
             spawnedButtons.Add(buttonObj);
         }
 

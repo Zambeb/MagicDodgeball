@@ -144,6 +144,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void OnMove(InputAction.CallbackContext ctx)
     {
         movementInput = ctx.ReadValue<Vector2>();
+        if (movementInput.magnitude > 1f)
+        {
+            movementInput = movementInput.normalized;
+        }
         moveDir = new Vector3(movementInput.x, 0, movementInput.y);
     }
     

@@ -11,14 +11,22 @@ public class UpgradeButton : MonoBehaviour
     public UpgradeData upgradeData;
     private UpgradeScreen upgradeScreen;
 
-    public void Setup(UpgradeData data, UpgradeScreen screen)
+    public void Setup(UpgradeData data, UpgradeScreen screen, PlayerController player)
     {
         upgradeData = data;
         upgradeScreen = screen;
 
         iconImage.sprite = data.icon;
         //nameText.text = data.upgradeName;
-        descriptionText.text = data.description;
+        if (player.currentControlScheme == "Gamepad")
+        {
+            descriptionText.text = data.descriptionIfGamepad;
+        }
+        else
+        {
+            descriptionText.text = data.descriptionIfKeyboard;
+        }
+        
         
         GetComponent<Button>().onClick.AddListener(OnClick);
     }

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Max Projectiles
   icon: {fileID: 21300000, guid: c2e0d2ab17f706941848d5bb4926953f, type: 3}
-  description: +1 Projectile
+  descriptionIfKeyboard: +1 projectile
+  descriptionIfGamepad: +1 projectile
   effectPrefab: {fileID: 11400000, guid: 10b1932bdde166d4f90917c12707fdb4, type: 2}

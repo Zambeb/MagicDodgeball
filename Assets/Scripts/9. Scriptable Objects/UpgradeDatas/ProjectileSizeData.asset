@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Projectile Size
   icon: {fileID: 21300000, guid: bc145d720e0ffa246abcb42c65d0d4a0, type: 3}
-  description: + Size of projectiles
+  descriptionIfKeyboard: + Projectile size
+  descriptionIfGamepad: + Projectile size
   effectPrefab: {fileID: 11400000, guid: 23b6ec2caed6d9b488dda803932719de, type: 2}

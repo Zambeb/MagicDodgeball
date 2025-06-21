@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Immunity After Hit
   icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
-  description: After being hit, become immune to the damage for 0.8 seconds
+  descriptionIfKeyboard: After being hit, become immune to the damage for 0.8 seconds
+  descriptionIfGamepad: After being hit, become immune to the damage for 0.8 seconds
   effectPrefab: {fileID: 11400000, guid: d40f268cfab0638459d58e0be8ced44b, type: 2}

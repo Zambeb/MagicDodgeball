@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Absorb Balls
   icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
-  description: When two projectiles collide, your newer ball absorbs the other and
-    his size and bounce amount increases
+  descriptionIfKeyboard: When two projectiles collide, your newer ball absorb the
+    other and its size and bounce amount increases
+  descriptionIfGamepad: When two projectiles collide, your newer ball absorb the
+    other and its size and bounce amount increases
   effectPrefab: {fileID: 11400000, guid: 5be348a8466346c45a801fbbd6db7727, type: 2}

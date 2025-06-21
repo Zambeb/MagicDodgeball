@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Swap
   icon: {fileID: 21300000, guid: bbce6f07dcdf99e45add519412a8653f, type: 3}
-  description: '[ACTIVE ABILITY]
+  descriptionIfKeyboard: 'Press Space to activate a teleport and swap places with
+    your enemy
 
-    Press Spacebar/L2 to activate a teleport and
-    swap places with your enemy'
+
+    Cooldown: 30 seconds'
+  descriptionIfGamepad: 'Press L2 to activate a teleport and swap places with your
+    enemy
+
+
+    Cooldown: 30 seconds'
   effectPrefab: {fileID: 11400000, guid: dd92093da93b96545aade6b7726a0993, type: 2}

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Projectile Speed
   icon: {fileID: 21300000, guid: 827f980decc930e479fd1d0cb1045609, type: 3}
-  description: + Projectile speed
+  descriptionIfKeyboard: + Projectile speed
+  descriptionIfGamepad: + Projectile speed
   effectPrefab: {fileID: 11400000, guid: 9a435af95bf0069479f5e70d60d3feb1, type: 2}

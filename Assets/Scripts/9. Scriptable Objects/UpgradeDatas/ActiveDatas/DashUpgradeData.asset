@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Dash
   icon: {fileID: 21300000, guid: bbce6f07dcdf99e45add519412a8653f, type: 3}
-  description: '[ACTIVE ABILITY]
+  descriptionIfKeyboard: 'Press Space to dash while being invincible
 
-    Press L2/Space to dash while being invincible
+
+    Cooldown:
+    2'
+  descriptionIfGamepad: 'Press L2 to dash while being invincible
 
 
     Cooldown:

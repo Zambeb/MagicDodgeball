@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Magic Barrier
   icon: {fileID: 21300000, guid: bbce6f07dcdf99e45add519412a8653f, type: 3}
-  description: '[ACTIVE ABILITY]
+  descriptionIfKeyboard: 'Press Space to create a wall near yourself. Only 2 walls
+    can exist at the same time. Wall HP = 3.
 
-    Press Space/L2 to create a wall near yourself
-    in the direction where you aim.
 
-    This wall exists for 3 seconds. Only 2 walls
-    can exist at the same time
+    Cooldown: 4 seconds'
+  descriptionIfGamepad: 'Press L2 to create a wall near yourself. Only 2 walls can
+    exist at the same time. Wall HP = 3.
 
 
     Cooldown: 4 seconds'

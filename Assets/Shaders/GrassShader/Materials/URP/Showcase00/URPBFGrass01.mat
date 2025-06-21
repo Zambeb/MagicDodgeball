@@ -111,7 +111,7 @@ Material:
     - _GlossyReflections: 1
     - _GrassCut: 0
     - _GrassSaturation: 1
-    - _GrassShading: 1
+    - _GrassShading: 0.56
     - _GrassThinness: 0.4
     - _GrassThinnessIntersection: 0.43
     - _HasRT: 0

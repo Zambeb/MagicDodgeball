@@ -201,6 +201,13 @@ public class RoundManager : MonoBehaviour
         {
             projectile.DestroySelf();
         }
+        
+        // Destroy all walls left
+        MagicBarrier[] allBarrierAbilities = FindObjectsByType<MagicBarrier>(FindObjectsSortMode.None);
+        foreach (var barrierAbility in allBarrierAbilities)
+        {
+            barrierAbility.RemoveAllBarriers();
+        }
 
         //Cursor.visible = true;
     }

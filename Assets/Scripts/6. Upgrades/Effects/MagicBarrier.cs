@@ -55,5 +55,18 @@ public class MagicBarrier : UpgradeEffectBase
         isOnCooldown = false;
     }
     
-    
+    public void RemoveAllBarriers()
+    {
+        var barriersToRemove = new List<MagicBarrierPrefab>(activeBarriers);
+        
+        foreach (var barrier in barriersToRemove)
+        {
+            if (barrier != null)
+            {
+                barrier.DestroySelf();
+            }
+        }
+        
+        activeBarriers.Clear();
+    }
 }

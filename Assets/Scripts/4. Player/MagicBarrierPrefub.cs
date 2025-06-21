@@ -4,6 +4,7 @@ public class MagicBarrierPrefab : MonoBehaviour, IDamageable
 {
     public int wallHP;
     private MagicBarrier barrierParent;
+    public GameObject destroyEffectPrefab;
 
     public void Initialize(MagicBarrier parent)
     {
@@ -32,10 +33,20 @@ public class MagicBarrierPrefab : MonoBehaviour, IDamageable
 
     public void DestroySelf()
     {
+        if (destroyEffectPrefab != null)
+        {
+            Quaternion randomRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
+            Vector3 spawnPos = transform.position;
+            spawnPos.y = 1f;
+            GameObject effect = Instantiate(destroyEffectPrefab, spawnPos, randomRotation);
+            Destroy(effect, 2);
+        }
+        
         if (barrierParent != null)
         {
             barrierParent.RemoveBarrier(this);
         }
+        
         Destroy(gameObject);
     }
 

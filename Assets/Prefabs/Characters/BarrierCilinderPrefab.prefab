@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallHP: 0
+  destroyEffectPrefab: {fileID: 8893734663272954044, guid: 500cb924277be594995d218546ea2ee0, type: 3}

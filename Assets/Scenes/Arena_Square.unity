@@ -3617,11 +3617,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a49f6d966f35674d8996657698de4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundDuration: 30
+  initialRoundDuration: 30
   delayBeforeUpgrades: 3
-  upgradeScreen: {fileID: 0}
   roundCount: 0
   twoBuffRound: 3
+  longerRoundsRound: 3
   projectileCount: 0
   player1: {fileID: 0}
   player2: {fileID: 0}

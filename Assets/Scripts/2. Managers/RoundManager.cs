@@ -10,12 +10,14 @@ public class RoundManager : MonoBehaviour
     public static RoundManager Instance { get; private set; }
     
     [Header("Round Settings")]
-    [SerializeField] private float roundDuration = 30f;
+    [SerializeField] private float initialRoundDuration = 30f;
     [SerializeField] private float delayBeforeUpgrades = 3f;
-    [SerializeField] private UpgradeScreen upgradeScreen;
+    //[SerializeField] private UpgradeScreen upgradeScreen;
     public int roundCount;
     public int twoBuffRound = 4;
+    public int longerRoundsRound = 3;
     public int projectileCount = 0;
+    private float roundDuration;
 
     [Header("Players")]
     public PlayerController player1;
@@ -52,6 +54,7 @@ public class RoundManager : MonoBehaviour
         playersSelectedUpgrade = 0;
         gameEnded = false;
         roundCount = 0;
+        roundDuration = initialRoundDuration;
     }
     
     void OnPlayerJoined(PlayerInput input)
@@ -123,6 +126,14 @@ public class RoundManager : MonoBehaviour
         player2points = 0;
         
         UIManager.Instance.UpdateRoundPoints(player1points, player2points);
+        if (roundCount > longerRoundsRound)
+        {
+            roundDuration += 5f;
+        }
+        else
+        {
+            roundDuration = initialRoundDuration;
+        }
 
         StartCoroutine(ResetRoundAfterDelay());
         //Cursor.visible = false;

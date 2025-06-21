@@ -58,14 +58,19 @@ public class Projectile : MonoBehaviour
         SphereCollider sc = GetComponent<SphereCollider>();
         if (sc != null)
         {
-            sphereCastRadius = sc.radius * transform.localScale.x;
+            float maxScale = Mathf.Max(transform.lossyScale.x, transform.lossyScale.y, transform.lossyScale.z);
+            sphereCastRadius = sc.radius * maxScale;
+            
+            sphereCastRadius *= 1.1f;
         }
         else
         {
-            sphereCastRadius = transform.localScale.x / 2f;
+            float fallbackScale = Mathf.Max(transform.lossyScale.x, transform.lossyScale.y, transform.lossyScale.z);
+            sphereCastRadius = fallbackScale / 2f;
+            sphereCastRadius *= 1.1f; 
         }
         sphereCastRadius = Mathf.Max(sphereCastRadius, 0.5f);
-        
+
         if (leavesTrail)
         {
             trailObject.SetActive(true);
@@ -104,6 +109,12 @@ public class Projectile : MonoBehaviour
                 lastTrailSpawnPos = transform.position;
             }
         }
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, sphereCastRadius);
     }
     
     void SpawnTrail(float dur)
@@ -272,18 +283,22 @@ public class Projectile : MonoBehaviour
     {
         if (absorbed == null || !absorbed.gameObject.activeSelf || this == null) return;
 
-        maxBounces += absorbed.maxBounces - absorbed.bounceCount;
+        int remainingBounces = absorbed.maxBounces - absorbed.bounceCount;
+        maxBounces += Mathf.Max(0, remainingBounces); 
+        
         Vector3 scaleIncrease = absorbed.transform.localScale * 0.5f;
         transform.localScale += scaleIncrease;
         
         SphereCollider sc = GetComponent<SphereCollider>();
+        float maxScale = Mathf.Max(transform.lossyScale.x, transform.lossyScale.y, transform.lossyScale.z);
+
         if (sc != null)
         {
-            sphereCastRadius = sc.radius * transform.localScale.x;
+            sphereCastRadius = sc.radius * maxScale * 1.1f;
         }
         else
         {
-            sphereCastRadius = transform.localScale.x / 2f;
+            sphereCastRadius = maxScale / 2f;
         }
         sphereCastRadius = Mathf.Max(sphereCastRadius, 0.5f);
         

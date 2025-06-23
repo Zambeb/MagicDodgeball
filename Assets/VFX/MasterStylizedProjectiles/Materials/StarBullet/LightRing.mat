@@ -25,7 +25,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _DEPTHFADE
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 0
@@ -136,7 +135,7 @@ Material:
     - _CastShadows: 0
     - _Cull: 0
     - _Cutoff: 0.5
-    - _DEPTHFADE: 1
+    - _DEPTHFADE: 0
     - _DepthFadeMax: 0.2
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
@@ -193,6 +192,7 @@ Material:
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _WarpScroll: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &1257779056871385295
 MonoBehaviour:
   m_ObjectHideFlags: 11

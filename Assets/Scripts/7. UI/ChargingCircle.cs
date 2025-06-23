@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,12 @@ public class ChargingCircle : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+
+    private void Start()
+    {
+        gameObject.SetActive(true);
         if (circleImage != null)
             circleImage.fillAmount = 0;
         
@@ -24,7 +31,7 @@ public class ChargingCircle : MonoBehaviour
         originalRotation = transform.rotation;
         gameObject.SetActive(false);
     }
-    
+
     public void Show(float duration)
     {
         gameObject.SetActive(true);

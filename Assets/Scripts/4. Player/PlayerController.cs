@@ -90,13 +90,11 @@ public class PlayerController : MonoBehaviour, IDamageable
                 HandleRotation();
             }
             
-            if (isCharging && stats.canCharge)
+            if (isCharging)
             {
                 chargeTime += Time.deltaTime;
                 chargeTime = Mathf.Min(chargeTime, stats.maxChargeTime);
                 chargeMultiplier = 1f + (chargeTime * stats.chargeSpeedIncreasePerSecond);
-            
-                // Add visual feedback
             }
         }
     }
@@ -165,14 +163,22 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (!disabled && canShoot && gun.activeProjectiles.Count < stats.maxProjectiles)
         {
-            if (ctx.started && stats.canCharge)
+            if (ctx.started)
             {
-                isCharging = true;
-                chargeTime = 0f;
-                chargeMultiplier = 1f;
-                if (chargingCircle != null)
+                if (stats.canCharge)
                 {
-                    chargingCircle.Show(stats.maxChargeTime);
+                    chargeTime = 0f;
+                    chargeMultiplier = 1f;
+                    isCharging = true;
+                    
+                    if (chargingCircle != null)
+                    {
+                        chargingCircle.Show(stats.maxChargeTime);
+                    }
+                }
+                else
+                {
+                    ShootNormal();
                 }
             }
             else if (ctx.canceled)
@@ -183,24 +189,14 @@ public class PlayerController : MonoBehaviour, IDamageable
                     {
                         chargingCircle.Hide();
                     }
-                    gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed * chargeMultiplier, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration, stats.leavesTrail);
-                    int shotBalls = gun.activeProjectiles.Count;
-                    int notShotBalls = stats.maxProjectiles - shotBalls;
-                    UIManager.Instance.UpdateBallsDisplay(playerIndex, notShotBalls, shotBalls);
-                    
-                    isCharging = false;
-                    chargeTime = 0f;
-                    chargeMultiplier = 1f;
+                    ShootCharged();
                 }
-                else if (!isCharging)
+                else if (stats.canCharge)
                 {
-                    gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, stats.accelerationAfterBounce, stats.canStun, stats.stunDuration, stats.leavesTrail);
-                    int shotBalls = gun.activeProjectiles.Count;
-                    int notShotBalls = stats.maxProjectiles - shotBalls;
-                    UIManager.Instance.UpdateBallsDisplay(playerIndex, notShotBalls, shotBalls);
+                    ShootNormal();
                 }
+                ResetChargeState();
             }
-            
             
             // Trigger attack animation
             if (animController != null)
@@ -208,6 +204,39 @@ public class PlayerController : MonoBehaviour, IDamageable
                 animController.TriggerAttackAnimation();
             }
         }
+    }
+    
+    private void ShootNormal()
+    {
+        gun.Shoot(playerIndex, stats.maxBounces, stats.projectileSpeed, 
+            stats.accelerationAfterBounce, stats.canStun, 
+            stats.stunDuration, stats.leavesTrail);
+        UpdateBallsDisplay();
+        Debug.Log("Shot Normal");
+    }
+    
+    private void ShootCharged()
+    {
+        float finalSpeed = stats.projectileSpeed * chargeMultiplier;
+        gun.Shoot(playerIndex, stats.maxBounces, finalSpeed, 
+            stats.accelerationAfterBounce, stats.canStun, 
+            stats.stunDuration, stats.leavesTrail);
+        UpdateBallsDisplay();
+        Debug.Log("Shot Charged");
+    }
+    
+    private void UpdateBallsDisplay()
+    {
+        int shotBalls = gun.activeProjectiles.Count;
+        int notShotBalls = stats.maxProjectiles - shotBalls;
+        UIManager.Instance.UpdateBallsDisplay(playerIndex, notShotBalls, shotBalls);
+    }
+
+    private void ResetChargeState()
+    {
+        isCharging = false;
+        chargeTime = 0f;
+        chargeMultiplier = 1f;
     }
     
     public void TakeDamage()

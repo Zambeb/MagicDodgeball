@@ -25,19 +25,18 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _DEPTHFADE
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
-  - DepthOnly
-  - SHADOWCASTER
   - MOTIONVECTORS
+  - SHADOWCASTER
+  - DepthOnly
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -143,7 +142,7 @@ Material:
     - _BUILTIN_ZTest: 4
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 0
-    - _Blend: 0
+    - _Blend: 2
     - _BlendOp: 0
     - _BottomMask: 1
     - _BumpScale: 1
@@ -154,16 +153,16 @@ Material:
     - _ColorMode: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DEPTHFADE: 1
-    - _DepthFadeMax: 0.2
+    - _DEPTHFADE: 0
+    - _DepthFadeMax: 0
     - _DetailNormalMapScale: 1
     - _DistortionBlend: 0.5
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0
-    - _DstBlend: 10
+    - _DstBlend: 1
     - _EDGEFADE: 0
-    - _EdgeFadeMax: 0.6
+    - _EdgeFadeMax: 1
     - _EdgeFadeMin: 1
     - _EmissionEnabled: 0
     - _Emissive: 0
@@ -174,7 +173,7 @@ Material:
     - _LUT: 0
     - _LightingEnabled: 0
     - _MainTexSpeed: -1.5
-    - _MaskFeather: 0.2
+    - _MaskFeather: 0.186
     - _MaskFeather2: 0.2
     - _MaskIntensity: 0
     - _MaskIntensity2: 0
@@ -206,7 +205,7 @@ Material:
     - _WARP: 0
     - _WarpIntensity: 0
     - _WarpScale: 1
-    - _ZTest: 4
+    - _ZTest: 8
     - _ZWrite: 0
     - _ZWriteControl: 0
     - __dirty: 0
@@ -238,6 +237,7 @@ Material:
     - _TrailColor: {r: 1, g: 1, b: 1, a: 1}
     - _WarpScroll: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &3164256293235536671
 MonoBehaviour:
   m_ObjectHideFlags: 11

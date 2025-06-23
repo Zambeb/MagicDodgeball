@@ -179,26 +179,38 @@ public class PlayerController : MonoBehaviour, IDamageable
                 else
                 {
                     ShootNormal();
+                    if (animController != null)
+                    {
+                        animController.TriggerAttackAnimation();
+                    }
                 }
             }
             else if (ctx.canceled)
             {
-                if (isCharging && stats.canCharge)
+                if (stats.canCharge && isCharging)
                 {
                     if (chargingCircle != null)
                     {
                         chargingCircle.Hide();
                     }
                     ShootCharged();
-                }
-                else if (stats.canCharge)
-                {
-                    ShootNormal();
+                    if (animController != null)
+                    {
+                        animController.TriggerAttackAnimation();
+                    }
                 }
                 ResetChargeState();
             }
             
-            // Trigger attack animation
+            else if (ctx.canceled && isCharging)
+            {
+                if (chargingCircle != null)
+                {
+                    chargingCircle.Hide();
+                }
+                ResetChargeState();
+            }
+            
             if (animController != null)
             {
                 animController.TriggerAttackAnimation();

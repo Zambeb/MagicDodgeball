@@ -271,6 +271,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             Debug.Log("Stunned!");
             StartCoroutine(PerformStun(duration));
+            _visuals.StunVisualEffect(duration);
         }
     }
     

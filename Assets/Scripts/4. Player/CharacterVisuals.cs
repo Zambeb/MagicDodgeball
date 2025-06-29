@@ -18,6 +18,11 @@ public class CharacterVisuals : MonoBehaviour
     [Header("VFX")] 
     [SerializeField] private GameObject ParryVFX;
     [SerializeField] private GameObject swapVFX;
+    [SerializeField] private GameObject stunVFX;
+    [SerializeField] private GameObject dashVFX;
+    [SerializeField] private GameObject forceFieldVFX;
+    [SerializeField] private GameObject immunityVFX;
+    [SerializeField] private GameObject chargingVFX;
     
     private void Start()
     {
@@ -97,5 +102,15 @@ public class CharacterVisuals : MonoBehaviour
         effect.transform.localScale *= 4f; 
         
         Destroy(effect, 2f);
+    }
+
+    public void StunVisualEffect(float duration)
+    {
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.y = 2f;
+        GameObject effect = Instantiate(stunVFX, spawnPosition, Quaternion.identity);
+        effect.transform.localScale *= 0.5f; 
+        
+        Destroy(effect, duration);
     }
 }

@@ -629,6 +629,11 @@ MonoBehaviour:
   model: {fileID: 0}
   ParryVFX: {fileID: 1037542503268038, guid: f35c52aa1abeb6b4b86e682039141b66, type: 3}
   swapVFX: {fileID: 2528196425102328709, guid: 934f46fc5e1bafd4ca7f14ce4aa04a16, type: 3}
+  stunVFX: {fileID: 335014109314203185, guid: 727ab4220fb0a734cb22ce8a98ea9c5d, type: 3}
+  dashVFX: {fileID: 0}
+  forceFieldVFX: {fileID: 0}
+  immunityVFX: {fileID: 0}
+  chargingVFX: {fileID: 0}
 --- !u!1 &5101880460496916527
 GameObject:
   m_ObjectHideFlags: 0

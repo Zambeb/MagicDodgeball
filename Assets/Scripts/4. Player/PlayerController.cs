@@ -397,6 +397,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (!activeApplied)
         {
             StartCoroutine(PerformDash(distance, duration, cooldown));
+            _visuals.DashVisualEffect(duration);
         }
     }
 

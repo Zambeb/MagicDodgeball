@@ -113,4 +113,21 @@ public class CharacterVisuals : MonoBehaviour
         
         Destroy(effect, duration);
     }
+
+    public void DashVisualEffect(float duration)
+    {
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.y = 1f;
+        
+        GameObject effect = Instantiate(dashVFX, spawnPosition, Quaternion.identity);
+        
+        effect.transform.SetParent(transform);
+        
+        effect.transform.localPosition = new Vector3(0, 1f, 0);
+        
+        effect.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
+        effect.transform.localScale *= 0.3f; 
+    
+        Destroy(effect, duration);
+    }
 }

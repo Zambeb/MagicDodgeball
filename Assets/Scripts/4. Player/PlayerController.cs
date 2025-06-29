@@ -161,33 +161,25 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
     public void OnFire(InputAction.CallbackContext ctx)
     {
-        if (!disabled && canShoot && gun.activeProjectiles.Count < stats.maxProjectiles)
+        if (disabled || !canShoot || gun.activeProjectiles.Count >= stats.maxProjectiles)
+            return;
+
+        if (stats.canCharge)
         {
             if (ctx.started)
             {
-                if (stats.canCharge)
+                chargeTime = 0f;
+                chargeMultiplier = 1f;
+                isCharging = true;
+
+                if (chargingCircle != null)
                 {
-                    chargeTime = 0f;
-                    chargeMultiplier = 1f;
-                    isCharging = true;
-                    
-                    if (chargingCircle != null)
-                    {
-                        chargingCircle.Show(stats.maxChargeTime);
-                    }
-                }
-                else
-                {
-                    ShootNormal();
-                    if (animController != null)
-                    {
-                        animController.TriggerAttackAnimation();
-                    }
+                    chargingCircle.Show(stats.maxChargeTime);
                 }
             }
             else if (ctx.canceled)
             {
-                if (stats.canCharge && isCharging)
+                if (isCharging)
                 {
                     if (chargingCircle != null)
                     {
@@ -201,19 +193,16 @@ public class PlayerController : MonoBehaviour, IDamageable
                 }
                 ResetChargeState();
             }
-            
-            else if (ctx.canceled && isCharging)
+        }
+        else
+        {
+            if (ctx.started)
             {
-                if (chargingCircle != null)
+                ShootNormal();
+                if (animController != null)
                 {
-                    chargingCircle.Hide();
+                    animController.TriggerAttackAnimation();
                 }
-                ResetChargeState();
-            }
-            
-            if (animController != null)
-            {
-                animController.TriggerAttackAnimation();
             }
         }
     }

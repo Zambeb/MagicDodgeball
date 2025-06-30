@@ -374,10 +374,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             if (!disabled && !IsActiveOnCooldown)
             {
                 acquiredActiveAbility.PerformAbility(this);
-            }
-            else
-            {
-                cooldownRing.ShowCooldown(activeCooldownTimeRemaining, activeCooldownDuration);
+                cooldownRing.StartCooldown(activeCooldownDuration);
             }
         }
     }
@@ -387,7 +384,14 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (!activeApplied)
         {
             StartCoroutine(PerformDash(distance, duration, cooldown));
-            _visuals.DashVisualEffect(duration);
+            if (moveDir.sqrMagnitude > 0.01f)
+            {
+                _visuals.DashVisualEffect(moveDir, duration);
+            }
+            else
+            {
+                _visuals.DashVisualEffect(transform.forward, duration);
+            }
         }
     }
 

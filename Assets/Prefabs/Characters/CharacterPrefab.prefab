@@ -652,7 +652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1809790931944954363
 RectTransform:
   m_ObjectHideFlags: 0
@@ -723,7 +723,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringImage: {fileID: 6795194993720260971}
-  hideDelay: 2
 --- !u!1 &5911594708312170669
 GameObject:
   m_ObjectHideFlags: 0

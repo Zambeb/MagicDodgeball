@@ -115,7 +115,7 @@ public class CharacterVisuals : MonoBehaviour
         Destroy(effect, duration);
     }
 
-    public void DashVisualEffect(float duration)
+    public void DashVisualEffect(Vector3 dashDirection, float duration)
     {
         Vector3 spawnPosition = transform.position;
         spawnPosition.y = 1f;
@@ -123,10 +123,14 @@ public class CharacterVisuals : MonoBehaviour
         GameObject effect = Instantiate(dashVFX, spawnPosition, Quaternion.identity);
         
         effect.transform.SetParent(transform);
-        
         effect.transform.localPosition = new Vector3(0, 1f, 0);
         
-        effect.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
+        Vector3 localDashDir = transform.InverseTransformDirection(dashDirection);
+        localDashDir.y = 0;
+        localDashDir.Normalize();
+        float angle = Mathf.Atan2(localDashDir.x, localDashDir.z) * Mathf.Rad2Deg;
+        
+        effect.transform.localRotation = Quaternion.Euler(-90f, 0, angle);
         effect.transform.localScale *= 0.3f; 
     
         Destroy(effect, duration);

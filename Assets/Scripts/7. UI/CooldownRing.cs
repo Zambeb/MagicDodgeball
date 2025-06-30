@@ -4,53 +4,57 @@ using UnityEngine.UI;
 public class CooldownRing : MonoBehaviour
 {
     public Image ringImage;
-    public float hideDelay = 1f;
+    //public float hideDelay = 1f;
 
-    private float currentCooldown;
+    private float remainingCooldown;
     private float totalCooldown;
-    private bool isVisible = false;
-    private float hideTimer;
-
-    public void ShowCooldown(float remaining, float total)
+    private bool isCooldownActive = false;
+    //private bool isVisible = false;
+    //private float hideTimer;
+    
+    private void Start()
     {
-        currentCooldown = remaining;
-        totalCooldown = total;
-        ringImage.fillAmount = currentCooldown / totalCooldown;
-        hideTimer = hideDelay;
+        ringImage.fillAmount = 0f;
+        gameObject.SetActive(false);
+    }
 
-        if (!isVisible)
+    public void StartCooldown(float total)
+    {
+        totalCooldown = total;
+        remainingCooldown = total;
+        isCooldownActive = true;
+
+        ringImage.fillAmount = 1f; 
+        gameObject.SetActive(true);
+        
+        if (ringImage.canvasRenderer != null)
         {
-            gameObject.SetActive(true);
-            isVisible = true;
+            ringImage.canvasRenderer.cull = false;
+            Canvas.ForceUpdateCanvases();
         }
     }
 
     private void Update()
     {
-        if (!isVisible) return;
-
-        currentCooldown -= Time.deltaTime;
-        float fill = 1f - Mathf.Clamp01(currentCooldown / totalCooldown);
-        ringImage.fillAmount = fill;
-        
-        if (fill >= 1f)
-        {
-            Hide();
+        if (!isCooldownActive)
             return;
-        }
 
-        hideTimer -= Time.deltaTime;
-        if (hideTimer <= 0f)
+        remainingCooldown -= Time.deltaTime;
+
+        float fill = Mathf.Clamp01(remainingCooldown / totalCooldown);
+        ringImage.fillAmount = fill;
+
+        if (remainingCooldown <= 0f)
         {
-            Hide();
+            EndCooldown();
         }
         
         transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
     }
 
-    private void Hide()
+    private void EndCooldown()
     {
-        isVisible = false;
+        isCooldownActive = false;
         gameObject.SetActive(false);
     }
 

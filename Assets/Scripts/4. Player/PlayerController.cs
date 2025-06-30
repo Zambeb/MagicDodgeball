@@ -451,7 +451,11 @@ public class PlayerController : MonoBehaviour, IDamageable
             yield return null;
         }
 
-        disabled = false;
+        if (RoundManager.Instance.roundActive)
+        {
+            disabled = false;
+        }
+        
         invincible = false;
         
         SetActiveCooldown(cooldown);

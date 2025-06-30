@@ -15,7 +15,7 @@ public class CooldownRing : MonoBehaviour
     private void Start()
     {
         ringImage.fillAmount = 0f;
-        gameObject.SetActive(false);
+        EndCooldown();
     }
 
     public void StartCooldown(float total)
@@ -26,6 +26,7 @@ public class CooldownRing : MonoBehaviour
 
         ringImage.fillAmount = 1f; 
         gameObject.SetActive(true);
+        ringImage.SetAllDirty();
         
         if (ringImage.canvasRenderer != null)
         {

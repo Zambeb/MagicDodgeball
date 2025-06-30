@@ -94,14 +94,15 @@ public class CharacterVisuals : MonoBehaviour
         Destroy(effect, 1f);
     }
 
-    public void SwapVisualEffect()
+    public GameObject SwapVisualEffect()
     {
         Vector3 spawnPosition = transform.position;
         spawnPosition.y = 0.2f;
         GameObject effect = Instantiate(swapVFX, spawnPosition, Quaternion.identity);
-        effect.transform.localScale *= 4f; 
-        
+        effect.transform.localScale *= 0.5f;
         Destroy(effect, 2f);
+        
+        return effect;
     }
 
     public void StunVisualEffect(float duration)

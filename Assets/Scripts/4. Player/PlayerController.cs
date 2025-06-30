@@ -191,12 +191,12 @@ public class PlayerController : MonoBehaviour, IDamageable
                         animController.TriggerAttackAnimation();
                     }
                 }
-                ResetChargeState();
+                
             }
         }
         else
         {
-            if (ctx.started)
+            if (ctx.performed)
             {
                 ShootNormal();
                 if (animController != null)
@@ -224,6 +224,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             stats.stunDuration, stats.leavesTrail);
         UpdateBallsDisplay();
         Debug.Log("Shot Charged");
+        ResetChargeState();
     }
     
     private void UpdateBallsDisplay()
@@ -505,25 +506,61 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (cc1 != null) cc1.enabled = false;
         if (cc2 != null) cc2.enabled = false;
-        
-        _visuals.SwapVisualEffect();
-        
-        yield return new WaitForSeconds(delay);
-        
-        Vector3 tempPosition = p1.transform.position;
-        Quaternion tempRotation = p1.transform.rotation;
-            
-        p1.transform.position = p2.transform.position;
-        p1.transform.rotation = p2.transform.rotation;
 
-        p2.transform.position = tempPosition;
-        p2.transform.rotation = tempRotation;
+        GameObject vfx1 = p1._visuals.SwapVisualEffect();
+        GameObject vfx2 = p2._visuals.SwapVisualEffect();
+
+        //yield return new WaitForSeconds(delay);
         
-        yield return null; 
+        Vector3 p1StartPos = p1.transform.position;
+        Vector3 p2StartPos = p2.transform.position;
+        Vector3 v1StartPos = vfx1.transform.position;
+        Vector3 v2StartPos = vfx2.transform.position;
+
+        Vector3 p1DownPos = p1StartPos + Vector3.down * 2f;
+        Vector3 p2DownPos = p2StartPos + Vector3.down * 2f;
+
+        float phaseDuration = delay / 3f; 
+        
+        float downElapsed = 0f;
+        while (downElapsed < phaseDuration)
+        {
+            downElapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(downElapsed / phaseDuration);
+            p1.transform.position = Vector3.Lerp(p1StartPos, p1DownPos, t);
+            p2.transform.position = Vector3.Lerp(p2StartPos, p2DownPos, t);
+            yield return null;
+        }
+        
+        float swapElapsed = 0f;
+        while (swapElapsed < phaseDuration)
+        {
+            swapElapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(swapElapsed / phaseDuration);
+            p1.transform.position = Vector3.Lerp(p1DownPos, p2DownPos, t);
+            p2.transform.position = Vector3.Lerp(p2DownPos, p1DownPos, t);
+            vfx1.transform.position = Vector3.Lerp(v1StartPos, v2StartPos, t);
+            vfx2.transform.position = Vector3.Lerp(v2StartPos, v1StartPos, t);
+            yield return null;
+        }
+        
+        float upElapsed = 0f;
+        while (upElapsed < phaseDuration)
+        {
+            upElapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(upElapsed / phaseDuration);
+            p1.transform.position = Vector3.Lerp(p2DownPos, p2StartPos, t);
+            p2.transform.position = Vector3.Lerp(p1DownPos, p1StartPos, t);
+            yield return null;
+        }
+        
+        Quaternion tempRotation = p1.transform.rotation;
+        p1.transform.rotation = p2.transform.rotation; 
+        p2.transform.rotation = tempRotation;
 
         if (cc1 != null) cc1.enabled = true;
         if (cc2 != null) cc2.enabled = true;
-        
+
         SetActiveCooldown(cooldown);
     }
 

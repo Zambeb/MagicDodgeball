@@ -83,6 +83,7 @@ public class PlayerAnimatorController : MonoBehaviour
     public void TriggerAttackAnimation()
     {
         animator.SetTrigger(IS_ATTACKING);
+        Debug.Log("Attacking");
     }
 
     private void ResetAnimationParameters()

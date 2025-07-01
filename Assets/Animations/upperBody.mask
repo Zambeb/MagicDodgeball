@@ -11,119 +11,429 @@ AvatarMask:
   m_Elements:
   - m_Path: 
     m_Weight: 1
-  - m_Path: Cube_021
+  - m_Path: geometry
     m_Weight: 1
-  - m_Path: mixamorig:Hips
+  - m_Path: geometry/lp_body
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:LeftUpLeg
+  - m_Path: geometry/lp_body/lp_body_base
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:LeftUpLeg/mixamorig:LeftLeg
+  - m_Path: geometry/lp_body/lp_ears
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:LeftUpLeg/mixamorig:LeftLeg/mixamorig:LeftFoot
+  - m_Path: geometry/lp_body/lp_eye_brows
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:LeftUpLeg/mixamorig:LeftLeg/mixamorig:LeftFoot/mixamorig:LeftToeBase
+  - m_Path: geometry/lp_body/lp_eyes
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:LeftUpLeg/mixamorig:LeftLeg/mixamorig:LeftFoot/mixamorig:LeftToeBase/mixamorig:LeftToe_End
+  - m_Path: geometry/lp_body/lp_head_racoon
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:RightUpLeg
+  - m_Path: geometry/lp_body/lp_nails
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:RightUpLeg/mixamorig:RightLeg
+  - m_Path: geometry/lp_body/lp_nose
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:RightUpLeg/mixamorig:RightLeg/mixamorig:RightFoot
+  - m_Path: geometry/lp_body/lp_tail_racoon
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:RightUpLeg/mixamorig:RightLeg/mixamorig:RightFoot/mixamorig:RightToeBase
+  - m_Path: geometry/lp_clothing
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:RightUpLeg/mixamorig:RightLeg/mixamorig:RightFoot/mixamorig:RightToeBase/mixamorig:RightToe_End
+  - m_Path: geometry/lp_clothing/lp_belt
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine
+  - m_Path: geometry/lp_clothing/lp_cape
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1
+  - m_Path: geometry/lp_clothing/lp_collar_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2
+  - m_Path: geometry/lp_clothing/lp_collar_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder
+  - m_Path: geometry/lp_clothing/lp_hat
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm
+  - m_Path: geometry/lp_clothing/lp_hat_ribbon
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm
+  - m_Path: geometry/lp_clothing/lp_scarf
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand
+  - m_Path: geometry/lp_clothing/lp_shirt
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandIndex1
+  - m_Path: geometry/lp_clothing/lp_sleeves
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandIndex1/mixamorig:LeftHandIndex2
+  - m_Path: rig
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandIndex1/mixamorig:LeftHandIndex2/mixamorig:LeftHandIndex3
+  - m_Path: rig/grp_ctrl_main
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandIndex1/mixamorig:LeftHandIndex2/mixamorig:LeftHandIndex3/mixamorig:LeftHandIndex4
+  - m_Path: rig/grp_ctrl_main/ctrl_main
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandMiddle1
+  - m_Path: rig/rig_move
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandMiddle1/mixamorig:LeftHandMiddle2
+  - m_Path: rig/rig_move/grp_ik_foot_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandMiddle1/mixamorig:LeftHandMiddle2/mixamorig:LeftHandMiddle3
+  - m_Path: rig/rig_move/grp_ik_foot_l/grp_toe_pivot_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandMiddle1/mixamorig:LeftHandMiddle2/mixamorig:LeftHandMiddle3/mixamorig:LeftHandMiddle4
+  - m_Path: rig/rig_move/grp_ik_foot_l/grp_toe_pivot_l/grp_foot_pivot_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandRing1
+  - m_Path: rig/rig_move/grp_ik_foot_l/grp_toe_pivot_l/grp_foot_pivot_l/grp_ankle_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandRing1/mixamorig:LeftHandRing2
+  - m_Path: rig/rig_move/grp_ik_foot_l/grp_toe_pivot_l/grp_foot_pivot_l/grp_ankle_l/ik_leg_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandRing1/mixamorig:LeftHandRing2/mixamorig:LeftHandRing3
+  - m_Path: rig/rig_move/grp_ik_foot_l/grp_toe_pivot_l/grp_foot_pivot_l/grp_toe_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandRing1/mixamorig:LeftHandRing2/mixamorig:LeftHandRing3/mixamorig:LeftHandRing4
+  - m_Path: rig/rig_move/grp_ik_foot_l/grp_toe_pivot_l/grp_foot_pivot_l/grp_toe_l/ik_toe_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandThumb1
+  - m_Path: rig/rig_move/grp_ik_foot_l/grp_toe_pivot_l/grp_foot_pivot_l/ik_foot_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandThumb1/mixamorig:LeftHandThumb2
+  - m_Path: rig/rig_move/grp_ik_foot_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandThumb1/mixamorig:LeftHandThumb2/mixamorig:LeftHandThumb3
+  - m_Path: rig/rig_move/grp_ik_foot_r/grp_toe_pivot_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandThumb1/mixamorig:LeftHandThumb2/mixamorig:LeftHandThumb3/mixamorig:LeftHandThumb4
+  - m_Path: rig/rig_move/grp_ik_foot_r/grp_toe_pivot_r/grp_foot_pivot_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck
+  - m_Path: rig/rig_move/grp_ik_foot_r/grp_toe_pivot_r/grp_foot_pivot_r/grp_ankle_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head
+  - m_Path: rig/rig_move/grp_ik_foot_r/grp_toe_pivot_r/grp_foot_pivot_r/grp_ankle_r/ik_leg_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head/mixamorig:HeadTop_End
+  - m_Path: rig/rig_move/grp_ik_foot_r/grp_toe_pivot_r/grp_foot_pivot_r/grp_toe_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder
+  - m_Path: rig/rig_move/grp_ik_foot_r/grp_toe_pivot_r/grp_foot_pivot_r/grp_toe_r/ik_toe_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm
+  - m_Path: rig/rig_move/grp_ik_foot_r/grp_toe_pivot_r/grp_foot_pivot_r/ik_foot_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm
+  - m_Path: rig/rig_move/jt_pelvis
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand
+  - m_Path: rig/rig_move/jt_pelvis/jt_leg_upper_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1
+  - m_Path: rig/rig_move/jt_pelvis/jt_leg_upper_l/jt_leg_lower_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1/mixamorig:RightHandIndex2
+  - m_Path: rig/rig_move/jt_pelvis/jt_leg_upper_l/jt_leg_lower_l/jt_foot_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1/mixamorig:RightHandIndex2/mixamorig:RightHandIndex3
+  - m_Path: rig/rig_move/jt_pelvis/jt_leg_upper_l/jt_leg_lower_l/jt_foot_l/jt_toe_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1/mixamorig:RightHandIndex2/mixamorig:RightHandIndex3/mixamorig:RightHandIndex4
+  - m_Path: rig/rig_move/jt_pelvis/jt_leg_upper_l/jt_leg_lower_l/jt_foot_l/jt_toe_l/jt_foot_end_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandMiddle1
+  - m_Path: rig/rig_move/jt_pelvis/jt_leg_upper_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandMiddle1/mixamorig:RightHandMiddle2
+  - m_Path: rig/rig_move/jt_pelvis/jt_leg_upper_r/jt_leg_rower_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandMiddle1/mixamorig:RightHandMiddle2/mixamorig:RightHandMiddle3
+  - m_Path: rig/rig_move/jt_pelvis/jt_leg_upper_r/jt_leg_rower_r/jt_foot_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandMiddle1/mixamorig:RightHandMiddle2/mixamorig:RightHandMiddle3/mixamorig:RightHandMiddle4
+  - m_Path: rig/rig_move/jt_pelvis/jt_leg_upper_r/jt_leg_rower_r/jt_foot_r/jt_toe_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandRing1
+  - m_Path: rig/rig_move/jt_pelvis/jt_leg_upper_r/jt_leg_rower_r/jt_foot_r/jt_toe_r/jt_foot_end_r
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandRing1/mixamorig:RightHandRing2
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandRing1/mixamorig:RightHandRing2/mixamorig:RightHandRing3
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandRing1/mixamorig:RightHandRing2/mixamorig:RightHandRing3/mixamorig:RightHandRing4
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandThumb1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_cape_01_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandThumb1/mixamorig:RightHandThumb2
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_cape_01_l/jt_cape_02_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandThumb1/mixamorig:RightHandThumb2/mixamorig:RightHandThumb3
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_cape_01_l/jt_cape_02_l/jt_cape_03_l
     m_Weight: 1
-  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandThumb1/mixamorig:RightHandThumb2/mixamorig:RightHandThumb3/mixamorig:RightHandThumb4
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_cape_01_l/jt_cape_02_l/jt_cape_03_l/jt_cape_04_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_cape_01_l/jt_cape_02_l/jt_cape_03_l/jt_cape_04_l/jt_cape_end_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_cape_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_cape_01_r/jt_cape_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_cape_01_r/jt_cape_02_r/jt_cape_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_cape_01_r/jt_cape_02_r/jt_cape_03_r/jt_cape_04_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_cape_01_r/jt_cape_02_r/jt_cape_03_r/jt_cape_04_r/jt_cape_end_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_head
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_head/jt_ear_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_head/jt_ear_01_l/jt_ear_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_head/jt_ear_01_l/jt_ear_02_l/jt_ear_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_head/jt_ear_01_l/jt_ear_02_l/jt_ear_03_l/jt_ear_end_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_head/jt_ear_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_head/jt_ear_01_r/jt_ear_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_head/jt_ear_01_r/jt_ear_02_r/jt_ear_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_head/jt_ear_01_r/jt_ear_02_r/jt_ear_03_r/jt_ear_end_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_head/jt_head_end
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_index_finger_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_index_finger_01_l/jt_index_finger_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_index_finger_01_l/jt_index_finger_02_l/jt_index_finger_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_index_finger_01_l/jt_index_finger_02_l/jt_index_finger_03_l/jt_index_finger_end_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_middle_finger_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_middle_finger_01_l/jt_middle_finger_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_middle_finger_01_l/jt_middle_finger_02_l/jt_middle_finger_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_middle_finger_01_l/jt_middle_finger_02_l/jt_middle_finger_03_l/jt_middle_finger_end_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_pinky_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_pinky_01_l/jt_pinky_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_pinky_01_l/jt_pinky_02_l/jt_pinky_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_pinky_01_l/jt_pinky_02_l/jt_pinky_03_l/jt_pinky_end_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_thumb_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_thumb_01_l/jt_thumb_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/jt_wrist_l/jt_thumb_01_l/jt_thumb_02_l/jt_thumb_end_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/sleeve_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/sleeve_01_l/sleeve_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_l/jt_arm_upper_l/jt_arm_lower_l/sleeve_01_l/sleeve_02_l/joint3
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_index_finger_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_index_finger_01_r/jt_index_finger_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_index_finger_01_r/jt_index_finger_02_r/jt_index_finger_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_index_finger_01_r/jt_index_finger_02_r/jt_index_finger_03_r/jt_index_finger_end_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_middle_finger_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_middle_finger_01_r/jt_middle_finger_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_middle_finger_01_r/jt_middle_finger_02_r/jt_middle_finger_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_middle_finger_01_r/jt_middle_finger_02_r/jt_middle_finger_03_r/jt_middle_finger_end_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_pinky_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_pinky_01_r/jt_pinky_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_pinky_01_r/jt_pinky_02_r/jt_pinky_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_pinky_01_r/jt_pinky_02_r/jt_pinky_03_r/jt_pinky_end_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_thumb_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_thumb_01_r/jt_thumb_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/jt_wrist_r/jt_thumb_01_r/jt_thumb_02_r/jt_thumb_end_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/sleeve_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/sleeve_01_r/sleeve_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_spine_middle/jt_spine_chest/jt_spine_neck/jt_shoulder_r/jt_arm_upper_r/jt_arm_rower_r/sleeve_01_r/sleeve_02_r/joint3
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_tail_01
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_tail_01/jt_tail_02
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_tail_01/jt_tail_02/jt_tail_03
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_tail_01/jt_tail_02/jt_tail_03/jt_tail_04
+    m_Weight: 1
+  - m_Path: rig/rig_move/jt_pelvis/jt_tail_01/jt_tail_02/jt_tail_03/jt_tail_04/jt_tail_end
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_arm_lower_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_arm_lower_l/ctrl_arm_lower_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_arm_lower_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_arm_lower_r/ctrl_arm_lower_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_arm_upper_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_arm_upper_l/ctrl_arm_upper_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_arm_upper_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_arm_upper_r/ctrl_arm_upper_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_01_l/ctrl_ear_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_01_r/ctrl_ear_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_02_l/ctrl_ear_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_02_r/ctrl_ear_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_03_l/ctrl_ear_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_ear_03_r/ctrl_ear_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_head
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_head/ctrl_head
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_01_l/ctrl_index_finger_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_01_r/ctrl_index_finger_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_02_l/ctrl_index_finger_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_02_r/ctrl_index_finger_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_03_l/ctrl_index_finger_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_index_finger_03_r/ctrl_index_finger_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_knee_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_knee_l/ctrl_knee_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_knee_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_knee_r/ctrl_knee_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_leg_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_leg_l/ctrl_leg_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_leg_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_leg_r/ctrl_leg_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_01_l/ctrl_middle_finger_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_01_r/ctrl_middle_finger_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_02_l/ctrl_middle_finger_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_02_r/ctrl_middle_finger_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_03_l/ctrl_middle_finger_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_middle_finger_03_r/ctrl_middle_finger_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pelvis
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pelvis/ctrl_pelvis
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_01_l/ctrl_pinky_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_01_r/ctrl_pinky_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_02_l/ctrl_pinky_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_02_r/ctrl_pinky_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_03_l/ctrl_pinky_03_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_pinky_03_r/ctrl_pinky_03_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_shoulder_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_shoulder_l/ctrl_shoulder_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_shoulder_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_shoulder_r/ctrl_shoulder_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_spine_chest
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_spine_chest/ctrl_spine_chest
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_spine_middle
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_spine_middle/ctrl_spine_middle
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_spine_neck
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_spine_neck/ctrl_spine_neck
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_thumb_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_thumb_01_l/ctrl_thumb_01_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_thumb_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_thumb_01_r/ctrl_thumb_01_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_thumb_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_thumb_02_l/ctrl_thumb_02_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_thumb_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_thumb_02_r/ctrl_thumb_02_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_wrist_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_wrist_l/ctrl_wrist_l
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_wrist_r
+    m_Weight: 1
+  - m_Path: rig/rig_move/oriHelp_wrist_r/ctrl_wrist_r
     m_Weight: 1

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,11 @@ public class AcquiredBuffsShower : MonoBehaviour
     [SerializeField] private Transform iconsParent; 
 
     private List<GameObject> spawnedIcons = new List<GameObject>();
+    
+
+    private void Start()
+    {
+    }
 
     public void UpdateBuffIcons()
     {
@@ -41,7 +47,7 @@ public class AcquiredBuffsShower : MonoBehaviour
         foreach (UpgradeEffectBase upgrade in upgrades)
         {
             GameObject iconObj = Instantiate(iconPrefab, iconsParent);
-            Image iconImage = iconObj.GetComponent<Image>();
+            Image iconImage = iconObj.GetComponent<AcquiredIconImage>().iconImage.GetComponent<Image>();
 
             BuffIcon buffIcon = iconObj.GetComponent<BuffIcon>();
             if (buffIcon != null)

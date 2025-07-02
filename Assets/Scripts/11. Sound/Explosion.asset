@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bc0cc2cce84c31448bdce96bfc83512, type: 3}
-  m_Name: Bounce
+  m_Name: Explosion
   m_EditorClassIdentifier: 
-  soundID: 
-  clips: []
+  soundID: Explosion
+  clips:
+  - {fileID: 8300000, guid: ddad4245e45d6c349801b2967d783f09, type: 3}
   outputGroup: {fileID: -1817967442443170780, guid: 55cbda9df79258946ad13270f8c1a5cb, type: 2}
-  volume: 1
+  volume: 0.6
   loop: 0

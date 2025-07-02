@@ -380,12 +380,14 @@ public class Projectile : MonoBehaviour
                 GameObject burnedArea = Instantiate(burnedAreaPrefab, spawnPosition, Quaternion.identity);
                 float adjustedScale = 1f + (ownerPlayer.stats.ballSizeMultiplier - 1f) * 0.5f;
                 burnedArea.transform.localScale *= adjustedScale;
+                SoundManager.Instance.PlaySFX("Explosion", spawnPosition);
             }
 
             if (ownerPlayer.stats.canExplodeBalls && miniProjectilePrefab != null)
             {
                 Quaternion randomRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
                 GameObject effect = Instantiate(explodeEffectPrefab, transform.position, randomRotation);
+                SoundManager.Instance.PlaySFX("Explosion", effect.transform.position);
                 Destroy(effect, effectLifetime);
                 
                 for (int i = 0; i < explosionProjectileCount; i++)

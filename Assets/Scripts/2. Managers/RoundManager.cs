@@ -225,8 +225,9 @@ public class RoundManager : MonoBehaviour
         player2.ResetPosition();
         
         UIManager.Instance.countdownText.gameObject.SetActive(true);
+        SoundManager.Instance.PlaySFX("Countdown");
 
-        string[] countdownSteps = { "3", "2", "1", "GO!" };
+        string[] countdownSteps = { "3", "2", "1"};
         
         if (player1Wins > 2 && player2Wins > 2)
         {
@@ -246,9 +247,14 @@ public class RoundManager : MonoBehaviour
         Debug.Log("Round Started!");
         timer = roundDuration;
         roundActive = true;
-        
+
         player1.ResetCharacter();
         player2.ResetCharacter();
+        
+        UIManager.Instance.countdownText.text = "GO!";
+        yield return new WaitForSeconds(stepDelay);
+        UIManager.Instance.countdownText.gameObject.SetActive(false);
+        
     }
     
     public void RegisterHit(int damagedIndex)

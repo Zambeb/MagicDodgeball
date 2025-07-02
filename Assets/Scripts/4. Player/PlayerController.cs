@@ -224,6 +224,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             stats.accelerationAfterBounce, stats.canStun, 
             stats.stunDuration, stats.leavesTrail);
         UpdateBallsDisplay();
+        SoundManager.Instance.PlaySFX("Sneeze", gameObject.transform.position);
         Debug.Log("Shot Normal");
     }
     
@@ -235,6 +236,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             stats.stunDuration, stats.leavesTrail);
         UpdateBallsDisplay();
         _visuals.ChargingVFXOff();
+        SoundManager.Instance.PlaySFX("Sneeze", gameObject.transform.position);
         Debug.Log("Shot Charged with multiplier = " + chargeMultiplier);
         ResetChargeState();
     }
@@ -261,6 +263,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             RoundManager.Instance.RegisterHit(playerIndex);
             Debug.Log("Ouch!");
             _visuals.FlashWhite(3, 0.5f);
+            SoundManager.Instance.PlaySFX("GetHit", gameObject.transform.position);
             if (stats.immunityAfterHit != 0)
             {
                 StartCoroutine(InvinvibityAfterHit(stats.immunityAfterHit));

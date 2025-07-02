@@ -10,8 +10,8 @@ public class CharacterVisuals : MonoBehaviour
     
     [SerializeField] private Material whiteMaterial;
     public GameObject model;
-    private Renderer renderer;
-    private Material originalMaterial;
+    private Renderer[] renderers;
+    private Material[] originalMaterials;
     
     private Coroutine flashCoroutine;
     private Coroutine chargingVFXCoroutine;
@@ -48,8 +48,12 @@ public class CharacterVisuals : MonoBehaviour
         
         model = characterModels[idx];
         model.SetActive(true);
-        renderer = model.GetComponentInChildren<Renderer>();
-        originalMaterial = renderer.material;
+        renderers = model.GetComponentsInChildren<Renderer>();
+        originalMaterials = new Material[renderers.Length];
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            originalMaterials[i] = renderers[i].material;
+        }
     }
     
     public void FlashWhite(int flashes, float totalDuration)
@@ -57,31 +61,36 @@ public class CharacterVisuals : MonoBehaviour
         if (flashCoroutine != null)
         {
             StopCoroutine(flashCoroutine);
-            renderer.material = originalMaterial; 
+            for (int j = 0; j < renderers.Length; j++)
+            {
+                renderers[j].material = originalMaterials[j];
+            }
         }
         flashCoroutine = StartCoroutine(FlashWhiteCoroutine(flashes, totalDuration));
     }
     
     private IEnumerator FlashWhiteCoroutine(int flashes, float totalDuration)
     {
-        if (model == null)
+        if (model == null || renderers == null || renderers.Length == 0)
             yield break;
-        
-        if (renderer == null)
-            yield break;
-        
+
         float flashDuration = totalDuration / (flashes * 2);
 
         for (int i = 0; i < flashes; i++)
         {
-            renderer.material = whiteMaterial;
+            for (int j = 0; j < renderers.Length; j++)
+                renderers[j].material = whiteMaterial;
+
             yield return new WaitForSeconds(flashDuration);
 
-            renderer.material = originalMaterial;
+            for (int j = 0; j < renderers.Length; j++)
+                renderers[j].material = originalMaterials[j];
+
             yield return new WaitForSeconds(flashDuration);
         }
-        
-        renderer.material = originalMaterial;
+
+        for (int j = 0; j < renderers.Length; j++)
+            renderers[j].material = originalMaterials[j];
     }
 
     public void ParryVisualEffect()

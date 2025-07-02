@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc0cc2cce84c31448bdce96bfc83512, type: 3}
+  m_Name: Sneeze
+  m_EditorClassIdentifier: 
+  soundID: Sneeze
+  clips:
+  - {fileID: 8300000, guid: cd93c8402ae2833459791c3b2a34cc70, type: 3}
+  - {fileID: 8300000, guid: 9dbbde96a433df541bbd1b2170efdf8d, type: 3}
+  - {fileID: 8300000, guid: 999b79e21f81e5a488a62ac42d09abf6, type: 3}
+  - {fileID: 8300000, guid: e2935da9e2a4e144ba5be3d838ce834f, type: 3}
+  - {fileID: 8300000, guid: 2fc4297ea262aae43981dfb5bc32e2ce, type: 3}
+  - {fileID: 8300000, guid: 0e117e4de9adc184eb07b651cfd0c759, type: 3}
+  - {fileID: 8300000, guid: b6bf9f378a6d3de4289134510efe436e, type: 3}
+  - {fileID: 8300000, guid: 28bd76c13438cf94798f247b55543ad8, type: 3}
+  - {fileID: 8300000, guid: 9c31e4320859011468c6540dd7051d3f, type: 3}
+  outputGroup: {fileID: -1817967442443170780, guid: 55cbda9df79258946ad13270f8c1a5cb, type: 2}
+  volume: 1
+  loop: 0

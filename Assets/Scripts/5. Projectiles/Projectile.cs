@@ -1,5 +1,7 @@
 using UnityEngine;
 using System;
+using System.Collections;
+using Unity.VisualScripting;
 
 public class Projectile : MonoBehaviour
 {
@@ -46,6 +48,7 @@ public class Projectile : MonoBehaviour
     public GameObject bounceEffectPrefab; 
     public GameObject destroyEffectPrefab;
     public GameObject explodeEffectPrefab;
+    public GameObject mergeEffectPrefab;
     public float effectLifetime = 2f;
 
     private void Start()
@@ -303,13 +306,65 @@ public class Projectile : MonoBehaviour
         }
         sphereCastRadius = Mathf.Max(sphereCastRadius, 0.5f);
         
+        StartCoroutine(PulseScale());
+
+        if (mergeEffectPrefab != null)
+        {
+            GameObject effect = Instantiate(mergeEffectPrefab, transform.position, Quaternion.identity);
+            effect.transform.localScale = this.GameObject().transform.localScale;
+            Destroy(effect, effectLifetime);
+        }
+        
         absorbed.DestroySelf();
         Debug.Log($"Absorbing: scale increased for {scaleIncrease}");
+    }
+    
+    private IEnumerator PulseScale()
+    {
+        Debug.Log("Пульсирую");
+        Vector3 baseScale = transform.localScale;
+        
+        Vector3 targetScale1 = baseScale * 1.4f;
+        Vector3 targetScale11 = baseScale * 0.6f;
+        float duration1 = 0.15f; 
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration1;
+            transform.localScale = Vector3.Lerp(baseScale, targetScale1, t);
+            yield return null;
+        }
+
+        t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration1;
+            transform.localScale = Vector3.Lerp(targetScale1, targetScale11, t);
+            yield return null;
+        }
+        
+        Vector3 targetScale2 = baseScale * 1.2f;
+        float duration2 = 0.12f;
+        t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration2;
+            transform.localScale = Vector3.Lerp(baseScale, targetScale2, t);
+            yield return null;
+        }
+        
+        t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration2;
+            transform.localScale = Vector3.Lerp(targetScale2, baseScale, t);
+            yield return null;
+        }
     }
 
     public void DestroySelf()
     {
-        if (destroyEffectPrefab != null)
+        if (destroyEffectPrefab != null && !ownerPlayer.stats.canBurnArea && !ownerPlayer.stats.canAbsorbBalls)
         {
             Quaternion randomRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
             GameObject effect = Instantiate(destroyEffectPrefab, transform.position, randomRotation);

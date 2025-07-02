@@ -400,6 +400,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (!activeApplied)
         {
             StartCoroutine(PerformForceField(duration, speedMultiplier, cooldown));
+            _visuals.ForceFieldEffect(duration);
         }
     }
 

@@ -135,4 +135,17 @@ public class CharacterVisuals : MonoBehaviour
     
         Destroy(effect, duration);
     }
+
+    public void ForceFieldEffect(float duration)
+    {
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.y = 1f;
+        
+        GameObject effect = Instantiate(forceFieldVFX, spawnPosition, Quaternion.identity);
+        
+        effect.transform.SetParent(transform);
+        effect.transform.localPosition = new Vector3(0, 1f, 0);
+        
+        Destroy(effect, duration);
+    }
 }

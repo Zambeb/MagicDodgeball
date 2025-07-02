@@ -14,6 +14,7 @@ public class CharacterVisuals : MonoBehaviour
     private Material originalMaterial;
     
     private Coroutine flashCoroutine;
+    private Coroutine chargingVFXCoroutine;
 
     [Header("VFX")] 
     [SerializeField] private GameObject ParryVFX;
@@ -160,5 +161,43 @@ public class CharacterVisuals : MonoBehaviour
         //effect.transform.localPosition = new Vector3(0, 1f, 0);
         
         Destroy(effect, duration);
+    }
+    
+    public void ChargingVFXOn(float duration)
+    {
+        GameObject instance = Instantiate(chargingVFX, transform.position, Quaternion.identity);
+        instance.transform.SetParent(transform);
+        
+        //instance.transform.localScale = Vector3.one * 0.1f;
+        
+        //StartCoroutine(ScaleChargingVFX(instance.transform, duration));
+    }
+
+    private IEnumerator ScaleChargingVFX(Transform effectTransform, float duration)
+    {
+        Vector3 startScale = Vector3.one * 0.1f;
+        Vector3 endScale = Vector3.one;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            effectTransform.localScale = Vector3.Lerp(startScale, endScale, t);
+            yield return null;
+        }
+
+        effectTransform.localScale = endScale;
+    }
+    
+    public void ChargingVFXOff()
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.name.Contains(chargingVFX.name))
+            {
+                Destroy(child.gameObject);
+            }
+        }
     }
 }

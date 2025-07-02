@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private float chargeMultiplier = 1f;
     private bool isCharging = false;
     private float chargeTime = 0f;
+    private bool chargeInputHeld = false;
 
     void Awake()
     {
@@ -95,6 +96,7 @@ public class PlayerController : MonoBehaviour, IDamageable
                 chargeTime += Time.deltaTime;
                 chargeTime = Mathf.Min(chargeTime, stats.maxChargeTime);
                 chargeMultiplier = 1f + (chargeTime * stats.chargeSpeedIncreasePerSecond);
+                //Debug.Log("CharMult = " + chargeMultiplier);
             }
         }
     }
@@ -166,12 +168,15 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (stats.canCharge)
         {
-            if (ctx.started)
+            if (ctx.started && !chargeInputHeld)
             {
                 chargeTime = 0f;
                 chargeMultiplier = 1f;
                 isCharging = true;
+                chargeInputHeld = true;
+                _visuals.ChargingVFXOn(stats.maxChargeTime);
 
+                Debug.Log("Start charging at multiplier = " + chargeMultiplier);
                 if (chargingCircle != null)
                 {
                     chargingCircle.Show(stats.maxChargeTime);
@@ -179,6 +184,11 @@ public class PlayerController : MonoBehaviour, IDamageable
             }
             else if (ctx.canceled)
             {
+                float val = ctx.ReadValue<float>();
+                if (val > 0.1f)
+                {
+                    return;
+                }
                 if (isCharging)
                 {
                     if (chargingCircle != null)
@@ -186,6 +196,7 @@ public class PlayerController : MonoBehaviour, IDamageable
                         chargingCircle.Hide();
                     }
                     ShootCharged();
+                    chargeInputHeld = false;
                     if (animController != null)
                     {
                         animController.TriggerAttackAnimation();
@@ -223,7 +234,8 @@ public class PlayerController : MonoBehaviour, IDamageable
             stats.accelerationAfterBounce, stats.canStun, 
             stats.stunDuration, stats.leavesTrail);
         UpdateBallsDisplay();
-        Debug.Log("Shot Charged");
+        _visuals.ChargingVFXOff();
+        Debug.Log("Shot Charged with multiplier = " + chargeMultiplier);
         ResetChargeState();
     }
     
@@ -237,6 +249,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void ResetChargeState()
     {
         isCharging = false;
+        _visuals.ChargingVFXOff();
         chargeTime = 0f;
         chargeMultiplier = 1f;
     }
@@ -270,6 +283,12 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (animController != null) animController.TriggerStunAnimation();
         disabled = true;
+        if (isCharging && chargingCircle != null)
+        {
+            chargingCircle.Hide();
+        }
+        chargeInputHeld = false;
+        isCharging = false;
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -324,6 +343,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
 
         isCharging = false;
+        chargeInputHeld = false;
+        _visuals.ChargingVFXOff();
     }
     
     public void EnableCharacter()
@@ -337,6 +358,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         shieldOrbit.ClearShields();
         disabled = false;
         invincible = false;
+        chargeInputHeld = false;
         ApplyAllUpgrades();
         UIManager.Instance.UpdateBallsDisplay(playerIndex, stats.maxProjectiles, 0);
     }
@@ -440,6 +462,13 @@ public class PlayerController : MonoBehaviour, IDamageable
         
         disabled = true;
         invincible = true;
+        if (isCharging && chargingCircle != null)
+        {
+            chargingCircle.Hide();
+        }
+
+        isCharging = false;
+        chargeInputHeld = false;
 
         float elapsed = 0f;
         Vector3 dashDirection = moveDir.normalized;

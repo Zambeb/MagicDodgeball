@@ -500,7 +500,7 @@ MonoBehaviour:
   dashVFX: {fileID: 2605316480486226868, guid: 6e6416a41fa90a24daf0f2f05dcaf2ad, type: 3}
   forceFieldVFX: {fileID: 1598533638775410, guid: 28f0186db411df4418f2a04d18987d56, type: 3}
   immunityVFX: {fileID: 8452160341050738606, guid: 70bc762668b2d584ca07d1a820298dfa, type: 3}
-  chargingVFX: {fileID: 0}
+  chargingVFX: {fileID: 1501320978331502, guid: 8ccf107dbad85e3468d2920e39493711, type: 3}
 --- !u!1 &5101880460496916527
 GameObject:
   m_ObjectHideFlags: 0

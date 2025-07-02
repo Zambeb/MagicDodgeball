@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ImmunityAfterHit
   m_EditorClassIdentifier: 
   upgradeName: Immunity After Hit
-  icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
+  icon: {fileID: 21300000, guid: efd93f6cac20e424d99915f0d7ef9ac9, type: 3}
   isActiveAbility: 0
   isStackable: 0
   maxStacks: 0

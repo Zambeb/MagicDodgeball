@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AccelerationAfterBounceData
   m_EditorClassIdentifier: 
   upgradeName: Acceleration after bounce
-  icon: {fileID: 21300000, guid: ad0f8ab32dc0c49429a58cb595ee75ff, type: 3}
+  icon: {fileID: 21300000, guid: 457cb1d0e3493674b9a2b30489be744c, type: 3}
   descriptionIfKeyboard: Your projectiles gain speed after each bounce
   descriptionIfGamepad: Your projectiles gain speed after each bounce
   effectPrefab: {fileID: 11400000, guid: c91a912ccfee4ca4e94b8f90bc027a0a, type: 2}

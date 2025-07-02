@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ExplosiveBallsEffect
   m_EditorClassIdentifier: 
   upgradeName: Explosive Balls
-  icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
+  icon: {fileID: 21300000, guid: 0af3957d71f19bd42971779812f83021, type: 3}
   isActiveAbility: 0
   isStackable: 0
   maxStacks: 0

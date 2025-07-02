@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MagicBarrierEffect
   m_EditorClassIdentifier: 
   upgradeName: Magic Barrier
-  icon: {fileID: 21300000, guid: bbce6f07dcdf99e45add519412a8653f, type: 3}
+  icon: {fileID: 21300000, guid: f7f1853e7031dad49a8f193547b6e314, type: 3}
   isActiveAbility: 1
   isStackable: 0
   maxStacks: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ForceFieldData
   m_EditorClassIdentifier: 
   upgradeName: Force Field
-  icon: {fileID: 21300000, guid: bbce6f07dcdf99e45add519412a8653f, type: 3}
+  icon: {fileID: 21300000, guid: bda4baaf1f5824b4f95a93866e5c7194, type: 3}
   descriptionIfKeyboard: 'Press Space to become invincible for 1.5 seconds, but your
     speed x0.5 and you can''t shoot
 

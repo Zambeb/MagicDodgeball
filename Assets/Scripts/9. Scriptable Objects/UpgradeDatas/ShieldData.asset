@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShieldData
   m_EditorClassIdentifier: 
   upgradeName: Shield
-  icon: {fileID: 21300000, guid: 163b5aa180941244491ac8091516c176, type: 3}
+  icon: {fileID: 21300000, guid: b19f3187787441b4fa3f8fc2296178d2, type: 3}
   descriptionIfKeyboard: +1 Shield floating around you, that protects from attacks
   descriptionIfGamepad: +1 Shield floating around you, that protects from attacks
   effectPrefab: {fileID: 11400000, guid: 1977ae0842430cc4d8d1d513a1e287e5, type: 2}

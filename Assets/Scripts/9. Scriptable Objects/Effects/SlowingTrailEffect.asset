@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SlowingTrailEffect
   m_EditorClassIdentifier: 
   upgradeName: Slowing Trail
-  icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
+  icon: {fileID: 21300000, guid: 40548af238433ba45b640151c469006b, type: 3}
   isActiveAbility: 0
   isStackable: 0
   maxStacks: 0

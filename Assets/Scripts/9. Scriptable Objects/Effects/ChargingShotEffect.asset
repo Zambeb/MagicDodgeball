@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ChargingShotEffect
   m_EditorClassIdentifier: 
   upgradeName: Charging Shot
-  icon: {fileID: 21300000, guid: 6bce538235490a74db5a217915969040, type: 3}
+  icon: {fileID: 21300000, guid: 630e82e7213039648bb4afdbc5abad8d, type: 3}
   isActiveAbility: 0
   isStackable: 0
   maxStacks: 0

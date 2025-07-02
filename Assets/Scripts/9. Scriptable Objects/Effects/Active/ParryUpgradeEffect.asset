@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ParryUpgradeEffect
   m_EditorClassIdentifier: 
   upgradeName: Parry
-  icon: {fileID: 21300000, guid: bbce6f07dcdf99e45add519412a8653f, type: 3}
+  icon: {fileID: 21300000, guid: c5c16c7590400e743adbe945450ae7ea, type: 3}
   isActiveAbility: 1
   isStackable: 0
   maxStacks: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StunData
   m_EditorClassIdentifier: 
   upgradeName: Stun
-  icon: {fileID: 21300000, guid: e40678f1cfb55ab408258091bbeff994, type: 3}
+  icon: {fileID: 21300000, guid: 2377fa92fe8452542be3264292dbd543, type: 3}
   descriptionIfKeyboard: Your projectiles stun the enemy for 0.8 seconds
   descriptionIfGamepad: Your projectiles stun the enemy for 0.8 seconds
   effectPrefab: {fileID: 11400000, guid: e18952ae0d8e48c49bcad02dbfb19d14, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NoSelfHarmData
   m_EditorClassIdentifier: 
   upgradeName: No Self Harm
-  icon: {fileID: 21300000, guid: 4ae9bea1832052944a071686272b6096, type: 3}
+  icon: {fileID: 21300000, guid: 9841895e5d7dac6469d46cecfda9d8b6, type: 3}
   descriptionIfKeyboard: Your projectiles can not harm you
   descriptionIfGamepad: Your projectiles can not harm you
   effectPrefab: {fileID: 11400000, guid: 0cfb9e20b61ba0a43980ddcd5a7efcda, type: 2}

@@ -11,6 +11,12 @@ public class UpgradeButton : MonoBehaviour
     public UpgradeData upgradeData;
     private UpgradeScreen upgradeScreen;
 
+    [SerializeField] private Image frame;
+
+    public Sprite stackableFrame;
+    public Sprite notStackableFrame;
+    public Sprite activeFrame;
+
     public void Setup(UpgradeData data, UpgradeScreen screen, PlayerController player)
     {
         upgradeData = data;
@@ -25,6 +31,19 @@ public class UpgradeButton : MonoBehaviour
         else
         {
             descriptionText.text = data.descriptionIfKeyboard;
+        }
+
+        if (data.effectPrefab.isActiveAbility)
+        {
+            frame.sprite = activeFrame;
+        }
+        else if (data.effectPrefab.isStackable)
+        {
+            frame.sprite = stackableFrame;
+        }
+        else
+        {
+            frame.sprite = notStackableFrame;
         }
         
         

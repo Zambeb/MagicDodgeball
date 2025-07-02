@@ -150,21 +150,37 @@ public class RoundManager : MonoBehaviour
         playersSelectedUpgrade = 0;
 
         string winnerMessage = "Draw!";
+        PlayerController winner = null;
+        PlayerController loser = null;
+
         if (player1points > player2points)
         {
             player1Wins++;
             winnerMessage = "Player 1 has won!";
+            winner = player1;
+            loser = player2;
             upgradeLogger.LogRound(roundCount, player1, player2, 0);
         }
         else if (player2points > player1points)
         {
             player2Wins++;
             winnerMessage = "Player 2 has won!";
+            winner = player2;
+            loser = player1;
             upgradeLogger.LogRound(roundCount, player1, player2, 1);
         }
         else
         {
             upgradeLogger.LogRound(roundCount, player1, player2, 2);
+        }
+
+        if (winner != null && loser != null)
+        {
+            PlayerAnimatorController winnerAnim = winner.GetComponentInChildren<PlayerAnimatorController>();
+            PlayerAnimatorController loserAnim = loser.GetComponentInChildren<PlayerAnimatorController>();
+
+            if (winnerAnim != null) winnerAnim.TriggerWonAnimation();
+            if (loserAnim != null) loserAnim.TriggerLostAnimation();
         }
         
         if (player1Wins >= 4)
@@ -188,6 +204,8 @@ public class RoundManager : MonoBehaviour
 
 
         UIManager.Instance.ShowWinner(winnerMessage);
+
+
         UIManager.Instance.victoryDisplayUI.UpdateVictoryCrystals(player1Wins, player2Wins);
 
         if (!gameEnded)

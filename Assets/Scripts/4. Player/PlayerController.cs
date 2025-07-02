@@ -245,6 +245,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (RoundManager.Instance.roundActive && !invincible)
         {
+            if (animController != null) animController.TriggerGetHitAnimation();
             RoundManager.Instance.RegisterHit(playerIndex);
             Debug.Log("Ouch!");
             _visuals.FlashWhite(3, 0.5f);
@@ -267,6 +268,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     
     private IEnumerator PerformStun(float duration)
     {
+        if (animController != null) animController.TriggerStunAnimation();
         disabled = true;
         float elapsed = 0f;
 
@@ -275,6 +277,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             elapsed += Time.deltaTime;
             yield return null;
         }
+
 
         if (RoundManager.Instance.roundActive)
         {
@@ -382,6 +385,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void Dash(float distance, float duration, float cooldown)
     {
+        if (animController != null) animController.TriggerDashAnimation();
         if (!activeApplied)
         {
             StartCoroutine(PerformDash(distance, duration, cooldown));
@@ -407,6 +411,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void Parry(float radius, float cooldown)
     {
+        if (animController != null) animController.TriggerParryAnimation();
         if (!activeApplied)
         {
             if (playerIndex == 0) opponent = RoundManager.Instance.player2;

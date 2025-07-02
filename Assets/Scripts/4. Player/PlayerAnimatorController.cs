@@ -11,6 +11,12 @@ public class PlayerAnimatorController : MonoBehaviour
     private const string IS_RUNNING_RIGHT = "isRunningRight";
     private const string IS_RUNNING_BACKWARD = "isRunningBackward";
     private const string IS_ATTACKING = "isAttacking";
+    private const string GET_HIT = "isGettingHit";
+    private const string IS_STUNNED = "isStunned";
+    private const string WON = "Won";
+    private const string LOST = "Lost";
+    private const string IS_DASHING = "isDashing";
+    private const string IS_PARRYING = "isParrying";
 
     void Start()
     {
@@ -24,6 +30,7 @@ public class PlayerAnimatorController : MonoBehaviour
         
         // Reset all animation parameters
         ResetAnimationParameters();
+
     }
 
     void Update()
@@ -80,16 +87,53 @@ public class PlayerAnimatorController : MonoBehaviour
     }
 
     // This method will be called from PlayerController when firing
+     public void TriggerGetHitAnimation()
+    {
+        animator.SetTrigger(GET_HIT);
+    }
+
+    public void TriggerStunAnimation()
+    {
+        animator.SetTrigger(IS_STUNNED);
+    }
+
+    public void TriggerWonAnimation()
+    {
+        animator.SetTrigger(WON);
+    }
+
+    public void TriggerLostAnimation()
+    {
+        animator.SetTrigger(LOST);
+    }
+
+    public void TriggerDashAnimation()
+    {
+        animator.SetTrigger(IS_DASHING);
+    }
+
+    public void TriggerParryAnimation()
+    {
+        animator.SetTrigger(IS_PARRYING);
+    }
+
     public void TriggerAttackAnimation()
     {
         animator.SetTrigger(IS_ATTACKING);
-        Debug.Log("Attacking");
+      //  Debug.Log("Attacking");
     }
 
     private void ResetAnimationParameters()
     {
         ResetMovementParameters();
         animator.ResetTrigger(IS_ATTACKING);
+        animator.ResetTrigger(GET_HIT);
+        animator.ResetTrigger(IS_STUNNED);
+        animator.ResetTrigger(WON);
+        animator.ResetTrigger(LOST);
+        animator.ResetTrigger(IS_DASHING);
+        animator.ResetTrigger(IS_PARRYING);
+
     }
 
     private void ResetMovementParameters()

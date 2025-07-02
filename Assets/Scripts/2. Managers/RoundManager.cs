@@ -40,6 +40,8 @@ public class RoundManager : MonoBehaviour
     [Header("Logger")]
     private PlayerUpgradeLogger upgradeLogger;
 
+    private bool endRoundSoundPlayed;
+
     private void Awake()
     {
         if (Instance != null && Instance != this) Destroy(gameObject);
@@ -92,6 +94,13 @@ public class RoundManager : MonoBehaviour
         if (!roundActive) return;
 
         timer -= Time.deltaTime;
+        
+        if (!endRoundSoundPlayed && timer <= 3f)
+        {
+            endRoundSoundPlayed = true;
+            SoundManager.Instance.PlaySFX("RoundEnding");
+        }
+        
         if (timer <= 0f)
         {
             EndRound();
@@ -125,6 +134,7 @@ public class RoundManager : MonoBehaviour
         roundCount++;
         player1points = 0;
         player2points = 0;
+        endRoundSoundPlayed = false;
         
         UIManager.Instance.UpdateRoundPoints(player1points, player2points);
         if (roundCount > longerRoundsRound)

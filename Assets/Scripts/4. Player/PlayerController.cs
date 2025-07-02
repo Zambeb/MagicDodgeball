@@ -298,6 +298,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private IEnumerator InvinvibityAfterHit(float duration)
     {
         invincible = true;
+        _visuals.ImmunityFVX(duration);
         Debug.Log("Invincibility starts");
         float elapsed = 0f;
         while (elapsed < duration)

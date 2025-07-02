@@ -152,7 +152,7 @@ public class UpgradeScreen : MonoBehaviour
         Vector3 targetWorldPos = parentRect.TransformPoint(targetLocalPos);
         Vector3 targetPos = targetWorldPos;
         Vector3 originalScale = button.transform.localScale;
-        Vector3 targetScale = originalScale * 2f;
+        Vector3 targetScale = originalScale * 1.8f;
         
         foreach (var go in spawnedButtons)
         {

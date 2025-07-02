@@ -149,6 +149,7 @@ MonoBehaviour:
   slowAmount: 0
   bounceEffectPrefab: {fileID: 1620636520166436, guid: 07757cf211bd45044a1f1917658b9e66, type: 3}
   destroyEffectPrefab: {fileID: 8893734663272954044, guid: 500cb924277be594995d218546ea2ee0, type: 3}
+  explodeEffectPrefab: {fileID: 5537036506536118661, guid: c9d59916dbc240e44ae75dc941e4631b, type: 3}
   effectLifetime: 2
 --- !u!1 &6856430591621889683
 GameObject:

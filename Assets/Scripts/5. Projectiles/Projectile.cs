@@ -44,7 +44,8 @@ public class Projectile : MonoBehaviour
     
     [Header("Visual Effects")]
     public GameObject bounceEffectPrefab; 
-    public GameObject destroyEffectPrefab; 
+    public GameObject destroyEffectPrefab;
+    public GameObject explodeEffectPrefab;
     public float effectLifetime = 2f;
 
     private void Start()
@@ -328,6 +329,10 @@ public class Projectile : MonoBehaviour
 
             if (ownerPlayer.stats.canExplodeBalls && miniProjectilePrefab != null)
             {
+                Quaternion randomRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
+                GameObject effect = Instantiate(explodeEffectPrefab, transform.position, randomRotation);
+                Destroy(effect, effectLifetime);
+                
                 for (int i = 0; i < explosionProjectileCount; i++)
                 {
                     float angle = (i / (float)explosionProjectileCount) * 360f;

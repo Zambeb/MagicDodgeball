@@ -103,6 +103,7 @@ public class RoundManager : MonoBehaviour
         if (player1 != null && player2 != null)
         {
             StartRound();
+            SoundManager.Instance.FadeMusicVolume(0.0f, 1f);
         }
         else
         {
@@ -146,6 +147,8 @@ public class RoundManager : MonoBehaviour
 
         player1.DisableCharacter();
         player2.DisableCharacter();
+        
+        SoundManager.Instance.FadeMusicVolume(0.5f, 1f);
 
         playersSelectedUpgrade = 0;
 
@@ -260,14 +263,25 @@ public class RoundManager : MonoBehaviour
             yield return new WaitForSeconds(stepDelay);
         }
 
-        UIManager.Instance.countdownText.gameObject.SetActive(false);
-
         Debug.Log("Round Started!");
         timer = roundDuration;
         roundActive = true;
 
         player1.ResetCharacter();
         player2.ResetCharacter();
+
+        if (roundCount == 1 || roundCount == 2)
+        {
+            SoundManager.Instance.PlayMusic("ArenaLVL1");
+        }
+        else if (roundCount == 3 || roundCount == 4)
+        {
+            SoundManager.Instance.PlayMusic("ArenaLVL2");
+        }
+        else if (roundCount >= 5)
+        {
+            SoundManager.Instance.PlayMusic("ArenaLVL3");
+        }
         
         UIManager.Instance.countdownText.text = "GO!";
         yield return new WaitForSeconds(stepDelay);

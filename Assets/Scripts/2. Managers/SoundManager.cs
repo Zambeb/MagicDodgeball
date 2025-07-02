@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -81,7 +82,7 @@ public class SoundManager : MonoBehaviour
             return;
         }
 
-        AudioClip chosenClip = data.clips[0]; // Для музыки можно всегда брать первый или сделать случайный выбор
+        AudioClip chosenClip = data.clips[0]; 
         musicSource.clip = chosenClip;
         musicSource.outputAudioMixerGroup = data.outputGroup;
         musicSource.volume = data.volume;
@@ -92,5 +93,25 @@ public class SoundManager : MonoBehaviour
     public void StopMusic()
     {
         musicSource.Stop();
+    }
+    
+    public void FadeMusicVolume(float targetVolume, float duration)
+    {
+        targetVolume = Mathf.Clamp01(targetVolume);
+        StartCoroutine(FadeVolumeCoroutine(targetVolume, duration));
+    }
+
+    private IEnumerator FadeVolumeCoroutine(float targetVolume, float duration)
+    {
+        float startVolume = musicSource.volume;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            musicSource.volume = Mathf.Lerp(startVolume, targetVolume, elapsed / duration);
+            yield return null;
+        }
+        musicSource.volume = targetVolume;
     }
 }

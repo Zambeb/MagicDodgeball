@@ -28,8 +28,9 @@ public class Projectile : MonoBehaviour
     
     public GameObject burnedAreaPrefab; 
     public PlayerController ownerPlayer;
-    
-    [Header("Mini Projectiles")]
+
+    [Header("Mini Projectiles")] 
+    public bool isMiniBall = false;
     public GameObject miniProjectilePrefab;
     public int explosionProjectileCount;
     public float explosionProjectileSizeMultiplier;
@@ -209,8 +210,8 @@ public class Projectile : MonoBehaviour
         var proj = hit.collider.GetComponent<Projectile>();
         if (proj != null)
         {
-            bool iCanAbsorb = ownerPlayer.stats.canAbsorbBalls;
-            bool otherCanAbsorb = proj.ownerPlayer != null && proj.ownerPlayer.stats.canAbsorbBalls;
+            bool iCanAbsorb = ownerPlayer.stats.canAbsorbBalls && !isMiniBall;
+            bool otherCanAbsorb = proj.ownerPlayer != null && proj.ownerPlayer.stats.canAbsorbBalls && !proj.isMiniBall;
 
             if (iCanAbsorb || otherCanAbsorb)
             {
@@ -415,6 +416,7 @@ public class Projectile : MonoBehaviour
                     if (miniProj != null)
                     {
                         miniProj.Initialize(dir);
+                        miniProj.isMiniBall = true;
                         miniProj.playerIndex = playerIndex;
                         miniProj.ownerPlayer = ownerPlayer;
                         miniProj.projectileSpeed = explosionProjectileSpeed;

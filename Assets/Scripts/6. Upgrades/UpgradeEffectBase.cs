@@ -8,6 +8,7 @@ public abstract class UpgradeEffectBase : ScriptableObject
     public Sprite icon;
     public bool isActiveAbility;
     public bool isStackable;
+    public bool offensive;
     [ShowIf("isStackable")]
     public int maxStacks;
     public abstract void Apply(PlayerController player);

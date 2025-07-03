@@ -16,6 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 40548af238433ba45b640151c469006b, type: 3}
   isActiveAbility: 0
   isStackable: 0
+  offensive: 1
   maxStacks: 0
   trailDuration: 1.5
   slowAmount: 0.65

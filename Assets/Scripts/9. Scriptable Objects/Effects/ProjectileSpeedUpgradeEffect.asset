@@ -16,6 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 7d9d08c1834576f4bbe581d49f6680dc, type: 3}
   isActiveAbility: 0
   isStackable: 1
+  offensive: 1
   maxStacks: 4
   statType: 1
   value: 4

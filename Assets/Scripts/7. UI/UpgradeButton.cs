@@ -13,8 +13,8 @@ public class UpgradeButton : MonoBehaviour
 
     [SerializeField] private Image frame;
 
-    public Sprite stackableFrame;
-    public Sprite notStackableFrame;
+    public Sprite offensiveFrame;
+    public Sprite deffensiveFrame;
     public Sprite activeFrame;
 
     public void Setup(UpgradeData data, UpgradeScreen screen, PlayerController player)
@@ -37,16 +37,18 @@ public class UpgradeButton : MonoBehaviour
         {
             frame.sprite = activeFrame;
         }
-        else if (data.effectPrefab.isStackable)
+        else if (!data.effectPrefab.isActiveAbility)
         {
-            frame.sprite = stackableFrame;
+            if (data.effectPrefab.offensive)
+            {
+                frame.sprite = offensiveFrame;
+            }
+            else
+            {
+                frame.sprite = deffensiveFrame;
+            }
         }
-        else
-        {
-            frame.sprite = notStackableFrame;
-        }
-        
-        
+
         GetComponent<Button>().onClick.AddListener(OnClick);
     }
 

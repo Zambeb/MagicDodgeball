@@ -140,8 +140,8 @@ MonoBehaviour:
   descriptionText: {fileID: 7297107614760302549}
   upgradeData: {fileID: 0}
   frame: {fileID: 1652541232269372495}
-  stackableFrame: {fileID: 21300000, guid: c3b757a4a7e890448a89c20b2014ec21, type: 3}
-  notStackableFrame: {fileID: 21300000, guid: 0d031543f9645644dbb7041e0c4b2baa, type: 3}
+  offensiveFrame: {fileID: 21300000, guid: 0d031543f9645644dbb7041e0c4b2baa, type: 3}
+  deffensiveFrame: {fileID: 21300000, guid: c3b757a4a7e890448a89c20b2014ec21, type: 3}
   activeFrame: {fileID: 21300000, guid: 78cee81fa3653ae4296f7afe51bf0af6, type: 3}
 --- !u!1 &945268857642272804
 GameObject:

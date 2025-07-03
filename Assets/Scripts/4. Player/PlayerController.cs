@@ -260,7 +260,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (RoundManager.Instance.roundActive && !invincible)
         {
-            if (animController != null) animController.TriggerGetHitAnimation();
             RoundManager.Instance.RegisterHit(playerIndex);
             Debug.Log("Ouch!");
             _visuals.FlashWhite(3, 0.5f);
@@ -269,6 +268,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             {
                 StartCoroutine(InvinvibityAfterHit(stats.immunityAfterHit));
             }
+            if (animController != null) animController.TriggerGetHitAnimation();
         }
     }
     

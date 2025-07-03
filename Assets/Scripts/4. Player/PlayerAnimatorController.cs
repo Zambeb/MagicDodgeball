@@ -27,7 +27,6 @@ public class PlayerAnimatorController : MonoBehaviour
         {
             Debug.LogError("PlayerAnimatorController requires a PlayerController component in parent!");
         }
-        
         // Reset all animation parameters
         ResetAnimationParameters();
 
@@ -86,42 +85,41 @@ public class PlayerAnimatorController : MonoBehaviour
     // This method will be called from PlayerController when firing
      public void TriggerGetHitAnimation()
     {
+        Debug.Log("Animator: " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
         animator.SetTrigger(GET_HIT);
-        Debug.Log("Triggered GetHitAnimation");
     }
 
     public void TriggerStunAnimation()
     {
         animator.SetTrigger(IS_STUNNED);
-        Debug.Log("Triggered StunAnimation");
     }
 
     public void TriggerWonAnimation()
     {
         animator.SetTrigger(WON);
-        Debug.Log("Triggered WonAnimation");
     }
 
     public void TriggerLostAnimation()
     {
         animator.SetTrigger(LOST);
-        Debug.Log("Triggered LostAnimation");
+      //  Debug.Log("Triggered LostAnimation");
     }
 
     public void TriggerDashAnimation()
     {
         animator.SetTrigger(IS_DASHING);
-        Debug.Log("Triggered DashAnimation");
+       // Debug.Log("Triggered DashAnimation");
     }
 
     public void TriggerParryAnimation()
     {
         animator.SetTrigger(IS_PARRYING);
-        Debug.Log("Triggered ParryAnimation");
+        //Debug.Log("Triggered ParryAnimation");
     }
 
     public void TriggerAttackAnimation()
     {
+        Debug.Log("Animator: " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
         animator.SetTrigger(IS_ATTACKING);
     }
 

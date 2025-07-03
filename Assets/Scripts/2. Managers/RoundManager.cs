@@ -136,6 +136,8 @@ public class RoundManager : MonoBehaviour
         player2points = 0;
         endRoundSoundPlayed = false;
         
+        UIManager.Instance.ResetPointBoardsPosition();
+        
         UIManager.Instance.UpdateRoundPoints(player1points, player2points);
         if (roundCount > longerRoundsRound)
         {
@@ -154,8 +156,6 @@ public class RoundManager : MonoBehaviour
     {
         Debug.Log("Round Ended!");
         roundActive = false;
-        
-        UIManager.Instance.ResetPointBoardsPosition();
 
         player1.DisableCharacter();
         player2.DisableCharacter();

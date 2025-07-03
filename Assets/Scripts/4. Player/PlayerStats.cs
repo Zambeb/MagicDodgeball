@@ -24,6 +24,8 @@ public struct PlayerStats
     public bool canCharge;
     public float maxChargeTime;
     public float chargeSpeedIncreasePerSecond;
+    public int miniBallsQuantity;
+    public float miniBallsSizeMultiplier;
 
     /*
     public PlayerStats()
@@ -54,6 +56,8 @@ public struct PlayerStats
         canCharge = other.canCharge;
         maxChargeTime = other.maxChargeTime;
         chargeSpeedIncreasePerSecond = other.chargeSpeedIncreasePerSecond;
+        miniBallsQuantity = other.miniBallsQuantity;
+        miniBallsSizeMultiplier = other.miniBallsSizeMultiplier;
     }
 }
 

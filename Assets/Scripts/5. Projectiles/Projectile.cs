@@ -31,7 +31,8 @@ public class Projectile : MonoBehaviour
     
     [Header("Mini Projectiles")]
     public GameObject miniProjectilePrefab;
-    public int explosionProjectileCount = 8; 
+    public int explosionProjectileCount;
+    public float explosionProjectileSizeMultiplier;
     public float explosionProjectileSpeed = 5f; 
     public float explosionSpreadAngle = 360f;
 
@@ -324,8 +325,8 @@ public class Projectile : MonoBehaviour
         Debug.Log("Пульсирую");
         Vector3 baseScale = transform.localScale;
         
-        Vector3 targetScale1 = baseScale * 1.4f;
-        Vector3 targetScale11 = baseScale * 0.6f;
+        Vector3 targetScale1 = baseScale * 1.5f;
+        Vector3 targetScale11 = baseScale * 0.5f;
         float duration1 = 0.15f; 
         float t = 0f;
         while (t < 1f)
@@ -343,13 +344,22 @@ public class Projectile : MonoBehaviour
             yield return null;
         }
         
-        Vector3 targetScale2 = baseScale * 1.2f;
+        Vector3 targetScale2 = baseScale * 1.25f;
+        Vector3 targetScale22 = baseScale * 0.75f;
         float duration2 = 0.12f;
         t = 0f;
         while (t < 1f)
         {
             t += Time.deltaTime / duration2;
             transform.localScale = Vector3.Lerp(baseScale, targetScale2, t);
+            yield return null;
+        }
+        
+        t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration2;
+            transform.localScale = Vector3.Lerp(baseScale, targetScale22, t);
             yield return null;
         }
         
@@ -389,6 +399,9 @@ public class Projectile : MonoBehaviour
                 GameObject effect = Instantiate(explodeEffectPrefab, transform.position, randomRotation);
                 SoundManager.Instance.PlaySFX("Explosion", effect.transform.position);
                 Destroy(effect, effectLifetime);
+
+                explosionProjectileCount = ownerPlayer.stats.miniBallsQuantity;
+                explosionProjectileSizeMultiplier = ownerPlayer.stats.miniBallsSizeMultiplier;
                 
                 for (int i = 0; i < explosionProjectileCount; i++)
                 {
@@ -396,7 +409,7 @@ public class Projectile : MonoBehaviour
                     Vector3 dir = Quaternion.Euler(0f, angle, 0f) * Vector3.forward;
 
                     GameObject miniProjObj = Instantiate(miniProjectilePrefab, transform.position, Quaternion.identity);
-                    miniProjObj.transform.localScale *= 0.5f;
+                    miniProjObj.transform.localScale = Vector3.one * explosionProjectileSizeMultiplier;
                     Projectile miniProj = miniProjObj.GetComponent<Projectile>();
 
                     if (miniProj != null)

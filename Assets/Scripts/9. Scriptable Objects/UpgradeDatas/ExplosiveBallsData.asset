@@ -18,4 +18,4 @@ MonoBehaviour:
     ones flying outwards
   descriptionIfGamepad: On final bounce your projectile explodes ointo 8 smaller
     ones flying outwards
-  effectPrefab: {fileID: 11400000, guid: 2fea1a5e87817c4408e4b0e2a840e86d, type: 2}
+  effectPrefab: {fileID: 11400000, guid: b2af63541ec4f0043808b731eba30f2a, type: 2}

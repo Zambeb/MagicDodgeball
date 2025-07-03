@@ -17,5 +17,5 @@ MonoBehaviour:
   isActiveAbility: 1
   isStackable: 0
   maxStacks: 0
-  cooldown: 25
+  cooldown: 8
   delay: 1

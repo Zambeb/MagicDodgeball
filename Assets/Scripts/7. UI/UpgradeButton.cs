@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class UpgradeButton : MonoBehaviour
+public class UpgradeButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image iconImage;
     //[SerializeField] private TMP_Text nameText;
@@ -18,6 +20,14 @@ public class UpgradeButton : MonoBehaviour
     public Sprite activeFrame;
 
     public TMP_Text typeText;
+    
+    private Vector3 originalScale;
+    private Coroutine scaleCoroutine;
+    
+    private void Awake()
+    {
+        originalScale = transform.localScale;
+    }
 
     public void Setup(UpgradeData data, UpgradeScreen screen, PlayerController player)
     {
@@ -84,5 +94,48 @@ public class UpgradeButton : MonoBehaviour
     public UpgradeData GetUpgradeData()
     {
         return upgradeData;
+    }
+    
+    public void OnSelect(BaseEventData eventData)
+    {
+        StartScaleAnimation(originalScale * 1.2f, 0.2f);
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+        StartScaleAnimation(originalScale, 0.2f);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        StartScaleAnimation(originalScale * 1.2f, 0.2f);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        StartScaleAnimation(originalScale, 0.2f);
+    }
+    
+    private void StartScaleAnimation(Vector3 targetScale, float duration)
+    {
+        if (scaleCoroutine != null)
+            StopCoroutine(scaleCoroutine);
+
+        scaleCoroutine = StartCoroutine(ScaleCoroutine(targetScale, duration));
+    }
+
+    private IEnumerator ScaleCoroutine(Vector3 targetScale, float duration)
+    {
+        Vector3 startScale = transform.localScale;
+        float time = 0f;
+
+        while (time < duration)
+        {
+            transform.localScale = Vector3.Lerp(startScale, targetScale, time / duration);
+            time += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        transform.localScale = targetScale;
     }
 }

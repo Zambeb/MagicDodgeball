@@ -17,6 +17,8 @@ public class UpgradeButton : MonoBehaviour
     public Sprite deffensiveFrame;
     public Sprite activeFrame;
 
+    public TMP_Text typeText;
+
     public void Setup(UpgradeData data, UpgradeScreen screen, PlayerController player)
     {
         upgradeData = data;
@@ -36,16 +38,19 @@ public class UpgradeButton : MonoBehaviour
         if (data.effectPrefab.isActiveAbility)
         {
             frame.sprite = activeFrame;
+            typeText.text = "Active";
         }
         else if (!data.effectPrefab.isActiveAbility)
         {
             if (data.effectPrefab.offensive)
             {
                 frame.sprite = offensiveFrame;
+                typeText.text = "Offensive";
             }
             else
             {
                 frame.sprite = deffensiveFrame;
+                typeText.text = "Defensive";
             }
         }
 

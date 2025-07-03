@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +11,13 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject inRoundUI;
 
-    [Header("Round Points")] [SerializeField]
-    private TextMeshProUGUI player1PointsText;
-
+    [Header("Round Points")] 
+    [SerializeField] private TextMeshProUGUI player1PointsText;
     [SerializeField] private TextMeshProUGUI player2PointsText;
+    private GameObject pointBoard1;
+    private GameObject pointBoard2;
+    private Vector3 originalPosBoard1;
+    private Vector3 originalPosBoard2;
 
     [Header("Player Balls")] 
     [SerializeField] private GameObject player1Balls;
@@ -44,6 +48,17 @@ public class UIManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) Destroy(gameObject);
         else Instance = this;
+    }
+
+    private void Start()
+    {
+        pointBoard1 = player1PointsText.transform.parent.gameObject;
+        pointBoard2 = player2PointsText.transform.parent.gameObject;
+        
+        RectTransform rt1 = pointBoard1.GetComponent<RectTransform>();
+        RectTransform rt2 = pointBoard2.GetComponent<RectTransform>();
+        originalPosBoard1 = rt1.anchoredPosition;
+        originalPosBoard2 = rt2.anchoredPosition;
     }
 
     private void Update()
@@ -239,5 +254,45 @@ public class UIManager : MonoBehaviour
     {
         if (!upgradeScreenMode.activeSelf) return;
         isUpgradeTimerRunning = true;
+    }
+    
+    public void SwapPointBoards()
+    {
+        StartCoroutine(SwapBoardsCoroutine());
+    }
+
+    private IEnumerator SwapBoardsCoroutine()
+    {
+        RectTransform rt1 = pointBoard1.GetComponent<RectTransform>();
+        RectTransform rt2 = pointBoard2.GetComponent<RectTransform>();
+
+        Vector3 startPos1 = rt1.anchoredPosition;
+        Vector3 startPos2 = rt2.anchoredPosition;
+
+        float elapsed = 0f;
+        float duration = 1f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.SmoothStep(0f, 1f, elapsed / duration);
+
+            rt1.anchoredPosition = Vector3.Lerp(startPos1, startPos2, t);
+            rt2.anchoredPosition = Vector3.Lerp(startPos2, startPos1, t);
+
+            yield return null;
+        }
+        
+        rt1.anchoredPosition = startPos2;
+        rt2.anchoredPosition = startPos1;
+    }
+    
+    public void ResetPointBoardsPosition()
+    {
+        RectTransform rt1 = pointBoard1.GetComponent<RectTransform>();
+        RectTransform rt2 = pointBoard2.GetComponent<RectTransform>();
+
+        rt1.anchoredPosition = originalPosBoard1;
+        rt2.anchoredPosition = originalPosBoard2;
     }
 }

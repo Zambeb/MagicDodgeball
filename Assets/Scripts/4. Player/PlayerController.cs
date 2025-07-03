@@ -449,12 +449,14 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void Swap(float cooldown, float delay)
     {
-        if (!activeApplied)
+        if (!activeApplied && !disabled)
         {
             var p1 = RoundManager.Instance.player1;
             var p2 = RoundManager.Instance.player2;
 
             if (p1 == null || p2 == null) return;
+            
+            UIManager.Instance.SwapPointBoards();
 
             StartCoroutine(PerformSwap(p1, p2, cooldown, delay));
         }
@@ -548,6 +550,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     private IEnumerator PerformSwap(PlayerController p1, PlayerController p2, float cooldown, float delay)
     {
         activeApplied = true;
+
+        p1.disabled = true;
+        p2.disabled = true;
         
         CharacterController cc1 = p1.GetComponent<CharacterController>();
         CharacterController cc2 = p2.GetComponent<CharacterController>();
@@ -608,6 +613,9 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (cc1 != null) cc1.enabled = true;
         if (cc2 != null) cc2.enabled = true;
+        
+        p1.disabled = false;
+        p2.disabled = false;
 
         SetActiveCooldown(cooldown);
     }

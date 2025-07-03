@@ -154,6 +154,8 @@ public class RoundManager : MonoBehaviour
     {
         Debug.Log("Round Ended!");
         roundActive = false;
+        
+        UIManager.Instance.ResetPointBoardsPosition();
 
         player1.DisableCharacter();
         player2.DisableCharacter();

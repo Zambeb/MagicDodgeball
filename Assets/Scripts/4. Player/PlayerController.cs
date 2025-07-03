@@ -410,7 +410,8 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void Dash(float distance, float duration, float cooldown)
     {
-        if (animController != null) animController.TriggerDashAnimation();
+        // I turned Dash animation off until it if fixed
+        //if (animController != null) animController.TriggerDashAnimation();
         if (!activeApplied)
         {
             StartCoroutine(PerformDash(distance, duration, cooldown));

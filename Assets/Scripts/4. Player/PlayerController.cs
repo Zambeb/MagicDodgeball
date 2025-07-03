@@ -261,14 +261,18 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (RoundManager.Instance.roundActive && !invincible)
         {
             RoundManager.Instance.RegisterHit(playerIndex);
-            Debug.Log("Ouch!");
+            Debug.Log($"Player {playerIndex + 1} says: Ouch!");
             _visuals.FlashWhite(3, 0.5f);
             SoundManager.Instance.PlaySFX("GetHit", gameObject.transform.position);
             if (stats.immunityAfterHit != 0)
             {
                 StartCoroutine(InvinvibityAfterHit(stats.immunityAfterHit));
             }
-            if (animController != null) animController.TriggerGetHitAnimation();
+            if (animController != null) 
+            {
+                //Debug.Log(" animController is not null (TakeDamage)"); 
+                animController.TriggerGetHitAnimation();
+            }
         }
     }
     

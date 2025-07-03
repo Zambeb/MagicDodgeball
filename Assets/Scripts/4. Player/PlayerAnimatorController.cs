@@ -85,7 +85,7 @@ public class PlayerAnimatorController : MonoBehaviour
     // This method will be called from PlayerController when firing
      public void TriggerGetHitAnimation()
     {
-        Debug.Log("Animator: " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
+        Debug.Log("Animator: GetHit " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
         animator.SetTrigger(GET_HIT);
     }
 
@@ -119,7 +119,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
     public void TriggerAttackAnimation()
     {
-        Debug.Log("Animator: " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
+        Debug.Log("Animator: Attack " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
         animator.SetTrigger(IS_ATTACKING);
     }
 

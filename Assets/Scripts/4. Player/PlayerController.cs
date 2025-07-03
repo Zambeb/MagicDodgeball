@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public ShieldOrbitManager shieldOrbit;
     
-    private PlayerAnimatorController animController;
+    public PlayerAnimatorController animController;
 
     [Header("Mouse Rotation")]
     [SerializeField] private LayerMask groundMask; 
@@ -65,7 +65,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         
         gun = GetComponent<PlayerGun>();
         controller = GetComponent<CharacterController>();
-        animController = GetComponentInChildren<PlayerAnimatorController>();
         
         initialStats = new PlayerStats(stats);
         //speed = stats.moveSpeed;
@@ -74,6 +73,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void Start()
     {
         playerInput = GetComponentInChildren<PlayerInput>();
+        animController = _visuals.characterModels[playerIndex].GetComponent<PlayerAnimatorController>();
+        
         disabled = true;
         invincible = false;
         canShoot = true;

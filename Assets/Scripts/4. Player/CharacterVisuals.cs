@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterVisuals : MonoBehaviour
 {
     [SerializeField] private Transform modelsRoot;  
-    [SerializeField] private GameObject[] characterModels;
+    [SerializeField] public GameObject[] characterModels;
     
     [SerializeField] private Material whiteMaterial;
     public GameObject model;

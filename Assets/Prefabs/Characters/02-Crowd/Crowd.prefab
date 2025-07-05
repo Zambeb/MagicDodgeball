@@ -4058,6 +4058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5275875578717755328}
   - component: {fileID: 7021586032416856224}
+  - component: {fileID: 3792620250994093625}
   m_Layer: 0
   m_Name: Crowd
   m_TagString: Untagged
@@ -4104,6 +4105,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3792620250994093625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4790840779374398842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca83ca3d5e0e6e044b49fe57df8085b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4801724994859083242
 GameObject:
   m_ObjectHideFlags: 0

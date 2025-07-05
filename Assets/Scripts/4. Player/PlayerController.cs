@@ -264,6 +264,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             RoundManager.Instance.RegisterHit(playerIndex);
             Debug.Log($"Player {playerIndex + 1} says: Ouch!");
             _visuals.FlashWhite(3, 0.5f);
+            FeelManager.Instance.GetHitCameraShake();
             SoundManager.Instance.PlaySFX("GetHit", gameObject.transform.position);
             if (stats.immunityAfterHit != 0)
             {

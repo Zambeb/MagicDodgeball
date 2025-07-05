@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PauseManager : MonoBehaviour
 {
-    public static PauseManager Instance;
+    public static PauseManager Instance { get; private set; }
 
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject mainPauseMenu;

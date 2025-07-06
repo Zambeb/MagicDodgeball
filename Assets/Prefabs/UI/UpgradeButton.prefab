@@ -145,6 +145,8 @@ MonoBehaviour:
   deffensiveFrame: {fileID: 21300000, guid: c3b757a4a7e890448a89c20b2014ec21, type: 3}
   activeFrame: {fileID: 21300000, guid: 78cee81fa3653ae4296f7afe51bf0af6, type: 3}
   typeText: {fileID: 1025885018747787840}
+  wobbleAngle: 2
+  wobbleSpeed: 0.4
 --- !u!1 &945268857642272804
 GameObject:
   m_ObjectHideFlags: 0

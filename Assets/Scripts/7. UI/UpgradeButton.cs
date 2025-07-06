@@ -24,9 +24,16 @@ public class UpgradeButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IP
     private Vector3 originalScale;
     private Coroutine scaleCoroutine;
     
+    private Coroutine wobbleCoroutine;
+
+    [SerializeField] private float wobbleAngle = 10f;
+    [SerializeField] private float wobbleSpeed = 2f;
+    private float wobblePhaseOffset;
+    
     private void Awake()
     {
         originalScale = transform.localScale;
+        wobblePhaseOffset = Random.Range(0f, Mathf.PI * 2f);
     }
 
     public void Setup(UpgradeData data, UpgradeScreen screen, PlayerController player)
@@ -99,21 +106,25 @@ public class UpgradeButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IP
     public void OnSelect(BaseEventData eventData)
     {
         StartScaleAnimation(originalScale * 1.2f, 0.2f);
+        StartWobble();
     }
 
     public void OnDeselect(BaseEventData eventData)
     {
         StartScaleAnimation(originalScale, 0.2f);
+        StopWobble();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         StartScaleAnimation(originalScale * 1.2f, 0.2f);
+        StartWobble();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         StartScaleAnimation(originalScale, 0.2f);
+        StopWobble();
     }
     
     private void StartScaleAnimation(Vector3 targetScale, float duration)
@@ -137,5 +148,34 @@ public class UpgradeButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IP
         }
 
         transform.localScale = targetScale;
+    }
+    
+    private void StartWobble()
+    {
+        if (wobbleCoroutine != null)
+            StopCoroutine(wobbleCoroutine);
+
+        wobbleCoroutine = StartCoroutine(WobbleCoroutine());
+    }
+    
+    public void StopWobble()
+    {
+        if (wobbleCoroutine != null)
+        {
+            StopCoroutine(wobbleCoroutine);
+            wobbleCoroutine = null;
+        }
+        
+        transform.rotation = Quaternion.identity;
+    }
+
+    private IEnumerator WobbleCoroutine()
+    {
+        while (true)
+        {
+            float angle = Mathf.Sin(Time.unscaledTime * wobbleSpeed * Mathf.PI * 2f + wobblePhaseOffset) * wobbleAngle;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+            yield return null;
+        }
     }
 }

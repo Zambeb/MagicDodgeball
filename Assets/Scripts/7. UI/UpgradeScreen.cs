@@ -146,14 +146,21 @@ public class UpgradeScreen : MonoBehaviour
         UpgradeManager.Instance.ApplyUpgrade(currentPlayer, upgrade);
         UIManager.Instance.UpdateAllAcquiredBuffs();
 
+        button.GetComponent<UpgradeButton>().StopWobble();
         Vector3 originalPos = button.transform.position;
         RectTransform parentRect = buttonsParent.GetComponent<RectTransform>();
         Vector3 targetLocalPos = Vector3.zero;
         Vector3 targetWorldPos = parentRect.TransformPoint(targetLocalPos);
         Vector3 targetPos = targetWorldPos;
+
         Vector3 originalScale = button.transform.localScale;
-        Vector3 targetScale = originalScale * 1.8f;
-        
+        float targetScaleMultiplier = 1.5f;
+
+        RectTransform rt = button.GetComponent<RectTransform>();
+
+        float duration = 1f;
+        float elapsed = 0f;
+
         foreach (var go in spawnedButtons)
         {
             if (go != button)
@@ -162,22 +169,39 @@ public class UpgradeScreen : MonoBehaviour
             }
         }
 
-        RectTransform rt = button.GetComponent<RectTransform>();
-        Vector3 startPos = rt.position;
-
-        float duration = 1f;
-        float elapsed = 0f;
-
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
-            rt.position = Vector3.Lerp(startPos, targetPos, t);
-            rt.localScale = Vector3.Lerp(originalScale, targetScale, t);
+
+            rt.position = Vector3.Lerp(originalPos, targetPos, t);
+
+            // Синус с замедленным уменьшением
+            float sinValue;
+
+            if (t <= 0.5f)
+            {
+                // Резкий рост
+                sinValue = Mathf.Sin(Mathf.PI * t);
+            }
+            else
+            {
+                float progress = (t - 0.5f) * 2f; // 0..1
+                float eased = progress * progress; // медленный старт, быстрый конец
+                float adjustedT = 0.5f + eased * 0.5f;
+                sinValue = Mathf.Sin(Mathf.PI * adjustedT);
+            }
+
+            float scaleMultiplier = 1f + (targetScaleMultiplier - 1f) * sinValue;
+            rt.localScale = originalScale * scaleMultiplier;
+
             yield return null;
         }
 
-        yield return new WaitForSeconds(1f);
+        // Визуальный эффект
+        //PlayUpgradeVFX(rt.position);
+
+        yield return new WaitForSeconds(0.5f);
 
         Destroy(button);
         spawnedButtons.Clear();
@@ -205,9 +229,7 @@ public class UpgradeScreen : MonoBehaviour
         activeAnimations--;
         isAnimating = false;
         UIManager.Instance.ResumeUpgradeTimer();
-        
-        
-        
+
         if (buffsChosen >= buffsToChoose)
         {
             RoundManager.Instance.PlayerSelectedUpgrade();

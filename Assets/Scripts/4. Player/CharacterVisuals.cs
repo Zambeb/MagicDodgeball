@@ -25,6 +25,7 @@ public class CharacterVisuals : MonoBehaviour
     [SerializeField] private GameObject forceFieldVFX;
     [SerializeField] private GameObject immunityVFX;
     [SerializeField] private GameObject chargingVFX;
+    [SerializeField] private GameObject getHitVFX;
     
     private void Start()
     {
@@ -211,5 +212,12 @@ public class CharacterVisuals : MonoBehaviour
         }
     }
 
-    
+    public void GetHitVFX()
+    {
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.y = 1f;
+        GameObject effect = Instantiate(getHitVFX, spawnPosition, Quaternion.identity);
+        effect.transform.localScale *= 2;
+        Destroy(effect, 2f);
+    }
 }

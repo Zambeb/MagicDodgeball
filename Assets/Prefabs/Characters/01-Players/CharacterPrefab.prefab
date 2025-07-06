@@ -500,6 +500,7 @@ MonoBehaviour:
   forceFieldVFX: {fileID: 1598533638775410, guid: 28f0186db411df4418f2a04d18987d56, type: 3}
   immunityVFX: {fileID: 8452160341050738606, guid: 70bc762668b2d584ca07d1a820298dfa, type: 3}
   chargingVFX: {fileID: 1501320978331502, guid: 8ccf107dbad85e3468d2920e39493711, type: 3}
+  getHitVFX: {fileID: 1029544359644514, guid: 4d1e8aacb1ece184a92a7605bfcd9917, type: 3}
 --- !u!1 &5101880460496916527
 GameObject:
   m_ObjectHideFlags: 0

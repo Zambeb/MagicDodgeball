@@ -130,6 +130,8 @@ public class RoundManager : MonoBehaviour
     
     public void StartRound()
     {
+        Cursor.visible = false;
+        
         Debug.Log("Round " + (roundCount + 1) + " starts");
         roundCount++;
         player1points = 0;
@@ -171,6 +173,8 @@ public class RoundManager : MonoBehaviour
     {
         Debug.Log("Round Ended!");
         roundActive = false;
+        
+        Cursor.visible = true;
 
         player1.DisableCharacter();
         player2.DisableCharacter();

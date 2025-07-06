@@ -4794,6 +4794,7 @@ MonoBehaviour:
   firstSelectedButton: {fileID: 0}
   buffsToChoose: 0
   buffsChosen: 0
+  starParticles: {fileID: 3577867260909892485, guid: 61bf8fbd73a99a34282362f868e16854, type: 3}
 --- !u!114 &481010819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6177,6 +6178,7 @@ MonoBehaviour:
   firstSelectedButton: {fileID: 0}
   buffsToChoose: 0
   buffsChosen: 0
+  starParticles: {fileID: 0}
 --- !u!114 &655771446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14528,6 +14530,7 @@ MonoBehaviour:
   firstSelectedButton: {fileID: 0}
   buffsToChoose: 0
   buffsChosen: 0
+  starParticles: {fileID: 0}
 --- !u!114 &1359835994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17298,6 +17301,7 @@ MonoBehaviour:
   firstSelectedButton: {fileID: 0}
   buffsToChoose: 0
   buffsChosen: 0
+  starParticles: {fileID: 3577867260909892485, guid: 61bf8fbd73a99a34282362f868e16854, type: 3}
 --- !u!114 &1597369786
 MonoBehaviour:
   m_ObjectHideFlags: 0

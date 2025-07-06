@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Coffee.UIExtensions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
+using UnityEngine.UI;
 
 public class UpgradeScreen : MonoBehaviour
 {
@@ -20,6 +22,8 @@ public class UpgradeScreen : MonoBehaviour
 
     private bool isAnimating = false;
     private int activeAnimations = 0;
+
+    public GameObject starParticles;
 
     public void Open(PlayerController player, int buffs)
     {
@@ -141,6 +145,9 @@ public class UpgradeScreen : MonoBehaviour
         isAnimating = true;
         activeAnimations++;
         
+        GridLayoutGroup grid = GetComponent<GridLayoutGroup>();
+        grid.enabled = false;
+        
         UIManager.Instance.PauseUpgradeTimer();
         
         UpgradeManager.Instance.ApplyUpgrade(currentPlayer, upgrade);
@@ -176,18 +183,16 @@ public class UpgradeScreen : MonoBehaviour
 
             rt.position = Vector3.Lerp(originalPos, targetPos, t);
 
-            // Синус с замедленным уменьшением
             float sinValue;
 
             if (t <= 0.5f)
             {
-                // Резкий рост
                 sinValue = Mathf.Sin(Mathf.PI * t);
             }
             else
             {
-                float progress = (t - 0.5f) * 2f; // 0..1
-                float eased = progress * progress; // медленный старт, быстрый конец
+                float progress = (t - 0.5f) * 2f;
+                float eased = progress * progress; 
                 float adjustedT = 0.5f + eased * 0.5f;
                 sinValue = Mathf.Sin(Mathf.PI * adjustedT);
             }
@@ -198,13 +203,30 @@ public class UpgradeScreen : MonoBehaviour
             yield return null;
         }
 
-        // Визуальный эффект
-        //PlayUpgradeVFX(rt.position);
+        if (currentPlayer.currentControlScheme == "Gamepad")
+        {
+            FeelManager.Instance.rumble.FadeOutRumble(1f, 1f, 1f);
+        }
+        
+        GameObject effect = Instantiate(starParticles, button.transform); 
+        effect.transform.localPosition = Vector3.zero;
 
-        yield return new WaitForSeconds(0.5f);
+        var uiParticle = effect.GetComponent<UIParticle>();
+        if (uiParticle == null)
+        {
+            uiParticle = effect.AddComponent<UIParticle>();
+        }
+
+        uiParticle.Play();
+
+        Destroy(effect, 1f);
+
+        yield return new WaitForSeconds(1f);
 
         Destroy(button);
         spawnedButtons.Clear();
+        
+        grid.enabled = true;
         
         buffsChosen++;
 

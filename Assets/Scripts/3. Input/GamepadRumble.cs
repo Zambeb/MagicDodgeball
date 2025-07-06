@@ -89,4 +89,34 @@ public class GamepadRumble : MonoBehaviour
         }
         StopVibration();
     }
+    
+    public void FadeOutRumble(float startLF, float startHF, float fadeDuration)
+    {
+        StartCoroutine(FadeOutRumbleCoroutine(startLF, startHF, fadeDuration));
+    }
+
+    private IEnumerator FadeOutRumbleCoroutine(float startLF, float startHF, float fadeDuration)
+    {
+        if (Gamepad.current == null)
+        {
+            Debug.Log("Геймпад не подключён.");
+            yield break;
+        }
+
+        float elapsed = 0f;
+
+        while (elapsed < fadeDuration)
+        {
+            float t = elapsed / fadeDuration;
+            float currentLF = Mathf.Lerp(startLF, 0, t);
+            float currentHF = Mathf.Lerp(startHF, 0, t);
+
+            Gamepad.current.SetMotorSpeeds(currentLF, currentHF);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        StopVibration();
+    }
 }

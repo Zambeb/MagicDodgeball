@@ -177,6 +177,11 @@ public class PlayerController : MonoBehaviour, IDamageable
                 chargeInputHeld = true;
                 _visuals.ChargingVFXOn(stats.maxChargeTime);
 
+                if (currentControlScheme == "Gamepad")
+                {
+                    FeelManager.Instance.rumble.ChargingRumble(1f, 1f, stats.maxChargeTime);
+                }
+
                 Debug.Log("Start charging at multiplier = " + chargeMultiplier);
                 if (chargingCircle != null)
                 {
@@ -197,6 +202,12 @@ public class PlayerController : MonoBehaviour, IDamageable
                         chargingCircle.Hide();
                     }
                     ShootCharged();
+
+                    if (currentControlScheme == "Gamepad")
+                    {
+                        FeelManager.Instance.rumble.StopChargingRumble();
+                    }
+                    
                     chargeInputHeld = false;
                     if (animController != null)
                     {
@@ -225,6 +236,12 @@ public class PlayerController : MonoBehaviour, IDamageable
             stats.accelerationAfterBounce, stats.canStun, 
             stats.stunDuration, stats.leavesTrail);
         UpdateBallsDisplay();
+
+        if (currentControlScheme == "Gamepad")
+        {
+            FeelManager.Instance.rumble.ShootRumble();
+        }
+        
         SoundManager.Instance.PlaySFX("Sneeze", gameObject.transform.position);
         Debug.Log("Shot Normal");
     }
@@ -267,6 +284,12 @@ public class PlayerController : MonoBehaviour, IDamageable
             FeelManager.Instance.GetHitCameraShake();
             _visuals.GetHitVFX();
             SoundManager.Instance.PlaySFX("GetHit", gameObject.transform.position);
+
+            if (currentControlScheme == "Gamepad")
+            {
+                FeelManager.Instance.rumble.GetHitRumble();
+            }
+            
             if (stats.immunityAfterHit != 0)
             {
                 StartCoroutine(InvinvibityAfterHit(stats.immunityAfterHit));
@@ -350,6 +373,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (isCharging && chargingCircle != null)
         {
             chargingCircle.Hide();
+        }
+
+        if (currentControlScheme == "Gamepas")
+        {
+            FeelManager.Instance.rumble.StopChargingRumble();
         }
 
         isCharging = false;

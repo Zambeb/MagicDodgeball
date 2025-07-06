@@ -6,6 +6,7 @@ public class FeelManager : MonoBehaviour
     public static FeelManager Instance { get; private set; }
     
     public MMF_Player screenShake;
+    public GamepadRumble rumble;
     
     private void Awake()
     {

@@ -29,6 +29,9 @@ public class Projectile : MonoBehaviour
     public GameObject burnedAreaPrefab; 
     public PlayerController ownerPlayer;
 
+    [Header("Visuals")] 
+    public GameObject[] ballsVisuals;
+    
     [Header("Mini Projectiles")] 
     public bool isMiniBall = false;
     public GameObject miniProjectilePrefab;
@@ -424,15 +427,7 @@ public class Projectile : MonoBehaviour
                         miniProj.direction = dir;
                         miniProj.canStun = false;
                         miniProj.miniBall = true;
-                        Renderer rend = miniProj.GetComponent<Renderer>();
-                        if (!ownerPlayer.stats.amigaBall)
-                        {
-                            rend.material = ownerPlayer.gun.projectileMaterial[ownerPlayer.playerIndex];
-                        }
-                        else
-                        {
-                            rend.material = ownerPlayer.gun.amigaBallMaterial;
-                        }
+                        miniProj.ballsVisuals[playerIndex].SetActive(true);
                     }
                 }
             }

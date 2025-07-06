@@ -425,10 +425,6 @@ MonoBehaviour:
   firingPoint: {fileID: 1317890245922917044}
   projectilePrefab: {fileID: 6479857954294971646, guid: 3690d4bcabafba44f988ab9c18a63d27, type: 3}
   firingSpeed: 0
-  projectileMaterial:
-  - {fileID: 2100000, guid: 2d97edb07cd39fc45bda490251027e0c, type: 2}
-  - {fileID: 2100000, guid: 34a47811570e3b24a9d54a8bd15c3d72, type: 2}
-  amigaBallMaterial: {fileID: 2100000, guid: cabfcf795464a8f4984ffc80fbe1fc00, type: 2}
   activeProjectiles: []
   bruh: []
 --- !u!143 &3360537607054427031
@@ -802,6 +798,10 @@ PrefabInstance:
     - target: {fileID: 14767676140120130, guid: 655efd3c921036e40a21e61f2c341571, type: 3}
       propertyPath: m_Name
       value: Player_Racoon_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 14767676140120130, guid: 655efd3c921036e40a21e61f2c341571, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 828565243982328568, guid: 655efd3c921036e40a21e61f2c341571, type: 3}
       propertyPath: m_LocalPosition.x

@@ -134,6 +134,21 @@ public class RoundManager : MonoBehaviour
         roundCount++;
         player1points = 0;
         player2points = 0;
+
+        // Reset animations
+        PlayerAnimatorController p1Anim = player1.GetComponentInChildren<PlayerAnimatorController>();
+        if (p1Anim != null) 
+        {
+            p1Anim.SetWinning(false);
+            p1Anim.SetLosing(false);
+        }
+
+        PlayerAnimatorController p2Anim = player2.GetComponentInChildren<PlayerAnimatorController>();
+        if (p2Anim != null) 
+        {
+            p2Anim.SetWinning(false);
+            p2Anim.SetLosing(false);
+        }
         endRoundSoundPlayed = false;
         
         UIManager.Instance.ResetPointBoardsPosition();
@@ -194,8 +209,8 @@ public class RoundManager : MonoBehaviour
             PlayerAnimatorController winnerAnim = winner.GetComponentInChildren<PlayerAnimatorController>();
             PlayerAnimatorController loserAnim = loser.GetComponentInChildren<PlayerAnimatorController>();
 
-            if (winnerAnim != null) winnerAnim.TriggerWonAnimation();
-            if (loserAnim != null) loserAnim.TriggerLostAnimation();
+            if (winnerAnim != null) winnerAnim.SetWinning(true);
+            if (loserAnim != null) loserAnim.SetLosing(true);
         }
         
         if (player1Wins >= 4)

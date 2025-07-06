@@ -16,5 +16,5 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 5b451c769c6f6e14db57d69a469e7a69, type: 3}
   outputGroup: {fileID: -7359874852084134811, guid: 55cbda9df79258946ad13270f8c1a5cb, type: 2}
-  volume: 1
+  volume: 0.8
   loop: 0

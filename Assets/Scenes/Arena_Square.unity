@@ -2747,7 +2747,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
-  - component: {fileID: 330585549}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2873,7 +2873,7 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &330585549
+--- !u!114 &330585548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2882,48 +2882,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 547ab53f5c5bd8f47958e648c03ed7e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChannelMode: 0
-  Channel: 0
-  MMChannelDefinition: {fileID: 0}
-  ZoomTween:
-    MMTweenDefinitionType: 1
-    MMTweenCurve: 4
-    Curve:
+  ShowDebugText: 0
+  ShowCameraFrustum: 1
+  IgnoreTimeScale: 0
+  WorldUpOverride: {fileID: 0}
+  ChannelMask: -1
+  UpdateMethod: 2
+  BlendUpdateMethod: 1
+  LensModeOverride:
+    Enabled: 0
+    DefaultMode: 2
+  DefaultBlend:
+    Style: 1
+    Time: 2
+    CustomCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    Initialized: 0
-    ConditionPropertyName: 
-    EnumConditionPropertyName: 
-    EnumConditions: 0000000000000000000000000000000000000000000000000000000000000000
-  TestMode: 0
-  TestFieldOfView: 30
-  TestTransitionDuration: 0.1
-  TestDuration: 0.05
-  TestZoomButton: 0
+  CustomBlends: {fileID: 0}
 --- !u!1 &332569086
 GameObject:
   m_ObjectHideFlags: 0
@@ -12577,6 +12558,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a2b7ff081ef64394ea0a22c40c76a642, type: 2}
   - {fileID: 11400000, guid: cdf9b9ef3a14ac746861a770f21de174, type: 2}
   - {fileID: 11400000, guid: 299bbb1bf8801fe458390184e55a968a, type: 2}
+  - {fileID: 11400000, guid: 0e4ba9000e799a145b46f4a4fd4ef25a, type: 2}
 --- !u!1 &1267971063
 GameObject:
   m_ObjectHideFlags: 0
@@ -16617,7 +16599,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 7d11f235ecd1cdc4aa892380d11d6268, type: 3}
   m_Resource: {fileID: 8300000, guid: 7d11f235ecd1cdc4aa892380d11d6268, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.391
+  m_Volume: 0.105
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -22783,6 +22765,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 395159512}
   - {fileID: 330585546}
+  - {fileID: 1111284756}
+  - {fileID: 1978692668}
   - {fileID: 2124532647}
   - {fileID: 1408544230}
   - {fileID: 1443522071}
@@ -22793,5 +22777,3 @@ SceneRoots:
   - {fileID: 368951229}
   - {fileID: 973226482}
   - {fileID: 174018059}
-  - {fileID: 1111284756}
-  - {fileID: 1978692668}

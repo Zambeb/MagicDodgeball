@@ -150,4 +150,9 @@ public class PlayerAnimatorController : MonoBehaviour
         animator.SetBool(IS_RUNNING_RIGHT, false);
         animator.SetBool(IS_RUNNING_BACKWARD, false);
     }
+
+    public void PlayStepSound()
+    {
+        SoundManager.Instance.PlaySFX("Pawstep", transform.position);
+    }
 }

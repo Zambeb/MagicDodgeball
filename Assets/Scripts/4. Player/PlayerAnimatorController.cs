@@ -13,8 +13,8 @@ public class PlayerAnimatorController : MonoBehaviour
     private const string IS_ATTACKING = "isAttacking";
     private const string GET_HIT = "isGettingHit";
     private const string IS_STUNNED = "isStunned";
-    private const string WON = "Won";
-    private const string LOST = "Lost";
+    private const string IS_WINNING = "isWinning";
+    private const string IS_LOSING = "isLosing";
     private const string IS_DASHING = "isDashing";
     private const string IS_PARRYING = "isParrying";
 
@@ -85,7 +85,7 @@ public class PlayerAnimatorController : MonoBehaviour
     // This method will be called from PlayerController when firing
      public void TriggerGetHitAnimation()
     {
-        Debug.Log("Animator: GetHit " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
+      //  Debug.Log("Animator: GetHit " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
         animator.SetTrigger(GET_HIT);
     }
 
@@ -94,15 +94,22 @@ public class PlayerAnimatorController : MonoBehaviour
         animator.SetTrigger(IS_STUNNED);
     }
 
-    public void TriggerWonAnimation()
+    public void SetWinning(bool isWinning)
     {
-        animator.SetTrigger(WON);
+        animator.SetBool(IS_WINNING, isWinning);
+        if (isWinning)
+        {
+            Debug.Log("Animator: isWinning " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
+        }
     }
 
-    public void TriggerLostAnimation()
+    public void SetLosing(bool isLosing)
     {
-        animator.SetTrigger(LOST);
-      //  Debug.Log("Triggered LostAnimation");
+        animator.SetBool(IS_LOSING, isLosing);
+        if (isLosing)
+        {
+            Debug.Log("Animator: isLosing " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
+        }
     }
 
     public void TriggerDashAnimation()
@@ -119,7 +126,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
     public void TriggerAttackAnimation()
     {
-        Debug.Log("Animator: Attack " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
+    //    Debug.Log("Animator: Attack " + animator.GetInstanceID() + ", Name: " + animator.gameObject.name);
         animator.SetTrigger(IS_ATTACKING); 
     }
 
@@ -129,10 +136,11 @@ public class PlayerAnimatorController : MonoBehaviour
         animator.ResetTrigger(IS_ATTACKING);
         animator.ResetTrigger(GET_HIT);
         animator.ResetTrigger(IS_STUNNED);
-        animator.ResetTrigger(WON);
-        animator.ResetTrigger(LOST);
         animator.ResetTrigger(IS_DASHING);
         animator.ResetTrigger(IS_PARRYING);
+
+        animator.SetBool(IS_WINNING, false);
+        animator.SetBool(IS_LOSING, false);
     }
 
     private void ResetMovementParameters()

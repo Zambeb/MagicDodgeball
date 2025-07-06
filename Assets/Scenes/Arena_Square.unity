@@ -6274,7 +6274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &663478405
 Transform:
   m_ObjectHideFlags: 0
@@ -10541,8 +10541,8 @@ Cloth:
   m_UseTethers: 1
   m_UseGravity: 1
   m_Damping: 0
-  m_ExternalAcceleration: {x: 0, y: 0, z: 0}
-  m_RandomAcceleration: {x: 0, y: 0, z: 0}
+  m_ExternalAcceleration: {x: 2, y: 2, z: 2}
+  m_RandomAcceleration: {x: -2, y: -2, z: -2}
   m_WorldVelocityScale: 0.5
   m_WorldAccelerationScale: 1
   m_Friction: 0.5
@@ -14696,7 +14696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1408544229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14713,7 +14713,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 0470664154e3ed64bb1c7aaa6c2f38fd, type: 2}
 --- !u!4 &1408544230
 Transform:
   m_ObjectHideFlags: 0
@@ -20782,8 +20782,8 @@ Cloth:
   m_UseTethers: 1
   m_UseGravity: 1
   m_Damping: 0
-  m_ExternalAcceleration: {x: 0, y: 0, z: 0}
-  m_RandomAcceleration: {x: 0, y: 0, z: 0}
+  m_ExternalAcceleration: {x: 2, y: 2, z: 2}
+  m_RandomAcceleration: {x: -2, y: -2, z: -2}
   m_WorldVelocityScale: 0.5
   m_WorldAccelerationScale: 1
   m_Friction: 0.5

@@ -10505,7 +10505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d5cc660fb6a32474a9e9fa1b67db2b9c, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d5cc660fb6a32474a9e9fa1b67db2b9c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -10515,7 +10515,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: banner 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7511558181221131132, guid: d5cc660fb6a32474a9e9fa1b67db2b9c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -20749,7 +20750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d280b789040effd43abec568daa6a9bc, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d280b789040effd43abec568daa6a9bc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -20759,7 +20760,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: banner 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7511558181221131132, guid: d280b789040effd43abec568daa6a9bc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

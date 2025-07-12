@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public static SoundManager Instance { get; private set; }
+    
     [Header("UI Panels")]
     public GameObject mainMenuPanel;
     public GameObject settingsPanel;
@@ -16,6 +18,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        SoundManager.Instance.PlaySFX("Click");
         StartCoroutine(LoadGameAsync());
     }
     
@@ -34,18 +37,21 @@ public class MainMenu : MonoBehaviour
 
     public void OpenSettings()
     {
+        SoundManager.Instance.PlaySFX("Click");
         mainMenuPanel.SetActive(false);
         settingsPanel.SetActive(true);
     }
 
     public void OpenCredits()
     {
+        SoundManager.Instance.PlaySFX("Click");
         mainMenuPanel.SetActive(false);
         creditsPanel.SetActive(true);
     }
 
     public void BackToMainMenu()
     {
+        SoundManager.Instance.PlaySFX("Click");
         settingsPanel.SetActive(false);
         creditsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
@@ -53,6 +59,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        SoundManager.Instance.PlaySFX("Click");
         Debug.Log("Quit Game");
         Application.Quit();
     }

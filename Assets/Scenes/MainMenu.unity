@@ -2012,20 +2012,21 @@ MonoBehaviour:
     Director\r\n\r\n<size=36><b>Milana Lukina</b></size>\r\nArt Director\r\n\r\n<size=36><b>Thi
     Thanh Nga Pham</b></size>\r\nTechnical Artist, VFX Artist, Sound Manager\r\n\r\n<size=36><b>Timur
     Erdashev</b></size>\r\nGame Designer, Programmer, Technical Artist, Audio Implementation,
-    3D Art Support\r\n\r\n\r\n\r\n<size=60><b>Sound</b></size>\r\n\r\n<size=36><b>
-    !!! </b></size>\r\nComposer\r\n\r\n<size=36><b> !!! </b></size>\r\nSound Designer\r\n\r\n\r\n\r\n<size=60><b>Supervisors</b></size>\r\n\r\n<size=36><b>Boris
+    3D Art Support\r\n\r\n\r\n\r\n<size=60><b>Sound</b></size>\r\n\r\n<size=36><b>Keanu
+    Fresen</b></size>\r\nComposer, Sound Designer\r\n\r\n<size=36><b>Luis Kirchlechner</b></size>\r\nComposer,
+    Sound Designer\r\n\r\n\r\n\r\n<size=60><b>Supervisors</b></size>\r\n\r\n<size=36><b>Boris
     Kunkel</b></size>\r\nManagement and Methodology Supervision\r\n\r\n<size=36><b>Ramon
     Schauer</b></size>\r\nArt & Animation Supervision\r\n\r\n<size=36><b>Stephan
     Jacob</b></size>\r\nGame Design Supervision\n\n\n\n<size=60><b>University</b></size>\r\n\r\nProduced
     as part of the Animation & Game Bachelor Program  \r\nat Hochschule Darmstadt
     \u2013 University of Applied Sciences\r\n\r\n\r\n\r\n<size=60><b>Tools & Assets</b></size>\r\n\r\nUnity
     Engine\r\nJetBrains Rider\r\nAdobe Photoshop\r\nBlender\r\nClip Studio Paint\r\nAutodesk
-    Maya\r\nSubstance Painter\r\nProcreate\r\nEZSoftBone\r\nZbrush\r\n\r\nTextMeshPro
-    (Unity)  \r\nCinemachine (Unity)  \r\nFeel by More Mountains  \r\nFur Brushes
-    by Tim Haag for ZBrush\r\n\r\nFonts: History of Wawa by Khurasan, Centaur by
-    Bruce Rogers\r\n\r\n\r\n\r\nAll third-party tools and assets used under their
-    respective licenses.\r\n\n\n\n\r\nAnimation & Game Bachelor Program  \r\nHochschule
-    Darmstadt  \r\n2025"
+    Maya\r\nSubstance Painter\r\nProcreate\r\nEZSoftBone\r\nZbrush\nAbleton Live 
+    \r\nNuendo\r\n\r\r\nFeel by More Mountains  \r\nFur Brushes by Tim Haag for ZBrush\n\nSome
+    sound effects sourced from\nweloveindies.com and creatively processed\r\n\r\nFonts:
+    History of Wawa by Khurasan, Centaur by Bruce Rogers\r\n\r\n\r\n\r\nAll third-party
+    tools and assets used under their respective licenses.\r\n\n\n\n\r\nAnimation
+    & Game  \r\nHochschule Darmstadt  \r\n2025"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ca4d2f306ccea545b06ae7c31441886, type: 2}
   m_sharedMaterial: {fileID: 1676728505900478140, guid: 3ca4d2f306ccea545b06ae7c31441886, type: 2}

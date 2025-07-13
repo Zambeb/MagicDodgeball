@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9075799291753309625}
   - component: {fileID: 1366417436038041484}
   - component: {fileID: 4709504807274311508}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 5021447792051475853}
   - component: {fileID: 3625298337669072668}
   - component: {fileID: 6724891311132555602}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ChargingCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 4180416533207355511}
   - component: {fileID: 6795194993720260971}
   - component: {fileID: 3831461473104642957}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CooldownRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4792,6 +4792,57 @@ MonoBehaviour:
   upgradeButtonPrefab: {fileID: 186458431244480032, guid: 64eb311f58f511e4eb669d98dbdabba4, type: 3}
   buttonsParent: {fileID: 481010817}
   firstSelectedButton: {fileID: 0}
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 5.09434
+      outSlope: 5.09434
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.050001223
+    - serializedVersion: 3
+      time: 0.08316568
+      value: 0.66011304
+      inSlope: 2.3558776
+      outSlope: 2.3558776
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.120357476
+    - serializedVersion: 3
+      time: 0.49998778
+      value: 0.99528193
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.86101204
+      value: 0.70087534
+      inSlope: -1.9843987
+      outSlope: -1.9843987
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1574558
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99999994
+      value: 0
+      inSlope: -4.952834
+      outSlope: -4.952834
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.22855209
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   buffsToChoose: 0
   buffsChosen: 0
   starParticles: {fileID: 3577867260909892485, guid: 61bf8fbd73a99a34282362f868e16854, type: 3}
@@ -6176,6 +6227,12 @@ MonoBehaviour:
   upgradeButtonPrefab: {fileID: 186458431244480032, guid: 64eb311f58f511e4eb669d98dbdabba4, type: 3}
   buttonsParent: {fileID: 655771442}
   firstSelectedButton: {fileID: 0}
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   buffsToChoose: 0
   buffsChosen: 0
   starParticles: {fileID: 0}
@@ -14532,6 +14589,12 @@ MonoBehaviour:
   upgradeButtonPrefab: {fileID: 186458431244480032, guid: 64eb311f58f511e4eb669d98dbdabba4, type: 3}
   buttonsParent: {fileID: 1359835990}
   firstSelectedButton: {fileID: 0}
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   buffsToChoose: 0
   buffsChosen: 0
   starParticles: {fileID: 0}
@@ -17303,6 +17366,57 @@ MonoBehaviour:
   upgradeButtonPrefab: {fileID: 186458431244480032, guid: 64eb311f58f511e4eb669d98dbdabba4, type: 3}
   buttonsParent: {fileID: 1597369784}
   firstSelectedButton: {fileID: 0}
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 5.09434
+      outSlope: 5.09434
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.050001223
+    - serializedVersion: 3
+      time: 0.08316568
+      value: 0.66011304
+      inSlope: 2.3558776
+      outSlope: 2.3558776
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.120357476
+    - serializedVersion: 3
+      time: 0.49998778
+      value: 0.99528193
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.86101204
+      value: 0.70087534
+      inSlope: -1.9843987
+      outSlope: -1.9843987
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1574558
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99999994
+      value: 0
+      inSlope: -4.952834
+      outSlope: -4.952834
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.22855209
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   buffsToChoose: 0
   buffsChosen: 0
   starParticles: {fileID: 3577867260909892485, guid: 61bf8fbd73a99a34282362f868e16854, type: 3}

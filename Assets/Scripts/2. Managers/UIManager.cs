@@ -43,6 +43,8 @@ public class UIManager : MonoBehaviour
 
     [Header("Other UI")] public TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI winnerText;
+    
+    private Coroutine shakeCoroutine;
 
     private void Awake()
     {
@@ -294,5 +296,43 @@ public class UIManager : MonoBehaviour
 
         rt1.anchoredPosition = originalPosBoard1;
         rt2.anchoredPosition = originalPosBoard2;
+    }
+
+    public void ShakeUpgradeScreen(float duration, float strength, float frequency)
+    {
+        RectTransform myUI = upgradeScreenMode.GetComponent<RectTransform>();
+        ShakeUIElement(myUI, duration, strength, frequency);
+    }
+    
+    private void ShakeUIElement(RectTransform target, float duration = 0.5f, float strength = 10f, float frequency = 25f)
+    {
+        if (shakeCoroutine != null)
+        {
+            StopCoroutine(shakeCoroutine);
+            target.anchoredPosition = Vector2.zero; 
+        }
+
+        shakeCoroutine = StartCoroutine(ShakeCoroutine(target, duration, strength, frequency));
+    }
+
+    private IEnumerator ShakeCoroutine(RectTransform target, float duration, float strength, float frequency)
+    {
+        Vector2 originalPos = target.anchoredPosition;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float damper = 1f - (elapsed / duration); 
+            float angle = elapsed * frequency;
+            float offsetX = (Mathf.PerlinNoise(angle, 0f) - 0.5f) * 2f * strength * damper;
+            float offsetY = (Mathf.PerlinNoise(0f, angle) - 0.5f) * 2f * strength * damper;
+
+            target.anchoredPosition = originalPos + new Vector2(offsetX, offsetY);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        target.anchoredPosition = originalPos;
+        shakeCoroutine = null;
     }
 }

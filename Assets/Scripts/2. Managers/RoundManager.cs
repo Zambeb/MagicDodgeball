@@ -244,11 +244,6 @@ public class RoundManager : MonoBehaviour
         
         UIManager.Instance.ShowWinner(winnerMessage);
 
-        if (!gameEnded)
-        {
-            StartCoroutine(ShowUpgradeScreenAfterDelay());
-        }
-        
         // Destroy all projectiles left
         Projectile[] allProjectiles = FindObjectsByType<Projectile>(FindObjectsSortMode.None);
         foreach (Projectile projectile in allProjectiles)
@@ -264,6 +259,15 @@ public class RoundManager : MonoBehaviour
         }
 
         //Cursor.visible = true;
+        
+        if (!gameEnded)
+        {
+            StartCoroutine(ShowUpgradeScreenAfterDelay());
+        }
+        else
+        {
+            StartCoroutine(GoToMainMenuAfterDelay(5f));
+        }
     }
     
     private IEnumerator ShowUpgradeScreenAfterDelay()
@@ -379,6 +383,12 @@ public class RoundManager : MonoBehaviour
             UIManager.Instance.CloseUpgradeScreens();
             TryStartRound();
         }
+    }
+    
+    private IEnumerator GoToMainMenuAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GameManager.Instance.LoadScene(GameScene.MainMenu);
     }
 }
 

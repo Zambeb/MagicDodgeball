@@ -40,6 +40,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI upgradeTimerText;
     private float upgradeTimer;
     private bool isUpgradeTimerRunning;
+    
+    [Header("Tutorial Screen")] 
+    public GameObject tutorialScreen;
 
     [Header("Other UI")] public TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI winnerText;
@@ -61,6 +64,8 @@ public class UIManager : MonoBehaviour
         RectTransform rt2 = pointBoard2.GetComponent<RectTransform>();
         originalPosBoard1 = rt1.anchoredPosition;
         originalPosBoard2 = rt2.anchoredPosition;
+        
+        tutorialScreen.gameObject.SetActive(true);
     }
 
     private void Update()

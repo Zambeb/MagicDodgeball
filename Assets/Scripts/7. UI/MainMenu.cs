@@ -11,28 +11,15 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject settingsPanel;
     public GameObject creditsPanel;
-    public GameObject loadingScreenPanel;
+    //public GameObject loadingScreenPanel;
 
     [Header("Gameplay")]
-    public string gameSceneName = "GameScene";
+    public GameScene gameSceneToLoad = GameScene.ArenaSquare;
 
     public void PlayGame()
     {
         SoundManager.Instance.PlaySFX("Click");
-        StartCoroutine(LoadGameAsync());
-    }
-    
-    private IEnumerator LoadGameAsync()
-    {
-        mainMenuPanel.SetActive(false);
-        loadingScreenPanel.SetActive(true);
-
-        AsyncOperation operation = SceneManager.LoadSceneAsync(gameSceneName);
-
-        while (!operation.isDone)
-        {
-            yield return null;
-        }
+        GameManager.Instance.LoadSceneAsync(gameSceneToLoad, mainMenuPanel);
     }
 
     public void OpenSettings()

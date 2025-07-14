@@ -45,10 +45,12 @@ public class RoundManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if (Instance != null && Instance != this) Destroy(gameObject);
         else Instance = this;
         upgradeLogger = gameObject.AddComponent<PlayerUpgradeLogger>();
         upgradeLogger.InitLogSession();
+        
     }
     
     private void Start()
@@ -225,7 +227,7 @@ public class RoundManager : MonoBehaviour
         
         if (player1Wins >= 4)
         {
-            winnerMessage = "PLAYER 1 IS VICTORIOUS!!!";
+            winnerMessage = "<color=#BC99F7>RAMMY</color> IS VICTORIOUS!!!";
             upgradeLogger.LogRound(roundCount, player1, player2, 0);
             upgradeLogger.FinalizeLog();
 
@@ -233,7 +235,7 @@ public class RoundManager : MonoBehaviour
         }
         else if (player2Wins >= 4)
         {
-            winnerMessage = "PLAYER 2 IS VICTORIOUS!!!";
+            winnerMessage = "<color=#FEDB5B>BUNNY</color> IS VICTORIOUS!!!";
             upgradeLogger.LogRound(roundCount, player1, player2, 1);
             upgradeLogger.FinalizeLog();
 

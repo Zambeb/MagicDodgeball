@@ -66,5 +66,15 @@ public class PauseManager : MonoBehaviour
         balanceMenu.SetActive(false);
     }
 
+    public void MainMenu()
+    {
+        GameManager.Instance.LoadScene(GameScene.MainMenu);
+    }
+    
+    public void QuitGame()
+    {
+        GameManager.Instance.QuitGame();
+    }
+
     public bool IsPaused => isPaused;
 }

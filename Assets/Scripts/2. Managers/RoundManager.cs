@@ -192,7 +192,9 @@ public class RoundManager : MonoBehaviour
         if (player1points > player2points)
         {
             player1Wins++;
-            winnerMessage = "<color=#4B45EE>Rammy</color> has won!";
+            UIManager.Instance.victoryDisplayUI.RegisterRoundWinner(0);
+            
+            winnerMessage = "<color=#BC99F7>Rammy</color> has won!";
             winner = player1;
             loser = player2;
             upgradeLogger.LogRound(roundCount, player1, player2, 0);
@@ -200,6 +202,8 @@ public class RoundManager : MonoBehaviour
         else if (player2points > player1points)
         {
             player2Wins++;
+            UIManager.Instance.victoryDisplayUI.RegisterRoundWinner(1);
+            
             winnerMessage = "<color=#FEDB5B>Bunny</color> has won!";
             winner = player2;
             loser = player1;
@@ -236,13 +240,7 @@ public class RoundManager : MonoBehaviour
             gameEnded = true;
         }
         
-        
-
-
         UIManager.Instance.ShowWinner(winnerMessage);
-
-
-        UIManager.Instance.victoryDisplayUI.UpdateVictoryCrystals(player1Wins, player2Wins);
 
         if (!gameEnded)
         {

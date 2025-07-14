@@ -3127,7 +3127,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &326195683
@@ -6281,6 +6281,9 @@ MonoBehaviour:
   crystalGrey2: {fileID: 21300000, guid: 65bb884282b027e4f883c349888a581c, type: 3}
   crystalBlue: {fileID: 21300000, guid: 7f92be01d3d7e1e4aac729a9638b1a87, type: 3}
   crystalRed: {fileID: 21300000, guid: add2ae47b93ca784fa4e840b2a8632ab, type: 3}
+  vfxPrefab: {fileID: 3577867260909892485, guid: 2186db1b242a87648bc4e26c2e870c67, type: 3}
+  crystalOverlayContainer: {fileID: 646227626}
+  mainCanvas: {fileID: 1158484793}
 --- !u!1 &650001541
 GameObject:
   m_ObjectHideFlags: 0
@@ -9835,7 +9838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 108.33334, y: -70}
+  m_AnchoredPosition: {x: 108.333336, y: -70}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013738118
@@ -16698,7 +16701,7 @@ MonoBehaviour:
   m_text: 30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

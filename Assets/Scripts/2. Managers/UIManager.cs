@@ -167,6 +167,8 @@ public class UIManager : MonoBehaviour
         }
 
         UpdateAllAcquiredBuffs();
+        
+        victoryDisplayUI.ShowVictoryDisplay(RoundManager.Instance.player1Wins, RoundManager.Instance.player2Wins);
 
         StartUpgradeTimer();
     }

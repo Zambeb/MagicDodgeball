@@ -47,6 +47,8 @@ public class AcquiredBuffsShower : MonoBehaviour
         foreach (UpgradeEffectBase upgrade in upgrades)
         {
             GameObject iconObj = Instantiate(iconPrefab, iconsParent);
+            iconObj.transform.localScale = iconObj.transform.localScale / 1.5f;
+            
             Image iconImage = iconObj.GetComponent<AcquiredIconImage>().iconImage.GetComponent<Image>();
 
             BuffIcon buffIcon = iconObj.GetComponent<BuffIcon>();

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -191,7 +192,7 @@ public class RoundManager : MonoBehaviour
         if (player1points > player2points)
         {
             player1Wins++;
-            winnerMessage = "Player 1 has won!";
+            winnerMessage = "<color=#4B45EE>Rammy</color> has won!";
             winner = player1;
             loser = player2;
             upgradeLogger.LogRound(roundCount, player1, player2, 0);
@@ -199,7 +200,7 @@ public class RoundManager : MonoBehaviour
         else if (player2points > player1points)
         {
             player2Wins++;
-            winnerMessage = "Player 2 has won!";
+            winnerMessage = "<color=#FEDB5B>Bunny</color> has won!";
             winner = player2;
             loser = player1;
             upgradeLogger.LogRound(roundCount, player1, player2, 1);
@@ -291,8 +292,39 @@ public class RoundManager : MonoBehaviour
 
         foreach (string step in countdownSteps)
         {
-            UIManager.Instance.countdownText.text = step;
-            yield return new WaitForSeconds(stepDelay);
+            TMP_Text countdownText = UIManager.Instance.countdownText;
+            countdownText.text = step;
+            
+            RectTransform rect = countdownText.rectTransform;
+            rect.localScale = Vector3.one;
+
+            rect.localScale = Vector3.zero;
+
+            float growDuration = stepDelay * 0.1f;
+            float holdDuration = stepDelay * 0.6f;
+            float shrinkDuration = stepDelay * 0.3f;
+            
+            float elapsed = 0f;
+            while (elapsed < growDuration)
+            {
+                float t = elapsed / growDuration;
+                rect.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, t);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            rect.localScale = Vector3.one;
+            
+            yield return new WaitForSeconds(holdDuration);
+            
+            elapsed = 0f;
+            while (elapsed < shrinkDuration)
+            {
+                float t = elapsed / shrinkDuration;
+                rect.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, t);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            rect.localScale = Vector3.zero;
         }
 
         Debug.Log("Round Started!");

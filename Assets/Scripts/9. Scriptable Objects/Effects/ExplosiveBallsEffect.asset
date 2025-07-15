@@ -18,5 +18,5 @@ MonoBehaviour:
   isStackable: 0
   offensive: 1
   maxStacks: 0
-  miniBallsQuantity: 7
+  miniBallsQuantity: 6
   miniBallSizeMultiplier: 0.5

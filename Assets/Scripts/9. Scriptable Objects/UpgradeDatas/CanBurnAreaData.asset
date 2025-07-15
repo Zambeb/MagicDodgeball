@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeName: Create Burned Area
   icon: {fileID: 21300000, guid: 86813b552eaef6645975bf7a7236a480, type: 3}
   descriptionIfKeyboard: Final bounce createas an electric area that damages those
-    ho stand on it. Bigger projectile -> bigger samage area
+    who stand on it. Bigger projectile -> bigger samage area
   descriptionIfGamepad: Final bounce createas an electric area that damages those
-    ho stand on it. Bigger projectile -> bigger samage area
+    who stand on it. Bigger projectile -> bigger samage area
   effectPrefab: {fileID: 11400000, guid: 303c338d6bce86a4c8cff423ac13a508, type: 2}

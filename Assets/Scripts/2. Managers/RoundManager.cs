@@ -195,8 +195,15 @@ public class RoundManager : MonoBehaviour
         {
             player1Wins++;
             UIManager.Instance.victoryDisplayUI.RegisterRoundWinner(0);
-            
-            winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> has won!";
+
+            if (GameManager.Instance != null)
+            {
+                winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> has won!";
+            }
+            else
+            {
+                winnerMessage = $"<color=#BC99F7>Rammy</color> has won!";
+            }
             winner = player1;
             loser = player2;
             upgradeLogger.LogRound(roundCount, player1, player2, 0);
@@ -205,8 +212,16 @@ public class RoundManager : MonoBehaviour
         {
             player2Wins++;
             UIManager.Instance.victoryDisplayUI.RegisterRoundWinner(1);
+
+            if (GameManager.Instance != null)
+            {
+                winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> has won!"; 
+            }
+            else
+            {
+                winnerMessage = $"<color=#FEDB5B>Benny</color> has won!";
+            }
             
-            winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> has won!";
             winner = player2;
             loser = player1;
             upgradeLogger.LogRound(roundCount, player1, player2, 1);

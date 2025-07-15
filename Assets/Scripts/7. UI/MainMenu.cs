@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,6 +16,10 @@ public class MainMenu : MonoBehaviour
 
     [Header("Gameplay")]
     public GameScene gameSceneToLoad = GameScene.ArenaSquare;
+    
+    [Header("Name Inputs")]
+    public TMP_InputField player1InputField;
+    public TMP_InputField player2InputField;
 
     public void PlayGame()
     {
@@ -61,5 +66,15 @@ public class MainMenu : MonoBehaviour
         SoundManager.Instance.PlaySFX("Click");
         Debug.Log("Quit Game");
         Application.Quit();
+    }
+
+    public void SetPlayer1Name(string enteredName)
+    {
+        GameManager.Instance.player1Name = enteredName;
+    }
+    
+    public void SetPlayer2Name(string enteredName)
+    {
+        GameManager.Instance.player2Name = enteredName;
     }
 }

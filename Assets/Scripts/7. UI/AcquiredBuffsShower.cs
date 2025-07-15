@@ -44,7 +44,7 @@ public class AcquiredBuffsShower : MonoBehaviour
         UpgradeEffectBase activeUpgrade = player.acquiredActiveAbility;
         List<UpgradeEffectBase> upgrades = player.acquiredUpgrades;
         
-        if (upgrades == null || upgrades.Count == 0) return;
+        if (activeUpgrade == null && (upgrades == null || upgrades.Count == 0)) return;
 
         if (activeUpgrade != null)
         {

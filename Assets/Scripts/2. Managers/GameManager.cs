@@ -10,9 +10,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<SceneEntry> scenes = new();
 
     private Dictionary<GameScene, string> sceneDict;
+
+    [Header("Settings")] 
+    public string player1Name = "Rammy";
+    public string player2Name = "Benny";
     
     [Header("UI Panels")]
     [SerializeField] private GameObject loadingScreenPanel;
+    
+    private bool isLoadingScene = false;
 
     private void Awake()
     {
@@ -64,8 +70,12 @@ public class GameManager : MonoBehaviour
     
     public void LoadSceneAsync(GameScene scene, GameObject menuToHide = null)
     {
+        if (isLoadingScene)
+            return;
+        
         if (sceneDict.TryGetValue(scene, out string sceneName))
         {
+            isLoadingScene = true;
             StartCoroutine(LoadSceneCoroutine(sceneName, menuToHide));
         }
         else

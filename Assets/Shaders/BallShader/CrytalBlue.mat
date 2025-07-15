@@ -39,18 +39,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _BottomLine: 0.427
-    - _ColorChangeSpeed: 5.02
+    - _ColorChangeSpeed: 10
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 0.2
+    - _Speed: 10
     - _TopLine: 0.353
-    - _metallic: 0.118
-    - _smoothness: 1
+    - _metallic: 0.109
+    - _smoothness: 0.849
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.9663324, b: 4.8316607, a: 0}
-    - _BottomColor: {r: 1.2591548, g: 6.835411, b: 0, a: 0}
+    - _BaseColor: {r: 0, g: 0.24335729, b: 1.2167861, a: 0}
+    - _BottomColor: {r: 0.3285095, g: 0.83940244, b: 0.20985061, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 0}
-    - _TopColor: {r: 4.5348806, g: 4.510018, b: 2.1604855, a: 0}
+    - _TopColor: {r: 0.044600733, g: 0.08222049, b: 0.06957246, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &5063687843218506156

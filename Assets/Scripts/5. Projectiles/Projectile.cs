@@ -153,7 +153,7 @@ public class Projectile : MonoBehaviour
     if (hitTag == "PlayerWall" || hitTag == "Trail" )
     {
         transform.position += direction * distance;
-        return true;
+        return false;
     }
 
     // 2. CenterWall - change layer and let the ball through

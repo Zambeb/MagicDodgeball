@@ -129,6 +129,7 @@ public class Projectile : MonoBehaviour
     void SpawnTrail(float dur)
     {
         GameObject trail = Instantiate(trailPrefab, transform.position, Quaternion.identity);
+        trail.transform.localScale *= ownerPlayer.stats.ballSizeMultiplier/2;
         TrailSlowZone trailSlow = trail.GetComponent<TrailSlowZone>();
         if (trailSlow != null)
         {

@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1998923192703257054
 Transform:
   m_ObjectHideFlags: 0
@@ -20521,24 +20521,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4286576139601024776, guid: 37d513b0921ba1447943b4fde936b2ab, type: 3}
+      propertyPath: m_Parameters.textureMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286576139601024776, guid: 37d513b0921ba1447943b4fde936b2ab, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 768889a2aec4f2d489b8555031dfff7b, type: 2}
     - target: {fileID: 4286576139601024776, guid: 37d513b0921ba1447943b4fde936b2ab, type: 3}
       propertyPath: m_Parameters.textureScale.x
-      value: 4
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286576139601024776, guid: 37d513b0921ba1447943b4fde936b2ab, type: 3}
+      propertyPath: m_Parameters.textureScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4286576139601024776, guid: 37d513b0921ba1447943b4fde936b2ab, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.19985196
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4286576139601024776, guid: 37d513b0921ba1447943b4fde936b2ab, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.6981132
+      value: 0.509434
       objectReference: {fileID: 0}
     - target: {fileID: 4286576139601024776, guid: 37d513b0921ba1447943b4fde936b2ab, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0
+      value: 0.0820688
       objectReference: {fileID: 0}
     - target: {fileID: 4286576139601024776, guid: 37d513b0921ba1447943b4fde936b2ab, type: 3}
       propertyPath: m_Parameters.colorGradient.key1.a
@@ -20598,7 +20606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918083380736606585, guid: 37d513b0921ba1447943b4fde936b2ab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -6552,7 +6552,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  iconPrefab: {fileID: 2835100968935790044, guid: e81cd9cd71f77a3429702254977cd522, type: 3}
+  iconPrefab: {fileID: 2835100968935790044, guid: 3adfa01177e9be04497d9dff9bbc73f0, type: 3}
+  iconPrefabActive: {fileID: 2835100968935790044, guid: e81cd9cd71f77a3429702254977cd522, type: 3}
   iconsParent: {fileID: 655771442}
 --- !u!114 &655771449
 MonoBehaviour:
@@ -6572,7 +6573,7 @@ MonoBehaviour:
     m_Top: 25
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: -10
+  m_Spacing: -20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -15260,7 +15261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 1
-  iconPrefab: {fileID: 2835100968935790044, guid: e81cd9cd71f77a3429702254977cd522, type: 3}
+  iconPrefab: {fileID: 2835100968935790044, guid: 3adfa01177e9be04497d9dff9bbc73f0, type: 3}
+  iconPrefabActive: {fileID: 2835100968935790044, guid: e81cd9cd71f77a3429702254977cd522, type: 3}
   iconsParent: {fileID: 1359835990}
 --- !u!114 &1359835997
 MonoBehaviour:
@@ -15280,7 +15282,7 @@ MonoBehaviour:
     m_Top: 25
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: -10
+  m_Spacing: -20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0

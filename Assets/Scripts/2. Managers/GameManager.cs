@@ -101,6 +101,8 @@ public class GameManager : MonoBehaviour
 
         if (loadingScreenPanel != null)
             loadingScreenPanel.SetActive(false);
+        
+        isLoadingScene = false;
     }
     
     public void QuitGame()

@@ -45,9 +45,14 @@ public class RoundManager : MonoBehaviour
 
     private void Awake()
     {
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
         
-        if (Instance != null && Instance != this) Destroy(gameObject);
-        else Instance = this;
         upgradeLogger = gameObject.AddComponent<PlayerUpgradeLogger>();
         upgradeLogger.InitLogSession();
         

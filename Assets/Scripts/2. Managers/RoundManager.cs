@@ -139,7 +139,7 @@ public class RoundManager : MonoBehaviour
     
     public void StartRound()
     {
-        //Cursor.visible = false;
+        Cursor.visible = false;
         
         Debug.Log("Round " + (roundCount + 1) + " starts");
         roundCount++;
@@ -183,7 +183,7 @@ public class RoundManager : MonoBehaviour
         Debug.Log("Round Ended!");
         roundActive = false;
         
-        //Cursor.visible = true;
+        Cursor.visible = true;
 
         player1.DisableCharacter();
         player2.DisableCharacter();
@@ -247,7 +247,7 @@ public class RoundManager : MonoBehaviour
         
         if (player1Wins >= 4)
         {
-            winnerMessage = "<color=#BC99F7>RAMMY</color> IS VICTORIOUS!!!";
+            winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> IS VICTORIOUS!!!";
             upgradeLogger.LogRound(roundCount, player1, player2, 0);
             upgradeLogger.FinalizeLog();
 
@@ -255,7 +255,7 @@ public class RoundManager : MonoBehaviour
         }
         else if (player2Wins >= 4)
         {
-            winnerMessage = "<color=#FEDB5B>BUNNY</color> IS VICTORIOUS!!!";
+            winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> IS VICTORIOUS!!!";
             upgradeLogger.LogRound(roundCount, player1, player2, 1);
             upgradeLogger.FinalizeLog();
 

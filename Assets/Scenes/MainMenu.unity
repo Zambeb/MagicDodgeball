@@ -3040,7 +3040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chose your arena
+  m_text: Choose your arena
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
   m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}

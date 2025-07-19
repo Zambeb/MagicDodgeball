@@ -214,7 +214,7 @@ public class Projectile : MonoBehaviour
         var proj = hit.collider.GetComponent<Projectile>();
         if (proj != null)
         {
-            bool iCanAbsorb = ownerPlayer.stats.canAbsorbBalls && !isMiniBall;
+            bool iCanAbsorb = ownerPlayer.stats.canAbsorbBalls && !isMiniBall && !proj.isMiniBall;
             bool otherCanAbsorb = proj.ownerPlayer != null && proj.ownerPlayer.stats.canAbsorbBalls && !proj.isMiniBall;
 
             if (iCanAbsorb || otherCanAbsorb)

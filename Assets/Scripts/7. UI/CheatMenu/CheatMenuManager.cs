@@ -36,6 +36,7 @@ public class CheatMenuManager : MonoBehaviour
     {
         if (isPaused) return;
 
+        Cursor.visible = true;
         Time.timeScale = 0f;
         isPaused = true;
         Debug.Log("Game Paused");
@@ -45,6 +46,10 @@ public class CheatMenuManager : MonoBehaviour
     {
         if (!isPaused) return;
 
+        if (RoundManager.Instance.roundActive)
+        {
+            Cursor.visible = false;
+        }
         Time.timeScale = 1f;
         isPaused = false;
         Debug.Log("Game Resumed");

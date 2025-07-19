@@ -38,6 +38,12 @@ public class MainMenu : MonoBehaviour
         SoundManager.Instance.PlaySFX("Click");
         GameManager.Instance.LoadSceneAsync(GameScene.ArenaOctagon, mainMenuPanel);
     }
+    
+    public void LoadSnowArena()
+    {
+        SoundManager.Instance.PlaySFX("Click");
+        GameManager.Instance.LoadSceneAsync(GameScene.ArenaSnow, mainMenuPanel);
+    }
 
     public void OpenSettings()
     {

@@ -18,10 +18,10 @@ MonoBehaviour:
 
 
     Cooldown:
-    2'
+    3'
   descriptionIfGamepad: 'Press L2 to dash while being invincible
 
 
     Cooldown:
-    2'
+    3'
   effectPrefab: {fileID: 11400000, guid: f872819bd37f44449bae350a905ce1b6, type: 2}

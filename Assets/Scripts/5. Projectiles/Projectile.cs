@@ -129,6 +129,7 @@ public class Projectile : MonoBehaviour
     void SpawnTrail(float dur)
     {
         GameObject trail = Instantiate(trailPrefab, transform.position, Quaternion.identity);
+        trail.transform.localScale *= ownerPlayer.stats.ballSizeMultiplier/2;
         TrailSlowZone trailSlow = trail.GetComponent<TrailSlowZone>();
         if (trailSlow != null)
         {
@@ -153,7 +154,7 @@ public class Projectile : MonoBehaviour
     if (hitTag == "PlayerWall" || hitTag == "Trail" )
     {
         transform.position += direction * distance;
-        return true;
+        return false;
     }
 
     // 2. CenterWall - change layer and let the ball through
@@ -213,7 +214,7 @@ public class Projectile : MonoBehaviour
         var proj = hit.collider.GetComponent<Projectile>();
         if (proj != null)
         {
-            bool iCanAbsorb = ownerPlayer.stats.canAbsorbBalls && !isMiniBall;
+            bool iCanAbsorb = ownerPlayer.stats.canAbsorbBalls && !isMiniBall && !proj.isMiniBall;
             bool otherCanAbsorb = proj.ownerPlayer != null && proj.ownerPlayer.stats.canAbsorbBalls && !proj.isMiniBall;
 
             if (iCanAbsorb || otherCanAbsorb)

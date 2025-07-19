@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -44,10 +45,17 @@ public class RoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this) Destroy(gameObject);
-        else Instance = this;
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        
         upgradeLogger = gameObject.AddComponent<PlayerUpgradeLogger>();
         upgradeLogger.InitLogSession();
+        
     }
     
     private void Start()
@@ -86,6 +94,7 @@ public class RoundManager : MonoBehaviour
         if (playersReady >= 2)
         {
             TryStartRound();
+            UIManager.Instance.tutorialScreen.gameObject.SetActive(false);
         }
     }
 
@@ -190,7 +199,16 @@ public class RoundManager : MonoBehaviour
         if (player1points > player2points)
         {
             player1Wins++;
-            winnerMessage = "Player 1 has won!";
+            UIManager.Instance.victoryDisplayUI.RegisterRoundWinner(0);
+
+            if (GameManager.Instance != null)
+            {
+                winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> has won!";
+            }
+            else
+            {
+                winnerMessage = $"<color=#BC99F7>Rammy</color> has won!";
+            }
             winner = player1;
             loser = player2;
             upgradeLogger.LogRound(roundCount, player1, player2, 0);
@@ -198,7 +216,17 @@ public class RoundManager : MonoBehaviour
         else if (player2points > player1points)
         {
             player2Wins++;
-            winnerMessage = "Player 2 has won!";
+            UIManager.Instance.victoryDisplayUI.RegisterRoundWinner(1);
+
+            if (GameManager.Instance != null)
+            {
+                winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> has won!"; 
+            }
+            else
+            {
+                winnerMessage = $"<color=#FEDB5B>Benny</color> has won!";
+            }
+            
             winner = player2;
             loser = player1;
             upgradeLogger.LogRound(roundCount, player1, player2, 1);
@@ -219,7 +247,7 @@ public class RoundManager : MonoBehaviour
         
         if (player1Wins >= 4)
         {
-            winnerMessage = "PLAYER 1 IS VICTORIOUS!!!";
+            winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> IS VICTORIOUS!!!";
             upgradeLogger.LogRound(roundCount, player1, player2, 0);
             upgradeLogger.FinalizeLog();
 
@@ -227,26 +255,15 @@ public class RoundManager : MonoBehaviour
         }
         else if (player2Wins >= 4)
         {
-            winnerMessage = "PLAYER 2 IS VICTORIOUS!!!";
+            winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> IS VICTORIOUS!!!";
             upgradeLogger.LogRound(roundCount, player1, player2, 1);
             upgradeLogger.FinalizeLog();
 
             gameEnded = true;
         }
         
-        
-
-
         UIManager.Instance.ShowWinner(winnerMessage);
 
-
-        UIManager.Instance.victoryDisplayUI.UpdateVictoryCrystals(player1Wins, player2Wins);
-
-        if (!gameEnded)
-        {
-            StartCoroutine(ShowUpgradeScreenAfterDelay());
-        }
-        
         // Destroy all projectiles left
         Projectile[] allProjectiles = FindObjectsByType<Projectile>(FindObjectsSortMode.None);
         foreach (Projectile projectile in allProjectiles)
@@ -262,6 +279,15 @@ public class RoundManager : MonoBehaviour
         }
 
         //Cursor.visible = true;
+        
+        if (!gameEnded)
+        {
+            StartCoroutine(ShowUpgradeScreenAfterDelay());
+        }
+        else
+        {
+            StartCoroutine(GoToMainMenuAfterDelay(5f));
+        }
     }
     
     private IEnumerator ShowUpgradeScreenAfterDelay()
@@ -290,8 +316,39 @@ public class RoundManager : MonoBehaviour
 
         foreach (string step in countdownSteps)
         {
-            UIManager.Instance.countdownText.text = step;
-            yield return new WaitForSeconds(stepDelay);
+            TMP_Text countdownText = UIManager.Instance.countdownText;
+            countdownText.text = step;
+            
+            RectTransform rect = countdownText.rectTransform;
+            rect.localScale = Vector3.one;
+
+            rect.localScale = Vector3.zero;
+
+            float growDuration = stepDelay * 0.1f;
+            float holdDuration = stepDelay * 0.6f;
+            float shrinkDuration = stepDelay * 0.3f;
+            
+            float elapsed = 0f;
+            while (elapsed < growDuration)
+            {
+                float t = elapsed / growDuration;
+                rect.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, t);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            rect.localScale = Vector3.one;
+            
+            yield return new WaitForSeconds(holdDuration);
+            
+            elapsed = 0f;
+            while (elapsed < shrinkDuration)
+            {
+                float t = elapsed / shrinkDuration;
+                rect.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, t);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            rect.localScale = Vector3.zero;
         }
 
         Debug.Log("Round Started!");
@@ -346,6 +403,12 @@ public class RoundManager : MonoBehaviour
             UIManager.Instance.CloseUpgradeScreens();
             TryStartRound();
         }
+    }
+    
+    private IEnumerator GoToMainMenuAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GameManager.Instance.LoadScene(GameScene.MainMenu);
     }
 }
 

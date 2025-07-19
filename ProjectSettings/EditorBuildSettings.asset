@@ -9,8 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Trash/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 83af4aea1b2fa8946b3b02dfa4e76243
+  - enabled: 1
     path: Assets/Scenes/Arena_Square.unity
     guid: d0bfcda5b6cc9a7458e36fc2a2040bb7
+  - enabled: 1
+    path: Assets/Scenes/Arena_Octagon.unity
+    guid: 33e839c9c661c8b47a775db50da1017e
+  - enabled: 1
+    path: Assets/Scenes/Arena_Snow.unity
+    guid: cf6844146740aaf4fab9735513f1b28a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7d44fc5bdd58bca4a8744a2ed076bf4e, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 0d2041419e666d74da5714cf49afaef1, type: 3}

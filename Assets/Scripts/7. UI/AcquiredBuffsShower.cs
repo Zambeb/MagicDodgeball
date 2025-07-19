@@ -7,6 +7,7 @@ public class AcquiredBuffsShower : MonoBehaviour
 {
     [SerializeField] private int playerIndex;
     [SerializeField] private GameObject iconPrefab; 
+    [SerializeField] private GameObject iconPrefabActive; 
     [SerializeField] private Transform iconsParent; 
 
     private List<GameObject> spawnedIcons = new List<GameObject>();
@@ -39,14 +40,45 @@ public class AcquiredBuffsShower : MonoBehaviour
             Debug.LogError($"Unknown playerIndex: {playerIndex}");
             return;
         }
-        
+
+        UpgradeEffectBase activeUpgrade = player.acquiredActiveAbility;
         List<UpgradeEffectBase> upgrades = player.acquiredUpgrades;
         
-        if (upgrades == null || upgrades.Count == 0) return;
+        if (activeUpgrade == null && (upgrades == null || upgrades.Count == 0)) return;
+
+        if (activeUpgrade != null)
+        {
+            GameObject iconObjAct = Instantiate(iconPrefabActive, iconsParent);
+            iconObjAct.transform.localScale = iconObjAct.transform.localScale / 1.5f;
+            
+            Image iconImageAct = iconObjAct.GetComponent<AcquiredIconImage>().iconImage.GetComponent<Image>();
+
+            BuffIcon buffIcon = iconObjAct.GetComponent<BuffIcon>();
+            if (buffIcon != null)
+            {
+                buffIcon.SetTooltip(activeUpgrade.upgradeName);
+            }
+            if (iconImageAct != null)
+            {
+                iconImageAct.sprite = activeUpgrade.icon;
+                Color newColor;
+                if (ColorUtility.TryParseHtmlString("#4E292E", out newColor))
+                {
+                    iconImageAct.color = newColor;
+                }
+                else
+                {
+                    Debug.LogError("wrong color code");
+                }
+            }
+            spawnedIcons.Add(iconObjAct);
+        }
         
         foreach (UpgradeEffectBase upgrade in upgrades)
         {
             GameObject iconObj = Instantiate(iconPrefab, iconsParent);
+            iconObj.transform.localScale = iconObj.transform.localScale / 1.5f;
+            
             Image iconImage = iconObj.GetComponent<AcquiredIconImage>().iconImage.GetComponent<Image>();
 
             BuffIcon buffIcon = iconObj.GetComponent<BuffIcon>();

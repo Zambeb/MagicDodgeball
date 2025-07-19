@@ -20,7 +20,6 @@ public class SoundManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         soundLookup = new Dictionary<string, SoundData>();
         foreach (var s in sounds)

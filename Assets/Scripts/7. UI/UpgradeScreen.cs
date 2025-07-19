@@ -13,6 +13,8 @@ public class UpgradeScreen : MonoBehaviour
     [SerializeField] private GameObject upgradeButtonPrefab;
     [SerializeField] private Transform buttonsParent;
     [SerializeField] private GameObject firstSelectedButton;
+    
+    [SerializeField] private AnimationCurve scaleCurve;
 
     private List<GameObject> spawnedButtons = new List<GameObject>();
     private PlayerController currentPlayer;
@@ -183,21 +185,7 @@ public class UpgradeScreen : MonoBehaviour
 
             rt.position = Vector3.Lerp(originalPos, targetPos, t);
 
-            float sinValue;
-
-            if (t <= 0.5f)
-            {
-                sinValue = Mathf.Sin(Mathf.PI * t);
-            }
-            else
-            {
-                float progress = (t - 0.5f) * 2f;
-                float eased = progress * progress; 
-                float adjustedT = 0.5f + eased * 0.5f;
-                sinValue = Mathf.Sin(Mathf.PI * adjustedT);
-            }
-
-            float scaleMultiplier = 1f + (targetScaleMultiplier - 1f) * sinValue;
+            float scaleMultiplier = 1f + (targetScaleMultiplier - 1f) * scaleCurve.Evaluate(t);
             rt.localScale = originalScale * scaleMultiplier;
 
             yield return null;
@@ -220,6 +208,8 @@ public class UpgradeScreen : MonoBehaviour
         uiParticle.Play();
 
         Destroy(effect, 1f);
+        
+        UIManager.Instance.ShakeUpgradeScreen(1f, 20f, 25f);
 
         yield return new WaitForSeconds(1f);
 

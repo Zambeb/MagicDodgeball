@@ -12,12 +12,10 @@ public class ShieldOrbitManager : MonoBehaviour
 
     void Update()
     {
-        rotationOffset += rotationSpeed * Time.deltaTime;
-        UpdateShieldPositions();
-        
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (shields.Count != 0)
         {
-            AddShield();
+            rotationOffset += rotationSpeed * Time.deltaTime;
+            UpdateShieldPositions();
         }
     }
 

@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &57116568136202110
 RectTransform:
   m_ObjectHideFlags: 0
@@ -295,7 +295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2019226097110186186
 Transform:
   m_ObjectHideFlags: 0
@@ -840,6 +840,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player-Bunny
       objectReference: {fileID: 0}
+    - target: {fileID: 2184390150547338334, guid: a1ebfc2beb34c1f499eb1c86cd6d17bb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -866,6 +870,10 @@ PrefabInstance:
     - target: {fileID: 3514566340503230370, guid: beb59870f2a8a53448c06bf37aec5000, type: 3}
       propertyPath: m_Name
       value: Player_Racoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514566340503230370, guid: beb59870f2a8a53448c06bf37aec5000, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4291349746574757144, guid: beb59870f2a8a53448c06bf37aec5000, type: 3}
       propertyPath: m_LocalPosition.x

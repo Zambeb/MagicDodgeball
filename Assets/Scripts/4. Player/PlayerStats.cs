@@ -26,6 +26,8 @@ public struct PlayerStats
     public float chargeSpeedIncreasePerSecond;
     public int miniBallsQuantity;
     public float miniBallsSizeMultiplier;
+    public bool hasAutoAim;
+    public float autoAimStrength;
 
     /*
     public PlayerStats()
@@ -58,6 +60,8 @@ public struct PlayerStats
         chargeSpeedIncreasePerSecond = other.chargeSpeedIncreasePerSecond;
         miniBallsQuantity = other.miniBallsQuantity;
         miniBallsSizeMultiplier = other.miniBallsSizeMultiplier;
+        hasAutoAim = other.hasAutoAim;
+        autoAimStrength = other.autoAimStrength;
     }
 }
 

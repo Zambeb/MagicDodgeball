@@ -94,6 +94,8 @@ public class RoundManager : MonoBehaviour
         if (playersReady >= 2)
         {
             TryStartRound();
+            player1.opponent = player2;
+            player2.opponent = player1;
             UIManager.Instance.tutorialScreen.gameObject.SetActive(false);
         }
     }

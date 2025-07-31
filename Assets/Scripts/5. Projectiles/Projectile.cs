@@ -48,6 +48,11 @@ public class Projectile : MonoBehaviour
     private Vector3 lastTrailSpawnPos;
     public float trailDuration;
     public float slowAmount;
+
+    [Header("Auto Aim")] 
+    public bool hasAutoAim = false;
+    public float autoAimStrength;
+    private Transform opponentTransform;
     
     [Header("Visual Effects")]
     public GameObject bounceEffectPrefab; 
@@ -86,6 +91,8 @@ public class Projectile : MonoBehaviour
             trailObject.GetComponent<TrailRenderer>().time = ownerPlayer.stats.trailDuration;
             lastTrailSpawnPos = transform.position;
         }
+        
+        opponentTransform = ownerPlayer.opponent.transform;
     }
     
     public void Initialize(Vector3 initDirection)
@@ -141,6 +148,11 @@ public class Projectile : MonoBehaviour
     
     private bool DoMovementStep(float distance)
 {
+    if (ownerPlayer.stats.hasAutoAim)
+    {
+        AdjustDirectionTowardsNearestEnemy();
+    }
+
     if (!Physics.SphereCast(transform.position, sphereCastRadius, direction, out RaycastHit hit, distance, collisionMask))
     {
         transform.position += direction * distance;
@@ -251,6 +263,22 @@ public class Projectile : MonoBehaviour
     HandleBounce(hit.normal, hit.point);
     return true;
 }
+
+    private void AdjustDirectionTowardsNearestEnemy()
+    {
+        Vector3 toEnemy = (opponentTransform.position - transform.position);
+        toEnemy.y = 0;
+
+        float sqrMag = toEnemy.x * toEnemy.x + toEnemy.z * toEnemy.z;
+        if (sqrMag > 0.0001f)
+        {
+            float invLength = 1.0f / Mathf.Sqrt(sqrMag);
+            toEnemy.x *= invLength;
+            toEnemy.z *= invLength;
+        }
+        
+        direction = Vector3.Lerp(direction, toEnemy, ownerPlayer.stats.autoAimStrength * Time.deltaTime).normalized;
+    }
 
     private void HandleBounce(Vector3 normal, Vector3 hitPoint)
     {

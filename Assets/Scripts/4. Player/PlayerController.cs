@@ -475,8 +475,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (animController != null) animController.TriggerParryAnimation();
         if (!activeApplied)
         {
-            if (playerIndex == 0) opponent = RoundManager.Instance.player2;
-            else opponent = RoundManager.Instance.player1;
             _visuals.ParryVisualEffect();
             StartCoroutine(PerformParry(radius, cooldown));
         }

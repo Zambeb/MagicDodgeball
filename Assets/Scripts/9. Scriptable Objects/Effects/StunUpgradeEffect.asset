@@ -19,4 +19,4 @@ MonoBehaviour:
   offensive: 1
   maxStacks: 0
   statType: 5
-  value: 0.8
+  value: 0.003

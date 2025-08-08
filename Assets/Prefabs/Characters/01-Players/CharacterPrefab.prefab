@@ -392,6 +392,8 @@ MonoBehaviour:
     chargeSpeedIncreasePerSecond: 0
     miniBallsQuantity: 0
     miniBallsSizeMultiplier: 0
+    hasAutoAim: 0
+    autoAimStrength: 0
   rotationSpeed: 1500
   _visuals: {fileID: 6537004844670196330}
   gun: {fileID: 0}
@@ -974,6 +976,10 @@ PrefabInstance:
     - target: {fileID: 1147144673574993740, guid: e460f509c3703d64395174dfc60630a6, type: 3}
       propertyPath: m_Name
       value: PEPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147144673574993740, guid: e460f509c3703d64395174dfc60630a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

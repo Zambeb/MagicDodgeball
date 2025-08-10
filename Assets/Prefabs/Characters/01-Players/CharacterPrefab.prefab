@@ -395,6 +395,7 @@ MonoBehaviour:
     miniBallsSizeMultiplier: 0
     hasAutoAim: 0
     autoAimStrength: 0
+    knockBack: 0
   rotationSpeed: 1500
   _visuals: {fileID: 6537004844670196330}
   gun: {fileID: 0}

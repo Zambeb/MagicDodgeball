@@ -1918,6 +1918,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5394376807650051576, guid: 06261f0da2f3a994c91206359e2fa424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5968213487048346796, guid: 06261f0da2f3a994c91206359e2fa424, type: 3}
       propertyPath: m_Name
       value: Environment_Octagon
@@ -2540,6 +2544,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 919b9a0dc794e6d4281abbece271885b, type: 2}
   - {fileID: 11400000, guid: 3c8f4e6e603a0ec41b0b61936a0cb7a1, type: 2}
   - {fileID: 11400000, guid: f497a046b1cb1c041b168a728706cb6e, type: 2}
+  - {fileID: 11400000, guid: edd4c0eb27c9a1b4b8ab5271590692d2, type: 2}
 --- !u!1001 &2070812424017276875
 PrefabInstance:
   m_ObjectHideFlags: 0

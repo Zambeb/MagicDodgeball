@@ -210,14 +210,21 @@ public class Projectile : MonoBehaviour
         var hitPlayer = hit.collider.GetComponent<PlayerController>();
         bool isSelfHit = hitPlayer != null && hitPlayer.playerIndex == playerIndex;
 
-        if (canStun)
-        {
-            damageable.Stun(stunDuration);
-        }
-
         if (!isSelfHit || (isSelfHit && hitPlayer.stats.canSelfHarm))
         {
             damageable.TakeDamage();
+            
+            if (canStun)
+            {
+                damageable.Stun(stunDuration);
+            }
+            
+            if (ownerPlayer.stats.knockBack)
+            {
+                Debug.Log("Knock Back!");
+                Vector3 knockBackDirection = direction.normalized;
+                StartCoroutine(hitPlayer.KnockBack(knockBackDirection, ownerPlayer.stats.knockBackDistance, ownerPlayer.stats.knockBackDuration));
+            }
         }
     }
     // 5. Projectile

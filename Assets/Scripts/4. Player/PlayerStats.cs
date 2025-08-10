@@ -28,6 +28,9 @@ public struct PlayerStats
     public float miniBallsSizeMultiplier;
     public bool hasAutoAim;
     public float autoAimStrength;
+    public bool knockBack;
+    public float knockBackDistance;
+    public float knockBackDuration;
 
     /*
     public PlayerStats()
@@ -62,6 +65,9 @@ public struct PlayerStats
         miniBallsSizeMultiplier = other.miniBallsSizeMultiplier;
         hasAutoAim = other.hasAutoAim;
         autoAimStrength = other.autoAimStrength;
+        knockBack = other.knockBack;
+        knockBackDistance = other.knockBackDistance;
+        knockBackDuration = other.knockBackDuration;
     }
 }
 

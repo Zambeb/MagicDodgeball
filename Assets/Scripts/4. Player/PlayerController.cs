@@ -296,6 +296,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             {
                 StartCoroutine(InvinvibityAfterHit(stats.immunityAfterHit));
             }
+            
             if (animController != null) 
             {
                 //Debug.Log(" animController is not null (TakeDamage)"); 
@@ -494,6 +495,24 @@ public class PlayerController : MonoBehaviour, IDamageable
             UIManager.Instance.SwapPointBoards();
 
             StartCoroutine(PerformSwap(p1, p2, cooldown, delay));
+        }
+    }
+
+    public IEnumerator KnockBack(Vector3 direction, float distance, float duration)
+    {
+        float elapsed = 0f;
+        if (direction.sqrMagnitude < 0.01f)
+            direction = -transform.forward;
+        
+        while (elapsed < duration)
+        {
+            float delta = Time.deltaTime;
+            elapsed += delta;
+
+            float moveStep = (distance / duration) * delta;
+            controller.Move(direction * moveStep);
+
+            yield return null;
         }
     }
 

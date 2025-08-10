@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de604bd7fdf335347bd00dd3b2cae24d, type: 3}
+  m_Name: TrashIdolData
+  m_EditorClassIdentifier: 
+  upgradeName: Trash Idol
+  icon: {fileID: 0}
+  descriptionIfKeyboard: 'Places turret that throws porjectiles (directly to enemy)
+    with Bounce Amount=0, can be destroyed after H hits
+
+'
+  descriptionIfGamepad: 'Places turret that throws porjectiles (directly to enemy)
+    with Bounce Amount=0, can be destroyed after H hits
+
+'
+  effectPrefab: {fileID: 11400000, guid: b2a4c79e171809540a00ef56e753f970, type: 2}

@@ -302,6 +302,12 @@ public class RoundManager : MonoBehaviour
             barrierAbility.RemoveAllBarriers();
         }
 
+        TrashIdolEffect[] allTrashIdolEffects = FindObjectsByType<TrashIdolEffect>(FindObjectsSortMode.None);
+        foreach (var idolAbility in allTrashIdolEffects)
+        {
+            idolAbility.RemoveAllIdols();
+        }
+
         //Cursor.visible = true;
         
         if (!gameEnded)

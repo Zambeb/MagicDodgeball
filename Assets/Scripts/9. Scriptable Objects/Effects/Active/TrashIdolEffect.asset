@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f4abb52b99e4a4595073e2504b7012, type: 3}
+  m_Name: TrashIdolEffect
+  m_EditorClassIdentifier: 
+  upgradeName: Trash Idol
+  icon: {fileID: 0}
+  isActiveAbility: 1
+  isStackable: 0
+  offensive: 1
+  maxStacks: 0
+  cooldown: 10
+  idolPrefab: {fileID: 7494326391021103248, guid: e6948366202af6b41a5ceeb727a9bbc3, type: 3}
+  maxIdols: 1
+  idolHP: 3
+  idolDistance: 2
+  idolShootInterval: 2
+  idolBallSpeed: 10
+  idolBallBounces: 1

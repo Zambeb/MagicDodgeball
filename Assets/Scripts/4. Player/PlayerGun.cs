@@ -9,14 +9,13 @@ public class PlayerGun : MonoBehaviour
     [SerializeField] private Transform firingPoint;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float firingSpeed;
+    public PlayerController playerController;
     //[SerializeField] private int maxProjectiles = 3;
     //public Material[] projectileMaterial;
     //public Material amigaBallMaterial;
     private GameObject projectileCollector;
 
     public static PlayerGun Instance;
-
-    private PlayerController playerController;
 
     public List<GameObject> activeProjectiles = new List<GameObject>();
     
@@ -25,7 +24,6 @@ public class PlayerGun : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        playerController = GetComponent<PlayerController>();
         projectileCollector = GameObject.Find("ProjectileCollector");
     }
 

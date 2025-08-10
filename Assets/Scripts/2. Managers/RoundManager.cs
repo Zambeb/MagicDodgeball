@@ -81,11 +81,13 @@ public class RoundManager : MonoBehaviour
         if (input.playerIndex == 0)
         {
             player1 = controller;
+            UIManager.Instance.PlayerJoinedText(controller, 1);
             Debug.Log("Player 1 joined");
         }
         else if (input.playerIndex == 1)
         {
             player2 = controller;
+            UIManager.Instance.PlayerJoinedText(controller, 2);
             Debug.Log("Player 2 joined");
         }
 
@@ -93,10 +95,14 @@ public class RoundManager : MonoBehaviour
 
         if (playersReady >= 2)
         {
+            yield return new WaitForSeconds(1f);
+            StartCoroutine(UIManager.Instance.CloseTutorial());
+
+            yield return new WaitForSeconds(1f);
             TryStartRound();
             player1.opponent = player2;
             player2.opponent = player1;
-            UIManager.Instance.tutorialScreen.gameObject.SetActive(false);
+            //UIManager.Instance.tutorialScreen.gameObject.SetActive(false);
         }
     }
 

@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour, IDamageable
 {
+    public GamepadRumble rumble;
     public int playerIndex;
     public PlayerController opponent;
     [SerializeField] public PlayerStats stats;
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         invincible = false;
         canShoot = true;
         currentControlScheme = playerInput.currentControlScheme;
+        rumble = GetComponentInChildren<GamepadRumble>();
     }
 
     void Update()
@@ -179,7 +181,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
                 if (currentControlScheme == "Gamepad")
                 {
-                    FeelManager.Instance.rumble.ChargingRumble(1f, 1f, stats.maxChargeTime);
+                    rumble.ChargingRumble(1f, 1f, stats.maxChargeTime);
                 }
 
                 Debug.Log("Start charging at multiplier = " + chargeMultiplier);
@@ -205,7 +207,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
                     if (currentControlScheme == "Gamepad")
                     {
-                        FeelManager.Instance.rumble.StopChargingRumble();
+                        rumble.StopChargingRumble();
                     }
                     
                     chargeInputHeld = false;
@@ -239,7 +241,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (currentControlScheme == "Gamepad")
         {
-            FeelManager.Instance.rumble.ShootRumble();
+            rumble.ShootRumble();
         }
         
         SoundManager.Instance.PlaySFX("Sneeze", gameObject.transform.position);
@@ -287,7 +289,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
             if (currentControlScheme == "Gamepad")
             {
-                FeelManager.Instance.rumble.GetHitRumble();
+                rumble.GetHitRumble();
             }
             
             if (stats.immunityAfterHit != 0)
@@ -377,7 +379,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (currentControlScheme == "Gamepas")
         {
-            FeelManager.Instance.rumble.StopChargingRumble();
+            rumble.StopChargingRumble();
         }
 
         isCharging = false;

@@ -43,6 +43,8 @@ public class UIManager : MonoBehaviour
     
     [Header("Tutorial Screen")] 
     public GameObject tutorialScreen;
+    public TMP_Text player1JoinedText;
+    public TMP_Text player2JoinedText;
 
     [Header("Other UI")] public TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI winnerText;
@@ -70,6 +72,8 @@ public class UIManager : MonoBehaviour
         originalPosBoard2 = rt2.anchoredPosition;
         
         tutorialScreen.gameObject.SetActive(true);
+        player1JoinedText.enabled = false;
+        player2JoinedText.enabled = false;
     }
 
     private void Update()
@@ -152,6 +156,79 @@ public class UIManager : MonoBehaviour
                 Instantiate(activeBallUIPrefab, targetContainer);
             }
         }
+    }
+
+    public void PlayerJoinedText(PlayerController controller, int i)
+    {
+        if (i == 1)
+        {
+            player1JoinedText.enabled = true;
+            if (GameManager.Instance != null)
+            {
+                if (controller.playerIndex == 0)
+                {
+                    player1JoinedText.text = GameManager.Instance.player1Name + " joined the game";
+                }
+                else
+                {
+                    player1JoinedText.text = GameManager.Instance.player2Name + " joined the game";
+                }
+            }
+            else
+            {
+                player1JoinedText.text = "Player joined the game";
+            }
+        }
+        else
+        {
+            player2JoinedText.enabled = true;
+            if (GameManager.Instance != null)
+            {
+                if (controller.playerIndex == 0)
+                {
+                    player2JoinedText.text = GameManager.Instance.player1Name + " joined the game";
+                }
+                else
+                {
+                    player2JoinedText.text = GameManager.Instance.player2Name + " joined the game";
+                }
+            }
+            else
+            {
+                player2JoinedText.text = "Player joined the game";
+            }
+        }
+    }
+
+    public IEnumerator CloseTutorial()
+    {
+        float duration = 1f;
+        float elapsed = 0f;
+        
+        Transform tutorialTransform = UIManager.Instance.tutorialScreen.transform;
+        Vector3 initialScale = tutorialTransform.localScale;
+        Vector3 targetScale = initialScale * 12f;
+
+        Image tutorialImage = UIManager.Instance.tutorialScreen.GetComponent<Image>();
+        Color initialColor = tutorialImage.color;
+        Color targetColor = new Color(initialColor.r, initialColor.g, initialColor.b, 0f);
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            
+            tutorialTransform.localScale = Vector3.Lerp(initialScale, targetScale, t);
+            
+            tutorialImage.color = Color.Lerp(initialColor, targetColor, t);
+
+            yield return null;
+        }
+        
+        tutorialScreen.gameObject.SetActive(false);
+        
+        tutorialTransform.localScale = initialScale;
+        tutorialImage.color = initialColor;
     }
 
     public void OpenUpgradeScreens(PlayerController p1, PlayerController p2)

@@ -193,7 +193,7 @@ public class UpgradeScreen : MonoBehaviour
 
         if (currentPlayer.currentControlScheme == "Gamepad")
         {
-            FeelManager.Instance.rumble.FadeOutRumble(1f, 1f, 1f);
+            currentPlayer.rumble.FadeOutRumble(1f, 1f, 1f);
         }
         
         GameObject effect = Instantiate(starParticles, button.transform); 

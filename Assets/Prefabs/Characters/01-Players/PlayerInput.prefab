@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5262792055232782700}
   - component: {fileID: 6541736017835645953}
   - component: {fileID: 2736661395421128792}
+  - component: {fileID: -2577483883171617824}
   m_Layer: 0
   m_Name: PlayerInput
   m_TagString: Untagged
@@ -200,3 +201,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5082877046682923718, guid: 854c1265052583c4ba805d5f1f71fe20, type: 3}
+--- !u!114 &-2577483883171617824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477069142128843285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23749787d0a34cf48a7f423a44e58345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getHitLF: 0.5
+  getHitHF: 0.5
+  getHitDur: 0.5
+  shootLF: 0
+  shootHF: 0.5
+  shootDur: 0.5

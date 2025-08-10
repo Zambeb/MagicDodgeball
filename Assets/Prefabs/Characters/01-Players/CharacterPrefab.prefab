@@ -366,6 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb0ab71ef002ac4ca7b17bf265da9c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rumble: {fileID: 0}
   playerIndex: 0
   opponent: {fileID: 0}
   stats:

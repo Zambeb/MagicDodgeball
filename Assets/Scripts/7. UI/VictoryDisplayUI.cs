@@ -82,7 +82,8 @@ public class VictoryDisplayUI : MonoBehaviour
             GameObject vfx = Instantiate(vfxPrefab, overlayObj.transform.position, Quaternion.identity, crystalOverlayContainer);
             UIManager.Instance.ShakeUpgradeScreen(0.5f, 20f, 25f);
             
-            FeelManager.Instance.rumble.FadeOutRumble(1f, 1f, 1f);
+            RoundManager.Instance.player1.rumble.FadeOutRumble(1f, 1f, 1f);
+            RoundManager.Instance.player2.rumble.FadeOutRumble(1f, 1f, 1f);
             
             Destroy(vfx, 2f);
         }

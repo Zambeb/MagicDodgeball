@@ -15,17 +15,44 @@ public class GamepadRumble : MonoBehaviour
     [SerializeField] private float shootDur = 0.5f;
     
     private Coroutine chargingCoroutine;
+    private Gamepad gamepad;
+    private PlayerInput playerInput;
+    
+    private void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        UpdateGamepadReference();
+        
+        playerInput.onControlsChanged += OnControlsChanged;
+    }
+
+    private void OnControlsChanged(PlayerInput input)
+    {
+        UpdateGamepadReference();
+    }
+
+    private void UpdateGamepadReference()
+    {
+        var device = playerInput.GetDevice<InputDevice>();
+        
+        gamepad = device as Gamepad;
+        
+        if (gamepad == null && device != null)
+        {
+            Debug.Log($"Устройство ввода {device.name} не является геймпадом", this);
+        }
+    }
 
     private void Vibrate(float lf, float hf, float dur)
     {
-        if (Gamepad.current != null)
+        if (gamepad != null)
         {
-            Gamepad.current.SetMotorSpeeds(lf, hf);
+            gamepad.SetMotorSpeeds(lf, hf);
             Invoke(nameof(StopVibration), dur);
         }
         else
         {
-            Debug.Log("Геймпад не подключён.");
+            Debug.Log("Геймпад не назначен для этого игрока.");
         }
     }
     
@@ -41,9 +68,9 @@ public class GamepadRumble : MonoBehaviour
 
     private void StopVibration()
     {
-        if (Gamepad.current != null)
+        if (gamepad != null)
         {
-            Gamepad.current.SetMotorSpeeds(0, 0);
+            gamepad.SetMotorSpeeds(0, 0);
         }
     }
     
@@ -57,9 +84,9 @@ public class GamepadRumble : MonoBehaviour
 
     private IEnumerator ChargingRumbleCoroutine(float maxLF, float maxHF, float chargeTime)
     {
-        if (Gamepad.current == null)
+        if (gamepad == null)
         {
-            Debug.Log("Геймпад не подключён.");
+            Debug.Log("Геймпад не назначен для этого игрока.");
             yield break;
         }
 
@@ -71,13 +98,13 @@ public class GamepadRumble : MonoBehaviour
             float currentLF = Mathf.Lerp(0, maxLF, t);
             float currentHF = Mathf.Lerp(0, maxHF, t);
 
-            Gamepad.current.SetMotorSpeeds(currentLF, currentHF);
+            gamepad.SetMotorSpeeds(currentLF, currentHF);
 
             elapsed += Time.deltaTime;
             yield return null;
         }
         
-        Gamepad.current.SetMotorSpeeds(maxLF, maxHF);
+        gamepad.SetMotorSpeeds(maxLF, maxHF);
     }
 
     public void StopChargingRumble()
@@ -97,9 +124,9 @@ public class GamepadRumble : MonoBehaviour
 
     private IEnumerator FadeOutRumbleCoroutine(float startLF, float startHF, float fadeDuration)
     {
-        if (Gamepad.current == null)
+        if (gamepad == null)
         {
-            Debug.Log("Геймпад не подключён.");
+            Debug.Log("Геймпад не назначен для этого игрока.");
             yield break;
         }
 
@@ -111,12 +138,25 @@ public class GamepadRumble : MonoBehaviour
             float currentLF = Mathf.Lerp(startLF, 0, t);
             float currentHF = Mathf.Lerp(startHF, 0, t);
 
-            Gamepad.current.SetMotorSpeeds(currentLF, currentHF);
+            gamepad.SetMotorSpeeds(currentLF, currentHF);
 
             elapsed += Time.deltaTime;
             yield return null;
         }
 
+        StopVibration();
+    }
+    
+    private void OnDestroy()
+    {
+        if (playerInput != null)
+            playerInput.onControlsChanged -= OnControlsChanged;
+            
+        StopVibration();
+    }
+
+    private void OnDisable()
+    {
         StopVibration();
     }
 }

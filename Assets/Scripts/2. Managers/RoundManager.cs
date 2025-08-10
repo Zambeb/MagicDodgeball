@@ -255,7 +255,15 @@ public class RoundManager : MonoBehaviour
         
         if (player1Wins >= 4)
         {
-            winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> IS VICTORIOUS!!!";
+            if (GameManager.Instance != null)
+            {
+                winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> IS VICTORIOUS!!!";
+            }
+            else
+            {
+                winnerMessage = $"<color=#BC99F7>RAMMY</color> IS VICTORIOUS!!!";
+            }
+            
             upgradeLogger.LogRound(roundCount, player1, player2, 0);
             upgradeLogger.FinalizeLog();
 
@@ -263,7 +271,15 @@ public class RoundManager : MonoBehaviour
         }
         else if (player2Wins >= 4)
         {
-            winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> IS VICTORIOUS!!!";
+            if (GameManager.Instance != null)
+            {
+                winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> IS VICTORIOUS!!!";
+            }
+            else
+            {
+                winnerMessage = $"<color=#FEDB5B>BENNY</color> IS VICTORIOUS!!!";
+            }
+            
             upgradeLogger.LogRound(roundCount, player1, player2, 1);
             upgradeLogger.FinalizeLog();
 

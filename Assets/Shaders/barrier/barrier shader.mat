@@ -50,8 +50,8 @@ Material:
     - _CastShadows: 1
     - _Cull: 0
     - _DstBlend: 1
-    - _Intersection_Depth: -0.65
-    - _MASK_POWER: 1.43
+    - _Intersection_Depth: 4.8
+    - _MASK_POWER: -0.53
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -65,9 +65,9 @@ Material:
     - _noise_scale: 287.81
     m_Colors:
     - _Color: {r: 0.68450356, g: 1, b: 0, a: 0}
-    - _Intersection_Color: {r: 0, g: 1, b: 0.95000005, a: 1}
+    - _Intersection_Color: {r: 0, g: 0, b: 0, a: 1}
     - _NoiseSpeed: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Speed: {r: 1, g: 1, b: 0, a: 0}
+    - _Speed: {r: 4.5, g: 1, b: 0, a: 0}
     - _Tiling: {r: 10, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -726,6 +726,11 @@
                     "devicePath": "<Gamepad>",
                     "isOptional": true,
                     "isOR": false
+                },
+                {
+                    "devicePath": "<DualShockGamepad>",
+                    "isOptional": true,
+                    "isOR": false
                 }
             ]
         },

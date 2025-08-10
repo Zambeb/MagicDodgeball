@@ -396,6 +396,11 @@ MonoBehaviour:
     hasAutoAim: 0
     autoAimStrength: 0
     knockBack: 0
+    knockBackDistance: 0
+    knockBackDuration: 0
+    doubleShot: 0
+    doubleShotChance: 0
+    doubleShotInterval: 0
   rotationSpeed: 1500
   _visuals: {fileID: 6537004844670196330}
   gun: {fileID: 0}

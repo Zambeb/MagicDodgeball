@@ -31,6 +31,9 @@ public struct PlayerStats
     public bool knockBack;
     public float knockBackDistance;
     public float knockBackDuration;
+    public bool doubleShot;
+    public float doubleShotChance;
+    public float doubleShotInterval;
 
     /*
     public PlayerStats()
@@ -68,6 +71,9 @@ public struct PlayerStats
         knockBack = other.knockBack;
         knockBackDistance = other.knockBackDistance;
         knockBackDuration = other.knockBackDuration;
+        doubleShot = other.doubleShot;
+        doubleShotChance = other.doubleShotChance;
+        doubleShotInterval = other.doubleShotInterval;
     }
 }
 

@@ -13,6 +13,8 @@ public class IdolController : MonoBehaviour, IDamageable
     public int bounces;
     public float ballSpeed;
     private float shootTimer;
+
+    public Animator animator;
     
     public void Initialize(TrashIdolEffect parent)
     {
@@ -45,7 +47,13 @@ public class IdolController : MonoBehaviour, IDamageable
         shootTimer -= Time.deltaTime;
         if (shootTimer <= 0f && RoundManager.Instance.roundActive)
         {
+            if (animator != null)
+            {
+                Debug.Log("Set Attack Trigger");
+                animator.SetTrigger("Attack");
+            }
             gun.Shoot(ownerPlayer.playerIndex, bounces, ballSpeed); 
+            
             shootTimer = shootInterval;
         }
     }

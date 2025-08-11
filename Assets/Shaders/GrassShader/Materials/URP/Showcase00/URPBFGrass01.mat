@@ -101,7 +101,7 @@ Material:
     - _FadeAmplitude: 28
     - _FadeDistance: 16
     - _FadeDistanceEnd: 60
-    - _FadeDistanceStart: 40
+    - _FadeDistanceStart: 87.89
     - _FurCeil: 0
     - _FurShading: 0.25
     - _FurThinness: 1
@@ -120,7 +120,7 @@ Material:
     - _MinimumNumberStacks: 2
     - _Mode: 0
     - _NearCameraSmoosh: 0.5
-    - _NoisePower: 2
+    - _NoisePower: 9.85
     - _NumberOfStacks: 12.2
     - _OcclusionStrength: 1
     - _OffsetExtrude: 0
@@ -140,7 +140,7 @@ Material:
     - _Tiling3: 1
     - _TilingN1: 6.06
     - _TilingN2: 0.05
-    - _TilingN3: 0.5
+    - _TilingN3: 7.5
     - _UVSec: 0
     - _UseAmbientLight: 0
     - _UseCS: 1
@@ -154,7 +154,7 @@ Material:
     - _UseVP: 0
     - _UseVR: 0
     - _UseWC: 0
-    - _WindForce: 0.1
+    - _WindForce: 44.78
     - _WindMovement: 0.45
     - _WorldRotation: 0
     - _WorldScale: 10

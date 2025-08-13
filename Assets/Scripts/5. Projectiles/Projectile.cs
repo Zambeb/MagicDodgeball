@@ -303,7 +303,8 @@ public class Projectile : MonoBehaviour
             return;
         }
 
-        if (bounceCount == maxBounces - 1 && ownerPlayer.stats.finalSpit)
+        if (bounceCount == maxBounces - 1 && ownerPlayer.stats.finalSpit && 
+            Vector3.Distance(transform.position, opponentTransform.position) >= 1f)
         {
             direction = (opponentTransform.position - hitPoint).normalized;
             direction.y = 0;

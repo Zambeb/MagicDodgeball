@@ -302,8 +302,18 @@ public class Projectile : MonoBehaviour
             DestroySelf();
             return;
         }
+
+        if (bounceCount == maxBounces - 1)
+        {
+            direction = (opponentTransform.position - hitPoint).normalized;
+            direction.y = 0;
+            direction.Normalize();
+        }
+        else
+        {
+            direction = ReflectInXZ(direction, normal);
+        }
         
-        direction = ReflectInXZ(direction, normal);
         projectileSpeed *= accelerationAfterBounce;
         transform.position = hitPoint + normal * sphereCastRadius + direction * 0.01f;
     }

@@ -12,4 +12,5 @@ public enum StatType
     ExplosiveBalls,
     ImmunityAfterHit,
     CanAbsorbBalls,
+    FinalSpit
 }

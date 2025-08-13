@@ -47,6 +47,9 @@ public class StatUpgradeEffect : UpgradeEffectBase
             case StatType.CanAbsorbBalls:
                 player.stats.canAbsorbBalls = true;
                 break;
+            case StatType.FinalSpit:
+                player.stats.finalSpit = true;
+                break;
             default:
                 Debug.LogWarning("Unknown stat type!");
                 break;

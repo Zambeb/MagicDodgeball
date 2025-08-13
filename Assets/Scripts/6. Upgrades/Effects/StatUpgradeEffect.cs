@@ -50,6 +50,9 @@ public class StatUpgradeEffect : UpgradeEffectBase
             case StatType.FinalSpit:
                 player.stats.finalSpit = true;
                 break;
+            case StatType.CooldownDurationMultiplier:
+                player.stats.cooldownDurationMultiplier -= value;
+                break;
             default:
                 Debug.LogWarning("Unknown stat type!");
                 break;

@@ -35,6 +35,7 @@ public struct PlayerStats
     public float doubleShotChance;
     public float doubleShotInterval;
     public bool finalSpit;
+    public float cooldownDurationMultiplier;
 
     /*
     public PlayerStats()
@@ -76,6 +77,7 @@ public struct PlayerStats
         doubleShotChance = other.doubleShotChance;
         doubleShotInterval = other.doubleShotInterval;
         finalSpit = other.finalSpit;
+        cooldownDurationMultiplier = other.cooldownDurationMultiplier;
     }
 }
 

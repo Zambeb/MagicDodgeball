@@ -678,8 +678,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (cooldownDuration <= 0) return;
 
-        activeCooldownDuration = cooldownDuration;
-        activeCooldownTimeRemaining = cooldownDuration;
+        activeCooldownDuration = cooldownDuration * stats.cooldownDurationMultiplier;
+        activeCooldownTimeRemaining = cooldownDuration * stats.cooldownDurationMultiplier;
         activeApplied = true;
     
         StartCoroutine(CooldownRoutine());

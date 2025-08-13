@@ -401,6 +401,8 @@ MonoBehaviour:
     doubleShot: 0
     doubleShotChance: 0
     doubleShotInterval: 0
+    finalSpit: 0
+    cooldownDurationMultiplier: 1
   rotationSpeed: 1500
   _visuals: {fileID: 6537004844670196330}
   gun: {fileID: 0}

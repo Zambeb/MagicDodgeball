@@ -205,9 +205,9 @@ public class Projectile : MonoBehaviour
 
     // 4. IDamageable
     var damageable = hit.collider.GetComponent<IDamageable>();
-    if (damageable != null)
+    var hitPlayer = hit.collider.GetComponent<PlayerController>();
+    if (damageable != null && hitPlayer != null)
     {
-        var hitPlayer = hit.collider.GetComponent<PlayerController>();
         bool isSelfHit = hitPlayer != null && hitPlayer.playerIndex == playerIndex;
 
         if (!isSelfHit || (isSelfHit && hitPlayer.stats.canSelfHarm))

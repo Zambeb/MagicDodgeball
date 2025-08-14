@@ -279,7 +279,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HeightMultiplier: 0.5
-    - _HeightScale: 0.34
+    - _HeightScale: 2.23
     - _ISADD: 0
     - _ISICE: 0
     - _ISSNOW: 0
@@ -334,7 +334,7 @@ Material:
     - _Smoothness: 0.817
     - _SmoothnessTextureChannel: 0
     - _SnowNormalScale: 1
-    - _SnowScale: 1
+    - _SnowScale: 0.71
     - _SpecForce: 3
     - _SpecGlossMap: 1
     - _Specular: -7.29

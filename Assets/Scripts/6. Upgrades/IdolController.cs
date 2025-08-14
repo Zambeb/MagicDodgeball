@@ -66,6 +66,7 @@ public class IdolController : MonoBehaviour, IDamageable
     public void TakeDamage()
     {
         idolHP -= 1;
+        Debug.Log("Idol HP = " + idolHP);
         CheckIfDead();
     }
 

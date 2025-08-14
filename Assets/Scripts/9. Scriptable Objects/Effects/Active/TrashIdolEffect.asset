@@ -18,11 +18,11 @@ MonoBehaviour:
   isStackable: 0
   offensive: 1
   maxStacks: 0
-  cooldown: 10
+  cooldown: 8
   idolPrefab: {fileID: 7494326391021103248, guid: e6948366202af6b41a5ceeb727a9bbc3, type: 3}
-  maxIdols: 1
+  maxIdols: 3
   idolHP: 3
   idolDistance: 2
   idolShootInterval: 2
-  idolBallSpeed: 10
-  idolBallBounces: 1
+  idolBallSpeed: 14
+  idolBallBounces: 2

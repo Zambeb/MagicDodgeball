@@ -18,5 +18,5 @@ MonoBehaviour:
   isStackable: 1
   offensive: 1
   maxStacks: 4
-  doubleShotChance: 0.05
+  doubleShotChance: 0.15
   doubleShotInterval: 0.2

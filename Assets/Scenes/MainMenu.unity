@@ -3231,11 +3231,12 @@ MonoBehaviour:
     \u2013 University of Applied Sciences\r\n\r\n\r\n\r\n<size=60><b>Tools & Assets</b></size>\r\n\r\nUnity
     Engine\r\nJetBrains Rider\r\nAdobe Photoshop\r\nBlender\r\nClip Studio Paint\r\nAutodesk
     Maya\r\nSubstance Painter\r\nProcreate\r\nEZSoftBone\r\nZbrush\nAbleton Live 
-    \r\nNuendo\r\n\r\r\nFeel by More Mountains  \r\nFur Brushes by Tim Haag for ZBrush\n\nSome
-    sound effects sourced from\nweloveindies.com and creatively processed\r\n\r\nFonts:
-    History of Wawa by Khurasan, Centaur by Bruce Rogers\r\n\r\n\r\n\r\nAll third-party
-    tools and assets used under their respective licenses.\r\n\n\n\n\r\nAnimation
-    & Game  \r\nHochschule Darmstadt  \r\n2025"
+    \r\nNuendo\r\n\r\r\nFeel by More Mountains  \r\nFur Brushes by Tim Haag for ZBrush\n\nVFX
+    assets by KYEOMS, WhiteBox Studio and Hovl Studio were used \n\nSome sound effects
+    sourced from\nweloveindies.com and creatively processed\r\n\r\nFonts: History
+    of Wawa by Khurasan, Centaur by Bruce Rogers\r\n\r\n\r\n\r\nAll third-party tools
+    and assets used under their respective licenses.\r\n\n\n\n\r\nAnimation & Game 
+    \r\nHochschule Darmstadt  \r\n2025"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ca4d2f306ccea545b06ae7c31441886, type: 2}
   m_sharedMaterial: {fileID: 1676728505900478140, guid: 3ca4d2f306ccea545b06ae7c31441886, type: 2}

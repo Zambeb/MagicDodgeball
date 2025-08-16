@@ -12,12 +12,11 @@ public class FeelManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
-            return;
+            Destroy(Instance.gameObject);
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         
     }
     void Start()
@@ -34,5 +33,11 @@ public class FeelManager : MonoBehaviour
     public void GetHitCameraShake()
     {
         screenShake.PlayFeedbacks();
+    }
+    
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 }

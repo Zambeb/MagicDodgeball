@@ -13,21 +13,22 @@ public class PlayerSpawner : MonoBehaviour
     public static PlayerSpawner instance = null;
     
     // Events
-    public event System.Action<PlayerInput> PlayerJoinedGame; 
+    public event System.Action<PlayerInput> PlayerJoinedGame;
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null & instance != this)
         {
-            instance = this;
+            Destroy(instance.gameObject);
         }
-        else Destroy(gameObject);
-        
+
+        instance = this;
+
         joinAction.Enable();
         joinAction.performed += context => JoinAction(context);
-        
+
         PlayerInputManager.instance.onPlayerJoined += OnPlayerJoined;
-        }
+    }
 
     private void Start()
     {
@@ -54,5 +55,11 @@ public class PlayerSpawner : MonoBehaviour
         {
             PlayerInputManager.instance.JoinPlayerFromActionIfNotAlreadyJoined(context);
         }
+    }
+    
+    private void OnDestroy()
+    {
+        if (instance == this)
+            instance = null;
     }
 }

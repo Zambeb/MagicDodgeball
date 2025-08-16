@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
         if (sceneDict.TryGetValue(scene, out string sceneName))
         {
             SceneManager.LoadScene(sceneName);
+            Cursor.visible = true;
         }
         else
         {
@@ -75,6 +76,7 @@ public class GameManager : MonoBehaviour
         
         if (sceneDict.TryGetValue(scene, out string sceneName))
         {
+            Cursor.visible = true;
             isLoadingScene = true;
             StartCoroutine(LoadSceneCoroutine(sceneName, menuToHide));
         }

@@ -16,12 +16,11 @@ public class PauseManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
-            return;
+            Destroy(Instance.gameObject);
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -74,12 +73,19 @@ public class PauseManager : MonoBehaviour
 
     public void MainMenu()
     {
+        Resume();
         GameManager.Instance.LoadScene(GameScene.MainMenu);
     }
     
     public void QuitGame()
     {
         GameManager.Instance.QuitGame();
+    }
+    
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 
     public bool IsPaused => isPaused;

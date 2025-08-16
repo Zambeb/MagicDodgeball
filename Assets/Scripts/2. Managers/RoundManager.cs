@@ -48,8 +48,7 @@ public class RoundManager : MonoBehaviour
 
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
-            return;
+            Destroy(Instance.gameObject);
         }
         Instance = this;
         
@@ -95,13 +94,20 @@ public class RoundManager : MonoBehaviour
 
         if (playersReady >= 2)
         {
+            Debug.Log("Both players joined");
             yield return new WaitForSeconds(1f);
+            
+            Debug.Log("Try to close tutorial");
             StartCoroutine(UIManager.Instance.CloseTutorial());
 
             yield return new WaitForSeconds(1f);
-            TryStartRound();
+            
             player1.opponent = player2;
             player2.opponent = player1;
+            
+            TryStartRound();
+            
+            
             //UIManager.Instance.tutorialScreen.gameObject.SetActive(false);
         }
     }
@@ -438,7 +444,14 @@ public class RoundManager : MonoBehaviour
     private IEnumerator GoToMainMenuAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        PauseManager.Instance.Resume();
         GameManager.Instance.LoadScene(GameScene.MainMenu);
+    }
+    
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 }
 

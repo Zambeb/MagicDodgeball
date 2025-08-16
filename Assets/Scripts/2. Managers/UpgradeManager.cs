@@ -11,8 +11,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);  
-            return;
+            Destroy(Instance.gameObject);
         }
         Instance = this;
         
@@ -78,5 +77,11 @@ public class UpgradeManager : MonoBehaviour
             player.acquiredUpgrades.Add(effect);
             player.acquiredUpgradeEffectsPrefabs.Add(upgradeData.effectPrefab);
         }
+    }
+    
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 }

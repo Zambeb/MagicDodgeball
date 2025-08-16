@@ -55,8 +55,7 @@ public class UIManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);  
-            return;
+            Destroy(Instance.gameObject);
         }
         Instance = this;
     }
@@ -229,6 +228,8 @@ public class UIManager : MonoBehaviour
         
         tutorialTransform.localScale = initialScale;
         tutorialImage.color = initialColor;
+        
+        Debug.Log("Tutorial closed");
     }
 
     public void OpenUpgradeScreens(PlayerController p1, PlayerController p2)
@@ -422,5 +423,11 @@ public class UIManager : MonoBehaviour
 
         target.anchoredPosition = originalPos;
         shakeCoroutine = null;
+    }
+    
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 }

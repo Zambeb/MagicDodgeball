@@ -8,6 +8,7 @@ public class IdolGun : MonoBehaviour
 
     public PlayerController ownerPlayer;
     private GameObject projectileCollector;
+    public GameObject shootVFX;
     
     void Awake()
     {
@@ -34,5 +35,8 @@ public class IdolGun : MonoBehaviour
         {
             proj.ballsVisuals[index].SetActive(true);
         }
+        
+        GameObject effect = Instantiate(shootVFX, firingPoint.position, firingPoint.rotation);
+        Destroy(effect, 2);
     }
 }

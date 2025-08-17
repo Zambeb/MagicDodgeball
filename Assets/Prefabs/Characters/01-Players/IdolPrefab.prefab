@@ -214,6 +214,7 @@ MonoBehaviour:
   firingPoint: {fileID: 1156924994404847262}
   projectilePrefab: {fileID: 6479857954294971646, guid: 3c8152e8c23027d4aab4b98d31d76315, type: 3}
   ownerPlayer: {fileID: 0}
+  shootVFX: {fileID: 1327231448029640, guid: 066f7c657efd4444d943d8bf5c004196, type: 3}
 --- !u!136 &8512686994346721589
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -413,7 +414,7 @@ PrefabInstance:
     - target: {fileID: -6810437867845382619, guid: 0ed6f835a6404dd468ba5b9ca1f10ccd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5160d2f1138980048ac8c170e3847479, type: 2}
+      objectReference: {fileID: 2100000, guid: 525201dbe84faf1408eb064cef26feed, type: 2}
     - target: {fileID: 919132149155446097, guid: 0ed6f835a6404dd468ba5b9ca1f10ccd, type: 3}
       propertyPath: m_Name
       value: trash idol

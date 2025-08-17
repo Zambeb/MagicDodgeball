@@ -100,7 +100,7 @@ public class CharacterVisuals : MonoBehaviour
         Vector3 spawnPosition = transform.position;
         spawnPosition.y = 1f; 
 
-        GameObject effect = Instantiate(ParryVFX, spawnPosition, Quaternion.identity);
+        GameObject effect = Instantiate(ParryVFX, spawnPosition, Quaternion.identity, transform);
         effect.transform.localScale *= 4f; 
         
         Destroy(effect, 1f);
@@ -121,7 +121,7 @@ public class CharacterVisuals : MonoBehaviour
     {
         Vector3 spawnPosition = transform.position;
         spawnPosition.y = 2f;
-        GameObject effect = Instantiate(stunVFX, spawnPosition, Quaternion.identity);
+        GameObject effect = Instantiate(stunVFX, spawnPosition, Quaternion.identity, transform);
         effect.transform.localScale *= 0.5f; 
         
         Destroy(effect, duration);

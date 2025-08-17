@@ -99,7 +99,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 61e80c9f17a46d840bfe3797359ad88e, type: 3}
-        m_Scale: {x: 3, y: 3}
+        m_Scale: {x: 3, y: 4.08}
         m_Offset: {x: 0, y: 0}
     - _Mask0:
         m_Texture: {fileID: 0}
@@ -262,7 +262,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DisplacementColorMult: 0.85
     - _DisplacementOffset: 0.3
-    - _DisplacementShadowMult: 1.7
+    - _DisplacementShadowMult: 1.86
     - _DisplacementStrength: 0.2
     - _DstBlend: 0
     - _EffectDisplacementStrength: 0.5
@@ -292,7 +292,7 @@ Material:
     - _LightIntensity: 1
     - _LightOffset: 0.165
     - _LittleSpecForce: 0.4
-    - _MainTexMult: 0.24
+    - _MainTexMult: 2
     - _Metallic: 0
     - _Metallic0: 0
     - _Metallic1: 0
@@ -303,7 +303,7 @@ Material:
     - _Metallic6: 0
     - _Metallic7: 0
     - _Mode: 0
-    - _NormalMultiplier: 0.68
+    - _NormalMultiplier: 0.1
     - _NormalRTDepth: 0.18
     - _NormalRTStrength: 2.2
     - _NormalScale: 0.507
@@ -333,7 +333,7 @@ Material:
     - _ShininessSnow: 15
     - _Smoothness: 0.817
     - _SmoothnessTextureChannel: 0
-    - _SnowNormalScale: 1
+    - _SnowNormalScale: 1.17
     - _SnowScale: 0.71
     - _SpecForce: 3
     - _SpecGlossMap: 1
@@ -365,7 +365,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0, g: 0.65999997, b: 0.73, a: 1}
     - _BotColor: {r: 0.71649414, g: 0.8354979, b: 0.87058824, a: 1}
-    - _Color: {r: 0.57254905, g: 0.89583826, b: 1, a: 1}
+    - _Color: {r: 0.24003202, g: 0.31783125, b: 0.5471698, a: 1}
     - _CracksStrength: {r: -0.05, g: 0.11, b: 0.1, a: -0.06}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

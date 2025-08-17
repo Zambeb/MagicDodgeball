@@ -46,6 +46,8 @@ public class UIManager : MonoBehaviour
     public GameObject tutorialScreen;
     public TMP_Text player1JoinedText;
     public TMP_Text player2JoinedText;
+    public GameObject pressA1;
+    public GameObject pressA2;
 
     [Header("Other UI")] public TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI winnerText;
@@ -77,6 +79,8 @@ public class UIManager : MonoBehaviour
         tutorialScreen.gameObject.SetActive(true);
         player1JoinedText.enabled = false;
         player2JoinedText.enabled = false;
+        pressA1.SetActive(true);
+        pressA2.SetActive(false);
     }
 
     private void Update()
@@ -181,6 +185,8 @@ public class UIManager : MonoBehaviour
             {
                 player1JoinedText.text = "Player joined the game";
             }
+            pressA1.SetActive(false);
+            pressA2.SetActive(true);
         }
         else
         {
@@ -200,6 +206,8 @@ public class UIManager : MonoBehaviour
             {
                 player2JoinedText.text = "Player joined the game";
             }
+            pressA1.SetActive(false);
+            pressA2.SetActive(false);
         }
     }
 

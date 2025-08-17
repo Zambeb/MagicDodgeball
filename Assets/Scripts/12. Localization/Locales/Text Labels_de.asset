@@ -164,15 +164,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14038242983936
-    m_Localized: "Dr\xFCcke Leertaste um f\xFCr {Duration} Sekunden Unverwundbar
-      zu werden, aber deine Geschwindigkeit wird um x{Multiplier} verringert und
-      du kannst nicht werfen"
+    m_Localized: "Dr\xFCcke Leertaste um f\xFCr 1.5 Sekunden Unverwundbar zu werden,
+      aber deine Geschwindigkeit wird um x0.5 verringert und du kannst nicht werfen"
     m_Metadata:
       m_Items: []
   - m_Id: 14421950496768
-    m_Localized: "Dr\xFCcke L-Taste um f\xFCr {Duration} Sekunden Unverwundbar zu
-      werden, aber deine Geschwindigkeit wird um x{Multiplier} verringert und du
-      kannst nicht werfen"
+    m_Localized: "Dr\xFCcke L-Taste um f\xFCr 1.5 Sekunden Unverwundbar zu werden,
+      aber deine Geschwindigkeit wird um x0.5 verringert und du kannst nicht werfen"
     m_Metadata:
       m_Items: []
   - m_Id: 14646878437376
@@ -180,13 +178,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14712502517760
-    m_Localized: "Dr\xFCcke Leertaste um eine Barrikade vor dir zu erbauen. Nur {MaxWalls}
-      Barrikaden k\xF6nnen zur selben Zeit existieren. HP = {WallHP}"
+    m_Localized: "Dr\xFCcke Leertaste um eine Barrikade vor dir zu erbauen. Nur 2
+      Barrikaden k\xF6nnen zur selben Zeit existieren. HP = 5"
     m_Metadata:
       m_Items: []
   - m_Id: 14759189315584
-    m_Localized: "Dr\xFCcke L-Taste um eine Barrikade vor dir zu erbauen. Nur {MaxWalls}
-      Barrikaden k\xF6nnen zur selben Zeit existieren. HP = {WallHP}"
+    m_Localized: "Dr\xFCcke L-Taste um eine Barrikade vor dir zu erbauen. Nur 2 Barrikaden
+      k\xF6nnen zur selben Zeit existieren. HP = 5"
     m_Metadata:
       m_Items: []
   - m_Id: 15150673068032
@@ -264,8 +262,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17339571273728
-    m_Localized: "Beim letzten Aufprall explodiert dein Ball in {MiniBallsQuantity}
-      kleine B\xE4lle"
+    m_Localized: "Beim letzten Aufprall explodiert dein Ball in 6 kleine B\xE4lle"
     m_Metadata:
       m_Items: []
   - m_Id: 17404377464832
@@ -273,8 +270,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17471188533248
-    m_Localized: "Nachdem du getroffen wurdest bekommst du f\xFCr {Duration} Sekunden
-      Unverwundbarkeit"
+    m_Localized: "Nachdem du getroffen wurdest bekommst du f\xFCr 1 Sekunden Unverwundbarkeit"
     m_Metadata:
       m_Items: []
   - m_Id: 17542382649344
@@ -282,7 +278,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17605557256192
-    m_Localized: "Erh\xF6he die Aufpr\xE4lle deiner B\xE4lle bei {ExtraBounces}"
+    m_Localized: "Erh\xF6he die Aufpr\xE4lle deiner B\xE4lle bei 2"
     m_Metadata:
       m_Items: []
   - m_Id: 17707587895296
@@ -290,7 +286,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17769382576128
-    m_Localized: "Erh\xF6he die Anzahl deiner B\xE4lle um {ExtraBalls}"
+    m_Localized: "Erh\xF6he die Anzahl deiner B\xE4lle um 1"
     m_Metadata:
       m_Items: []
   - m_Id: 17829625364480
@@ -298,7 +294,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17886726619136
-    m_Localized: "Erh\xF6he deine Bewegungs Geschwindigkeit um x {Multiplier}"
+    m_Localized: "Erh\xF6he deine Bewegungs Geschwindigkeit um 5"
     m_Metadata:
       m_Items: []
   - m_Id: 17943144202240
@@ -314,7 +310,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18169510789120
-    m_Localized: "Erh\xF6he die Gr\xF6\xDFe deiner B\xE4lle um x {Multiplier}"
+    m_Localized: "Erh\xF6he die Gr\xF6\xDFe deiner B\xE4lle um x1.65"
     m_Metadata:
       m_Items: []
   - m_Id: 18228243628032
@@ -322,7 +318,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18284938035200
-    m_Localized: "Erh\xF6he die Geschwindigkeit deiner B\xE4lle um x {Multiplier}"
+    m_Localized: "Erh\xF6he die Geschwindigkeit deiner B\xE4lle um 4"
     m_Metadata:
       m_Items: []
   - m_Id: 18340625809408
@@ -330,8 +326,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18397349576704
-    m_Localized: "Beschw\xF6re {ShieldQuantity} Schild dass um dich herum schwebt
-      und dich vor attacken sch\xFCtzt"
+    m_Localized: "Beschw\xF6re 1 Schild dass um dich herum schwebt und dich vor attacken
+      sch\xFCtzt"
     m_Metadata:
       m_Items: []
   - m_Id: 18452504674304
@@ -348,7 +344,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18622529175552
-    m_Localized: "Deine B\xE4lle bet\xE4uben deinen Gegner f\xFCr {Duration} Sekunden"
+    m_Localized: "Deine B\xE4lle bet\xE4uben deinen Gegner f\xFCr 0.8 Sekunden"
     m_Metadata:
       m_Items: []
   - m_Id: 22562327003136
@@ -357,14 +353,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 22623979077632
     m_Localized: "Dr\xFCcken Sie Leertaste, um ein selbstgebautes Idol zu platzieren,
-      das Geschosse auf Feinde schleudert.\nKein Abprall. Zerst\xF6rt sich nach H
-      Treffern. Abklingzeit Xs."
+      das Geschosse auf Feinde schleudert. Zerst\xF6rt sich nach 3 Treffern. Abklingzeit
+      8s."
     m_Metadata:
       m_Items: []
   - m_Id: 22649002295296
     m_Localized: "Dr\xFCcken Sie Linken Trigger, um ein selbstgebautes Idol zu platzieren,
-      die B\xE4lle auf Feinde schleudert.\nKein Abprall. Zerst\xF6rt sich nach H
-      Treffern. Abklingzeit Xs."
+      die B\xE4lle auf Feinde schleudert. Zerst\xF6rt sich nach 3 Treffern. Abklingzeit
+      8s."
     m_Metadata:
       m_Items: []
   - m_Id: 23374415560704
@@ -394,8 +390,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 24361817636864
-    m_Localized: "Hat eine n%-Chance, sofort einen zweiten Schuss abzufeuern. Der
-      zus\xE4tzliche Schuss kostet keine Munition."
+    m_Localized: "+20%-Chance, sofort einen zweiten Schuss abzufeuern. Der zus\xE4tzliche
+      Schuss kostet keine Munition."
     m_Metadata:
       m_Items: []
   - m_Id: 24381560225792
@@ -408,7 +404,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 24503975182336
-    m_Localized: "Die Abklingzeiten aktiver F\xE4higkeiten werden um n% reduziert."
+    m_Localized: "Die Abklingzeiten aktiver F\xE4higkeiten werden um 20% reduziert."
     m_Metadata:
       m_Items: []
   - m_Id: 31517736468480

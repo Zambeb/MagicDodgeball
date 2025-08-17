@@ -163,13 +163,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14038242983936
-    m_Localized: Press Space to become invincible for {Duration} seconds, but your
-      speed x{Multiplier} and you can't shoot
+    m_Localized: Press Space to become invincible for 1.5 seconds, but your speed
+      x0.5 and you can't shoot
     m_Metadata:
       m_Items: []
   - m_Id: 14421950496768
-    m_Localized: Press Left Trigger to become invincible for {Duration} seconds,
-      but your speed x{Multiplier} and you can't shoot
+    m_Localized: Press Left Trigger to become invincible for 1.5 seconds, but your
+      speed x0.5 and you can't shoot
     m_Metadata:
       m_Items: []
   - m_Id: 14646878437376
@@ -177,13 +177,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14712502517760
-    m_Localized: Press Space to create a barrel near yourself. Only {MaxWalls} walls
-      can exist at the same time. Barrel HP = {WallHP}
+    m_Localized: Press Space to create a barrel near yourself. Only 2 walls can exist
+      at the same time. Barrel HP = 5
     m_Metadata:
       m_Items: []
   - m_Id: 14759189315584
-    m_Localized: Press Left Trigger to create a barrel near yourself. Only {MaxWalls}
-      walls can exist at the same time. Barrel HP = {WallHP}
+    m_Localized: Press Left Trigger to create a barrel near yourself. Only 2 walls
+      can exist at the same time. Barrel HP = 5
     m_Metadata:
       m_Items: []
   - m_Id: 15150673068032
@@ -256,8 +256,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17339571273728
-    m_Localized: On final bounce your ball explodes ointo {MiniBallsQuantity} smaller
-      ones flying outwards
+    m_Localized: On final bounce your ball explodes ointo 6 smaller ones flying outwards
     m_Metadata:
       m_Items: []
   - m_Id: 17404377464832
@@ -265,7 +264,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17471188533248
-    m_Localized: After being hit, become immune to the damage for {Duration} sec
+    m_Localized: After being hit, become immune to the damage for 1 sec
     m_Metadata:
       m_Items: []
   - m_Id: 17542382649344
@@ -273,7 +272,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17605557256192
-    m_Localized: Add {ExtraBounces} bounces for your balls
+    m_Localized: Add 2 bounces for your balls
     m_Metadata:
       m_Items: []
   - m_Id: 17707587895296
@@ -281,7 +280,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17769382576128
-    m_Localized: Add {ExtraBalls} balls
+    m_Localized: Add 1 balls
     m_Metadata:
       m_Items: []
   - m_Id: 17829625364480
@@ -289,7 +288,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17886726619136
-    m_Localized: Increase Move Speed by x{Multiplier}
+    m_Localized: Increase Move Speed by 5
     m_Metadata:
       m_Items: []
   - m_Id: 17943144202240
@@ -305,7 +304,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18169510789120
-    m_Localized: Increase Ball Size by x{Multiplier}
+    m_Localized: Increase Ball Size by x1.65
     m_Metadata:
       m_Items: []
   - m_Id: 18228243628032
@@ -313,7 +312,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18284938035200
-    m_Localized: Increase Ball Speed by x{Multiplier}
+    m_Localized: Increase Ball Speed by 4
     m_Metadata:
       m_Items: []
   - m_Id: 18340625809408
@@ -321,7 +320,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18397349576704
-    m_Localized: Add {ShieldQuantity} floating around you, that protects from attacks
+    m_Localized: Add 1 shield floating around you, that protects from attacks
     m_Metadata:
       m_Items: []
   - m_Id: 18452504674304
@@ -337,17 +336,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18622529175552
-    m_Localized: Your projectiles stun the enemy for {Duration} seconds
+    m_Localized: Your projectiles stun the enemy for 0.8 seconds
     m_Metadata:
       m_Items: []
   - m_Id: 22623979077632
     m_Localized: Press Space to deploy a DIY idol that hurls projectiles at enemies.
-      No bounce. Breaks after H hits. Xs cooldown
+      Breaks after 3 hits. 8s cooldown
     m_Metadata:
       m_Items: []
   - m_Id: 22649002295296
     m_Localized: Press Left Trigger to deploy a DIY idol that hurls projectiles at
-      enemies. No bounce. Breaks after H hits. Xs cooldown
+      enemies. Breaks after 3 hits. 8s cooldown
     m_Metadata:
       m_Items: []
   - m_Id: 22562327003136
@@ -376,7 +375,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 24361817636864
-    m_Localized: Has an n% chance to fire a second shot immediately. The extra shot
+    m_Localized: Adds a 20% chance to fire a second shot immediately. The extra shot
       costs no ammo
     m_Metadata:
       m_Items: []
@@ -393,7 +392,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 24503975182336
-    m_Localized: Active ability cooldowns are reduced by n%
+    m_Localized: Active ability cooldowns are reduced by 20%
     m_Metadata:
       m_Items: []
   - m_Id: 31517736468480

@@ -203,10 +203,6 @@ MonoBehaviour:
     m_Key: UPGRADE_ACCEL_NAME
     m_Metadata:
       m_Items: []
-  - m_Id: 16273832181760
-    m_Key: New Entry
-    m_Metadata:
-      m_Items: []
   - m_Id: 16300013027328
     m_Key: UPGRADE_ACCEL_DES
     m_Metadata:

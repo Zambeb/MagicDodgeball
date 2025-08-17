@@ -147,6 +147,36 @@ MonoBehaviour:
   typeText: {fileID: 1025885018747787840}
   wobbleAngle: 2
   wobbleSpeed: 0.4
+  offensiveLoc:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 11932102590464
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  defensiveLoc:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 11867141210112
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  activeLoc:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 11990655074304
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &945268857642272804
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,8 +286,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -57}
-  m_SizeDelta: {x: 230, y: 128.6}
+  m_AnchoredPosition: {x: 0, y: -58.054}
+  m_SizeDelta: {x: 217.0191, y: 116.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3856369566301474081
 CanvasRenderer:
@@ -288,7 +318,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Description. Very long and informative description. Your life ctory.Description.
-    Very long and informative description. Your life ctory.Description.
+    Very long and informative description. Your life ctory.Description. Very long
+    and informative description. Your life ctory.Description. Very long and informative
+    description. Your life ctory.Description.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c995eab6680d8748b90b6d784ec8b64, type: 2}
   m_sharedMaterial: {fileID: -648965209436816186, guid: 6c995eab6680d8748b90b6d784ec8b64, type: 2}
@@ -315,12 +347,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 15.35
   m_fontSizeBase: 22
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 15
+  m_fontSizeMax: 20
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

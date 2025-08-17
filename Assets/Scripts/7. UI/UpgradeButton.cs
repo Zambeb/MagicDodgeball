@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization;
 
 public class UpgradeButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -29,6 +30,11 @@ public class UpgradeButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IP
     [SerializeField] private float wobbleAngle = 10f;
     [SerializeField] private float wobbleSpeed = 2f;
     private float wobblePhaseOffset;
+
+    [Header("Localization")] 
+    public LocalizedString offensiveLoc;
+    public LocalizedString defensiveLoc;
+    public LocalizedString activeLoc;
     
     private void Awake()
     {
@@ -55,19 +61,19 @@ public class UpgradeButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IP
         if (data.effectPrefab.isActiveAbility)
         {
             frame.sprite = activeFrame;
-            typeText.text = "Active";
+            typeText.text = activeLoc.GetLocalizedString();
         }
         else if (!data.effectPrefab.isActiveAbility)
         {
             if (data.effectPrefab.offensive)
             {
                 frame.sprite = offensiveFrame;
-                typeText.text = "Offensive";
+                typeText.text = offensiveLoc.GetLocalizedString();
             }
             else
             {
                 frame.sprite = deffensiveFrame;
-                typeText.text = "Defensive";
+                typeText.text = defensiveLoc.GetLocalizedString();
             }
         }
 

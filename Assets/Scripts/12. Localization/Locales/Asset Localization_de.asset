@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: Asset Localization_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: a5ee1c49d9080174b934e8b8a581154a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4651919114240
+    m_Localized: 'f336dd5c15a695a4aac0599c6e99ea13[Button01Shadow]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2263715971072
+    m_Localized: '074eefa6a39e4d24e8536be3531b2096[Button01]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5287364558848
+    m_Localized: '88360a39e06b34e49b00da187619b02d[Button02]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5331606077440
+    m_Localized: 'b4a563e2a5b48a445809fa4a9469ac44[Button02Shadow]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5395430801408
+    m_Localized: '986c38626f39b314c905ce7c62810060[Button03]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5404150759424
+    m_Localized: '9da267e4abf572149978c4b5d60a807a[Button03Shadows]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5473105117184
+    m_Localized: '2c2ed44edf83f1743a7160fd69fff8fd[Button04]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5525869461504
+    m_Localized: 'ff413c001f94c3249960956ed61db435[Button04Shadows]'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

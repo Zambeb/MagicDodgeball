@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Asset Localization Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Asset Localization
+  m_TableCollectionNameGuidString: a5ee1c49d9080174b934e8b8a581154a
+  m_Entries:
+  - m_Id: 2263715971072
+    m_Key: GAME_NEWGAME_IMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4651919114240
+    m_Key: GAME_NEWGAME_IMAGE_SHADOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5287364558848
+    m_Key: GAME_OPTIONS_IMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5331606077440
+    m_Key: GAME_OPTIONS_IMAGE_SHADOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5395430801408
+    m_Key: GAME_CREDITS_IMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5404150759424
+    m_Key: GAME_CREDITS_IMAGE_SHADOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5473105117184
+    m_Key: GAME_QUIT_IMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5525869461504
+    m_Key: GAME_QUIT_IMAGE_SHADOW
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items:
+    - rid: 6803554051105227004
+  m_KeyGenerator:
+    rid: 6803554051105226990
+  references:
+    version: 2
+    RefIds:
+    - rid: 6803554051105226990
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1755452410197
+    - rid: 6803554051105227004
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 2263715971072
+          m_TableCodes:
+          - en
+          - de
+          - ru
+        - m_KeyId: 4651919114240
+          m_TableCodes:
+          - en
+          - de
+          - ru
+        - m_KeyId: 5287364558848
+          m_TableCodes:
+          - en
+          - de
+          - ru
+        - m_KeyId: 5331606077440
+          m_TableCodes:
+          - en
+          - de
+          - ru
+        - m_KeyId: 5395430801408
+          m_TableCodes:
+          - en
+          - de
+          - ru
+        - m_KeyId: 5404150759424
+          m_TableCodes:
+          - en
+          - de
+          - ru
+        - m_KeyId: 5473105117184
+          m_TableCodes:
+          - en
+          - de
+          - ru
+        - m_KeyId: 5525869461504
+          m_TableCodes:
+          - en
+          - de
+          - ru
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

@@ -403,6 +403,10 @@ MonoBehaviour:
     m_Localized: Language
     m_Metadata:
       m_Items: []
+  - m_Id: 135706756022272
+    m_Localized: CHOOSE AN ABILITY
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -383,6 +383,10 @@ MonoBehaviour:
     m_Key: OPTIONS_LANGUAGE
     m_Metadata:
       m_Items: []
+  - m_Id: 135706756022272
+    m_Key: UPGRADE_CHOOSE_ABILITY
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

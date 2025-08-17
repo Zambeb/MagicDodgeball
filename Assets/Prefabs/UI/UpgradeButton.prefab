@@ -317,13 +317,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Description. Very long and informative description. Your life ctory.Description.
-    Very long and informative description. Your life ctory.Description. Very long
-    and informative description. Your life ctory.Description. Very long and informative
-    description. Your life ctory.Description.
+  m_text: 'Description. Very long and informative description. Your life ctory.Description.
+    Very long '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6c995eab6680d8748b90b6d784ec8b64, type: 2}
-  m_sharedMaterial: {fileID: -648965209436816186, guid: 6c995eab6680d8748b90b6d784ec8b64, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -347,12 +345,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.35
+  m_fontSize: 14
   m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 15
-  m_fontSizeMax: 20
+  m_fontSizeMin: 12
+  m_fontSizeMax: 14
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -458,8 +456,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
-  m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5eced66cdedc3994d94ba981c8e6e379, type: 2}
+  m_sharedMaterial: {fileID: -8851447778917513411, guid: 5eced66cdedc3994d94ba981c8e6e379, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -483,8 +481,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

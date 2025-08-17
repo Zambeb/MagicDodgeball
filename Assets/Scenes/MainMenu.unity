@@ -1055,8 +1055,8 @@ MonoBehaviour:
     with mysterious chants and magical burps. Now it\u2019s just a great place to
     duel and accidentally summon something."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6c995eab6680d8748b90b6d784ec8b64, type: 2}
-  m_sharedMaterial: {fileID: -648965209436816186, guid: 6c995eab6680d8748b90b6d784ec8b64, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.45
+  m_fontSize: 21.55
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1501,7 +1501,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 52266c3aa85f43a4e93f5ee04d43cf3b, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -1622,8 +1622,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Player 2 name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
-  m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1647,13 +1647,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2630,8 +2630,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: English
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3797,8 +3797,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Language
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
-  m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3822,13 +3822,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -4077,8 +4077,8 @@ MonoBehaviour:
     and assets used under their respective licenses.\r\n\n\n\n\r\nAnimation & Game 
     \r\nHochschule Darmstadt  \r\n2025"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3ca4d2f306ccea545b06ae7c31441886, type: 2}
-  m_sharedMaterial: {fileID: 1676728505900478140, guid: 3ca4d2f306ccea545b06ae7c31441886, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4190,7 +4190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -427.58716}
+  m_AnchoredPosition: {x: 0, y: -401.2}
   m_SizeDelta: {x: 1745.8716, y: 139.1743}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209628621
@@ -4262,8 +4262,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Choose your arena
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
-  m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5eced66cdedc3994d94ba981c8e6e379, type: 2}
+  m_sharedMaterial: {fileID: -8851447778917513411, guid: 5eced66cdedc3994d94ba981c8e6e379, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4287,8 +4287,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 140
-  m_fontSizeBase: 140
+  m_fontSize: 180
+  m_fontSizeBase: 180
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4765,7 +4765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.93725497, g: 0.8431373, b: 0.7843138, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5013,7 +5013,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_KeepTextSelectionVisible: 0
@@ -5570,7 +5570,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_KeepTextSelectionVisible: 0
@@ -6115,8 +6115,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
-  m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6914,8 +6914,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
-  m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7072,8 +7072,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Rammy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
-  m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7710,8 +7710,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Benny
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
-  m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7889,8 +7889,8 @@ MonoBehaviour:
     stadium is held together by sheer determination and Rammy's engineering skills.
     \nThe crowd? Questionable. \nThe vibes? Immaculate."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6c995eab6680d8748b90b6d784ec8b64, type: 2}
-  m_sharedMaterial: {fileID: -648965209436816186, guid: 6c995eab6680d8748b90b6d784ec8b64, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7914,7 +7914,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
+  m_fontSize: 22.55
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8141,8 +8141,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8166,8 +8166,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8443,7 +8443,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: English
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8509,7 +8509,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2027433383
@@ -8659,8 +8659,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Player 1 name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
-  m_sharedMaterial: {fileID: -2099295880899820873, guid: faea45a33a58a6c47ae726dc13c8944d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
+  m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8684,13 +8684,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535

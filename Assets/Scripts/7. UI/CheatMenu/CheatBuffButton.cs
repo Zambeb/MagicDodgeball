@@ -13,7 +13,7 @@ public class CheatBuffButton : MonoBehaviour
         upgradeData = data;
         upgradeScreen = screen;
         
-        nameText.text = data.upgradeName;
+        nameText.text = data.upgradeName.GetLocalizedString();
 
         GetComponent<Button>().onClick.AddListener(OnClick);
     }

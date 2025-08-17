@@ -58,6 +58,348 @@ MonoBehaviour:
     m_Localized: Draw!
     m_Metadata:
       m_Items: []
+  - m_Id: 10462284251136
+    m_Localized: wins the round!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656069484544
+    m_Localized: is the champion!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10820108713984
+    m_Localized: Final round!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10906469433344
+    m_Localized: Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10987302060032
+    m_Localized: Resume Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11041261780992
+    m_Localized: To Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11118176927744
+    m_Localized: Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11187282280448
+    m_Localized: Shoot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11252029751296
+    m_Localized: Aim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11310548680704
+    m_Localized: Active Ability
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11368786591744
+    m_Localized: Keyboard + Mouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11430853902336
+    m_Localized: Gamepad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11489460912128
+    m_Localized: LMB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11549493985280
+    m_Localized: Space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11627814223872
+    m_Localized: Left Stick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11687817936896
+    m_Localized: Right Stick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11745489616896
+    m_Localized: Left Trigger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11806487379968
+    m_Localized: Right Trigger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11867141210112
+    m_Localized: Defensive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11932102590464
+    m_Localized: Offensive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11990655074304
+    m_Localized: Active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12043696242688
+    m_Localized: Cooldown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12103003701248
+    m_Localized: Dash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12180107591680
+    m_Localized: Press Space to dash while being invincible
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12256175489024
+    m_Localized: Press Left Trigger to dash while being invincible
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13933255360512
+    m_Localized: Force Field
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14038242983936
+    m_Localized: Press Space to become invincible for {Duration} seconds, but your
+      speed x{Multiplier} and you can't shoot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14421950496768
+    m_Localized: Press Left Trigger to become invincible for {Duration} seconds,
+      but your speed x{Multiplier} and you can't shoot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14646878437376
+    m_Localized: Magic Barrier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14712502517760
+    m_Localized: Press Space to create a barrel near yourself. Only {MaxWalls} walls
+      can exist at the same time. Barrel HP = {WallHP}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14759189315584
+    m_Localized: Press Left Trigger to create a barrel near yourself. Only {MaxWalls}
+      walls can exist at the same time. Barrel HP = {WallHP}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15150673068032
+    m_Localized: Parry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15290817347584
+    m_Localized: Press Space before being hit to parry balls back to the enemie's
+      area
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15534510604288
+    m_Localized: Press Left Trigger before being hit to parry balls back to the enemie's
+      area
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15761443422208
+    m_Localized: Swap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15843295264768
+    m_Localized: Press Space to activate a teleport and swap places with your enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16053312454656
+    m_Localized: Press Left Trigger to activate a teleport and swap places with your
+      enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16200658354176
+    m_Localized: Acceleration After Bounce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16300013027328
+    m_Localized: Your balls gain speed after each bounce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16357957337088
+    m_Localized: Absorb Balls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16416090390528
+    m_Localized: When two balls collide, your newer ball absorb the other and its
+      size and bounce amount increases
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16479445352448
+    m_Localized: Electric Field
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16627202293760
+    m_Localized: Final bounce createas an electric area that damages those who stand
+      on it. Bigger balls -> bigger samage area
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16728696061952
+    m_Localized: Charging Shot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16780051120128
+    m_Localized: Hold LMB to increase the next ball's speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17089708195840
+    m_Localized: Hold Right Trigger to increase the next ball's speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17275230650368
+    m_Localized: Explosive Balls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17339571273728
+    m_Localized: On final bounce your ball explodes ointo {MiniBallsQuantity} smaller
+      ones flying outwards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17404377464832
+    m_Localized: Immunity After Hit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17471188533248
+    m_Localized: After being hit, become immune to the damage for {Duration} sec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17542382649344
+    m_Localized: Max Bounce Increase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17605557256192
+    m_Localized: Add {ExtraBounces} bounces for your balls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17707587895296
+    m_Localized: Extra Balls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17769382576128
+    m_Localized: Add {ExtraBalls} balls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17829625364480
+    m_Localized: Move Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17886726619136
+    m_Localized: Increase Move Speed by x{Multiplier}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17943144202240
+    m_Localized: No Friendly Fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18020118069248
+    m_Localized: Your balls can not harm you
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18085901533184
+    m_Localized: Ball Size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18169510789120
+    m_Localized: Increase Ball Size by x{Multiplier}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18228243628032
+    m_Localized: Ball Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18284938035200
+    m_Localized: Increase Ball Speed by x{Multiplier}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18340625809408
+    m_Localized: Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18397349576704
+    m_Localized: Add {ShieldQuantity} floating around you, that protects from attacks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18452504674304
+    m_Localized: Slowing Trail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18513095589888
+    m_Localized: Your balls leave trails that slow down anyone who steps on it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18565755076608
+    m_Localized: Stun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18622529175552
+    m_Localized: Your projectiles stun the enemy for {Duration} seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22623979077632
+    m_Localized: Press Space to deploy a DIY idol that hurls projectiles at enemies.
+      No bounce. Breaks after H hits. Xs cooldown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22649002295296
+    m_Localized: Press Left Trigger to deploy a DIY idol that hurls projectiles at
+      enemies. No bounce. Breaks after H hits. Xs cooldown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22562327003136
+    m_Localized: Trash Idol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23374415560704
+    m_Localized: Seeking Ball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23510189375488
+    m_Localized: Your projectiles slowly adjust their movement direction towards
+      enemy's position
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24185417793536
+    m_Localized: Knock Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24292196384768
+    m_Localized: On hit, slightly knocks the character back in the opposite direction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24311666343936
+    m_Localized: Double Shot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24361817636864
+    m_Localized: Has an n% chance to fire a second shot immediately. The extra shot
+      costs no ammo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24381560225792
+    m_Localized: Final Spit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24438443376640
+    m_Localized: After its final bounce, the projectile heads toward the enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24456181088256
+    m_Localized: Hustle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24503975182336
+    m_Localized: Active ability cooldowns are reduced by n%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31517736468480
+    m_Localized: ' joined the game'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

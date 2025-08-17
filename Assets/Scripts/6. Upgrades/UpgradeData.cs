@@ -1,14 +1,13 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 [CreateAssetMenu(fileName = "UpgradeData", menuName = "Upgrades/Data/UpgradeData")]
 public class UpgradeData : ScriptableObject
 {
-    public string upgradeName;
+    public LocalizedString upgradeName;
     public Sprite icon;
-    [TextArea(3, 10)] 
-    public string descriptionIfKeyboard;
-    [TextArea(3, 10)] 
-    public string descriptionIfGamepad;
+    public LocalizedString descriptionIfKeyboard;
+    public LocalizedString descriptionIfGamepad;
     
     public UpgradeEffectBase effectPrefab;
 

@@ -12,10 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de604bd7fdf335347bd00dd3b2cae24d, type: 3}
   m_Name: KnockBackData
   m_EditorClassIdentifier: 
-  upgradeName: Knock Back
+  upgradeName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 24185417793536
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 0}
-  descriptionIfKeyboard: when hitting enemy - move enemy to the opposite from being
-    hit direction ( a little bit, not taking control, no invulnerablity)
-  descriptionIfGamepad: when hitting enemy - move enemy to the opposite from being
-    hit direction ( a little bit, not taking control, no invulnerablity)
+  descriptionIfKeyboard:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 24292196384768
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionIfGamepad:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 24292196384768
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   effectPrefab: {fileID: 11400000, guid: 2e464e1773af2464fb3f12e7d206e565, type: 2}
+  references:
+    version: 2
+    RefIds: []

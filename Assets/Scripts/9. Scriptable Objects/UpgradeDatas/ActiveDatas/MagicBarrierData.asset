@@ -12,16 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de604bd7fdf335347bd00dd3b2cae24d, type: 3}
   m_Name: MagicBarrierData
   m_EditorClassIdentifier: 
-  upgradeName: Magic Barrier
+  upgradeName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 14646878437376
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: f7f1853e7031dad49a8f193547b6e314, type: 3}
-  descriptionIfKeyboard: 'Press Space to create a wall near yourself. Only 2 walls
-    can exist at the same time. Wall HP = 3.
-
-
-    Cooldown: 4 seconds'
-  descriptionIfGamepad: 'Press L2 to create a wall near yourself. Only 2 walls can
-    exist at the same time. Wall HP = 3.
-
-
-    Cooldown: 4 seconds'
+  descriptionIfKeyboard:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 14712502517760
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionIfGamepad:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 14759189315584
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   effectPrefab: {fileID: 11400000, guid: 597d91c1871a2d2478ffe65a24ef1568, type: 2}
+  references:
+    version: 2
+    RefIds: []

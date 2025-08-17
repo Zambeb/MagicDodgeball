@@ -58,3 +58,42 @@ MonoBehaviour:
   player2Wins: 0
   roundActive: 0
   playersReady: 0
+  drawLoc:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 1381280546816
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  roundWinnerLoc:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 10462284251136
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  gameWinnerLoc:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 10656069484544
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  finalRoundLoc:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 10820108713984
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

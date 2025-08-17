@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Localization;
 
 public class UIManager : MonoBehaviour
 {
@@ -50,6 +51,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI winnerText;
     
     private Coroutine shakeCoroutine;
+
+    [Header("Localization")] 
+    public LocalizedString playerJoinedLoc;
 
     private void Awake()
     {
@@ -166,11 +170,11 @@ public class UIManager : MonoBehaviour
             {
                 if (controller.playerIndex == 0)
                 {
-                    player1JoinedText.text = GameManager.Instance.player1Name + " joined the game";
+                    player1JoinedText.text = GameManager.Instance.player1Name + playerJoinedLoc.GetLocalizedString();
                 }
                 else
                 {
-                    player1JoinedText.text = GameManager.Instance.player2Name + " joined the game";
+                    player1JoinedText.text = GameManager.Instance.player2Name + playerJoinedLoc.GetLocalizedString();
                 }
             }
             else
@@ -185,11 +189,11 @@ public class UIManager : MonoBehaviour
             {
                 if (controller.playerIndex == 0)
                 {
-                    player2JoinedText.text = GameManager.Instance.player1Name + " joined the game";
+                    player2JoinedText.text = GameManager.Instance.player1Name + playerJoinedLoc.GetLocalizedString();
                 }
                 else
                 {
-                    player2JoinedText.text = GameManager.Instance.player2Name + " joined the game";
+                    player2JoinedText.text = GameManager.Instance.player2Name + playerJoinedLoc.GetLocalizedString();
                 }
             }
             else

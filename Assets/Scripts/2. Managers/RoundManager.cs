@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 public class RoundManager : MonoBehaviour
 {
@@ -37,6 +38,12 @@ public class RoundManager : MonoBehaviour
     public bool roundActive = false;
     public int playersReady = 0;
     private int playersSelectedUpgrade;
+
+    [Header("Localization")] 
+    public LocalizedString drawLoc;
+    public LocalizedString roundWinnerLoc;
+    public LocalizedString gameWinnerLoc;
+    public LocalizedString finalRoundLoc;
     
     [Header("Logger")]
     private PlayerUpgradeLogger upgradeLogger;
@@ -206,7 +213,7 @@ public class RoundManager : MonoBehaviour
 
         playersSelectedUpgrade = 0;
 
-        string winnerMessage = "Draw!";
+        string winnerMessage = drawLoc.GetLocalizedString();
         PlayerController winner = null;
         PlayerController loser = null;
 
@@ -217,11 +224,11 @@ public class RoundManager : MonoBehaviour
 
             if (GameManager.Instance != null)
             {
-                winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> has won!";
+                winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> " + roundWinnerLoc.GetLocalizedString();
             }
             else
             {
-                winnerMessage = $"<color=#BC99F7>Rammy</color> has won!";
+                winnerMessage = $"<color=#BC99F7>Rammy</color> " + roundWinnerLoc.GetLocalizedString();
             }
             winner = player1;
             loser = player2;
@@ -234,11 +241,11 @@ public class RoundManager : MonoBehaviour
 
             if (GameManager.Instance != null)
             {
-                winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> has won!"; 
+                winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> " + roundWinnerLoc.GetLocalizedString(); 
             }
             else
             {
-                winnerMessage = $"<color=#FEDB5B>Benny</color> has won!";
+                winnerMessage = $"<color=#FEDB5B>Benny</color> " + roundWinnerLoc.GetLocalizedString();
             }
             
             winner = player2;
@@ -263,11 +270,11 @@ public class RoundManager : MonoBehaviour
         {
             if (GameManager.Instance != null)
             {
-                winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> IS VICTORIOUS!!!";
+                winnerMessage = $"<color=#BC99F7>{GameManager.Instance.player1Name}</color> " + gameWinnerLoc.GetLocalizedString();
             }
             else
             {
-                winnerMessage = $"<color=#BC99F7>RAMMY</color> IS VICTORIOUS!!!";
+                winnerMessage = $"<color=#BC99F7>RAMMY</color> " + gameWinnerLoc.GetLocalizedString();
             }
             
             upgradeLogger.LogRound(roundCount, player1, player2, 0);
@@ -279,11 +286,11 @@ public class RoundManager : MonoBehaviour
         {
             if (GameManager.Instance != null)
             {
-                winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> IS VICTORIOUS!!!";
+                winnerMessage = $"<color=#FEDB5B>{GameManager.Instance.player2Name}</color> " + gameWinnerLoc.GetLocalizedString();
             }
             else
             {
-                winnerMessage = $"<color=#FEDB5B>BENNY</color> IS VICTORIOUS!!!";
+                winnerMessage = $"<color=#FEDB5B>BENNY</color> " + gameWinnerLoc.GetLocalizedString();
             }
             
             upgradeLogger.LogRound(roundCount, player1, player2, 1);
@@ -345,7 +352,7 @@ public class RoundManager : MonoBehaviour
         
         if (player1Wins > 2 && player2Wins > 2)
         {
-            countdownSteps[0] = "Final round!";
+            countdownSteps[0] = finalRoundLoc.GetLocalizedString();
         }
 
         float stepDelay = delayBeforeUpgrades / countdownSteps.Length;

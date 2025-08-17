@@ -45,11 +45,11 @@ public class UpgradeButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IP
         //nameText.text = data.upgradeName;
         if (player.currentControlScheme == "Gamepad")
         {
-            descriptionText.text = data.descriptionIfGamepad;
+            descriptionText.text = data.descriptionIfGamepad.GetLocalizedString();
         }
         else
         {
-            descriptionText.text = data.descriptionIfKeyboard;
+            descriptionText.text = data.descriptionIfKeyboard.GetLocalizedString();
         }
 
         if (data.effectPrefab.isActiveAbility)

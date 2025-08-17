@@ -12,12 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de604bd7fdf335347bd00dd3b2cae24d, type: 3}
   m_Name: HustleData
   m_EditorClassIdentifier: 
-  upgradeName: Hustle
+  upgradeName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 24456181088256
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 0}
-  descriptionIfKeyboard: 'Active ability cooldowns are reduced by 20%
-
-'
-  descriptionIfGamepad: 'Active ability cooldowns are reduced by 20%
-
-'
+  descriptionIfKeyboard:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 24503975182336
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionIfGamepad:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 24503975182336
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   effectPrefab: {fileID: 11400000, guid: 455310cac5598b74ab2ab1dff1530b34, type: 2}
+  references:
+    version: 2
+    RefIds: []

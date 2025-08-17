@@ -12,14 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de604bd7fdf335347bd00dd3b2cae24d, type: 3}
   m_Name: TrashIdolData
   m_EditorClassIdentifier: 
-  upgradeName: Trash Idol
+  upgradeName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 22562327003136
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 0}
-  descriptionIfKeyboard: 'Places turret that throws porjectiles (directly to enemy)
-    with Bounce Amount=0, can be destroyed after H hits
-
-'
-  descriptionIfGamepad: 'Places turret that throws porjectiles (directly to enemy)
-    with Bounce Amount=0, can be destroyed after H hits
-
-'
+  descriptionIfKeyboard:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 22623979077632
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionIfGamepad:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 22649002295296
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   effectPrefab: {fileID: 11400000, guid: b2a4c79e171809540a00ef56e753f970, type: 2}
+  references:
+    version: 2
+    RefIds: []

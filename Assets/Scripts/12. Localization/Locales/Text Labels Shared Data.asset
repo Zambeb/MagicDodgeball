@@ -51,6 +51,338 @@ MonoBehaviour:
     m_Key: GAME_WINNER_DRAW
     m_Metadata:
       m_Items: []
+  - m_Id: 10462284251136
+    m_Key: GAME_ROUND_WINNER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656069484544
+    m_Key: GAME_WINNER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10820108713984
+    m_Key: GAME_FINAL_ROUND
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10906469433344
+    m_Key: PAUSE_PAUSED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10987302060032
+    m_Key: PAUSE_RESUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11041261780992
+    m_Key: PAUSE_MAIN_MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11118176927744
+    m_Key: CONTROLS_MOVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11187282280448
+    m_Key: CONTROLS_SHOOT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11252029751296
+    m_Key: CONTROLS_AIM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11310548680704
+    m_Key: CONTROLS_ACTIVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11368786591744
+    m_Key: CONTROLS_KM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11430853902336
+    m_Key: CONTROLS_GP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11489460912128
+    m_Key: CONTROLS_KM_LMB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11549493985280
+    m_Key: CONTROLS_KM_SPACE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11627814223872
+    m_Key: CONTROLS_GP_LS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11687817936896
+    m_Key: CONTROLS_GP_RS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11745489616896
+    m_Key: CONTROLS_GP_LT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11806487379968
+    m_Key: CONTROLS_GP_RT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11867141210112
+    m_Key: UPGRADE_TYPE_DEFENSIVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11932102590464
+    m_Key: UPGRADE_TYPE_OFFENSIVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11990655074304
+    m_Key: UPGRADE_TYPE_ACTIVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12043696242688
+    m_Key: UPGRADE_COOLDOWN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12103003701248
+    m_Key: UPGRADE_DASH_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12180107591680
+    m_Key: UPGRADE_DASH_DES_KB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12256175489024
+    m_Key: UPGRADE_DASH_DES_GP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13933255360512
+    m_Key: UPGRADE_FORCEFIELD_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14038242983936
+    m_Key: UPGRADE_FORCEFIELD_DES_KB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14421950496768
+    m_Key: UPGRADE_FORCEFIELD_DES_GP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14646878437376
+    m_Key: UPGRADE_MAGICBARRIER_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14712502517760
+    m_Key: UPGRADE_MAGICBARRIER_DES_KB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14759189315584
+    m_Key: UPGRADE_MAGICBARRIER_DES_GP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15150673068032
+    m_Key: UPGRADE_PARRY_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15290817347584
+    m_Key: UPGRADE_PARRY_DES_KB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15534510604288
+    m_Key: UPGRADE_PARRY_DES_GP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15761443422208
+    m_Key: UPGRADE_SWAP_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15843295264768
+    m_Key: UPGRADE_SWAP_DES_KB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16053312454656
+    m_Key: UPGRADE_SWAP_DES_GP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16200658354176
+    m_Key: UPGRADE_ACCEL_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16273832181760
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16300013027328
+    m_Key: UPGRADE_ACCEL_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16357957337088
+    m_Key: UPGRADE_ABSORB_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16416090390528
+    m_Key: UPGRADE_ABSORB_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16479445352448
+    m_Key: UPGRADE_ELECTRIC_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16627202293760
+    m_Key: UPGRADE_ELECTRIC_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16728696061952
+    m_Key: UPGRADE_CHARGING_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16780051120128
+    m_Key: UPGRADE_CHARGING_DES_KB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17089708195840
+    m_Key: UPGRADE_CHARGING_DES_GP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17275230650368
+    m_Key: UPGRADE_EXPLOSIVE_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17339571273728
+    m_Key: UPGRADE_EXPLOSIVE_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17404377464832
+    m_Key: UPGRADE_IMMUNITY_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17471188533248
+    m_Key: UPGRADE_IMMUNITY_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17542382649344
+    m_Key: UPGRADE_BOUNCES_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17605557256192
+    m_Key: UPGRADE_BOUNCES_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17707587895296
+    m_Key: UPGRADE_MAXPROJ_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17769382576128
+    m_Key: UPGRADE_MAXPROJ_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17829625364480
+    m_Key: UPGRADE_MOVESPEED_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17886726619136
+    m_Key: UPGRADE_MOVESPEED_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17943144202240
+    m_Key: UPGRADE_NOFRIENDLYFIRE_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18020118069248
+    m_Key: UPGRADE_NOFRIENDLYFIRE_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18085901533184
+    m_Key: UPGRADE_PROJSIZE_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18169510789120
+    m_Key: UPGRADE_PROJSIZE_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18228243628032
+    m_Key: UPGRADE_PROJSPEED_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18284938035200
+    m_Key: UPGRADE_PROJSPEED_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18340625809408
+    m_Key: UPGRADE_SHIELD_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18397349576704
+    m_Key: UPGRADE_SHIELD_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18452504674304
+    m_Key: UPGRADE_SLOWTRAIL_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18513095589888
+    m_Key: UPGRADE_SLOWTRAIL_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18565755076608
+    m_Key: UPGRADE_STUN_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18622529175552
+    m_Key: UPGRADE_STUN_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22562327003136
+    m_Key: UPGRADE_TRASHIDOL_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22623979077632
+    m_Key: UPGRADE_TRASHIDOL_DES_KB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22649002295296
+    m_Key: UPGRADE_TRASHIDOL_DES_GP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23374415560704
+    m_Key: UPGRADE_SEEKING_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23510189375488
+    m_Key: UPGRADE_SEEKING_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24185417793536
+    m_Key: UPGRADE_KNOCKBACK_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24292196384768
+    m_Key: UPGRADE_KNOCKBACK_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24311666343936
+    m_Key: UPGRADE_DOUBLESHOT_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24361817636864
+    m_Key: UPGRADE_DOUBLESHOT_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24381560225792
+    m_Key: UPGRADE_FINALSPIT_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24438443376640
+    m_Key: UPGRADE_FINALSPIT_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24456181088256
+    m_Key: UPGRADE_HUSTLE_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24503975182336
+    m_Key: UPGRADE_HUSTLE_DES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31517736468480
+    m_Key: GAME_PLAYER_JOINED
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

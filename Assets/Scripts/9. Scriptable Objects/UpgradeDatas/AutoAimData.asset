@@ -12,10 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de604bd7fdf335347bd00dd3b2cae24d, type: 3}
   m_Name: AutoAimData
   m_EditorClassIdentifier: 
-  upgradeName: Auto Aim
+  upgradeName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 23374415560704
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 0}
-  descriptionIfKeyboard: Your projectiles slowly adjust their movement direction
-    towards enemy's position
-  descriptionIfGamepad: Your projectiles slowly adjust their movement direction towards
-    enemy's position
+  descriptionIfKeyboard:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 23510189375488
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionIfGamepad:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 23510189375488
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   effectPrefab: {fileID: 11400000, guid: fbda64fa136a3324199a4eb90eca5edf, type: 2}
+  references:
+    version: 2
+    RefIds: []

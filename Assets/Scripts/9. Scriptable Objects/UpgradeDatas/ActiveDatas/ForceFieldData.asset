@@ -12,16 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de604bd7fdf335347bd00dd3b2cae24d, type: 3}
   m_Name: ForceFieldData
   m_EditorClassIdentifier: 
-  upgradeName: Force Field
+  upgradeName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 13933255360512
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: bda4baaf1f5824b4f95a93866e5c7194, type: 3}
-  descriptionIfKeyboard: 'Press Space to become invincible for 1.5 seconds, but your
-    speed x0.5 and you can''t shoot
-
-
-    Cooldown: 7 seconds'
-  descriptionIfGamepad: 'Press L2 to become invincible for 1.5 seconds, but your
-    speed x0.5 and you can''t shoot
-
-
-    Cooldown: 7 seconds'
+  descriptionIfKeyboard:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 14038242983936
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionIfGamepad:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4
+    m_TableEntryReference:
+      m_KeyId: 14421950496768
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   effectPrefab: {fileID: 11400000, guid: c72dedab87d1e8d43bcfc400903b3bdc, type: 2}
+  references:
+    version: 2
+    RefIds: []

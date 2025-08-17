@@ -38,6 +38,8 @@ public class PauseManager : MonoBehaviour
             RoundManager.Instance.player1.DisableCharacter();
             RoundManager.Instance.player2.DisableCharacter();
         }
+
+        Cursor.visible = true;
     }
 
     public void Resume()
@@ -49,6 +51,11 @@ public class PauseManager : MonoBehaviour
         {
             RoundManager.Instance.player1.EnableCharacter();
             RoundManager.Instance.player2.EnableCharacter();
+        }
+
+        if (RoundManager.Instance.roundActive)
+        {
+            Cursor.visible = false;
         }
     }
 

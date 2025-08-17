@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-English (en)
   m_GUID: 1614b94c264f6a244a28a1616bad8340
   m_SerializeEntries:
+  - m_GUID: 380dd50197317f445a70e556ee0114bc
+    m_Address: BS_UI_Tutorial
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3ce666bc14ff57747a5ee794e230f1c7
     m_Address: Button02Shadow
     m_ReadOnly: 1

@@ -45,6 +45,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-de
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aac8ac1efa4999843b866895bb65ab9c
+    m_Address: BS_UI_Tutorial DE
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-de
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b4a563e2a5b48a445809fa4a9469ac44
     m_Address: Button02Shadow
     m_ReadOnly: 1

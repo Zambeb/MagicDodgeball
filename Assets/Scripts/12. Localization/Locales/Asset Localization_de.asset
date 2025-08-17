@@ -50,6 +50,10 @@ MonoBehaviour:
     m_Localized: 'ff413c001f94c3249960956ed61db435[Button04Shadows]'
     m_Metadata:
       m_Items: []
+  - m_Id: 64859089436672
+    m_Localized: 'aac8ac1efa4999843b866895bb65ab9c[BS_UI_Tutorial DE]'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

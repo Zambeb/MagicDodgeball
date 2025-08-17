@@ -47,6 +47,10 @@ MonoBehaviour:
     m_Key: GAME_QUIT_IMAGE_SHADOW
     m_Metadata:
       m_Items: []
+  - m_Id: 64859089436672
+    m_Key: TUTORIAL_IMAGE
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 6803554051105227004
@@ -99,6 +103,11 @@ MonoBehaviour:
           - de
           - ru
         - m_KeyId: 5525869461504
+          m_TableCodes:
+          - en
+          - de
+          - ru
+        - m_KeyId: 64859089436672
           m_TableCodes:
           - en
           - de

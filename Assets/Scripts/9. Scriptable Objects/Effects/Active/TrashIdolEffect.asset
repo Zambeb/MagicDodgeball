@@ -25,4 +25,4 @@ MonoBehaviour:
   idolDistance: 2
   idolShootInterval: 2
   idolBallSpeed: 14
-  idolBallBounces: 2
+  idolBallBounces: 1

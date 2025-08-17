@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class IdolController : MonoBehaviour, IDamageable
@@ -15,6 +16,9 @@ public class IdolController : MonoBehaviour, IDamageable
     private float shootTimer;
 
     public Animator animator;
+
+    public GameObject instantiateVFX;
+    public GameObject explodeVFX;
     
     public void Initialize(TrashIdolEffect parent)
     {
@@ -27,7 +31,13 @@ public class IdolController : MonoBehaviour, IDamageable
         
         gun.ownerPlayer = ownerPlayer;
         opponentPlayer = ownerPlayer.opponent;
-        shootTimer = 0;
+        shootTimer = shootInterval;
+        
+        Quaternion randomRotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
+        GameObject effect = Instantiate(instantiateVFX, transform.position, randomRotation);
+        Destroy(effect, 2);
+        
+        StartCoroutine(SpawnRise());
     }
     
     void Update()
@@ -58,6 +68,31 @@ public class IdolController : MonoBehaviour, IDamageable
         }
     }
     
+    private IEnumerator SpawnRise()
+    {
+        float duration = 0.5f;
+        float elapsed = 0f;
+
+        Vector3 startPos = transform.position + new Vector3(0, -2f, 0);
+        Vector3 endPos = transform.position;
+
+        transform.position = startPos;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            // Можно добавить плавность с помощью SmoothStep
+            t = Mathf.SmoothStep(0, 1, t);
+
+            transform.position = Vector3.Lerp(startPos, endPos, t);
+            yield return null;
+        }
+
+        transform.position = endPos;
+    }
+    
     public void Stun(float duration)
     {
         return;
@@ -80,6 +115,11 @@ public class IdolController : MonoBehaviour, IDamageable
     
     public void DestroySelf()
     {
+        GameObject effect = Instantiate(explodeVFX, transform.position, Quaternion.identity);
+        effect.transform.localScale *= 0.5f;
+        SoundManager.Instance.PlaySFX("Explosion", gameObject.transform.position);
+        Destroy(effect, 2);
+        
         if (idolParent != null)
         {
             idolParent.RemoveIdol(this);

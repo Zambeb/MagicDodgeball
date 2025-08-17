@@ -206,11 +206,11 @@ public class Projectile : MonoBehaviour
     // 4. IDamageable
     var damageable = hit.collider.GetComponent<IDamageable>();
     var hitPlayer = hit.collider.GetComponent<PlayerController>();
-    if (damageable != null && hitPlayer != null)
+    if (damageable != null)
     {
         bool isSelfHit = hitPlayer != null && hitPlayer.playerIndex == playerIndex;
 
-        if (!isSelfHit || (isSelfHit && hitPlayer.stats.canSelfHarm))
+        if (!isSelfHit || (isSelfHit && hitPlayer.stats.canSelfHarm) && hitPlayer != null)
         {
             damageable.TakeDamage();
             
@@ -225,6 +225,10 @@ public class Projectile : MonoBehaviour
                 Vector3 knockBackDirection = direction.normalized;
                 StartCoroutine(hitPlayer.KnockBack(knockBackDirection, ownerPlayer.stats.knockBackDistance, ownerPlayer.stats.knockBackDuration));
             }
+        }
+        else if (hitPlayer == null)
+        {
+            damageable.TakeDamage();
         }
     }
     // 5. Projectile

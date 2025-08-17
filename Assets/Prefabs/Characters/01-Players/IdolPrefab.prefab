@@ -199,6 +199,8 @@ MonoBehaviour:
   bounces: 0
   ballSpeed: 0
   animator: {fileID: 5221811956126664940}
+  instantiateVFX: {fileID: 8893734663272954044, guid: 500cb924277be594995d218546ea2ee0, type: 3}
+  explodeVFX: {fileID: 6581419670868180027, guid: 136d042c06493c640a60c83e884735fd, type: 3}
 --- !u!114 &1314955678028142725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingPoint: {fileID: 1156924994404847262}
-  projectilePrefab: {fileID: 6479857954294971646, guid: 3c8152e8c23027d4aab4b98d31d76315, type: 3}
+  projectilePrefab: {fileID: 6479857954294971646, guid: 3690d4bcabafba44f988ab9c18a63d27, type: 3}
   ownerPlayer: {fileID: 0}
   shootVFX: {fileID: 1327231448029640, guid: 066f7c657efd4444d943d8bf5c004196, type: 3}
 --- !u!136 &8512686994346721589

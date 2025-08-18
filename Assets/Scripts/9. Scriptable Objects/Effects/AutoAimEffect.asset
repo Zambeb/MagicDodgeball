@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AutoAimEffect
   m_EditorClassIdentifier: 
   upgradeName: Auto Aim
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2121dbcbadf1a2f47b12eb2af12f37e0, type: 3}
   isActiveAbility: 0
   isStackable: 0
   offensive: 1

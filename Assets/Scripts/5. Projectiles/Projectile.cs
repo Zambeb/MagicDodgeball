@@ -177,10 +177,12 @@ public class Projectile : MonoBehaviour
             hasEnteredEnemyZone = true;
             gameObject.layer = LayerMask.NameToLayer("EnemyProjectile");
             transform.position += direction * distance;
+            SoundManager.Instance.PlaySFX("CenterGo", gameObject.transform.position);
             return false;
         }
         else
         {
+            SoundManager.Instance.PlaySFX("BounceCenter", gameObject.transform.position);
             HandleBounce(hit.normal, hit.point);
             return true;
         }
@@ -194,6 +196,7 @@ public class Projectile : MonoBehaviour
         {
             if (shieldOwner.playerIndex != playerIndex)
             {
+                SoundManager.Instance.PlaySFX("Bounce", gameObject.transform.position);
                 HandleBounce(hit.normal, hit.point);
                 return true;
             }
@@ -228,6 +231,7 @@ public class Projectile : MonoBehaviour
         }
         else if (hitPlayer == null)
         {
+            SoundManager.Instance.PlaySFX("BounceCenter", gameObject.transform.position);
             damageable.TakeDamage();
         }
     }
@@ -271,6 +275,7 @@ public class Projectile : MonoBehaviour
     }
 
     // 6. Bounce
+    SoundManager.Instance.PlaySFX("Bounce", gameObject.transform.position);
     HandleBounce(hit.normal, hit.point);
     return true;
 }

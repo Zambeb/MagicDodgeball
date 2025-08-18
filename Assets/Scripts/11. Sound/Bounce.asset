@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc0cc2cce84c31448bdce96bfc83512, type: 3}
   m_Name: Bounce
   m_EditorClassIdentifier: 
-  soundID: 
-  clips: []
+  soundID: Bounce
+  clips:
+  - {fileID: 8300000, guid: 807113061a420704c81b4afe54c6753d, type: 3}
+  - {fileID: 8300000, guid: 7d819bd6d4e3d5048a7711eed68372d0, type: 3}
+  - {fileID: 8300000, guid: e68cee3e094e5744896be3491191b887, type: 3}
+  - {fileID: 8300000, guid: 90ab5f6aeb186364c8601523fa6503c1, type: 3}
+  - {fileID: 8300000, guid: 741eddd229bf8364f93eb53241a2cc99, type: 3}
+  - {fileID: 8300000, guid: bc380cf74e7ff8443ad44524e6cabd44, type: 3}
+  - {fileID: 8300000, guid: f866132c5bbef994da5dda064c3a5b81, type: 3}
+  - {fileID: 8300000, guid: ea44fa54fed86f344b14701e6628a71f, type: 3}
   outputGroup: {fileID: -1817967442443170780, guid: 55cbda9df79258946ad13270f8c1a5cb, type: 2}
-  volume: 1
+  volume: 0.5
   loop: 0

@@ -21,7 +21,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ff366a90abea1724a86838a2e0da0594, type: 3}
   descriptionIfKeyboard:
     m_TableReference:
       m_TableCollectionName: GUID:5e3606aab6cada1438b40f190db374c4

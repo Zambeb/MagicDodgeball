@@ -17,7 +17,434 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 5e3606aab6cada1438b40f190db374c4, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 130866249728
+    m_Localized: Rammy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 367328526336
+    m_Localized: Benny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496685056000
+    m_Localized: "Wybierz swoj\u0105 aren\u0119 "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 887346724864
+    m_Localized: "To z mi\u0142o\u015Bci, b\u0142ota i wszystkiego, co akurat le\u017Ca\u0142o
+      pod r\u0119k\u0105, wzniesione, imponuj\u0105ce stadion, trzyma si\u0119 razem
+      dzi\u0119ki czystej determinacji i in\u017Cynierskiej sztuce Rammy.\nPubliczno\u015B\u0107?
+      W\u0105tpliwa.\nAtmosfera? Nienaganna."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1030267633664
+    m_Localized: "Te dawno opuszczone przez czas i wiewi\xF3rki kamienne ruiny niegdy\u015B
+      rozbrzmiewa\u0142y echem tajemniczych pie\u015Bni i magicznych bekni\u0119\u0107.
+      Teraz to jedynie wspania\u0142e miejsce do przeprowadzania pojedynk\xF3w i
+      przypadkowego przywo\u0142ywania byt\xF3w."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1131039981568
+    m_Localized: Z powrotem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1227953569792
+    m_Localized: "Imi\u0119 gracza 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1319242596352
+    m_Localized: "Imi\u0119 gracza 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1381280546816
+    m_Localized: Remis!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10462284251136
+    m_Localized: " wygrywa rund\u0119!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656069484544
+    m_Localized: ' jest mistrzem!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10820108713984
+    m_Localized: "Fina\u0142owa runda"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10906469433344
+    m_Localized: Pauza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10987302060032
+    m_Localized: "Kontynuuj gr\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11041261780992
+    m_Localized: "Do menu g\u0142\xF3wnego"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11118176927744
+    m_Localized: Ruszanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11187282280448
+    m_Localized: Rzucanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11252029751296
+    m_Localized: Celowanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11310548680704
+    m_Localized: "Aktywna umiej\u0119tno\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11368786591744
+    m_Localized: Klawiatura + Mysz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11430853902336
+    m_Localized: Gamepad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11489460912128
+    m_Localized: Lewy przycisk myszy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11549493985280
+    m_Localized: Spacja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11627814223872
+    m_Localized: "Lewy dr\u0105\u017Cek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11687817936896
+    m_Localized: "Prawy dr\u0105\u017Cek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11745489616896
+    m_Localized: Przycisk L
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11806487379968
+    m_Localized: Przycisk R
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11867141210112
+    m_Localized: Defensywa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11932102590464
+    m_Localized: Ofensywa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11990655074304
+    m_Localized: Aktywny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12043696242688
+    m_Localized: Czas odnowienia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12103003701248
+    m_Localized: Zryw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12180107591680
+    m_Localized: "Naci\u015Bnij Spacja, aby wykona\u0107 zryw, b\u0119d\u0105c nie\u015Bmiertelnym"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12256175489024
+    m_Localized: "Naci\u015Bnij Przycisk L, aby wykona\u0107 zryw, b\u0119d\u0105c
+      nie\u015Bmiertelnym"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13933255360512
+    m_Localized: "Pole si\u0142owe "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14038242983936
+    m_Localized: "Naci\u015Bnij Spacja, aby sta\u0107 si\u0119 nie\u015Bmiertelnym
+      na 1.5 sekundy, ale twoja pr\u0119dko\u015B\u0107 zostanie zmniejszona o x0.5
+      i nie mo\u017Cesz rzuca\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14421950496768
+    m_Localized: "Naci\u015Bnij Przycisk L, aby sta\u0107 si\u0119 nie\u015Bmiertelnym
+      na 1.5 sekundy, ale twoja pr\u0119dko\u015B\u0107 zostanie zmniejszona o x0.5
+      i nie mo\u017Cesz rzuca\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14646878437376
+    m_Localized: Magiczna barykada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14712502517760
+    m_Localized: "Naci\u015Bnij Spacja, aby postawi\u0107 barykad\u0119 przed sob\u0105.
+      W tym samym czasie mo\u017Ce istnie\u0107 tylko 2 barykad. HP = 5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14759189315584
+    m_Localized: "Naci\u015Bnij Przycisk L, aby postawi\u0107 barykad\u0119 przed
+      sob\u0105. W tym samym czasie mo\u017Ce istnie\u0107 tylko 2 barykad. HP =
+      5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15150673068032
+    m_Localized: Parowanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15290817347584
+    m_Localized: "Naci\u015Bnij Spacja przed uderzeniem, aby odes\u0142a\u0107 przeciwnikowi
+      pi\u0142ki na jego stron\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15534510604288
+    m_Localized: "Naci\u015Bnij Przycisk L przed uderzeniem, aby odes\u0142a\u0107
+      przeciwnikowi pi\u0142ki na jego stron\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15761443422208
+    m_Localized: Wymiana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15843295264768
+    m_Localized: "Naci\u015Bnij Spacja, aby przywo\u0142a\u0107 teleport, kt\xF3ry
+      zamienia miejscami twoj\u0105 i przeciwnika pozycj\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16053312454656
+    m_Localized: "Naci\u015Bnij Przycisk L, aby przywo\u0142a\u0107 teleport, kt\xF3ry
+      zamienia miejscami twoj\u0105 i przeciwnika pozycj\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16200658354176
+    m_Localized: "Przyspieszenie po ka\u017Cdym uderzeniu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16300013027328
+    m_Localized: "Twoje pi\u0142ki przy ka\u017Cdym uderzeniu staj\u0105 si\u0119
+      szybsze"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16357957337088
+    m_Localized: "Absorpcja pi\u0142ki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16416090390528
+    m_Localized: "Gdy dwa pi\u0142ki si\u0119 zderz\u0105, twoja najnowsza pi\u0142ka
+      absorbuje drug\u0105 i dodaje jej rozmiar oraz pozosta\u0142e uderzenia do
+      swoich w\u0142asnych"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16479445352448
+    m_Localized: Elektryczna powierzchnia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16627202293760
+    m_Localized: "Ostatnie uderzenie tworzy elektryczn\u0105 powierzchni\u0119, kt\xF3ra
+      rani tych, kt\xF3rzy na niej stan\u0105. Wi\u0119ksze pi\u0142ki \u2192 wi\u0119kszy
+      obszar obra\u017Ce\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16728696061952
+    m_Localized: "Na\u0142adowany rzut"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16780051120128
+    m_Localized: "Przytrzymaj lewy przycisk myszy, aby zwi\u0119kszy\u0107 pr\u0119dko\u015B\u0107
+      swojego nast\u0119pnego rzutu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17089708195840
+    m_Localized: "Przytrzymaj Przycisk R, aby zwi\u0119kszy\u0107 pr\u0119dko\u015B\u0107
+      swojego nast\u0119pnego rzutu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17275230650368
+    m_Localized: "Eksploduj\u0105ce pi\u0142ki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17339571273728
+    m_Localized: "Przy ostatnim odbiciu twoja pi\u0142ka eksploduje na 6 mniejszych
+      pi\u0142ek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17404377464832
+    m_Localized: "Odporno\u015B\u0107 po trafieniu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17471188533248
+    m_Localized: "Po otrzymaniu trafienia stajesz si\u0119 odporny na obra\u017Cenia
+      na 1 sekund"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17542382649344
+    m_Localized: "Zwi\u0119kszenie maksymalnej liczby odbi\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17605557256192
+    m_Localized: "Zwi\u0119ksz liczb\u0119 odbi\u0107 swoich pi\u0142ek o 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17707587895296
+    m_Localized: "Wi\u0119cej pi\u0142ek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17769382576128
+    m_Localized: "Zwi\u0119ksz liczb\u0119 swoich pi\u0142ek o 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17829625364480
+    m_Localized: "Pr\u0119dko\u015B\u0107 ruchu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17886726619136
+    m_Localized: "Zwi\u0119ksz pr\u0119dko\u015B\u0107 ruchu o 5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17943144202240
+    m_Localized: Brak Friendly Fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18020118069248
+    m_Localized: "Twoje w\u0142asne pi\u0142ki nie mog\u0105 ci\u0119 zrani\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18085901533184
+    m_Localized: "Rozmiar pi\u0142ki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18169510789120
+    m_Localized: "Zwi\u0119ksz rozmiar swoich pi\u0142ek x1.65-krotnie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18228243628032
+    m_Localized: "Pr\u0119dko\u015B\u0107 pi\u0142ki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18284938035200
+    m_Localized: "Zwi\u0119ksz pr\u0119dko\u015B\u0107 swoich pi\u0142ek o 4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18340625809408
+    m_Localized: Tarcza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18397349576704
+    m_Localized: "Przywo\u0142aj 1 tarczy unosz\u0105cych si\u0119 wok\xF3\u0142
+      ciebie, kt\xF3re chroni\u0105 przed atakami"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18452504674304
+    m_Localized: "Spowalniaj\u0105cy \u015Blad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18513095589888
+    m_Localized: "Twoje pi\u0142ki zostawiaj\u0105 \u015Blady, kt\xF3re spowalniaj\u0105
+      ka\u017Cdego, kto po nich st\u0105pa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18565755076608
+    m_Localized: "Og\u0142uszenie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18622529175552
+    m_Localized: "Twoje pi\u0142ki og\u0142uszaj\u0105 przeciwnika na 0.8 sekund"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31517736468480
+    m_Localized: " do\u0142\u0105czy\u0142 do gry"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22562327003136
+    m_Localized: "\u015Amieciowy Idol"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22623979077632
+    m_Localized: "Naci\u015Bnij Spacj\u0119, aby postawi\u0107 w\u0142asnor\u0119cznie
+      zbudowanego idola, kt\xF3ry miota pociski w przeciwnik\xF3w.\nNiszczy si\u0119
+      po 3 trafieniach. Czas odnowienia: 8s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22649002295296
+    m_Localized: "Naci\u015Bnij Przycisk L, aby postawi\u0107 w\u0142asnor\u0119cznie
+      zbudowanego idola, kt\xF3ry miota pociski w przeciwnik\xF3w.\nNiszczy si\u0119
+      po 3 trafieniach. Czas odnowienia: 8s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23374415560704
+    m_Localized: "Pi\u0142ka z namierzaniem celu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23510189375488
+    m_Localized: "Twoje pociski pi\u0142ki powoli dostosowuj\u0105 tor lotu do pozycji
+      przeciwnika"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24185417793536
+    m_Localized: Odrzut
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24292196384768
+    m_Localized: "Trafienie powoduje lekki odrzut postaci w przeciwn\u0105 stron\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24311666343936
+    m_Localized: "Podw\xF3jny Strza\u0142"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24361817636864
+    m_Localized: "Ma 20% szansy, natychmiast wystrzeli\u0107 drugi strza\u0142. Dodatkowy
+      strza\u0142 nie zu\u017Cywa amunicji."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24381560225792
+    m_Localized: "Fina\u0142owa Plwocina"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24438443376640
+    m_Localized: "Po ostatnim odbiciu pocisk kieruje si\u0119 w stron\u0119 przeciwnika"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24456181088256
+    m_Localized: "Szybko\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24503975182336
+    m_Localized: "Czas odnowienia aktywnych umiej\u0119tno\u015Bci zostaje zmniejszony
+      o 20%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60150848978944
+    m_Localized: "J\u0119zyk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135706756022272
+    m_Localized: "WYBIERZ UMIEJ\u0118TNO\u015A\u0106"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302086516146176
+    m_Localized: "G\u0142o\u015Bno\u015B\u0107 gry"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302192384573440
+    m_Localized: "G\u0142o\u015Bno\u015B\u0107 muzyki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302277377949696
+    m_Localized: "G\u0142o\u015Bno\u015B\u0107 efekt\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360327522582528
+    m_Localized: "Benny odkry\u0142 t\u0119 lodow\u0105 aren\u0119 podczas zbierania
+      pustych butelek w\u015Br\xF3d za\u015Bnie\u017Conych g\xF3r. Lokalni yeti ch\u0119tnie
+      zgodzili si\u0119 udost\u0119pni\u0107 j\u0105 do magicznych pojedynk\xF3w
+      w zamian za 15% ca\u0142kowitego dochodu."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

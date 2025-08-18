@@ -17,7 +17,43 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: a5ee1c49d9080174b934e8b8a581154a, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 2263715971072
+    m_Localized: '8661e99407435014e878eef3b18e4360[Button01]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4651919114240
+    m_Localized: '6bc74db98103865439d272bcb523e180[Button01Shadow]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5287364558848
+    m_Localized: '4939cef2a11a0d148b9f366188681674[Button02]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5331606077440
+    m_Localized: 'efd287d4b2c3bae40b6690b79c7dc3fd[Button02Shadow]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5395430801408
+    m_Localized: 'd2d69f5300389814294e9e90403d2e78[Button03]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5404150759424
+    m_Localized: '836c007a99301af4c8f64d57f4178e38[Button03Shadows]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5473105117184
+    m_Localized: 'f8fe727a631e68a48a5809ecef73dd97[Button04]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5525869461504
+    m_Localized: '52455b141b58dbf4fafe806ff063ed13[Button04Shadows]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64859089436672
+    m_Localized: '3aeeb8c33db0df34abdab5429b62ccba[BS_UI_Tutorial PL]'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -431,6 +431,13 @@ MonoBehaviour:
     m_Localized: "SFX-Lautst\xE4rke"
     m_Metadata:
       m_Items: []
+  - m_Id: 360327522582528
+    m_Localized: "Benny entdeckte diese eisige Arena, als er leere Flaschen in den
+      verschneiten Bergen sammelte. Die einheimischen Yetis erkl\xE4rten sich freundlicherweise
+      bereit, sie f\xFCr magische Duelle zur Verf\xFCgung zu stellen - im Austausch
+      f\xFCr 15 % der Gesamteinnahmen."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

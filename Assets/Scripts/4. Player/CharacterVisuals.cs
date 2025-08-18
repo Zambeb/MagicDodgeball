@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterVisuals : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class CharacterVisuals : MonoBehaviour
     [SerializeField] private GameObject immunityVFX;
     [SerializeField] private GameObject chargingVFX;
     [SerializeField] private GameObject getHitVFX;
+    [SerializeField] private GameObject snowTrailSpawner;
     
     private void Start()
     {
@@ -52,9 +54,19 @@ public class CharacterVisuals : MonoBehaviour
         model.SetActive(true);
         renderers = model.GetComponentsInChildren<Renderer>();
         originalMaterials = new Material[renderers.Length];
+        
         for (int i = 0; i < renderers.Length; i++)
         {
             originalMaterials[i] = renderers[i].material;
+        }
+        
+        if (SceneManager.GetActiveScene().name == "Arena_Snow")
+        {
+            Debug.Log("Это снег!!!");
+            if (snowTrailSpawner != null)
+            {
+                snowTrailSpawner.SetActive(true);
+            }
         }
     }
     

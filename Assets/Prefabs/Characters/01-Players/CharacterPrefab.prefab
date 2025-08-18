@@ -514,6 +514,7 @@ MonoBehaviour:
   immunityVFX: {fileID: 8452160341050738606, guid: 70bc762668b2d584ca07d1a820298dfa, type: 3}
   chargingVFX: {fileID: 1501320978331502, guid: 8ccf107dbad85e3468d2920e39493711, type: 3}
   getHitVFX: {fileID: 1029544359644514, guid: 4d1e8aacb1ece184a92a7605bfcd9917, type: 3}
+  snowTrailSpawner: {fileID: 8690073499013635334}
 --- !u!1 &5101880460496916527
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,5 +1000,10 @@ PrefabInstance:
 --- !u!4 &8690073499013635331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1147144673574993737, guid: e460f509c3703d64395174dfc60630a6, type: 3}
+  m_PrefabInstance: {fileID: 8606992203242627658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8690073499013635334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1147144673574993740, guid: e460f509c3703d64395174dfc60630a6, type: 3}
   m_PrefabInstance: {fileID: 8606992203242627658}
   m_PrefabAsset: {fileID: 0}

@@ -419,6 +419,12 @@ MonoBehaviour:
     m_Localized: SFX Volume
     m_Metadata:
       m_Items: []
+  - m_Id: 360327522582528
+    m_Localized: Benny discovered this icy arena while collecting empty bottles among
+      the snowy mountains. The local yetis kindly agreed to provide it for magical
+      duels in exchange for 15% of the total revenue.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

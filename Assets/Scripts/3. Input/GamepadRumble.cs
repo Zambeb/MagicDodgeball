@@ -47,13 +47,33 @@ public class GamepadRumble : MonoBehaviour
     {
         if (gamepad != null)
         {
-            gamepad.SetMotorSpeeds(lf, hf);
-            Invoke(nameof(StopVibration), dur);
+            StopAllCoroutines();
+            StartCoroutine(VibrateCoroutine(lf, hf, dur));
         }
         else
         {
             Debug.Log("Геймпад не назначен для этого игрока.");
         }
+    }
+    
+    private IEnumerator VibrateCoroutine(float startLF, float startHF, float duration)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+            
+            float currentLF = Mathf.Lerp(startLF, 0, t);
+            float currentHF = Mathf.Lerp(startHF, 0, t);
+
+            gamepad.SetMotorSpeeds(currentLF, currentHF);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        StopVibration();
     }
     
     public void ShootRumble()

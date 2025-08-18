@@ -261,7 +261,7 @@ Material:
     - _DetailBumpScale: 3.07
     - _DetailNormalMapScale: 1
     - _DisplacementColorMult: 0.85
-    - _DisplacementOffset: 0.3
+    - _DisplacementOffset: 0
     - _DisplacementShadowMult: 1.86
     - _DisplacementStrength: 0.2
     - _DstBlend: 0
@@ -279,7 +279,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HeightMultiplier: 0.5
-    - _HeightScale: 2.23
+    - _HeightScale: 1.24
     - _ISADD: 0
     - _ISICE: 0
     - _ISSNOW: 0

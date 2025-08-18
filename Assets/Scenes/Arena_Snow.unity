@@ -1836,7 +1836,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
-  m_PlayerRoot: {fileID: 0}
+  m_PlayerRoot: {fileID: 944132910}
 --- !u!1001 &259583658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4997,7 +4997,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
-  m_PlayerRoot: {fileID: 0}
+  m_PlayerRoot: {fileID: 944132909}
 --- !u!1001 &874123632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5155,7 +5155,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
-  m_PlayerRoot: {fileID: 0}
+  m_PlayerRoot: {fileID: 944132911}
 --- !u!1001 &878278691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5636,6 +5636,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8086034752324737465, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
   m_PrefabInstance: {fileID: 944132905}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &944132907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 891249058942631214, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
+  m_PrefabInstance: {fileID: 944132905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &944132908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5292294821958956984, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
+  m_PrefabInstance: {fileID: 944132905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &944132909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8285283542977835500, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
+  m_PrefabInstance: {fileID: 944132905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &944132910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 817444239317713661, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
+  m_PrefabInstance: {fileID: 944132905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &944132911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7764006278263622574, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
+  m_PrefabInstance: {fileID: 944132905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &973226481
 GameObject:
   m_ObjectHideFlags: 0
@@ -6039,7 +6064,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
-  m_PlayerRoot: {fileID: 0}
+  m_PlayerRoot: {fileID: 944132908}
 --- !u!1001 &998687903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11492,7 +11517,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
-  m_PlayerRoot: {fileID: 0}
+  m_PlayerRoot: {fileID: 944132907}
 --- !u!1001 &1938708807
 PrefabInstance:
   m_ObjectHideFlags: 0

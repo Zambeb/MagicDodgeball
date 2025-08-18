@@ -419,6 +419,18 @@ MonoBehaviour:
     m_Localized: "W\xC4HLE EINE F\xC4HIGKEIT"
     m_Metadata:
       m_Items: []
+  - m_Id: 302086516146176
+    m_Localized: "Spiel-Lautst\xE4rke"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302192384573440
+    m_Localized: "Musiklautst\xE4rke"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302277377949696
+    m_Localized: "SFX-Lautst\xE4rke"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

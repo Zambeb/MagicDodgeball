@@ -9,6 +9,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject mainPauseMenu;
     [SerializeField] private GameObject balanceMenu;
+    [SerializeField] private GameObject optionsMenu;
 
     private bool isPaused = false;
 
@@ -71,11 +72,18 @@ public class PauseManager : MonoBehaviour
         balanceMenu.SetActive(true);
         balanceMenu.GetComponent<BalanceData>().UpdateAllData();
     }
+    
+    public void OpenOptionsMenu()
+    {
+        mainPauseMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
 
     public void BackToMainPauseMenu()
     {
         mainPauseMenu.SetActive(true);
         balanceMenu.SetActive(false);
+        optionsMenu.SetActive(false);
     }
 
     public void MainMenu()

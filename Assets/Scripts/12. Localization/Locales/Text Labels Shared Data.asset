@@ -387,6 +387,18 @@ MonoBehaviour:
     m_Key: UPGRADE_CHOOSE_ABILITY
     m_Metadata:
       m_Items: []
+  - m_Id: 302086516146176
+    m_Key: SETTINGS_GAME_VOLUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302192384573440
+    m_Key: SETTINGS_MUSIC_VOLUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302277377949696
+    m_Key: SETTINGS_SFX_VOLUME
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

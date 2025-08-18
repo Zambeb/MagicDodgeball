@@ -407,6 +407,18 @@ MonoBehaviour:
     m_Localized: CHOOSE AN ABILITY
     m_Metadata:
       m_Items: []
+  - m_Id: 302086516146176
+    m_Localized: Game Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302192384573440
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302277377949696
+    m_Localized: SFX Volume
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

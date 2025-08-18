@@ -6201,6 +6201,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8433899079422712539, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433899079422712539, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Text
+      value: "T\xFCrk\xE7e"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433899079422712539, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433899079422712539, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433899079422712539, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433899079422712539, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

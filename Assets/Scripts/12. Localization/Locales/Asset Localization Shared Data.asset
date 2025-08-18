@@ -72,45 +72,54 @@ MonoBehaviour:
           - en
           - de
           - ru
+          - tr
         - m_KeyId: 4651919114240
           m_TableCodes:
           - en
           - de
           - ru
+          - tr
         - m_KeyId: 5287364558848
           m_TableCodes:
           - en
           - de
           - ru
+          - tr
         - m_KeyId: 5331606077440
           m_TableCodes:
           - en
           - de
           - ru
+          - tr
         - m_KeyId: 5395430801408
           m_TableCodes:
           - en
           - de
           - ru
+          - tr
         - m_KeyId: 5404150759424
           m_TableCodes:
           - en
           - de
           - ru
+          - tr
         - m_KeyId: 5473105117184
           m_TableCodes:
           - en
           - de
           - ru
+          - tr
         - m_KeyId: 5525869461504
           m_TableCodes:
           - en
           - de
           - ru
+          - tr
         - m_KeyId: 64859089436672
           m_TableCodes:
           - en
           - de
           - ru
+          - tr
         m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null

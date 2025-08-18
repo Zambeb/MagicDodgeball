@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc0cc2cce84c31448bdce96bfc83512, type: 3}
+  m_Name: CardPick
+  m_EditorClassIdentifier: 
+  soundID: CardPick
+  clips:
+  - {fileID: 8300000, guid: 17fe95bcb376c7244b09b097c9051efb, type: 3}
+  - {fileID: 8300000, guid: c162e00a04ee0ff4097707fd6dcbdcc3, type: 3}
+  - {fileID: 8300000, guid: 01039af98b186a642998e2303064bfb8, type: 3}
+  - {fileID: 8300000, guid: 48ffefaecd3a44e48b6d0cbcfa0b55ed, type: 3}
+  - {fileID: 8300000, guid: ca3942133b50bc345b9ec2067987db2d, type: 3}
+  - {fileID: 8300000, guid: 907fd87434160f24d8bd766595cef7a5, type: 3}
+  - {fileID: 8300000, guid: b5e71e543d7e59d42a9f04d09dac28b8, type: 3}
+  - {fileID: 8300000, guid: de52defbbc61f0d4299d9681dfa274ea, type: 3}
+  outputGroup: {fileID: -1817967442443170780, guid: 55cbda9df79258946ad13270f8c1a5cb, type: 2}
+  volume: 0.4
+  loop: 0

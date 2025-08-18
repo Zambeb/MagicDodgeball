@@ -138,6 +138,7 @@ public class UpgradeButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IP
         if (scaleCoroutine != null)
             StopCoroutine(scaleCoroutine);
 
+        SoundManager.Instance.PlaySFX("CardPick");
         scaleCoroutine = StartCoroutine(ScaleCoroutine(targetScale, duration));
     }
 

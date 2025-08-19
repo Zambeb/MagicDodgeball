@@ -63,7 +63,11 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        transform.localScale *= ownerPlayer.stats.ballSizeMultiplier;
+        if (!isMiniBall)
+        {
+            transform.localScale *= ownerPlayer.stats.ballSizeMultiplier;
+        }
+        
         if (direction == Vector3.zero)
         {
             direction = transform.forward;
@@ -441,7 +445,7 @@ public class Projectile : MonoBehaviour
             Destroy(effect, effectLifetime);
         }
         
-        if (ownerPlayer != null && !miniBall)
+        if (ownerPlayer != null && !miniBall && !isMiniBall)
         {
             if (ownerPlayer.stats.canBurnArea)
             {

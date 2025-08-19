@@ -28,6 +28,7 @@ public class IdolGun : MonoBehaviour
         proj.projectileSpeed = speed;
         proj.accelerationAfterBounce = 1f;
         proj.canStun = false;
+        proj.leavesTrail = false;
         proj.stunDuration = 0f;
         proj.playerIndex = index;
         proj.projectileCount = RoundManager.Instance.projectileCount;

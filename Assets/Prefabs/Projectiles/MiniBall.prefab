@@ -10154,8 +10154,10 @@ MonoBehaviour:
   trailPrefab: {fileID: 0}
   trailDuration: 0
   slowAmount: 0
+  hasAutoAim: 0
+  autoAimStrength: 0.1
   bounceEffectPrefab: {fileID: 0}
-  destroyEffectPrefab: {fileID: 0}
+  destroyEffectPrefab: {fileID: 8893734663272954044, guid: 500cb924277be594995d218546ea2ee0, type: 3}
   explodeEffectPrefab: {fileID: 0}
   mergeEffectPrefab: {fileID: 0}
   effectLifetime: 2

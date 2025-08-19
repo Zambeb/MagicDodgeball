@@ -23,6 +23,7 @@ public class IdolGun : MonoBehaviour
         
         Projectile proj = projectile.GetComponent<Projectile>();
         proj.ownerPlayer = ownerPlayer;
+        proj.isMiniBall = true;
         proj.maxBounces = bounces;
         proj.projectileSpeed = speed;
         proj.accelerationAfterBounce = 1f;

@@ -60,6 +60,7 @@ public class CharacterVisuals : MonoBehaviour
             originalMaterials[i] = renderers[i].material;
         }
         
+        /*
         if (SceneManager.GetActiveScene().name == "Arena_Snow")
         {
             Debug.Log("Это снег!!!");
@@ -68,6 +69,7 @@ public class CharacterVisuals : MonoBehaviour
                 snowTrailSpawner.SetActive(true);
             }
         }
+        */
     }
     
     public void FlashWhite(int flashes, float totalDuration)

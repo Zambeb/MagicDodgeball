@@ -814,10 +814,10 @@ MonoBehaviour:
     m_Value: 0
   focusDistance:
     m_OverrideState: 1
-    m_Value: 60.3
+    m_Value: 61.4
   aperture:
     m_OverrideState: 1
-    m_Value: 1.7
+    m_Value: 1.3
   focalLength:
     m_OverrideState: 1
     m_Value: 300

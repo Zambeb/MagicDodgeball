@@ -2,20 +2,29 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: URPBallSnow04
   m_Shader: {fileID: 4800000, guid: 06aa19b87b8aa174485b5a0ed989e1cb, type: 3}
-  m_ShaderKeywords: IS_ICE USE_AL USE_FOG USE_LS _TESSELLATION_EDGE
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - IS_ICE
+  - USE_AL
+  - USE_FOG
+  - USE_LS
+  - _TESSELLATION_EDGE
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -37,6 +46,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _CrackLayers:
         m_Texture: {fileID: 2800000, guid: 9d2bc4563c4469046b3894dadfed737e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CustomTerrainHolesTexture:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -239,6 +252,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AddSnowStrength: 0.5
     - _BumpScale: 3.44
@@ -355,7 +369,7 @@ Material:
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FogDirection: {r: 1, g: 0.3, b: 2, a: 0}
-    - _IceTint: {r: 0.018600928, g: 0.2233538, b: 0.3584906, a: 1}
+    - _IceTint: {r: 0.067283735, g: 0.34603903, b: 0.5283019, a: 1}
     - _IceTrail: {r: 0.134, g: 0.134, b: 0.07412766, a: 1}
     - _MountColor: {r: 0.120717645, g: 0.121025234, b: 0.12156863, a: 1}
     - _ParalaxColor: {r: 0, g: 0, b: 0, a: 1}
@@ -380,3 +394,5 @@ Material:
     - _TopColor: {r: 1, g: 1, b: 1, a: 1}
     - _TransitionColor: {r: 1, g: 1, b: 1, a: 1}
     - _WireframeColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

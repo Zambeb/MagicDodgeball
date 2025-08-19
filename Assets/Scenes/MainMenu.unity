@@ -3069,12 +3069,13 @@ MonoBehaviour:
     \u2013 University of Applied Sciences\r\n\r\n\r\n\r\n<size=60><b>Tools & Assets</b></size>\r\n\r\nUnity
     Engine\r\nJetBrains Rider\r\nAdobe Photoshop\r\nBlender\r\nClip Studio Paint\r\nAutodesk
     Maya\r\nSubstance Painter\r\nProcreate\r\nEZSoftBone\r\nZbrush\nAbleton Live 
-    \r\nNuendo\r\n\r\r\nFeel by More Mountains  \r\nFur Brushes by Tim Haag for ZBrush\n\nVFX
-    assets by KYEOMS, WhiteBox Studio and Hovl Studio were used \n\nSome sound effects
-    sourced from\nweloveindies.com and pixabay.com and creatively processed\r\n\r\nFonts:
-    Glina Script by Liese Mars and Gabriela by Eduardo Tunni \r\n\r\n\r\n\r\nAll
-    third-party tools and assets used under their respective licenses.\r\n\n\n\n\r\nAnimation
-    & Game  \r\nHochschule Darmstadt  \r\n2025"
+    \r\nNuendo\r\n\r\r\nFeel by More Mountains  \r\nFur Brushes by Tim Haag for ZBrush\n\nSnow
+    and Ice Shader: Brute Force\n\nVFX assets by KYEOMS, WhiteBox Studio and Hovl
+    Studio were used \n\nSome sound effects sourced from\nweloveindies.com and pixabay.com
+    and creatively processed\r\n\r\nFonts: Glina Script by Liese Mars and Gabriela
+    by Eduardo Tunni \r\n\r\n\r\n\r\nAll third-party tools and assets used under
+    their respective licenses.\r\n\n\n\n\r\nAnimation & Game  \r\nHochschule Darmstadt 
+    \r\n2025"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}
   m_sharedMaterial: {fileID: 5231930577251244076, guid: da776b623fd9de24ebd4820c3debbd5e, type: 2}

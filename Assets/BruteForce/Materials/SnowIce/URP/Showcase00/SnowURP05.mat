@@ -260,7 +260,7 @@ Material:
     - _Cutoff: 0.361
     - _DetailBumpScale: 3.07
     - _DetailNormalMapScale: 1
-    - _DisplacementColorMult: 0.85
+    - _DisplacementColorMult: 0.94
     - _DisplacementOffset: 0
     - _DisplacementShadowMult: 1.86
     - _DisplacementStrength: 0.2
@@ -279,7 +279,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HeightMultiplier: 0.5
-    - _HeightScale: 1.24
+    - _HeightScale: 0.57
     - _ISADD: 0
     - _ISICE: 0
     - _ISSNOW: 0
@@ -292,7 +292,7 @@ Material:
     - _LightIntensity: 1
     - _LightOffset: 0.165
     - _LittleSpecForce: 0.4
-    - _MainTexMult: 2
+    - _MainTexMult: 0.93
     - _Metallic: 0
     - _Metallic0: 0
     - _Metallic1: 0
@@ -365,7 +365,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0, g: 0.65999997, b: 0.73, a: 1}
     - _BotColor: {r: 0.71649414, g: 0.8354979, b: 0.87058824, a: 1}
-    - _Color: {r: 0.55108577, g: 0.6424155, b: 0.9056604, a: 1}
+    - _Color: {r: 0.03706836, g: 0.3418547, b: 0.46226418, a: 1}
     - _CracksStrength: {r: -0.05, g: 0.11, b: 0.1, a: -0.06}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

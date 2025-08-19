@@ -288,7 +288,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17886726619136
-    m_Localized: Increase Move Speed by 5
+    m_Localized: Increase Move Speed
     m_Metadata:
       m_Items: []
   - m_Id: 17943144202240
@@ -304,7 +304,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18169510789120
-    m_Localized: Increase Ball Size by x1.65
+    m_Localized: Increase Ball Size
     m_Metadata:
       m_Items: []
   - m_Id: 18228243628032
@@ -312,7 +312,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18284938035200
-    m_Localized: Increase Ball Speed by 4
+    m_Localized: Increase Ball Speed
     m_Metadata:
       m_Items: []
   - m_Id: 18340625809408

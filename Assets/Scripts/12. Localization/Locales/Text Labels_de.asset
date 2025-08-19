@@ -294,7 +294,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17886726619136
-    m_Localized: "Erh\xF6he deine Bewegungs Geschwindigkeit um 5"
+    m_Localized: "Erh\xF6he deine Bewegungs Geschwindigkeit"
     m_Metadata:
       m_Items: []
   - m_Id: 17943144202240
@@ -310,7 +310,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18169510789120
-    m_Localized: "Erh\xF6he die Gr\xF6\xDFe deiner B\xE4lle um x1.65"
+    m_Localized: "Erh\xF6he die Gr\xF6\xDFe deiner B\xE4lle"
     m_Metadata:
       m_Items: []
   - m_Id: 18228243628032
@@ -318,7 +318,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18284938035200
-    m_Localized: "Erh\xF6he die Geschwindigkeit deiner B\xE4lle um 4"
+    m_Localized: "Erh\xF6he die Geschwindigkeit deiner B\xE4lle"
     m_Metadata:
       m_Items: []
   - m_Id: 18340625809408

@@ -3051,13 +3051,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<size=60><b>Ball Busters Team</b></size>\r\n\r\n<size=36><b>Alina Kantar</b></size>\r\nProject
-    Manager, Concept Artist, UI Artist\r\n\r\n<size=36><b>Daniel Velitskiy</b></size>\r\nVision
-    Keeper, Game Designer, Sound Manager\r\n\r\n<size=36><b>Maja Riedel</b></size>\r\nCharacter
-    Artist, 3D Generalist\r\n\r\n<size=36><b>Mert Yilmaz</b></size>\r\nTechnical
-    Director\r\n\r\n<size=36><b>Milana Lukina</b></size>\r\nArt Director\r\n\r\n<size=36><b>Thi
-    Thanh Nga Pham</b></size>\r\nTechnical Artist, VFX Artist, Sound Manager\r\n\r\n<size=36><b>Timur
-    Erdashev</b></size>\r\nGame Designer, Programmer, Technical Artist, Audio Implementation,
-    3D Art Support\r\n\r\n\r<size=36><b>Sara Miedler</b></size>\r\nTechnical Artist\n\n\n\r\n<size=60><b>Sound</b></size>\r\n\r\n<size=36><b>Keanu
+    Manager, Concept Artist, UI Artist, German Localization\r\n\r\n<size=36><b>Daniel
+    Velitskiy</b></size>\r\nVision Keeper, Game Designer, Sound Manager\r\n\r\n<size=36><b>Maja
+    Riedel</b></size>\r\nCharacter Artist, 3D Generalist, Polish Localization\r\n\r\n<size=36><b>Mert
+    Yilmaz</b></size>\r\nTechnical Director, Turkish Localization\r\n\r\n<size=36><b>Milana
+    Lukina</b></size>\r\nArt Director\r\n\r\n<size=36><b>Thi Thanh Nga Pham</b></size>\r\nTechnical
+    Artist, VFX Artist, Sound Manager\r\n\r\n<size=36><b>Timur Erdashev</b></size>\r\nGame
+    Designer, Programmer, Technical Artist, Audio Implementation, Sound Designer,
+    3D Art Support, VFX Artist, Localization Manager, Russian Localization\r\n\r\n\r<size=36><b>Sara
+    Miedler</b></size>\r\nTechnical Artist, 3D Artist\n\n\n\r\n<size=60><b>Sound</b></size>\r\n\r\n<size=36><b>Keanu
     Fresen</b></size>\r\nComposer, Sound Designer\r\n\r\n<size=36><b>Luis Kirchlechner</b></size>\r\nComposer,
     Sound Designer\r\n\r\n\r\n\r\n<size=60><b>Supervisors</b></size>\r\n\r\n<size=36><b>Boris
     Kunkel</b></size>\r\nManagement and Methodology Supervision\r\n\r\n<size=36><b>Ramon

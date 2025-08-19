@@ -302,7 +302,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17886726619136
-    m_Localized: "Zwi\u0119ksz pr\u0119dko\u015B\u0107 ruchu o 5"
+    m_Localized: "Zwi\u0119ksz pr\u0119dko\u015B\u0107 ruchu"
     m_Metadata:
       m_Items: []
   - m_Id: 17943144202240
@@ -318,7 +318,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18169510789120
-    m_Localized: "Zwi\u0119ksz rozmiar swoich pi\u0142ek x1.65-krotnie"
+    m_Localized: "Zwi\u0119ksz rozmiar swoich pi\u0142ek"
     m_Metadata:
       m_Items: []
   - m_Id: 18228243628032
@@ -326,7 +326,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18284938035200
-    m_Localized: "Zwi\u0119ksz pr\u0119dko\u015B\u0107 swoich pi\u0142ek o 4"
+    m_Localized: "Zwi\u0119ksz pr\u0119dko\u015B\u0107 swoich pi\u0142ek"
     m_Metadata:
       m_Items: []
   - m_Id: 18340625809408

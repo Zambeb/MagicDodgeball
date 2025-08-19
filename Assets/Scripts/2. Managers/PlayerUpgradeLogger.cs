@@ -24,16 +24,25 @@ public class PlayerUpgradeLogger : MonoBehaviour
         File.WriteAllText(sessionFilePath, "Round,Player1Upgrades,Player2Upgrades,Winner\n");
     }
 
-    public void LogRound(int roundNumber, PlayerController player1, PlayerController player2, int winnerIndex)
+    public void LogRound(int roundNumber, PlayerController player1, PlayerController player2, int winnerIndex, int p1Wins, int p2Wins)
     {
-        string p1Upgrades = UpgradesToString(player1);
-        string p2Upgrades = UpgradesToString(player2);
+        LogPlayerUpgrades(roundNumber, 1, player1, winnerIndex == 0, p1Wins, p2Wins);
+        LogPlayerUpgrades(roundNumber, 2, player2, winnerIndex == 1, p1Wins, p2Wins);
+    }
 
-        string winner = winnerIndex == -1 ? "Draw" : $"Player{winnerIndex + 1}";
+    private void LogPlayerUpgrades(int round, int playerIndex, PlayerController player, bool isWinner, int p1Wins, int p2Wins)
+    {
+        foreach (var upgrade in player.acquiredUpgrades)
+        {
+            string line = $"{round},{playerIndex},{upgrade.name},Passive,{(isWinner ? 1 : 0)},{p1Wins},{p2Wins}\n";
+            File.AppendAllText(sessionFilePath, line);
+        }
 
-        string line = $"Round {roundNumber}:\nPlayer 1 upgrades: {p1Upgrades}\nPlayer 2 upgrades: {p2Upgrades}\nWinner: {winner}\n\n";
-        roundLogs.Add(line);
-        File.AppendAllText(sessionFilePath, line);
+        if (player.acquiredActiveAbility != null)
+        {
+            string line = $"{round},{playerIndex},{player.acquiredActiveAbility.name},Active,{(isWinner ? 1 : 0)},{p1Wins},{p2Wins}\n";
+            File.AppendAllText(sessionFilePath, line);
+        }
     }
 
     private string UpgradesToString(PlayerController player)

@@ -232,7 +232,7 @@ public class RoundManager : MonoBehaviour
             }
             winner = player1;
             loser = player2;
-            upgradeLogger.LogRound(roundCount, player1, player2, 0);
+            upgradeLogger.LogRound(roundCount, player1, player2, 0, player1Wins, player2Wins);
         }
         else if (player2points > player1points)
         {
@@ -250,11 +250,11 @@ public class RoundManager : MonoBehaviour
             
             winner = player2;
             loser = player1;
-            upgradeLogger.LogRound(roundCount, player1, player2, 1);
+            upgradeLogger.LogRound(roundCount, player1, player2, 1, player1Wins, player2Wins);
         }
         else
         {
-            upgradeLogger.LogRound(roundCount, player1, player2, 2);
+            upgradeLogger.LogRound(roundCount, player1, player2, -1, player1Wins, player2Wins);
         }
 
         if (winner != null && loser != null)
@@ -277,7 +277,7 @@ public class RoundManager : MonoBehaviour
                 winnerMessage = $"<color=#BC99F7>RAMMY</color> " + gameWinnerLoc.GetLocalizedString();
             }
             
-            upgradeLogger.LogRound(roundCount, player1, player2, 0);
+            upgradeLogger.LogRound(roundCount, player1, player2, 0, player1Wins, player2Wins);
             upgradeLogger.FinalizeLog();
 
             gameEnded = true;
@@ -293,7 +293,7 @@ public class RoundManager : MonoBehaviour
                 winnerMessage = $"<color=#FEDB5B>BENNY</color> " + gameWinnerLoc.GetLocalizedString();
             }
             
-            upgradeLogger.LogRound(roundCount, player1, player2, 1);
+            upgradeLogger.LogRound(roundCount, player1, player2, 1, player1Wins, player2Wins);
             upgradeLogger.FinalizeLog();
 
             gameEnded = true;

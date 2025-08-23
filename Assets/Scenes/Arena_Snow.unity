@@ -4506,8 +4506,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.1968548}
+  m_Center: {x: 1.130748e-10, y: 0, z: -0.09842745}
 --- !u!23 &787480821
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4614,8 +4614,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.3561678}
+  m_Center: {x: -9.928547e-11, y: 0, z: -0.17808393}
 --- !u!23 &798353639
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8487,8 +8487,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.1014917}
+  m_Center: {x: 7.362305e-13, y: 0, z: -0.050745904}
 --- !u!23 &1389720256
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13371,8 +13371,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.1331911}
+  m_Center: {x: -0, y: 0, z: -0.066595554}
 --- !u!23 &2039795542
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13550,8 +13550,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.1603587}
+  m_Center: {x: 5.528704e-11, y: 0, z: -0.08017938}
 --- !u!23 &2102343826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14012,8 +14012,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.1541376}
+  m_Center: {x: 0, y: 0, z: -0.077068806}
 --- !u!1 &1534807259839977888
 GameObject:
   m_ObjectHideFlags: 0

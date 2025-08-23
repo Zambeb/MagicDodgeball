@@ -17647,6 +17647,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662199908652677357, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3562137427461640153, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -17671,6 +17675,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4390975449585308008, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 863088878}
     - target: {fileID: 5835316513476837212, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -17695,6 +17703,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6955079899741207697, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
+      propertyPath: 'playerEventSystems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 863088878}
+    - target: {fileID: 6955079899741207697, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
+      propertyPath: 'playerEventSystems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 243294934}
     - target: {fileID: 7022501394510890667, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -1,3 +1,4 @@
+using ChristinaCreatesGames.UI;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +11,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject mainPauseMenu;
     [SerializeField] private GameObject balanceMenu;
     [SerializeField] private GameObject optionsMenu;
+    [SerializeField] private SetsUiElementToSelectOnInteraction uiSelector;
 
     private bool isPaused = false;
 
@@ -41,6 +43,7 @@ public class PauseManager : MonoBehaviour
         }
 
         Cursor.visible = true;
+        uiSelector.JumpToElement();
     }
 
     public void Resume()

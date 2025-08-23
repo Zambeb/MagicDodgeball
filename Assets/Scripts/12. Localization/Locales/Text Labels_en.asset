@@ -235,8 +235,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16627202293760
-    m_Localized: Final bounce createas an electric area that damages those who stand
-      on it. Bigger balls -> bigger samage area
+    m_Localized: On its final bounce, the ball creates an electric zone that damages
+      all units standing inside. The larger the ball, the wider the damage area.
     m_Metadata:
       m_Items: []
   - m_Id: 16728696061952
@@ -280,7 +280,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17769382576128
-    m_Localized: Add 1 balls
+    m_Localized: Add 1 ball
     m_Metadata:
       m_Items: []
   - m_Id: 17829625364480

@@ -445,6 +445,10 @@ MonoBehaviour:
       w zamian za 15% ca\u0142kowitego dochodu."
     m_Metadata:
       m_Items: []
+  - m_Id: 67023853703692288
+    m_Localized: "Niedost\u0119pne w wersji demonstracyjnej"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

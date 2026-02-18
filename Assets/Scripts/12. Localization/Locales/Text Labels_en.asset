@@ -425,6 +425,10 @@ MonoBehaviour:
       duels in exchange for 15% of the total revenue.
     m_Metadata:
       m_Items: []
+  - m_Id: 67023853703692288
+    m_Localized: Not available in the demo
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

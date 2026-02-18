@@ -438,6 +438,10 @@ MonoBehaviour:
       f\xFCr 15 % der Gesamteinnahmen."
     m_Metadata:
       m_Items: []
+  - m_Id: 67023853703692288
+    m_Localized: "In der Demo nicht verf\xFCgbar"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

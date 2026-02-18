@@ -435,6 +435,10 @@ MonoBehaviour:
       i\xE7in memnuniyetle tahsis etmeyi kabul ettiler."
     m_Metadata:
       m_Items: []
+  - m_Id: 67023853703692288
+    m_Localized: "Demoda mevcut de\u011Fil"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

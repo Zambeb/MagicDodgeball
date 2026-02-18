@@ -568,6 +568,11 @@ MonoBehaviour:
       \u043D\u0430 15% \u043E\u0442 \u043E\u0431\u0449\u0435\u0439 \u0432\u044B\u0440\u0443\u0447\u043A\u0438."
     m_Metadata:
       m_Items: []
+  - m_Id: 67023853703692288
+    m_Localized: "\u041D\u0435 \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u043E \u0432
+      \u0434\u0435\u043C\u043E"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

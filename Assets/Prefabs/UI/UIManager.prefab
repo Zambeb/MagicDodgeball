@@ -1795,6 +1795,7 @@ MonoBehaviour:
   mainPauseMenu: {fileID: 6244197996817730377}
   balanceMenu: {fileID: 5098999274966833435}
   optionsMenu: {fileID: 7950298189594244730}
+  pauseMenuCanvas: {fileID: 891249058942631214}
   pauseMenuFirstButton: {fileID: 6090030817618188536}
   optionsMenuFirstButton: {fileID: 1300277986949570398}
   balanceMenuFirstButton: {fileID: 2748228248692061453}
@@ -6869,7 +6870,7 @@ MonoBehaviour:
       - m_Target: {fileID: 5542943983440664506}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: Resume
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

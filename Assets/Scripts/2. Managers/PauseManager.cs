@@ -12,6 +12,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject optionsMenu;
     
     [Header("UI Navigation")]
+    [SerializeField] private GameObject pauseMenuCanvas;
     [SerializeField] private GameObject pauseMenuFirstButton; 
     [SerializeField] private GameObject optionsMenuFirstButton;
     [SerializeField] private GameObject balanceMenuFirstButton;
@@ -87,10 +88,16 @@ public class PauseManager : MonoBehaviour
         if (eventSystemObj != null)
         {
             var mpes = eventSystemObj.GetComponent<MultiplayerEventSystem>();
-            if (mpes != null && mpes.playerRoot != null)
+            if (mpes != null)
             {
+                // Сохраняем личный UI игрока (меню способностей)
                 previousPlayerRoot = mpes.playerRoot;
-                mpes.playerRoot = null; 
+                
+                // Назначаем корень на глобальное меню паузы! Теперь геймпад видит кнопки
+                if (pauseMenuCanvas != null)
+                {
+                    mpes.playerRoot = pauseMenuCanvas; 
+                }
             }
         }
     }

@@ -5839,6 +5839,7 @@ GameObject:
   - component: {fileID: 2027519948}
   - component: {fileID: 2027519950}
   - component: {fileID: 2027519949}
+  - component: {fileID: 2027519951}
   m_Layer: 0
   m_Name: EventSystems
   m_TagString: Untagged
@@ -5907,6 +5908,18 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 157760954}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &2027519951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027519947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b277ad72fcdb945b6835968202a32c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2059770992 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6754954814137438346, guid: bfa4fcee86553ee409545026727acc18, type: 3}
@@ -6436,7 +6449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2441173619647953326, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2931350293663680095, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_AnchorMax.x

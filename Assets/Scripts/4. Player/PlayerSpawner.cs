@@ -46,6 +46,11 @@ public class PlayerSpawner : MonoBehaviour
             playerInput.transform.position = spawnPoints[playerIndex].position;
         }
         
+        if (playerList.Count >= 2)
+        {
+            joinAction.Disable();
+        }
+        
         PlayerJoinedGame?.Invoke(playerInput);
     }
 

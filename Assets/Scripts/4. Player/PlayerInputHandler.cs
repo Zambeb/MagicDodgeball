@@ -13,7 +13,9 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (playerPrefab != null)
         {
-            int playerIndex = PlayerSpawner.instance.playerList.Count - 1;
+            var playerInput = GetComponent<PlayerInput>();
+            
+            int playerIndex = playerInput.playerIndex;
             
             playerController = GameObject.Instantiate(
                     playerPrefab, 
@@ -24,11 +26,11 @@ public class PlayerInputHandler : MonoBehaviour
             transform.position = playerController.transform.position;
             playerController.playerIndex = playerIndex;
             
-            AssignUIInputModule(playerIndex);
+            AssignUIInputModule(playerIndex, playerInput);
         }
     }
 
-    private void AssignUIInputModule(int playerIndex)
+    private void AssignUIInputModule(int playerIndex, PlayerInput playerInput)
     {
         GameObject eventSystemsObj = GameObject.Find("EventSystems");
         if (eventSystemsObj == null)
@@ -48,18 +50,40 @@ public class PlayerInputHandler : MonoBehaviour
         var inputModule = moduleTransform.GetComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
         if (inputModule == null)
         {
-            Debug.LogError($"InputSystemUIInputModule not found in {moduleName} ");
+            Debug.LogError($"InputSystemUIInputModule not found in {moduleName}");
             return;
         }
         
-        var playerInput = GetComponent<PlayerInput>();
-        if (playerInput == null)
+        // Привязываем модуль к игроку
+        playerInput.uiInputModule = inputModule;
+        
+        var actions = playerInput.actions;
+        inputModule.actionsAsset = actions;
+
+        // ВАЖНО: Здесь должно быть точное название твоей карты действий для интерфейса.
+        // Обычно в Unity это "UI". Если у тебя она называется иначе (например, "Menu" или "Interface"), измени эту строку:
+        string mapName = "UI"; 
+
+        // Вспомогательная локальная функция для безопасного поиска
+        InputAction FindActionSafe(string actionName)
         {
-            Debug.LogError("PlayerInput not found in PlayerInputHandler!");
-            return;
+            var action = actions.FindAction($"{mapName}/{actionName}");
+            if (action == null) 
+                Debug.LogWarning($"Внимание: Не найдено действие {mapName}/{actionName} в Action Asset!");
+            return action;
         }
 
-        playerInput.uiInputModule = inputModule;
+        // 3. Заполняем поля жесткими ссылками, чтобы они больше не были None
+        inputModule.move = InputActionReference.Create(FindActionSafe("Navigate"));
+        inputModule.submit = InputActionReference.Create(FindActionSafe("Submit"));
+        inputModule.cancel = InputActionReference.Create(FindActionSafe("Cancel"));
+        inputModule.point = InputActionReference.Create(FindActionSafe("Point"));
+        inputModule.leftClick = InputActionReference.Create(FindActionSafe("Click"));
+        inputModule.scrollWheel = InputActionReference.Create(FindActionSafe("ScrollWheel"));
+        inputModule.middleClick = InputActionReference.Create(FindActionSafe("MiddleClick"));
+        inputModule.rightClick = InputActionReference.Create(FindActionSafe("RightClick"));
+        inputModule.trackedDevicePosition = InputActionReference.Create(FindActionSafe("TrackedDevicePosition"));
+        inputModule.trackedDeviceOrientation = InputActionReference.Create(FindActionSafe("TrackedDeviceOrientation"));
     }
     
     public void OnMove(InputAction.CallbackContext context)
@@ -84,12 +108,18 @@ public class PlayerInputHandler : MonoBehaviour
     
     public void OnPause(InputAction.CallbackContext context)
     {
+        Debug.Log($"Игрок {playerController.playerIndex} нажал кнопку паузы. Статус: {context.phase}");
         if (context.started)
         {
             if (PauseManager.Instance.IsPaused)
+            {
                 PauseManager.Instance.Resume();
+            }
             else
-                PauseManager.Instance.Pause();
+            {
+                // Передаем индекс, чтобы выдать фокус конкретному геймпаду
+                PauseManager.Instance.Pause(playerController.playerIndex);
+            }
         }
     }
 }

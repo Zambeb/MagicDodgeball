@@ -6118,6 +6118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2128245569}
   - component: {fileID: 2128245570}
+  - component: {fileID: 2128245571}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6164,6 +6165,18 @@ MonoBehaviour:
   player1Name: Rammy
   player2Name: Benny
   loadingScreenPanel: {fileID: 1003464392018439103}
+--- !u!114 &2128245571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128245568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b8613c60455bc48963747020aaabf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1003464392018439103
 GameObject:
   m_ObjectHideFlags: 0
@@ -6338,7 +6351,7 @@ PrefabInstance:
     - target: {fileID: 878649747367071422, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
-      objectReference: {fileID: 1284296987}
+      objectReference: {fileID: 1505166152}
     - target: {fileID: 878649747367071422, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
@@ -6519,6 +6532,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.8235294
       objectReference: {fileID: 0}
+    - target: {fileID: 4737736978070188807, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5558283970109935739, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6534,6 +6551,30 @@ PrefabInstance:
     - target: {fileID: 5558283970109935739, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838483139007505373, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838483139007505373, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838483139007505373, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838483139007505373, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -441.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838483139007505373, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -361
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838483139007505373, guid: bfa4fcee86553ee409545026727acc18, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6148748102203843193, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6666,7 +6707,7 @@ PrefabInstance:
     - target: {fileID: 8433899079422712539, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
-      objectReference: {fileID: 1461078831}
+      objectReference: {fileID: 2100728314}
     - target: {fileID: 8433899079422712539, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.5566038
@@ -6682,11 +6723,11 @@ PrefabInstance:
     - target: {fileID: 8433899079422712539, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2059770995}
     - target: {fileID: 8433899079422712539, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_Navigation.m_SelectOnLeft
       value: 
-      objectReference: {fileID: 2100728314}
+      objectReference: {fileID: 0}
     - target: {fileID: 8613166312738071746, guid: bfa4fcee86553ee409545026727acc18, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4

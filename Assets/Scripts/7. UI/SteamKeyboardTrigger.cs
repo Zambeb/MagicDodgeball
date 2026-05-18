@@ -1,12 +1,14 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
-using Steamworks; // Требуется установленный Steamworks.NET
+using Steamworks;
+using System.Collections;
 
-public class SteamKeyboardTrigger : MonoBehaviour, ISelectHandler
+public class SteamKeyboardTrigger : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     private TMP_InputField inputField;
     protected Callback<GamepadTextInputDismissed_t> m_GamepadTextInputDismissed;
+    private bool isKeyboardOpen = false;
 
     private void Awake()
     {
@@ -17,50 +19,86 @@ public class SteamKeyboardTrigger : MonoBehaviour, ISelectHandler
     {
         if (SteamManager.Initialized)
         {
-            // Регистрируем колбэк: что делать, когда клавиатура закроется
             m_GamepadTextInputDismissed = Callback<GamepadTextInputDismissed_t>.Create(OnGamepadTextInputDismissed);
+            Debug.Log($"[SteamKeyboard] Инициализация для {gameObject.name} успешна.");
+        }
+        else
+        {
+            Debug.LogError("[SteamKeyboard] SteamManager не инициализирован! Клавиатура не будет работать.");
         }
     }
 
     public void OnSelect(BaseEventData eventData)
     {
-        // Проверяем, что ввод идет с контроллера (а не мышкой)
-        // Если Steam просит Full Controller Support, клавиатура должна открываться при навигации геймпадом
+        // Запускаем через небольшую задержку, чтобы EventSystem успела отработать
+        StartCoroutine(OpenKeyboardRoutine());
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+        isKeyboardOpen = false;
+    }
+
+    private IEnumerator OpenKeyboardRoutine()
+    {
+        // Короткая пауза в 0.1 сек часто решает проблему игнорирования вызова
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        if (isKeyboardOpen) yield break;
+
         ShowSteamOsk();
     }
 
     private void ShowSteamOsk()
     {
-        if (!SteamManager.Initialized) return;
+        if (!SteamManager.Initialized)
+        {
+            Debug.LogWarning("[SteamKeyboard] Попытка вызова клавиатуры без SteamAPI.");
+            return;
+        }
 
-        // Вызываем клавиатуру Steam
-        // Параметры: режим (нормальный), тип (одна строка), описание, макс. символов, текущий текст
-        bool opened = SteamUtils.ShowGamepadTextInput(
+        isKeyboardOpen = true;
+        Debug.Log($"[SteamKeyboard] Запрос на открытие клавиатуры для: {gameObject.name}");
+
+        // Вызываем стандартную клавиатуру
+        bool success = SteamUtils.ShowGamepadTextInput(
             EGamepadTextInputMode.k_EGamepadTextInputModeNormal,
             EGamepadTextInputLineMode.k_EGamepadTextInputLineModeSingleLine,
-            "Enter Player Name",
+            "Enter Text",
             20,
             inputField.text
         );
 
-        if (opened)
+        if (success)
         {
-            Debug.Log("Steam OSK Opened");
+            Debug.Log("[SteamKeyboard] Steam подтвердил вызов клавиатуры (True).");
+        }
+        else
+        {
+            Debug.LogError("[SteamKeyboard] Steam отклонил вызов (False). Проверьте, включен ли Overlay и запущен ли Big Picture.");
+            
+            // Альтернативный метод для плавающей клавиатуры (иногда работает лучше на новых версиях)
+            // SteamUtils.ShowFloatingGamepadTextInput(EFloatingGamepadTextInputMode.k_EFloatingGamepadTextInputModeModeSingleLine, 0, 0, 0, 0);
         }
     }
 
     private void OnGamepadTextInputDismissed(GamepadTextInputDismissed_t callback)
     {
+        isKeyboardOpen = false;
+        Debug.Log($"[SteamKeyboard] Клавиатура закрыта. Submitted: {callback.m_bSubmitted}");
+
         if (callback.m_bSubmitted)
         {
-            // Получаем текст, который ввел пользователь в оверлее
             uint length = SteamUtils.GetEnteredGamepadTextLength();
-            SteamUtils.GetEnteredGamepadTextInput(out string submittedText, length);
-
-            inputField.text = submittedText;
-            
-            // Вызываем событие OnEndEdit вручную, чтобы MainMenu подхватил имя
-            inputField.onEndEdit.Invoke(submittedText);
+            if (SteamUtils.GetEnteredGamepadTextInput(out string submittedText, length))
+            {
+                inputField.text = submittedText;
+                inputField.onEndEdit.Invoke(submittedText);
+                Debug.Log($"[SteamKeyboard] Текст получен: {submittedText}");
+            }
         }
+        
+        // Возвращаем фокус на поле ввода после закрытия клавиатуры
+        EventSystem.current.SetSelectedGameObject(gameObject);
     }
 }

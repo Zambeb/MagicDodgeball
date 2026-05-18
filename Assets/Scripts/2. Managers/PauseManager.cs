@@ -1,7 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 
 public class PauseManager : MonoBehaviour
@@ -27,17 +25,11 @@ public class PauseManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(Instance.gameObject);
+            Destroy(gameObject);
             return;
         }
 
         Instance = this;
-        //DontDestroyOnLoad(gameObject);
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void Pause(int playerIndex)
@@ -63,14 +55,14 @@ public class PauseManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void Resume(int playerIndex = -1)
+    public void Resume() 
     {
         Time.timeScale = 1f;
         isPaused = false;
         
-        // Очищаем фокус у того, кто управлял меню
         ClearFocusForPlayer(currentPausingPlayer);
         RestorePlayerRootCage(currentPausingPlayer);
+        
         currentPausingPlayer = -1;
         
         pauseMenuUI.SetActive(false);
@@ -88,7 +80,7 @@ public class PauseManager : MonoBehaviour
         pauseMenuUI.SetActive(true);
         BackToMainPauseMenu();
     }
-    
+
     private void RemovePlayerRootCage(int playerIndex)
     {
         GameObject eventSystemObj = GameObject.Find($"EventSystems/UIInputModule_{playerIndex}");
@@ -97,9 +89,7 @@ public class PauseManager : MonoBehaviour
             var mpes = eventSystemObj.GetComponent<MultiplayerEventSystem>();
             if (mpes != null && mpes.playerRoot != null)
             {
-                // Сохраняем личный UI игрока
                 previousPlayerRoot = mpes.playerRoot;
-                // Обнуляем корень. Теперь MPES может нажимать на общее меню паузы
                 mpes.playerRoot = null; 
             }
         }
@@ -115,9 +105,8 @@ public class PauseManager : MonoBehaviour
             var mpes = eventSystemObj.GetComponent<MultiplayerEventSystem>();
             if (mpes != null)
             {
-                // Возвращаем изоляцию UI обратно
                 mpes.playerRoot = previousPlayerRoot;
-                previousPlayerRoot = null; // Очищаем
+                previousPlayerRoot = null; 
             }
         }
     }
@@ -189,22 +178,6 @@ public class PauseManager : MonoBehaviour
     public void QuitGame()
     {
         GameManager.Instance.QuitGame();
-    }
-    
-    private void SetSelectedUIObject(GameObject obj)
-    {
-        if (EventSystem.current != null && obj != null)
-        {
-            // Сначала очищаем фокус, чтобы Unity гарантированно зарегистрировала новое выделение
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(obj);
-        }
-    }
-    
-    private void OnDestroy()
-    {
-        if (Instance == this)
-            Instance = null;
     }
 
     public bool IsPaused => isPaused;

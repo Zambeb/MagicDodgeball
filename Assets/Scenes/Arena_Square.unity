@@ -540,11 +540,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22039199}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &31815796 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6090030817618188536, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-  m_PrefabInstance: {fileID: 1717475298}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &43539856 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 817444239317713661, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
@@ -5942,11 +5937,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5e3abd2732445024b87bd4dfd255bcff, type: 3}
   m_PrefabInstance: {fileID: 576549829}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &591735919 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2748228248692061453, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-  m_PrefabInstance: {fileID: 1717475298}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &595155265
 PrefabInstance:
@@ -12123,11 +12113,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000053079333, y: -0.00003039278, z: -0.0016856713}
     m_Extent: {x: 0.003973346, y: 0.0003594284, z: 0.007875362}
   m_DirtyAABB: 0
---- !u!1 &1168360314 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1300277986949570398, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-  m_PrefabInstance: {fileID: 1717475298}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1198220588
 GameObject:
   m_ObjectHideFlags: 0
@@ -17197,11 +17182,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36508bffb4154154bad588e43baa10f0, type: 3}
   m_PrefabInstance: {fileID: 1668378082}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1675039327 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 891249058942631214, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-  m_PrefabInstance: {fileID: 1717475298}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1676407051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17456,37 +17436,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 395159512}
     m_Modifications:
-    - target: {fileID: 891249058942631214, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3562137427461640153, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
       propertyPath: m_Name
       value: UIManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5542943983440664506, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-      propertyPath: pauseMenuCanvas
-      value: 
-      objectReference: {fileID: 1675039327}
-    - target: {fileID: 5542943983440664506, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-      propertyPath: pauseMenuFirstButton
-      value: 
-      objectReference: {fileID: 31815796}
-    - target: {fileID: 5542943983440664506, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-      propertyPath: balanceMenuFirstButton
-      value: 
-      objectReference: {fileID: 591735919}
-    - target: {fileID: 5542943983440664506, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-      propertyPath: optionsMenuFirstButton
-      value: 
-      objectReference: {fileID: 1168360314}
-    - target: {fileID: 7347508112859346605, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7992933101954754833, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7992933101954754833, guid: a61667fb061e24b419391d7cfc96b4ca, type: 3}
       propertyPath: eventSystem

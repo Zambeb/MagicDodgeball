@@ -33,57 +33,29 @@ public class PlayerInputHandler : MonoBehaviour
     private void AssignUIInputModule(int playerIndex, PlayerInput playerInput)
     {
         GameObject eventSystemsObj = GameObject.Find("EventSystems");
-        if (eventSystemsObj == null)
-        {
-            Debug.LogError("EventSystems not found!");
-            return;
-        }
+        if (eventSystemsObj == null) return;
         
         string moduleName = $"UIInputModule_{playerIndex}";
         Transform moduleTransform = eventSystemsObj.transform.Find(moduleName);
-        if (moduleTransform == null)
-        {
-            Debug.LogError($"Not found UI Input Module: {moduleName}");
-            return;
-        }
+        if (moduleTransform == null) return;
         
         var inputModule = moduleTransform.GetComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
-        if (inputModule == null)
-        {
-            Debug.LogError($"InputSystemUIInputModule not found in {moduleName}");
-            return;
-        }
+        if (inputModule == null) return;
+
+        // 1. Привязываем модуль к клонированным экшенам игрока. 
+        // Это сохраняет изоляцию устройств (каждый геймпад управляет только своим модулем).
+        inputModule.actionsAsset = playerInput.actions;
         
-        // Привязываем модуль к игроку
-        playerInput.uiInputModule = inputModule;
+        // ВАЖНО: Мы НЕ пишем playerInput.uiInputModule = inputModule; 
+        // Именно встроенная логика PlayerInput сбрасывала всё в None!
         
-        var actions = playerInput.actions;
-        inputModule.actionsAsset = actions;
-
-        // ВАЖНО: Здесь должно быть точное название твоей карты действий для интерфейса.
-        // Обычно в Unity это "UI". Если у тебя она называется иначе (например, "Menu" или "Interface"), измени эту строку:
-        string mapName = "UI"; 
-
-        // Вспомогательная локальная функция для безопасного поиска
-        InputAction FindActionSafe(string actionName)
+        // 2. Перманентно включаем карту интерфейса. 
+        // Теперь навигация (Navigate) будет работать всегда, когда открыто любое меню.
+        var uiMap = playerInput.actions.FindActionMap("UI");
+        if (uiMap != null)
         {
-            var action = actions.FindAction($"{mapName}/{actionName}");
-            if (action == null) 
-                Debug.LogWarning($"Внимание: Не найдено действие {mapName}/{actionName} в Action Asset!");
-            return action;
+            uiMap.Enable();
         }
-
-        // 3. Заполняем поля жесткими ссылками, чтобы они больше не были None
-        inputModule.move = InputActionReference.Create(FindActionSafe("Navigate"));
-        inputModule.submit = InputActionReference.Create(FindActionSafe("Submit"));
-        inputModule.cancel = InputActionReference.Create(FindActionSafe("Cancel"));
-        inputModule.point = InputActionReference.Create(FindActionSafe("Point"));
-        inputModule.leftClick = InputActionReference.Create(FindActionSafe("Click"));
-        inputModule.scrollWheel = InputActionReference.Create(FindActionSafe("ScrollWheel"));
-        inputModule.middleClick = InputActionReference.Create(FindActionSafe("MiddleClick"));
-        inputModule.rightClick = InputActionReference.Create(FindActionSafe("RightClick"));
-        inputModule.trackedDevicePosition = InputActionReference.Create(FindActionSafe("TrackedDevicePosition"));
-        inputModule.trackedDeviceOrientation = InputActionReference.Create(FindActionSafe("TrackedDeviceOrientation"));
     }
     
     public void OnMove(InputAction.CallbackContext context)
